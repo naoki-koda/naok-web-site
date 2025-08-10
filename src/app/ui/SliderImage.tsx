@@ -2,14 +2,23 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
+import { useTheme } from 'next-themes';
 
 interface AnimatedImageProps {
-  triggerId: string; // トリガーにするセクションのID
-  src: string;
+  triggerId: string;
+  srcLight: string;
+  srcDark: string;
   alt: string;
 }
 
-export default function AnimatedImage({ triggerId, src, alt }: AnimatedImageProps) {
+export default function AnimatedImage({
+  triggerId,
+  srcLight,
+  srcDark,
+  alt,
+}: AnimatedImageProps) {
+  const { theme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
   const [show, setShow] = useState(false);
   const [scrollOut, setScrollOut] = useState(false);
   const [position, setPosition] = useState({ top: 0, left: 0 });
@@ -19,28 +28,14 @@ export default function AnimatedImage({ triggerId, src, alt }: AnimatedImageProp
     triggerOnce: true,
   });
 
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => setMounted(true), []);
 
-  // 表示トリガー
   useEffect(() => {
-    if (inView) {
-      setShow(true);
-    }
+    if (inView) setShow(true);
   }, [inView]);
 
-  // スクロールで画面上に消える
-  useEffect(() => {
-    const handleScroll = () => {
-      if (show) {
-        setScrollOut(window.scrollY > (position.top + 100));
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [show, position.top]);
-
-  // トリガー位置に画像を表示させるために座標取得
-  useEffect(() => {
+  // ✅ 位置を再計算する関数（共通化）
+  const updatePosition = () => {
     const triggerEl = document.getElementById(triggerId);
     if (triggerEl) {
       const rect = triggerEl.getBoundingClientRect();
@@ -49,16 +44,41 @@ export default function AnimatedImage({ triggerId, src, alt }: AnimatedImageProp
         left: rect.left + window.scrollX - 100,
       });
     }
-  }, [triggerId]);
+  };
+
+  useEffect(() => {
+    if (!mounted) return;
+    requestAnimationFrame(updatePosition);
+    window.addEventListener('resize', updatePosition);
+    window.addEventListener('scroll', updatePosition); // ← スクロールでも再計算
+    return () => {
+      window.removeEventListener('resize', updatePosition);
+      window.removeEventListener('scroll', updatePosition);
+    };
+  }, [mounted, triggerId]);
+
+  // スクロールで画面外に出たか判定
+  useEffect(() => {
+    const handleScroll = () => {
+      if (show) {
+        setScrollOut(window.scrollY > position.top + 100);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [show, position.top]);
+
+  if (!mounted) return null;
+
+  const currentTheme = theme === 'system' ? resolvedTheme : theme;
+  const imgSrc = currentTheme === 'dark' ? srcDark : srcLight;
 
   return (
     <>
-      {/* トリガー要素 */}
       <div id={triggerId} ref={ref} className="h-1" />
 
-      {/* スライド画像 */}
       <img
-        src={src}
+        src={imgSrc}
         alt={alt}
         style={{
           position: 'absolute',

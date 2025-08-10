@@ -38,12 +38,13 @@ export default function Home() {
         <p>
           愛知県・名古屋市を中心としたWEBサイト開発事務所
         </p>
-        <div className="bg-white text-gray-900">
+        <div className="bg-white dark:bg-black text-gray-900">
           {/* ヒーローセクション */}
           <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
             <AnimatedImage
               triggerId="section-1"
-              src="/first.PNG"
+              srcLight="/first_light.PNG"
+              srcDark="/first_dark.PNG"
               alt="1番目の画像"
             />
             <h2 className="text-4xl md:text-5xl text-center font-bold mb-4">速さは、信頼につながる。</h2>
@@ -60,23 +61,24 @@ export default function Home() {
           </section>
 
           {/* 技術的な速さの説明 */}
-          <section className="rounded-md py-16 px-6 bg-gray-50 mb-10">
-
+          <section className="rounded-md py-16 px-6 bg-gray-50 dark:bg-gray-800 mb-10 text-gray-900 dark:text-white">
             <h3 className="text-3xl font-bold text-center mb-12">どうして、そんなに速いの？</h3>
+
             <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10">
-              <div className="bg-white p-6 rounded shadow">
+              <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                 <h3 className="text-xl font-bold mb-2 text-center">Next.js の SPA構成</h3>
                 <p>ページ遷移が瞬時。再読み込みが不要でストレスゼロ。</p>
               </div>
-              <div className="bg-white p-6 rounded shadow">
+              <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                 <h3 className="text-xl font-bold mb-2 text-center">静的サイト生成（SSG）</h3>
                 <p>サーバーレスでHTMLを事前に生成。<br />圧倒的な表示スピード。</p>
               </div>
-              <div className="bg-white p-6 rounded shadow">
+              <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                 <h3 className="text-xl font-bold mb-2 text-center">軽量な設計</h3>
                 <p>余計なJSを使わず<br />モバイルでもスムーズに表示。</p>
               </div>
             </div>
+
             <h2 className="text-3xl font-bold text-center mb-12">表示スピードは、ビジネス成果に直結</h2>
             <div className="max-w-4xl mx-auto text-center text-lg space-y-6">
               <p>表示が遅いと、約50%以上のユーザーが離脱すると言われています。</p>
@@ -89,7 +91,8 @@ export default function Home() {
           <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
             <AnimatedImage
               triggerId="section-2"
-              src="/cheap.PNG"
+              srcLight="/cheap_light.PNG"
+              srcDark="/cheap_dark.PNG"
               alt="2番目の画像" />
 
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -109,18 +112,18 @@ export default function Home() {
             </a>
           </section>
 
-          <section className="rounded-md py-16 px-6 bg-gray-50 mb-10">
+          <section className="rounded-md py-16 px-6 bg-gray-50 dark:bg-gray-800 mb-10 text-gray-900 dark:text-white">
             <h3 className="text-3xl font-bold text-center mb-12">どうして、そんなに安いの？</h3>
             <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10">
-              <div className="bg-white p-6 rounded shadow">
+              <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                 <h3 className="text-xl font-bold mb-2 text-center">すべてを一人で対応</h3>
                 <p>開発・運用・保守・打ち合わせまで、<br />外注せずワンストップ。</p>
               </div>
-              <div className="bg-white p-6 rounded shadow">
+              <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                 <h3 className="text-xl font-bold mb-2 text-center">中間マージンゼロ</h3>
                 <p>代理店や営業コストが無いため、<br />価格を抑えられます。</p>
               </div>
-              <div className="bg-white p-6 rounded shadow">
+              <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                 <h3 className="text-xl font-bold mb-2 text-center">効率的な制作体制</h3>
                 <p>実績あるテンプレートや開発手法を活用し、<br />短納期＆低コストを実現。</p>
               </div>
@@ -137,7 +140,8 @@ export default function Home() {
           <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
             <AnimatedImage
               triggerId="section-3"
-              src="/sell.PNG"
+              srcLight="/sell_light.PNG"
+              srcDark="/sell_dark.PNG"
               alt="3番目の画像"
             />
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
@@ -155,18 +159,18 @@ export default function Home() {
             </a>
           </section>
 
-          <section className="rounded-md py-16 px-6 bg-gray-50 mb-10">
+          <section className="rounded-md py-16 px-6 bg-gray-50 dark:bg-gray-800 mb-10 text-gray-900 dark:text-white">
             <h3 className="text-3xl font-bold text-center mb-12">どうして、そんなに売れるの？</h3>
             <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10">
-              <div className="bg-white p-6 rounded shadow">
+              <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                 <h3 className="text-xl font-bold mb-2 text-center">導線重視の構成</h3>
                 <p>ユーザーの行動を想定した<br />CTAやナビゲーション設計。</p>
               </div>
-              <div className="bg-white p-6 rounded shadow">
+              <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                 <h3 className="text-xl font-bold mb-2 text-center">ターゲットに響くコピー</h3>
                 <p>「誰に」「何を」「どう伝えるか」<br />言葉の力で興味を惹きつけます。</p>
               </div>
-              <div className="bg-white p-6 rounded shadow">
+              <div className="bg-white p-6 dark:bg-gray-700 rounded shadow">
                 <h3 className="text-xl font-bold mb-2 text-center">スマホ最適化</h3>
                 <p>多くの訪問者が使うスマホで、<br />見やすく・使いやすく・買いやすく。</p>
               </div>

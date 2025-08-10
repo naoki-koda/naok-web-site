@@ -17,6 +17,7 @@ export async function sendMail(prevState: State, formData: FormData): Promise<St
   const lastName = formData.get('lastName')?.toString() || '';
   const firstName = formData.get('firstName')?.toString() || '';
   const email = formData.get('email')?.toString() || '';
+  const confirmEmail = formData.get('confirmEmail')?.toString() || '';
   const message = formData.get('message')?.toString() || '';
 
   // バリデーション例（必要に応じて）
@@ -26,6 +27,11 @@ export async function sendMail(prevState: State, formData: FormData): Promise<St
   }
   if (!message || message.length < 5) {
     errors.message = ['メッセージを5文字以上入力してください。'];
+  }
+  console.log(email);
+  console.log(confirmEmail);
+  if (email !== confirmEmail) {
+    errors.message = ['確認用メールアドレスがメールアドレスと一致しません。']
   }
 
   if (Object.keys(errors).length > 0) {

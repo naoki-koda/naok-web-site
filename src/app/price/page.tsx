@@ -1,43 +1,68 @@
 'use client';
+import InitPricingCard from '@/app/ui/InitPriceCard';
+import PricingCard from '@/app/ui/priceCard';
 
 export default function PricingPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-8">料金プラン</h1>
+      <h1 className="text-center text-3xl font-bold mb-8">料金プラン</h1>
       {/* キャンペーン告知 */}
-      <div className="mb-8 p-4 bg-yellow-100 text-yellow-900 border-l-4 border-yellow-500 rounded">
-        🎉 <strong>事業開始キャンペーン</strong> 実施中！<br />
-        今だけ先着10社様に限り、<strong>初回制作費無料</strong>でご提供いたします。
-      </div>
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">制作プラン（コーポレートサイト）</h2>
-        <p className="mb-2">制作費用は個別見積もりとなりますが、以下の条件でのご対応となります。</p>
+        <h2 className="text-2xl font-semibold mb-4">初期費用(WEBサイトの制作費用)</h2>
+        <div className="flex justify-center">
+          <InitPricingCard
+            className="w-full"
+            title="WEBサイト制作費用"
+            subtitle="事業開始キャンペーン!"
+            originalPrice=""
+            currentPrice="無料"
+            period=""
+            yearlyTotal="￥108,000"
+            note="">
+          </InitPricingCard>
+        </ div>
+        <p className="mb-2 p-4">制作費用は個別見積もりとなりますが、以下の条件でのご対応となります。</p>
         <ul className="list-disc list-inside space-y-2 text-gray-800 dark:text-gray-200">
           <li>初回ヒアリングおよび打ち合わせは <strong>4回まで無料</strong> です。</li>
           <li>4回の打ち合わせでWEBサイトの仕様が決まった場合、WEB制作費は無料です。</li>
           <li className="list-item [text-indent:-1em] [padding-left:1em]">
-            コストカットのためWEBサイトの仕様書の作成等は行いません。<br />
-            &nbsp;打ち合わせ時に打ち合わせの内容を記録し、これをWEBサイトの仕様とします。
+            打ち合わせ内容を記録し、これをWEBサイトの仕様とします。
           </li>
           <li>5回目以降の打ち合わせは <strong>1時間あたり5,000円（税込）</strong> を頂戴します。</li>
           <li>サイトの規模や機能により、制作費用は変動します。</li>
         </ul>
       </section>
 
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">月額保守プラン</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-800 dark:text-gray-200">
-          <li>月額 <strong>10,000円（税込）〜</strong></li>
-          <li>軽微な修正対応・コンテンツ更新を含みます。</li>
-        </ul>
-      </section>
+      <h2 className="text-2xl font-semibold mb-4 item-center">
+        月額費用(ドメイン、サーバ、運用保守費用)
+      </h2>
+      <div className="flex flex-xol md:flex-row gap-6 item-center">
+        <PricingCard
+          title="月間契約プラン"
+          subtitle="数ヶ月の運用、お試しされたい方向け"
+          originalPrice="年間 ￥120,000"
+          currentPrice="￥10,000"
+          period="月額(税込)"
+          yearlyTotal="￥108,000"
+          note="軽微な修正、サーバー、ドメインの運用費用を含みます。">
+        </PricingCard>
+        <PricingCard
+          title="年間契約プラン"
+          subtitle="年間のコストを抑えたい方向け"
+          originalPrice="年間 ￥99,600"
+          currentPrice="￥8,300"
+          period="月額(税込)"
+          yearlyTotal="￥108,000"
+          note="軽微な修正、サーバー、ドメインの運用費用を含みます。">
+        </PricingCard>
+      </div>
 
       <div className="text-sm text-gray-500 mt-8">
         ※詳細な料金はお問い合わせ時にご案内いたします。<br />
         ※表示価格はすべて税込です。<br />
         ※掲載内容は予告なく変更される場合があります。<br />
         ※トラブルや損害について当方は一切の責任を負いかねます。<br />
-        詳しくは<a href="/terms" className="text-blue-500 underline">ご利用規約</a>をご確認ください。
+        詳しくは<a href="/termsOfService" className="text-blue-500 underline">ご利用規約</a>をご確認ください。
       </div>
     </div>
   );
