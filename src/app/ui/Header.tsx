@@ -21,7 +21,7 @@ export default function Header() {
               height={37}
             />
             <Link href="/" className="text-xl font-bold ">
-              NAOK. WEB開発
+              nao.k WEB開発
             </Link>
           </div>
           <div className="absolute right-4">

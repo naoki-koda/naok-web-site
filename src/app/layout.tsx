@@ -17,19 +17,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "愛知・名古屋のWebサイト制作 | NAOK. WEB開発",
+  title: "愛知・名古屋のWebサイト制作 | nao.k WEB開発",
   description: "愛知県・名古屋市を中心に、Webサイトの開発・運用・保守を一貫して提供。迅速で低コスト、売上に貢献するサイト制作を行います。",
   openGraph: {
-    title: "愛知・名古屋のWebサイト制作 | NAOK. WEB開発",
-    description: "低コスト・高品質・成果の出るWeb制作。愛知・名古屋でWeb開発ならNAOK.",
+    title: "愛知・名古屋のWebサイト制作 | nao.k WEB開発",
+    description: "低コスト・高品質・成果の出るWeb制作。愛知・名古屋でWeb開発ならnao.k",
     url: "https://example.com", // 実際のURLに変更してください
-    siteName: "NAOK. WEB開発",
+    siteName: "nao.k WEB開発",
     images: [
       {
         url: "/favicon.ico", // publicディレクトリに置いた画像のパス
         width: 1200,
         height: 630,
-        alt: "NAOK. WEB開発のサイトイメージ",
+        alt: "nao.k WEB開発のサイトイメージ",
       },
     ],
     type: "website",
