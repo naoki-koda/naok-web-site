@@ -30,7 +30,7 @@ export default function Home() {
   }, []);
   return (
     <main>
-      <div className="relative">
+      <div className="relative hidden md:block">
         <Image
           src={isVisible ? '/mainview.png' : '/hero_image_placeholder.png'}
           alt="Hero Image"
@@ -66,12 +66,14 @@ export default function Home() {
           <div className="bg-white dark:bg-black text-gray-900">
             {/* ヒーローセクション */}
             <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
-              <AnimatedImage
-                triggerId="section-1"
-                srcLight="/first_dark.PNG"
-                srcDark="/first_dark.PNG"
-                alt="1番目の画像"
-              />
+              <div className="hidden md:block">
+                <AnimatedImage
+                  triggerId="section-1"
+                  srcLight="/first_dark.PNG"
+                  srcDark="/first_dark.PNG"
+                  alt="1番目の画像"
+                />
+              </div>
               <h2 className="text-4xl md:text-5xl text-center font-bold mb-4">速さは、信頼につながる。</h2>
               <img
                 src="/fastIcon.webp"
@@ -118,12 +120,13 @@ export default function Home() {
 
             {/* 安さの説明 */}
             <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
-              <AnimatedImage
-                triggerId="section-2"
-                srcLight="/cheap_light.PNG"
-                srcDark="/cheap_dark.PNG"
-                alt="2番目の画像" />
-
+              <div className="hidden md:block">
+                <AnimatedImage
+                  triggerId="section-2"
+                  srcLight="/cheap_light.PNG"
+                  srcDark="/cheap_dark.PNG"
+                  alt="2番目の画像" />
+              </ div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 安さの理由、<br />
                 <strong className="underline">無駄がない</strong>から。
@@ -172,12 +175,14 @@ export default function Home() {
 
             {/* 売れるの説明 */}
             <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
-              <AnimatedImage
-                triggerId="section-3"
-                srcLight="/sell_light.PNG"
-                srcDark="/sell_dark.PNG"
-                alt="3番目の画像"
-              />
+              <div className="hidden md:block">
+                <AnimatedImage
+                  triggerId="section-3"
+                  srcLight="/sell_light.PNG"
+                  srcDark="/sell_dark.PNG"
+                  alt="3番目の画像"
+                />
+              </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 売れるサイトには、<br/><strong className="underline">理由</strong>があります。
               </h2>
