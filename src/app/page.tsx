@@ -30,9 +30,9 @@ export default function Home() {
   }, []);
   return (
     <main>
-      <div className="relative hidden md:block">
+      <div className="relative hidden sm:block">
         <Image
-          src={isVisible ? '/mainview.png' : '/hero_image_placeholder.png'}
+          src='/mainview.png'
           alt="Hero Image"
           width={2560}
           height={700}
@@ -66,7 +66,7 @@ export default function Home() {
           <div className="bg-white dark:bg-black text-gray-900">
             {/* ヒーローセクション */}
             <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
-              <div className="hidden md:block">
+              <div className="hidden sm:block">
                 <AnimatedImage
                   triggerId="section-1"
                   srcLight="/first_dark.PNG"
@@ -120,7 +120,7 @@ export default function Home() {
 
             {/* 安さの説明 */}
             <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
-              <div className="hidden md:block">
+              <div className="hidden sm:block">
                 <AnimatedImage
                   triggerId="section-2"
                   srcLight="/cheap_light.PNG"
@@ -175,7 +175,7 @@ export default function Home() {
 
             {/* 売れるの説明 */}
             <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
-              <div className="hidden md:block">
+              <div className="hidden sm:block">
                 <AnimatedImage
                   triggerId="section-3"
                   srcLight="/sell_light.PNG"
