@@ -40,8 +40,8 @@ export default function AnimatedImage({
     if (triggerEl) {
       const rect = triggerEl.getBoundingClientRect();
       setPosition({
-        top: rect.top + window.scrollY - 180,
-        left: rect.left + window.scrollX - 100,
+        top: rect.top + window.scrollY - 90,
+        left: rect.left + window.scrollX - 50,
       });
     }
   };

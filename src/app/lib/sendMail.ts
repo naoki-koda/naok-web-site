@@ -1,12 +1,13 @@
-
 'use server'
 
 import nodemailer from 'nodemailer';
 import { redirect } from 'next/navigation';
+import { sendMailSchema } from './sendMailSchema';
 
 export type State = {
   errors?: {
-    email?: string[];
+    lastName?: string[];
+    firstName?: string[];
     message?: string[];
   };
   message?: string | null;
@@ -14,29 +15,22 @@ export type State = {
 
 
 export async function sendMail(prevState: State, formData: FormData): Promise<State> {
-  const lastName = formData.get('lastName')?.toString() || '';
-  const firstName = formData.get('firstName')?.toString() || '';
-  const email = formData.get('email')?.toString() || '';
-  const confirmEmail = formData.get('confirmEmail')?.toString() || '';
-  const message = formData.get('message')?.toString() || '';
+  const validatedFields = sendMailSchema.safeParse({
+    lastName: formData.get('lastName')?.toString() || '',
+    firstName: formData.get('firstName')?.toString() || '',
+    email: formData.get('email')?.toString() || '',
+    confirmEmail: formData.get('confirmEmail')?.toString() || '',
+    message: formData.get('message')?.toString() || '',
+  });
 
-  // バリデーション例（必要に応じて）
-  const errors: State["errors"] = {};
-  if (!email.includes('@')) {
-    errors.email = ['有効なメールアドレスを入力してください。'];
-  }
-  if (!message || message.length < 5) {
-    errors.message = ['メッセージを5文字以上入力してください。'];
-  }
-  console.log(email);
-  console.log(confirmEmail);
-  if (email !== confirmEmail) {
-    errors.message = ['確認用メールアドレスがメールアドレスと一致しません。']
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: null,
+    };
   }
 
-  if (Object.keys(errors).length > 0) {
-    return { errors, message: null };
-  }
+  const { lastName, firstName, email, message } = validatedFields.data;
 
   try {
     // メール送信設定
@@ -64,7 +58,7 @@ export async function sendMail(prevState: State, formData: FormData): Promise<St
     return { message: 'redirect' };
   } catch (error) {
     console.error('メール送信エラー:', error);
-    return { message: 'メールの送信中にエラーが発生しました。' };
+    return { message: 'failed' };
   }
 }
 

@@ -14,8 +14,10 @@ export default function Form() {
   useEffect(() => {
     if (state.message === 'redirect') {
       router.push('/done');
+    } else if (state.message === 'failed') {
+      router.push("/failed");
     }
-  }, [state.message]);
+  }, [state.message, router]);
   return (
     <form action={formAction}>
       <div className="rounded-xl bg-gray-100 mx-4 my-4 p-4 md-p-6 dark:bg-gray-800">
@@ -31,8 +33,17 @@ export default function Form() {
                 name="lastName"
                 placeholder="例)山田"
                 className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               >
               </input>
+              <div id="lastName-error" aria-live="polite" aria-atomic="true">
+                {state.errors?.lastName &&
+                  state.errors.lastName.map((error: string) => (
+                    <p className="mt-2 text-sm text-red-500" key={error}>
+                      {error}
+                    </p>
+                  ))}
+              </div>
             </div>
           </div>
           <div>
@@ -44,11 +55,19 @@ export default function Form() {
                 type="text"
                 id="firstName"
                 name="firstName"
-                autoComplete="given-name"
+                // autoComplete="given-name"
                 placeholder="例）太郎"
                 className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
+              <div id="firstName-error" aria-live="polite" aria-atomic="true">
+                {state.errors?.firstName &&
+                  state.errors.firstName.map((error: string) => (
+                    <p className="mt-2 text-sm text-red-500" key={error}>
+                      {error}
+                    </p>
+                  ))}
+              </div>
             </div>
           </div>
           <div>
@@ -62,6 +81,7 @@ export default function Form() {
                 name="lastNameKana"
                 placeholder="例)ヤマダ"
                 className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required
               >
               </input>
             </div>
@@ -75,7 +95,6 @@ export default function Form() {
                 type="text"
                 id="firstNameKana"
                 name="firstNameKana"
-                autoComplete="given-name"
                 placeholder="例）タロウ"
                 className="w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
@@ -121,6 +140,7 @@ export default function Form() {
             rows={6}
             placeholder="作成したいWEBサイトの事業、打ち合わせ希望日などお気軽にお書きください。"
             className="mt-1 w-full rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
           >
           </textarea>
 
