@@ -59,7 +59,7 @@ export default function Home() {
       </div>
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-7 pb-2 gap-1 sm:p-10 font-[family-name:var(--font-geist-sans)]">
         <div className="flex flex-col gap-[32px] row-start-2 items-center">
-          <p className={`text-4xl md:text-5xl text-center ${kosugiMaru.className} mt-0 pb-2`}>
+          <p className={`text-2xl md:text-5xl text-center ${kosugiMaru.className} mt-0 pb-2`}>
             nao.k WEB開発のサイトは
           </p>
           <p className={`hidden sm:block text-4xl md:text-5xl text-center ${kosugiMaru.className} mb-1 mt-0 pb-2`}>
