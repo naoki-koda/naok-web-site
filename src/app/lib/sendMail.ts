@@ -50,6 +50,7 @@ export async function sendMail(prevState: State, formData: FormData): Promise<St
       subject: 'お問い合わせフォームより',
       text: `
   【お名前】${fullName}
+  【読み仮名】${lastName} ${firstName}
   【メール】${email}
   【メッセージ】
   ${message}

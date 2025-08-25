@@ -57,6 +57,21 @@ export default function Home() {
           </h1>
         </div>
       </div>
+      <div className="relative w-screen h-[300px] block md:hidden bg-gradient-to-r from-orange-400 to-sky-400">
+        <p className="text-white absolute inset-0 flex items-start justify-center mt-8 text-lg"
+          style={{ textShadow: '3px 3px 8px rgba(0, 0, 0, 0.85)' }}>
+            愛知県・名古屋市を中心とした<br/>事業者向けWEBサイトの開発
+        </p>
+        {/* <div className="absolute bottom-0 left-0 w-full"> */}
+          <Image
+            src='/mobilehero2.png'
+            alt="Mobile Hero Image"
+            fill
+            priority
+            className="object-contain bottom-0"
+            />
+        {/* </div> */}
+      </div>
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-7 pb-2 gap-1 sm:p-10 font-[family-name:var(--font-geist-sans)]">
         <div className="flex flex-col gap-[32px] row-start-2 items-center">
           <p className={`text-2xl md:text-5xl text-center ${kosugiMaru.className} mt-0 pb-2`}>
@@ -72,9 +87,9 @@ export default function Home() {
               <div className="hidden sm:block">
                 <AnimatedImage
                   triggerId="section-1"
-                  srcLight="/first_dark.PNG"
+                  srcLight="/first_light.PNG"
                   srcDark="/first_dark.PNG"
-                  alt="1番目の画像"
+                  alt="速さをアピールする画像"
                 />
               </div>
               <h2 className="text-4xl md:text-5xl text-center font-bold mb-4">速さは、信頼につながる。</h2>
@@ -128,7 +143,7 @@ export default function Home() {
                   triggerId="section-2"
                   srcLight="/cheap_light.PNG"
                   srcDark="/cheap_dark.PNG"
-                  alt="2番目の画像" />
+                  alt="安さをアピールする画像" />
               </ div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
                 安さの理由、<br />
@@ -183,7 +198,7 @@ export default function Home() {
                   triggerId="section-3"
                   srcLight="/sell_light.PNG"
                   srcDark="/sell_dark.PNG"
-                  alt="3番目の画像"
+                  alt="売れるをアピールする画像"
                 />
               </div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
