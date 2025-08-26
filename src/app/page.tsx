@@ -57,20 +57,31 @@ export default function Home() {
           </h1>
         </div>
       </div>
-      <div className="relative w-screen h-[300px] block md:hidden bg-gradient-to-r from-orange-400 to-sky-400">
-        <p className="text-white absolute inset-0 flex items-start justify-center mt-8 text-lg"
-          style={{ textShadow: '3px 3px 8px rgba(0, 0, 0, 0.85)' }}>
-            愛知県・名古屋市を中心とした<br/>事業者向けWEBサイトの開発
-        </p>
-        {/* <div className="absolute bottom-0 left-0 w-full"> */}
+      <div className="relative block md:hidden h-[340px] w-full">
           <Image
-            src='/mobilehero2.png'
+            src='/mobilehero4.png'
             alt="Mobile Hero Image"
             fill
             priority
-            className="object-contain bottom-0"
+            className="w-full h-auto object-cover transition-transform duration-500"
             />
-        {/* </div> */}
+        <div className="absolute inset-0 flex items-center justify-center gap-4 -translate-x-6 translate-y-15">
+          <Image
+            src="/favicon.ico"
+            alt="Company Icon"
+            width={64}
+            height={64}
+          />
+
+          <h1 className={`text-white text-4xl font-bold drop-shadow-2xl ${kosugiMaru.className}`}
+            style={{ textShadow: '3px 3px 8px rgba(0, 0, 0, 0.85)' }}>
+            NAO.K WEB開発
+          </h1>
+          <p className="text-white absolute inset-10 flex items-start justify-center mt-8 text-base translate-x-3 translate-y-30"
+          style={{ textShadow: '3px 3px 8px rgba(0, 0, 0, 0.85)' }}>
+            愛知県・名古屋市を中心とした<br/>事業者向けWEBサイトの開発
+        </p>
+        </div>
       </div>
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-7 pb-2 gap-1 sm:p-10 font-[family-name:var(--font-geist-sans)]">
         <div className="flex flex-col gap-[32px] row-start-2 items-center">
