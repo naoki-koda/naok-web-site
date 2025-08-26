@@ -59,13 +59,13 @@ export default function Home() {
       </div>
       <div className="relative block md:hidden h-[340px] w-full">
           <Image
-            src='/mobilehero4.png'
+            src='/mobilehero4.PNG'
             alt="Mobile Hero Image"
             fill
             priority
             className="w-full h-auto object-cover transition-transform duration-500"
             />
-        <div className="absolute inset-0 flex items-center justify-center gap-4 -translate-x-6 translate-y-15">
+        <div className="absolute inset-0 flex items-center justify-center gap-4 -translate-x-2 translate-y-15">
           <Image
             src="/favicon.ico"
             alt="Company Icon"
