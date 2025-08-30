@@ -17,23 +17,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "愛知・名古屋のWebサイト制作 | nao.k WEB開発",
-  description: "愛知県・名古屋市を中心に、Webサイトの開発・運用・保守を一貫して提供。迅速で低コスト、売上に貢献するサイト制作を行います。",
+  title: "名古屋のWebサイト制作・運用 | nao.k WEB開発",
+  description: "愛知・名古屋で低コスト・高品質なWebサイト制作を提供。迅速な開発・運用・保守で売上アップに貢献するWeb制作ならnao.k WEB開発。",
+  keywords: ["名古屋 Web制作", "愛知 Web開発", "Webサイト制作", "Web開発", "Web運用", "nao.k WEB開発"],
   openGraph: {
-    title: "愛知・名古屋のWebサイト制作 | nao.k WEB開発",
-    description: "低コスト・高品質・成果の出るWeb制作。愛知・名古屋でWeb開発ならnao.k",
-    url: "https://example.com", // 実際のURLに変更してください
+    title: "名古屋のWebサイト制作・運用 | nao.k WEB開発",
+    description: "愛知・名古屋で成果につながるWebサイト制作。低コスト・高品質・迅速なWeb開発ならnao.k WEB開発にお任せください。",
+    url: "https://www.naok-webstudio.jp/",
     siteName: "nao.k WEB開発",
     images: [
       {
-        url: "/favicon.ico", // publicディレクトリに置いた画像のパス
+        url: "/og-image.png", // public ディレクトリに置いたSNS用画像
         width: 1200,
         height: 630,
-        alt: "nao.k WEB開発のサイトイメージ",
+        alt: "nao.k WEB開発のWebサイト制作イメージ",
       },
     ],
     type: "website",
     locale: "ja_JP",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "名古屋のWebサイト制作・運用 | nao.k WEB開発",
+    description: "愛知・名古屋で売上に貢献するWebサイト制作ならnao.k WEB開発。低コスト・高品質・迅速な開発・運用・保守を提供。",
+    images: ["/og-image.png"],
   },
 };
 
