@@ -97,34 +97,34 @@ export default function Home() {
               <div>
                 <CountableAnimation
                   triggerId="section-0"
-                  srcLight="/Hfirst.PNG"
-                  srcDark="/Hfirst.PNG"
+                  srcLight="/Hfirst_black.PNG"
+                  srcDark="/Hfirste.PNG"
                   alt="Concept Image"
                   count={1}
                   size="19rem"
-                  lastPosition={{ top: 100, left: 140 }}
+                  lastPosition={{ top: 105, left: 145 }}
                 />
               </div>
               <div>
                 <CountableAnimation
                   triggerId="section-1"
-                  srcLight="/Hcheap.PNG"
+                  srcLight="/Hcheap_black.PNG"
                   srcDark="/Hcheap.PNG"
                   alt="Concept Image"
                   count={2}
                   size="15rem"
-                  lastPosition={{ top: 90, left: 120 }}
+                  lastPosition={{ top: 95, left: 120 }}
                 />
               </div>
               <div>
                 <CountableAnimation
                   triggerId="section-2"
-                  srcLight="/Hsell.PNG"
+                  srcLight="/Hsell_black.PNG"
                   srcDark="/Hsell.PNG"
                   alt="Concept Image"
                   count={3}
-                  size="16rem"
-                  lastPosition={{ top: 100, left: 120 }}
+                  size="18rem"
+                  lastPosition={{ top: 115, left: 130 }}
                 />
               </div>
             </div>
