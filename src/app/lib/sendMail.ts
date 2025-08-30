@@ -8,7 +8,18 @@ export type State = {
   errors?: {
     lastName?: string[];
     firstName?: string[];
+    email?: string[];
+    confirmEmail?: string[];
     message?: string[];
+  };
+  values?: {                // ← 追加
+    lastName?: string;
+    lastNameKana?: string;
+    firstName?: string;
+    firstNameKana?: string;
+    email?: string;
+    confirmEmail?: string;
+    message?: string;
   };
   message?: string | null;
 }
@@ -26,6 +37,15 @@ export async function sendMail(prevState: State, formData: FormData): Promise<St
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
+      values: {                       // ← 入力値も返す
+        lastName: formData.get('lastName')?.toString(),
+        lastNameKana: formData.get('lastNameKana')?.toString(),
+        firstName: formData.get('firstName')?.toString(),
+        firstNameKana: formData.get('firstNameKana')?.toString(),
+        email: formData.get('email')?.toString(),
+        confirmEmail: formData.get('confirmEmail')?.toString(),
+        message: formData.get('message')?.toString(),
+    },
       message: null,
     };
   }

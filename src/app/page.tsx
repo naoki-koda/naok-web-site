@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { kosugiMaru } from '@/app/ui/fonts';
 import { useEffect, useState } from 'react';
-import AnimatedImage from '@/app/ui/SliderImage';
+import { AnimatedImage, CountableAnimation } from '@/app/ui/SliderImage';
 
 
 export default function Home() {
@@ -32,18 +32,18 @@ export default function Home() {
     <main>
       <div className="relative hidden sm:block">
         <Image
-          src='/mainview.png'
+          src='/mainview1.png'
           alt="Hero Image"
           width={2560}
           height={700}
           quality={100}
           className={`w-full h-auto object-cover transition-transform duration-500 ${isVisible ? 'translate-x-0' : 'translate-x-full'}`}
         />
-        <p className="text-white absolute inset-0 flex items-start justify-center mt-8 text-2xl"
+        <p className="text-white absolute inset-0 flex items-start justify-center mt-8 text-2xl translate-x-2"
           style={{ textShadow: '3px 3px 8px rgba(0, 0, 0, 0.85)' }}>
-            ー愛知県・名古屋市を中心とした事業者向けWEBサイトの開発ー
+            ー御社のWEBサイトお作りします。ー
         </p>
-        <div className="absolute inset-0 flex items-center justify-center gap-4 -translate-x-12 translate-y-25">
+        <div className="absolute inset-0 flex items-center justify-center gap-4 -translate-x-2 translate-y-25">
           <Image
             src="/favicon.ico"
             alt="Company Icon"
@@ -55,6 +55,7 @@ export default function Home() {
             style={{ textShadow: '3px 3px 8px rgba(0, 0, 0, 0.85)' }}>
             NAO.K WEB開発
           </h1>
+
         </div>
       </div>
       <div className="relative block md:hidden h-[340px] w-full">
@@ -75,11 +76,11 @@ export default function Home() {
 
           <h1 className={`text-white text-4xl font-bold drop-shadow-2xl ${kosugiMaru.className}`}
             style={{ textShadow: '3px 3px 8px rgba(0, 0, 0, 0.85)' }}>
-            NAO.K WEB開発
+            nao.k WEB開発
           </h1>
-          <p className="text-white absolute inset-10 flex items-start justify-center mt-8 text-base translate-x-3 translate-y-30"
+          <p className="text-white absolute inset-10 flex items-start justify-center mt-8 text-xl translate-x-3 translate-y-35"
           style={{ textShadow: '3px 3px 8px rgba(0, 0, 0, 0.85)' }}>
-            愛知県・名古屋市を中心とした<br/>事業者向けWEBサイトの開発
+            ー御社のWEBサイトお作りします。ー
         </p>
         </div>
       </div>
@@ -91,26 +92,62 @@ export default function Home() {
           <p className={`hidden sm:block text-4xl md:text-5xl text-center ${kosugiMaru.className} mb-1 mt-0 pb-2`}>
             早い、安い、売れる。
           </p>
-
+          <div className="block md:hidden">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-20 mt-5">
+              <div>
+                <CountableAnimation
+                  triggerId="section-0"
+                  srcLight="/Hfirst.PNG"
+                  srcDark="/Hfirst.PNG"
+                  alt="Concept Image"
+                  count={1}
+                  size="19rem"
+                  lastPosition={{ top: 100, left: 140 }}
+                />
+              </div>
+              <div>
+                <CountableAnimation
+                  triggerId="section-1"
+                  srcLight="/Hcheap.PNG"
+                  srcDark="/Hcheap.PNG"
+                  alt="Concept Image"
+                  count={2}
+                  size="15rem"
+                  lastPosition={{ top: 90, left: 120 }}
+                />
+              </div>
+              <div>
+                <CountableAnimation
+                  triggerId="section-2"
+                  srcLight="/Hsell.PNG"
+                  srcDark="/Hsell.PNG"
+                  alt="Concept Image"
+                  count={3}
+                  size="16rem"
+                  lastPosition={{ top: 100, left: 120 }}
+                />
+              </div>
+            </div>
+          </div>
           <div className="bg-white dark:bg-black text-gray-900">
             {/* ヒーローセクション */}
             <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
               <div className="hidden sm:block">
                 <AnimatedImage
-                  triggerId="section-1"
+                  triggerId="section-4"
                   srcLight="/first_light.PNG"
                   srcDark="/first_dark.PNG"
                   alt="速さをアピールする画像"
                 />
               </div>
-              <h2 className="text-4xl md:text-5xl text-center font-bold mb-4">速さは、信頼につながる。</h2>
+              <h2 className="text-3xl md:text-5xl text-center font-bold mb-4">速さは、信頼につながる。</h2>
               <img
                 src="/fastIcon.webp"
                 alt="Fast Image Logo"
                 className="w-48 mx-auto h-auto"/>
-              <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-                WordPressよりも高速。<br />最新のフレームワークNext.js を用いて、<br />表示スピードにこだわったWebサイトを制作します。<br />
-                読み込みの速さがあなたのビジネスの価値を高めます。<br/>このWEBサイトで画面遷移の速さを体感してください。
+              <p className="text-base md:text-xl mb-6 max-w-2xl mx-auto">
+                WordPressよりも高速。<br />表示スピードにこだわったWebサイトを制作します。<br />
+                表示スピードがあなたのビジネスの価値を高めます。<br/>このWEBサイトで体感してください。
               </p>
               <a
                 href="#contact"
@@ -126,7 +163,7 @@ export default function Home() {
 
               <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10">
                 <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
-                  <h3 className="text-xl font-bold mb-2 text-center">Next.js の SPA構成</h3>
+                  <h3 className="md:text-xl font-bold mb-2 text-center">Next.js の SPA構成</h3>
                   <p>リロード0でページ遷移が瞬時。<br />再読み込みが不要でストレスゼロ。</p>
                 </div>
                 <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
@@ -139,11 +176,11 @@ export default function Home() {
                 </div>
               </div>
 
-              <h2 className="text-3xl font-bold text-center mb-12">表示スピードは、ビジネス成果に直結</h2>
-              <div className="max-w-4xl mx-auto text-center text-lg space-y-6">
-                <p>表示が遅いと、約50%以上のユーザーが離脱すると言われています。</p>
-                <p>高速表示は、ユーザー体験を高め、Google検索にも強くなります。</p>
-                <p>スピードこそ、信頼と売上アップのカギです。</p>
+              <h2 className="text-xl font-bold text-center mb-12">表示スピードは、ビジネス成果に直結</h2>
+              <div className="max-w-4xl mx-auto text-center text-base space-y-6">
+                <p>表示が遅いと約50%以上のユーザーが<br/>離脱すると言われています。</p>
+                <p>高速表示は、ユーザー体験を高め<br/>Google検索にも強くなります。</p>
+                <strong className="underline">スピードこそ、信頼と売上アップのカギです。</strong>
               </div>
             </section>
 
@@ -151,7 +188,7 @@ export default function Home() {
             <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
               <div className="hidden sm:block">
                 <AnimatedImage
-                  triggerId="section-2"
+                  triggerId="section-5"
                   srcLight="/cheap_light.PNG"
                   srcDark="/cheap_dark.PNG"
                   alt="安さをアピールする画像" />
@@ -164,11 +201,12 @@ export default function Home() {
                 src="/cheapIcon.webp"
                 alt="Cheap Image Logo"
                 className="w-48 mx-auto h-auto"/>
-              <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
+              <p className="text-base md:text-xl mb-6 max-w-2xl mx-auto">
                 {/* 私は一人で Web サイトの開発から運用・保守<br /> */}
+                初期費用は頂きません。<br/>
                 最新のフレームワークを採用して開発時間の短縮。<br/>
                 営業、打ち合わせまで全てを弊社スタッフが担当し、<br />
-                外注費や中間マージンなどの無駄を徹底的に省いています。
+                外注費や中間マージンを徹底的に省いています。
               </p>
               <a
                 href="#contact"
@@ -195,10 +233,10 @@ export default function Home() {
                 </div>
               </div>
               <h2 className="text-3xl font-bold text-center mb-12">安さと品質の両立を実現</h2>
-              <div className="max-w-4xl mx-auto text-center text-lg space-y-6">
+              <div className="text-base md:text-lg max-w-4xl mx-auto text-center space-y-6">
                 <p>「安かろう悪かろう」ではありません。</p>
                 <p>開発〜運用まで全てを一貫して請け負うからこそ、<br />伝達ミスやロスのない高品質な制作が可能です。</p>
-                <p>ご相談から納品まで、誠実・スピーディーに対応します。</p>
+                <strong className="underline">ご相談から納品まで<br/>誠実・スピーディーに対応します。</strong>
               </div>
             </section>
 
@@ -219,8 +257,8 @@ export default function Home() {
                 src="/buyIcon.webp"
                 alt="Buy Image Logo"
                 className="w-48 mx-auto h-auto"/>
-              <p className="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
-                デザインだけでなく、導線設計・文章構成・ユーザー心理までを意識した<br />
+              <p className="text-base md:text-xl mb-6 max-w-2xl mx-auto">
+                デザインだけでなく、<br/>導線設計・文章構成・ユーザー心理までを意識した<br />
                 「成果の出る」サイトを制作します。
               </p>
               <a
@@ -232,7 +270,7 @@ export default function Home() {
             </section>
 
             <section className="rounded-md py-16 px-6 bg-gray-50 dark:bg-gray-800 mb-10 text-gray-900 dark:text-white">
-              <h3 className="text-3xl font-bold text-center mb-12">どうして、そんなに売れるの？</h3>
+              <h3 className="text-3xl font-bold text-center mb-12">どうして、<br/>そんなに売れるの？</h3>
               <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10">
                 <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                   <h3 className="text-xl font-bold mb-2 text-center">導線重視の構成</h3>
@@ -247,11 +285,11 @@ export default function Home() {
                   <p>多くの訪問者が使うスマホで、<br />見やすく・使いやすく・買いやすく。</p>
                 </div>
               </div>
-              <h2 className="text-3xl font-bold text-center mb-12">「見られる」から「売れる」へ</h2>
+              <h2 className="text-3xl font-bold text-center mb-12">「見られる」から<br/>「売れる」へ</h2>
               <div className="max-w-4xl mx-auto text-center text-lg space-y-6">
-                <p>ただ見た目が綺麗なだけでは、売れるサイトにはなりません。</p>
+                <p>ただ見た目が綺麗なだけでは、<br/>売れるサイトにはなりません。</p>
                 <p>戦略的に構成されたサイトは、<br />訪問者を顧客へと変える力を持っています。</p>
-                <p>私たちは、成果にこだわったサイトを提案します。</p>
+                <strong className="underline">成果にこだわったサイトを提案します。</strong>
               </div>
             </section>
 
@@ -259,9 +297,9 @@ export default function Home() {
 
 
             {/* CTAセクション */}
-            <section id="contact" className="bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">まずはお気軽にご相談ください！</h2>
-              <p className="mb-6 text-lg">スピーディーなサイト制作で、あなたのビジネスを後押しします。</p>
+            <section id="contact" className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-20 px-6 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">まずはお気軽に<br/>ご相談ください！</h2>
+              <p className="mb-6 text-lg">スピーディーなサイト制作で、<br/>あなたのビジネスを後押しします。</p>
               <a
                 href="/contact"
                 className="bg-white text-orange-500 font-semibold px-6 py-3 rounded shadow hover:bg-gray-100 transition"

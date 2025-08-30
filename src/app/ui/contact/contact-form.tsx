@@ -34,6 +34,7 @@ export default function Form() {
                 placeholder="例)山田"
                 className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
+                defaultValue={state.values?.lastName ?? ''}
               >
               </input>
               <div id="lastName-error" aria-live="polite" aria-atomic="true">
@@ -55,10 +56,10 @@ export default function Form() {
                 type="text"
                 id="firstName"
                 name="firstName"
-                // autoComplete="given-name"
                 placeholder="例）太郎"
                 className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
+                defaultValue={state.values?.firstName ?? ''}
               />
               <div id="firstName-error" aria-live="polite" aria-atomic="true">
                 {state.errors?.firstName &&
@@ -82,6 +83,7 @@ export default function Form() {
                 placeholder="例)ヤマダ"
                 className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
+                defaultValue={state.values?.lastNameKana ?? ''}
               >
               </input>
             </div>
@@ -98,6 +100,7 @@ export default function Form() {
                 placeholder="例）タロウ"
                 className="w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
+                defaultValue={state.values?.firstNameKana ?? ''}
               />
             </div>
           </div>
@@ -112,9 +115,18 @@ export default function Form() {
             name="email"
             placeholder="you@example.com"
             required
+            defaultValue={state.values?.email ?? ''}
             className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
           </input>
+          <div id="email-error" aria-live="polite" aria-atomic="true">
+            {state.errors?.email &&
+              state.errors.email.map((error: string) => (
+                <p className="mt-2 text-sm text-red-500" key={error}>
+                  {error}
+                </p>
+              ))}
+          </div>
         </div>
         <div className="mt-4">
           <label htmlFor="email" className="block text-sm font-medium">
@@ -125,10 +137,19 @@ export default function Form() {
             type="email"
             name="confirmEmail"
             placeholder="you@example.com"
+            defaultValue={state.values?.confirmEmail ?? ''}
             required
             className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
           </input>
+          <div id="confirmEmail-error" aria-live="polite" aria-atomic="true">
+            {state.errors?.confirmEmail &&
+              state.errors.confirmEmail.map((error: string) => (
+                <p className="mt-2 text-sm text-red-500" key={error}>
+                  {error}
+                </p>
+              ))}
+          </div>
         </div>
         <div className="mt-4">
           <label htmlFor="message" className="block text-sm font-medium">
@@ -140,6 +161,7 @@ export default function Form() {
             rows={6}
             placeholder="作成したいWEBサイトの事業、打ち合わせ希望日などお気軽にお書きください。"
             className="mt-1 w-full rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            defaultValue={state.values?.message ?? ''}
             required
           >
           </textarea>
