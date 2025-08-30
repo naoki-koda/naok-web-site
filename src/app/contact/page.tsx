@@ -15,7 +15,7 @@ export default function Page() {
       <section>
         <Form />
       </section>
-      <h2 className={`text-2xl text-center ${kosugiMaru.className}}`}>お電話からお問い合わせ</h2>
+      {/* <h2 className={`text-2xl text-center ${kosugiMaru.className}}`}>お電話からお問い合わせ</h2>
       <section className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400  text-center mx-auto">
         <div className="text-center p-6">
           <p className="mb-2 text-lg text-white font-semibold">お電話からののお問い合わせはこちら</p>
@@ -23,7 +23,7 @@ export default function Page() {
             080-1234-5678
           </a>
         </div>
-      </section>
+      </section> */}
       <PrivacyPolicyContent />
     </div >
   )

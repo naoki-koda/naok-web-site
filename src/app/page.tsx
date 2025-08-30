@@ -161,7 +161,7 @@ export default function Home() {
             <section className="rounded-md py-16 px-6 bg-gray-50 dark:bg-gray-800 mb-10 text-gray-900 dark:text-white">
               <h3 className="text-3xl font-bold text-center mb-12">どうして、そんなに速いの？</h3>
 
-              <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10">
+              <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10 text-center">
                 <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                   <h3 className="md:text-xl font-bold mb-2 text-center">Next.js の SPA構成</h3>
                   <p>リロード0でページ遷移が瞬時。<br />再読み込みが不要でストレスゼロ。</p>
@@ -218,7 +218,7 @@ export default function Home() {
 
             <section className="rounded-md py-16 px-6 bg-gray-50 dark:bg-gray-800 mb-10 text-gray-900 dark:text-white">
               <h3 className="text-3xl font-bold text-center mb-12">どうして、そんなに安いの？</h3>
-              <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10">
+              <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10 text-center">
                 <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                   <h3 className="text-xl font-bold mb-2 text-center">すべてを自社で対応</h3>
                   <p>開発・運用・保守・打ち合わせまで、<br />外注せずワンストップ。</p>
@@ -271,7 +271,7 @@ export default function Home() {
 
             <section className="rounded-md py-16 px-6 bg-gray-50 dark:bg-gray-800 mb-10 text-gray-900 dark:text-white">
               <h3 className="text-3xl font-bold text-center mb-12">どうして、<br/>そんなに売れるの？</h3>
-              <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10">
+              <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10 text-center">
                 <div className="bg-white dark:bg-gray-700 p-6 rounded shadow">
                   <h3 className="text-xl font-bold mb-2 text-center">導線重視の構成</h3>
                   <p>ユーザーの行動を想定した<br />CTAやナビゲーション設計。</p>
