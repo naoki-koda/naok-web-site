@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       { url: "/apple-touch-icon.png", sizes: "180x180" },
     ],
   },
-  keywords: ["名古屋 Web制作", "愛知 Web開発", "Webサイト制作", "Web開発", "Web運用", "nao.k WEB開発", "ホームページ", "ホームページ制作"],
+  keywords: ["名古屋", "愛知",  "ホームページ", "ホームページ制作","web制作"],
   openGraph: {
     title: "名古屋のホームページ制作・運用 | nao.k WEB開発",
     description: "愛知・名古屋で成果につながるWebサイト制作。低コスト・高品質・迅速なWeb開発ならnao.k WEB開発にお任せください。",
