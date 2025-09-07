@@ -4,7 +4,7 @@ export default function TermsOfService() {
       <h1 className="text-3xl font-bold mb-6">ご利用規約</h1>
 
       <p className="mb-6">
-        本規約は、[会社名または屋号]（以下「当方」）が提供するWebサイトの開発、運用、保守サービス（以下「本サービス」）の利用条件を定めるものです。本サービスをご利用される方（以下「利用者」）は、本規約に同意したものとみなします。
+        本規約は、nao.k（以下「当方」）が提供するWebサイトの開発、運用、保守サービス（以下「本サービス」）の利用条件を定めるものです。本サービスをご利用される方（以下「利用者」）は、本規約に同意したものとみなします。
       </p>
 
       <hr className="my-6" />
@@ -89,10 +89,10 @@ export default function TermsOfService() {
       <hr className="my-6" />
 
       <footer className="text-sm text-gray-600">
-        <p>制定日：2025年○月○日</p>
-        <p>[会社名または屋号]</p>
-        <p>[所在地]</p>
-        <p>[連絡先メールアドレス]</p>
+        <p>制定日：2025年9月1日</p>
+        <p>nao.k</p>
+        <p>愛知県名古屋市西区菊井1-33-23</p>
+        <p>naoki.koda1997@gmail.com</p>
       </footer>
     </main>
   );
