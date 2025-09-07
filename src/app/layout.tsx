@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: "愛知・名古屋で低コスト・高品質なWebサイト制作を提供。迅速な開発・運用・保守で売上アップに貢献するWeb制作ならnao.k WEB開発。",
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
       { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
     ],
     apple: [
