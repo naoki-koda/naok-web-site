@@ -140,7 +140,7 @@ export default function Home() {
                   alt="速さをアピールする画像"
                 />
               </div>
-              <h2 className="text-3xl md:text-5xl text-center font-bold mb-4">速さは、信頼につながる。</h2>
+              <h2 className="text-3xl md:text-5xl text-center font-bold mb-4">WordPressより高速、<br/>最新技術を提供します。</h2>
               <img
                 src="/fastIcon.webp"
                 alt="Fast Image Logo"
@@ -151,7 +151,7 @@ export default function Home() {
               </p>
               <a
                 href="#contact"
-                className="bg-white text-orange-500 font-semibold px-6 py-3 rounded-md shadow hover:bg-gray-100 transition"
+                className="bg-orange-600 text-white font-semibold px-6 py-3 rounded-md shadow hover:bg-gray-100 transition"
               >
                 お問い合わせはこちら
               </a>
@@ -194,8 +194,9 @@ export default function Home() {
                   alt="安さをアピールする画像" />
               </ div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                安さの理由、<br />
-                <strong className="underline">無駄がない</strong>から。
+                ホームページ制作費が<br />
+                5ページまで
+                <strong className="underline">0円</strong>
               </h2>
               <img
                 src="/cheapIcon.webp"
@@ -206,11 +207,12 @@ export default function Home() {
                 初期費用は頂きません。<br/>
                 最新のフレームワークを採用して開発時間の短縮。<br/>
                 営業、打ち合わせまで全てを弊社スタッフが担当し、<br />
-                外注費や中間マージンを徹底的に省いています。
+                外注費や中間マージンを徹底的に省いています。<br />
+                ※5ページ以上は追加費用が発生します。              
               </p>
               <a
                 href="#contact"
-                className="bg-white text-orange-600 font-semibold px-6 py-3 rounded-md shadow hover:bg-gray-100 transition"
+                className="bg-orange-600 text-white font-semibold px-6 py-3 rounded-md shadow hover:bg-gray-100 transition"
               >
                 見積もり・ご相談はこちら
               </a>
@@ -263,7 +265,7 @@ export default function Home() {
               </p>
               <a
                 href="#contact"
-                className="bg-white text-orange-600 font-semibold px-6 py-3 rounded-md shadow hover:bg-gray-100 transition"
+                className="bg-orange-600 text-white font-semibold px-6 py-3 rounded-md shadow hover:bg-gray-100 transition"
               >
                 売上につながるサイトを相談する
               </a>
