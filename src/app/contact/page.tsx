@@ -8,7 +8,6 @@ export default function Page() {
   return (
     <div className="flex flex-col justify-center gap-4 p-12">
       <h1 className={`text-4xl text-center ${kosugiMaru.className}}`}>お問い合わせ</h1>
-      <h2 className={`text-2xl text-center ${kosugiMaru.className}}`}>メールからのお問い合わせ</h2>
       <p className="text-center">
         お気軽にお問い合わせください。
       </p>

@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "名古屋のWebサイト制作・運用 | nao.k WEB開発",
-  description: "愛知・名古屋で低コスト・高品質なWebサイト制作を提供。迅速な開発・運用・保守で売上アップに貢献するWeb制作ならnao.k WEB開発。",
+  title: "名古屋市の個人事業主向けのホームページの制作 | nao.k WEB開発",
+  description: "愛知県名古屋市を拠点に個人事業主、ビジネス向けに低コスト・高品質なWebサイトの制作を行ます。SEO・スマホ対応・集客力アップに強いサイト作りをサポートします。",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       { url: "/apple-touch-icon.png", sizes: "180x180" },
     ],
   },
-  keywords: ["名古屋", "愛知",  "ホームページ", "ホームページ制作","web制作"],
+  keywords: ["名古屋", "愛知", "ホームページ", "ホームページ制作", "web制作"],
   openGraph: {
     title: "名古屋のホームページ制作・運用 | nao.k WEB開発",
     description: "愛知・名古屋で成果につながるWebサイト制作。低コスト・高品質・迅速なWeb開発ならnao.k WEB開発にお任せください。",

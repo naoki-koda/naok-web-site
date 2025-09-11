@@ -20,13 +20,13 @@ export default function Form() {
   }, [state.message, router]);
   return (
     <form action={formAction}>
-      <div className="rounded-xl bg-gray-100 mx-4 my-4 p-4 md-p-6 dark:bg-gray-800">
+      <div className="rounded-xl bg-gray-100 mx-4 my-4 p-4 md-p-6 bg-white">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label htmlFor="lastName" className="md-1 block text-sm font-medium">
               性
             </label>
-            <div className="relative mt-1 rounded-md">
+            <div className="relative mt-1 rounded-md bg-gray-100">
               <input
                 id="lastName"
                 type="text"
@@ -51,7 +51,7 @@ export default function Form() {
             <label htmlFor="firstName" className="md-1 block text-sm font-medium">
               名
             </label>
-            <div className="relative mt-1 rounded-md">
+            <div className="relative mt-1 rounded-md bg-gray-100 bg-gray-100">
               <input
                 type="text"
                 id="firstName"
@@ -75,7 +75,7 @@ export default function Form() {
             <label htmlFor="lastNameKana" className="md-1 block text-sm font-medium">
               フリガナ(性)
             </label>
-            <div className="relative mt-1 rounded-md">
+            <div className="relative mt-1 rounded-md bg-gray-100">
               <input
                 id="lastNameKana"
                 type="text"
@@ -92,7 +92,7 @@ export default function Form() {
             <label htmlFor="firstNameKana" className="md-1 block text-sm font-medium">
               フリガナ(名)
             </label>
-            <div className="relative mt-1 rounded-md">
+            <div className="relative mt-1 rounded-md bg-gray-100">
               <input
                 type="text"
                 id="firstNameKana"
@@ -116,7 +116,7 @@ export default function Form() {
             placeholder="you@example.com"
             required
             defaultValue={state.values?.email ?? ''}
-            className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
           >
           </input>
           <div id="email-error" aria-live="polite" aria-atomic="true">
@@ -139,7 +139,7 @@ export default function Form() {
             placeholder="you@example.com"
             defaultValue={state.values?.confirmEmail ?? ''}
             required
-            className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="peer w-full rounded-md border border-gray-200 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
           >
           </input>
           <div id="confirmEmail-error" aria-live="polite" aria-atomic="true">
@@ -160,7 +160,7 @@ export default function Form() {
             name="message"
             rows={6}
             placeholder="作成したいWEBサイトの事業、打ち合わせ希望日などお気軽にお書きください。"
-            className="mt-1 w-full rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="mt-1 w-full rounded-md border border-gray-300 p-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-100"
             defaultValue={state.values?.message ?? ''}
             required
           >
