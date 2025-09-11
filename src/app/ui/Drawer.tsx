@@ -9,7 +9,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer"
 import { Button } from "@/components/ui/button"
-import Link from 'next/Link';
+import Link from 'next/link';
 
 export default function MyDrawer() {
   return (
