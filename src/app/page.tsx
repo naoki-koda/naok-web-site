@@ -31,7 +31,7 @@ export default function Home() {
   }, []);
   return (
     <main>
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 pb-6">
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 pb-6 z-50">
         <MyDrawer />
       </div>      <div className="relative hidden sm:block">
         <Image
@@ -101,7 +101,7 @@ export default function Home() {
                 <CountableAnimation
                   triggerId="section-0"
                   srcLight="/Hfirst_black.PNG"
-                  srcDark="/Hfirste.PNG"
+                  srcDark="/Hfirst_black.PNG"
                   alt="Concept Image"
                   count={1}
                   size="19rem"
@@ -112,7 +112,7 @@ export default function Home() {
                 <CountableAnimation
                   triggerId="section-1"
                   srcLight="/Hcheap_black.PNG"
-                  srcDark="/Hcheap.PNG"
+                  srcDark="/Hcheap_black.PNG"
                   alt="Concept Image"
                   count={2}
                   size="15rem"
@@ -123,7 +123,7 @@ export default function Home() {
                 <CountableAnimation
                   triggerId="section-2"
                   srcLight="/Hsell_black.PNG"
-                  srcDark="/Hsell.PNG"
+                  srcDark="/Hsell_black.PNG"
                   alt="Concept Image"
                   count={3}
                   size="18rem"
