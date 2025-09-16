@@ -22,13 +22,13 @@ export default function MyDrawer() {
           <DrawerTitle></DrawerTitle>
           {/* <DrawerDescription>この操作は取り消せません。</DrawerDescription> */}
         </DrawerHeader>
-        <div className="p-4 max-h-[70vh] overflow-y-auto">
-          <img
-            src="/dance.webp"
-            alt="demo"
-            className="rounded-lg w-full h-auto"
-          />
-        </div>
+        {/* <div className="p-4 max-h-[70vh] overflow-y-auto"> */}
+        {/*   <img */}
+        {/*     src="/dance.webp" */}
+        {/*     alt="demo" */}
+        {/*     className="rounded-lg w-full h-auto" */}
+        {/*   /> */}
+        {/* </div> */}
         <DrawerFooter>
           <Button asChild className="bg-orange-400 hover:bg-sky-400">
             <Link href="/contact">
