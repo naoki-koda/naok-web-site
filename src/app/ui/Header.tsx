@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { kosugiMaru } from '@/app/ui/fonts';
 import Image from 'next/image';
+import { PencilSquareIcon, PhotoIcon, HomeIcon, CurrencyDollarIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 
 
 export default function Header() {
@@ -47,16 +48,19 @@ export default function Header() {
       )}
       {
         isMenuOpen && (
-          <nav className="fixed top1 right-0 h-full w-64 bg-sky-400/80 shadow-md z-20 pt-16 p-4">
-            <ul className="flex flex-col p-3 space-y-2">
+          <nav className="fixed top1 right-0 h-full w-94 bg-sky-400 shadow-md z-50 pt-16 p-4 item-center">
+            <ul className="flex flex-col p-3 space-y-2 ">
               <li>
                 <Link
                   href="/"
                   className="text-white block hover:text-gray-300 text-center mb-4"
                   onClick={() => setIsMenuOpen(false)}>
-                  <span className="block text-base">Top</span>
-                  <div className="border-t border-white mx-auto my0"></div>
-                  <span className="block text-sm">トップページ</span>
+                  <div className="flex flex-row items-center">
+                    <HomeIcon className="w-6 h-6" />
+                    <span className="block text-base">Top</span>
+                    <div className="border-t border-white w-6 my-1 mx-3"></div>
+                    <span className="block text-sm">トップページ</span>
+                  </div>
                 </Link>
               </li>
               <li>
@@ -64,9 +68,28 @@ export default function Header() {
                   href="/works"
                   className="text-white block hover:text-gray-300 text-center mb-4"
                   onClick={() => setIsMenuOpen(false)}>
-                  <span className="block text-base">WORKS</span>
-                  <div className="border-t border-white mx-auto my0"></div>
-                  <span className="block text-sm">制作事例</span>
+                  <div className="flex flex-row items-center">
+                    <PhotoIcon className="w-6 h-6" />
+                    <span className="block text-base">WORKS</span>
+                    <div className="border-t border-white w-6 my-1 mx-3"></div>
+                    <span className="block text-sm">制作事例</span>
+                  </div>
+
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/design"
+                  className="text-white block hover:text-gray-300 text-center mb-4"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {/* アイコン + テキスト */}
+                  <div className="flex flex-row items-center">
+                    <PencilSquareIcon className="w-6 h-6" />
+                    <span className="block text-base">DESIGN</span>
+                    <div className="border-t border-white w-6 my-1 mx-3"></div>
+                    <span className="block text-sm">デザイン</span>
+                  </div>
                 </Link>
               </li>
               <li>
@@ -75,9 +98,12 @@ export default function Header() {
                   className="text-white block hover:text-gray-300 text-center mb-4"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  <span className="block text-base">PRICE</span>
-                  <div className="border-t border-white mx-auto my0"></div>
-                  <span className="block text-sm">料金プラン</span>
+                  <div className="flex flex-row item-center">
+                    <CurrencyDollarIcon className="w-6 h-6" />
+                    <span className="block text-base">PRICE</span>
+                    <div className="border-t border-white w-6 my-1 mx-3"></div>
+                    <span className="block text-sm">料金プラン</span>
+                  </div>
                 </Link>
               </li>
 
@@ -86,9 +112,12 @@ export default function Header() {
                   href="/contact"
                   className="text-white block hover:text-gray-300 text-center mb-4"
                   onClick={() => setIsMenuOpen(false)}>
-                  <span className="block text-base">CONTACT</span>
-                  <div className="border-t border-white mx-auto my0"></div>
-                  <span className="block text-sm">お問い合わせ</span>
+                  <div className="flex flex-row item-center">
+                    <EnvelopeIcon className="w-6 h-6" />
+                    <span className="block text-base">CONTACT</span>
+                    <div className="border-t border-white w-6 my-1 mx-3"></div>
+                    <span className="block text-sm">お問い合わせ</span>
+                  </div>
                 </Link>
               </li>
 

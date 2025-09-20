@@ -1,14 +1,15 @@
 'use client';
 import InitPricingCard from '@/app/ui/InitPriceCard';
 import PricingCard from '@/app/ui/priceCard';
+import { kosugiMaru } from '@/app/ui/fonts';
 
 export default function PricingPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-center text-3xl font-bold mb-8">料金プラン</h1>
+      <h1 className={`text-4xl text-center mb-8 ${kosugiMaru.className}`}>料金プラン</h1>
       {/* キャンペーン告知 */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">初期費用(WEBサイトの制作費用)</h2>
+        <h2 className="text-2xl font-semibold text-center mb-4">初期費用(WEBサイトの制作費用)</h2>
         <div className="flex justify-center">
           <InitPricingCard
             className="w-full"
@@ -33,7 +34,7 @@ export default function PricingPage() {
         </ul>
       </section>
 
-      <h2 className="text-2xl font-semibold mb-4 item-center">
+      <h2 className="text-2xl font-semibold mb-4 text-center item-center">
         月額費用(ドメイン、サーバ、運用保守費用)
       </h2>
       <div className="flex flex-xol md:flex-row gap-6 item-center">
