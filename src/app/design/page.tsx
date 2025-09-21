@@ -32,7 +32,7 @@ export default function Page() {
         <h1 className={`text-4xl text-center ${kosugiMaru.className}`}>ボタンの色一覧</h1>
         <h2 className={`text-2xl text-center ${kosugiMaru.className}`}>tailwind CSSで設定可能な色を使用しています。</h2>
       </div>
-      <div className="grid gap-3 grid-cols-2 sm:grid-cols-6 mt-8">
+      <div className="grid gap-3 grid-cols-1 sm:grid-cols-6 mt-8">
         {bgClassList.map((cName) => (
           <Button key={cName} className={`${['black', 'white'].includes(cName) ? `bg-${cName}` : `${cName}`
             } px-5 py-2 text-white`}>{cName}</Button>
