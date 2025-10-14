@@ -1,8 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+import { kosugiMaru } from '@/app/ui/fonts';
 import {
   Bars3Icon,
   CurrencyDollarIcon,
@@ -12,7 +10,9 @@ import {
   PhotoIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { kosugiMaru } from '@/app/ui/fonts';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const NAV_ITEMS = [
   {
@@ -98,24 +98,6 @@ export default function Header() {
         >
           <div className="mx-auto w-full max-w-sm flex-1 space-y-6 overflow-y-auto">
             <div className="flex items-center justify-between text-white">
-              <div className="flex items-center gap-3">
-                <Image
-                  src="/favicon.ico"
-                  alt="Site Icon"
-                  width={36}
-                  height={36}
-                  className="rounded-xl border border-white/40 bg-white/30 p-1 shadow-sm backdrop-blur"
-                />
-                <span className="text-base font-semibold">nao.k WEB開発</span>
-              </div>
-              <button
-                type="button"
-                aria-label="メニューを閉じる"
-                onClick={() => setIsMenuOpen(false)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/40 bg-white/20 text-white/90 transition hover:bg-white/30"
-              >
-                <XMarkIcon className="h-5 w-5" />
-              </button>
             </div>
 
             <ul className="flex flex-col space-y-4">
