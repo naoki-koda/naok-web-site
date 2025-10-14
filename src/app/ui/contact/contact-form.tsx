@@ -31,8 +31,8 @@ export default function Form() {
       action={formAction}
       className="group relative isolate overflow-hidden rounded-3xl border border-slate-200/60 bg-white/95 p-8 shadow-xl shadow-slate-900/10 backdrop-blur md:p-12 dark:border-white/10 dark:bg-slate-900/90"
     >
-      <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-sky-400/30 blur-3xl transition-all duration-700 group-hover:translate-x-4 group-hover:-translate-y-2" />
-      <div className="pointer-events-none absolute -left-32 -bottom-32 h-80 w-80 rounded-full bg-orange-400/25 blur-3xl transition-all duration-700 group-hover:-translate-x-4 group-hover:translate-y-2" />
+      {/* <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-sky-400/30 blur-3xl transition-all duration-700 group-hover:translate-x-4 group-hover:-translate-y-2" /> */}
+      {/* <div className="pointer-events-none absolute -left-32 -bottom-32 h-80 w-80 rounded-full bg-orange-400/25 blur-3xl transition-all duration-700 group-hover:-translate-x-4 group-hover:translate-y-2" /> */}
 
       <div className="relative space-y-10">
         <header className="space-y-4 text-slate-900 dark:text-white">

@@ -60,7 +60,7 @@ export default function Header() {
             <Image src="/favicon.ico" alt="Site Icon" width={40} height={40} className="rounded-lg" />
             <span className="text-lg font-semibold leading-none">nao.k WEB開発</span>
           </Link>
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-900 md:flex">
+          {/* <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-900 md:flex">
             {NAV_ITEMS.map(({ href, label }) => (
               <Link
                 key={href}
@@ -69,6 +69,11 @@ export default function Header() {
               >
                 {label}
               </Link>
+            ))}
+          </nav> */}
+          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-900 md:flex">
+            {NAV_ITEMS.map(({ href, label }) => (
+                <NavLinkDroplet key={href} href={href} label={label} />
             ))}
           </nav>
           <button
@@ -128,5 +133,69 @@ export default function Header() {
         </nav>
       )}
     </>
+  );
+}
+
+// 2) 同ファイルの下部に追加：水滴ホバー用コンポーネント
+function NavLinkDroplet({ href, label }: { href: string; label: string }) {
+  // ホバー中のマウス位置で CSS 変数を更新
+  const onMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const el = e.currentTarget;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    el.style.setProperty('--x', `${x}px`);
+    el.style.setProperty('--y', `${y}px`);
+  };
+
+  return (
+    <Link
+      href={href}
+      onMouseMove={onMove}
+      className="
+        group relative isolate overflow-hidden
+        rounded-full px-4 py-2
+        bg-white/30 text-slate-900
+        transition
+        hover:bg-white/40 hover:shadow-lg
+        backdrop-blur-sm
+      "
+    >
+      {/* 水滴（拡大レンズ） */}
+      <span
+        aria-hidden
+        className="
+          pointer-events-none absolute
+          h-16 w-16
+          -translate-x-1/2 -translate-y-1/2
+          rounded-full
+          opacity-0 group-hover:opacity-100
+          transition-opacity duration-150
+          will-change-transform
+          /* “ガラス越し拡大”の質感 */
+          bg-white/18
+          backdrop-blur-2xl backdrop-saturate-150 backdrop-brightness-125
+          ring-1 ring-white/40
+          shadow-[0_12px_38px_-10px_rgba(255,255,255,0.45)]
+          mix-blend-screen
+        "
+        style={{
+          left: 'var(--x)',
+          top: 'var(--y)',
+        }}
+      />
+      {/* うっすら縁の光彩（iOS感） */}
+      <span
+        aria-hidden
+        className="
+          pointer-events-none absolute inset-0
+          rounded-full
+          ring-1 ring-white/30
+          shadow-[inset_0_1px_0_0_rgba(255,255,255,0.4)]
+        "
+      />
+      {/* テキスト */}
+      <span className="relative z-10">{label}</span>
+    </Link>
   );
 }

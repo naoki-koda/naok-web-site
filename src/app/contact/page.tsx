@@ -64,9 +64,9 @@ export default function Page() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,theme(colors.orange.400)/28%,theme(colors.sky.400)/18%,transparent_70%)]" />
           <div className="absolute inset-0 bg-slate-900/35" />
         </div>
-        <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24 md:px-10">
+        <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24 md:px-1">
           <div className="grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:items-center">
-            <div className="space-y-6 text-center md:text-left">
+            <div className="space-y-3 text-center md:text-left">
               <span className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-sky-200">
                 CONTACT
               </span>
@@ -104,13 +104,13 @@ export default function Page() {
                 </div>
                 <div className="mt-6 grid gap-4 text-xs text-slate-900">
                   <p className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
-                    <strong className="block text-sm text-slate-900">相談の多いテーマ</strong>
+                    <strong className="block text-md text-slate-900">相談の多いテーマ</strong>
                     ・新サービスの立ち上げ用コーポレートサイト<br />
                     ・既存サイトのSEO改善とCV導線の見直し<br />
                     ・LP量産を前提としたデザインシステム構築
                   </p>
-                  <p className="rounded-2xl border border-white/20 bg-slate px-4 py-3">
-                    <strong className="block text-sm text-slate-900">対応エリア</strong>
+                  <p className="rounded-2xl border border-white/20 bg-white/10 bg-slate px-4 py-3">
+                    <strong className="block text-md text-slate-900">対応エリア</strong>
                     名古屋・東海エリアの対面打ち合わせに対応。全国のオンライン相談も歓迎しています。
                   </p>
                 </div>
