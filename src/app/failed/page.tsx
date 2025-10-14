@@ -16,13 +16,13 @@ export default function Page() {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/contact"
-            className="inline-block rounded-md bg-orange-400 px-6 py-2 text-white hover:bg-orange-500 transition"
+            className="inline-block rounded-md bg-gradient-to-r from-orange-400 to-sky-400 px-6 py-2 text-white shadow-md shadow-orange-300/30 transition hover:brightness-105"
           >
             再度お問い合わせ
           </Link>
           <Link
             href="/"
-            className="inline-block rounded-md bg-gray-300 px-6 py-2 text-gray-800 hover:bg-gray-400 transition"
+            className="inline-block rounded-md border border-orange-200/60 bg-gradient-to-r from-orange-400/20 to-sky-400/20 px-6 py-2 text-orange-600 transition hover:brightness-110"
           >
             トップページに戻る
           </Link>

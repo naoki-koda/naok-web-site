@@ -26,8 +26,8 @@ export default function InitPricingCard({
   return (
     <div
       className={cn(
-        "rounded-lg border p-6 bg-yellow-100  text-black max-w-sm flex flex-col justify-between item-center w-full max-w-full",
-        highlighted ? "border-blue-500" : "border-black",
+        "rounded-xl border border-orange-200/70 bg-white/95 p-6 text-slate-900 shadow-lg shadow-orange-200/40 flex flex-col justify-between item-center w-full max-w-full",
+        highlighted ? "border-orange-400 shadow-orange-300/50" : "",
         className
       )}
     >
@@ -39,14 +39,16 @@ export default function InitPricingCard({
 
         <div className="mt-4">
           <p className="text-sm text-gray-800 text-center">{originalPrice}</p>
-          <p className="text-4xl font-extrabold text-blue-600 bg-blue-50 inline-block px-4 py-2 rounded-lg shadow-lg text-center">
-            {currentPrice}
-            <span className="text-lg font-normal text-gray-700"> {period}</span>
-          </p>
+          <div className="inline-flex flex-col items-center gap-2 rounded-2xl bg-gradient-to-r from-orange-400/15 to-sky-400/15 px-6 py-3 shadow-inner shadow-orange-200/50">
+            <p className="text-4xl font-extrabold bg-gradient-to-r from-orange-400 to-sky-400 bg-clip-text text-transparent">
+              {currentPrice}
+            </p>
+            <span className="text-sm font-semibold text-orange-600/90">{period}</span>
+          </div>
         </div>
       </div>
 
-      <p className="text-xs text-gray-800 border-t border-gray-600 pt-4 mt-4">{note}</p>
+      <p className="text-xs text-slate-600 border-t border-orange-200/70 pt-4 mt-4">{note}</p>
     </div>
   );
 }

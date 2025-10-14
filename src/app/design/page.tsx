@@ -27,17 +27,63 @@ export default function Page() {
     shadeList.map((shade) => `bg-${cName}-${shade}`)
   );
   return (
-    <div>
-      <div className="flex flex-col justify-center gap-4 p-12">
-        <h1 className={`text-4xl text-center ${kosugiMaru.className}`}>ボタンの色一覧</h1>
-        <h2 className={`text-2xl text-center ${kosugiMaru.className}`}>tailwind CSSで設定可能な色を使用しています。</h2>
-      </div>
-      <div className="grid gap-3 grid-cols-1 sm:grid-cols-6 mt-8">
-        {bgClassList.map((cName) => (
-          <Button key={cName} className={`${['black', 'white'].includes(cName) ? `bg-${cName}` : `${cName}`
-            } px-5 py-2 text-white`}>{cName}</Button>
-        ))}
-      </div>
+    <div className="min-h-screen bg-slate-50/60 pb-24 dark:bg-slate-900">
+      <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-white">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.12)_0,rgba(255,255,255,0.12)_1px,transparent_1px,transparent_80px)] opacity-70" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.25),transparent_55%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.2),transparent_60%)]" />
+          <div className="absolute -top-36 -left-20 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
+          <div className="absolute -bottom-48 right-[-20%] h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+          <div className="absolute inset-0 bg-slate-900/20" />
+        </div>
+        <div className="relative mx-auto max-w-5xl px-6 py-16 sm:py-20 md:px-10">
+          <div className="mx-auto max-w-3xl space-y-6 rounded-[2.75rem] border border-white/25 bg-white/10 px-8 py-12 text-center shadow-[0_20px_60px_-30px_rgba(15,23,42,0.45)] backdrop-blur-xl">
+            <div className="space-y-6">
+              <span className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/90 shadow-inner shadow-white/20">
+                DESIGN SYSTEM
+              </span>
+              <h1
+                className={`text-3xl leading-tight text-white md:text-4xl lg:text-[2.8rem] ${kosugiMaru.className}`}
+              >
+                Tailwind カラーパレットで
+                <br className="hidden sm:inline" />
+                ボタンデザインを素早く確認
+              </h1>
+              <p className="text-sm leading-relaxed text-slate-100 md:text-base">
+                Tailwind CSS で利用できるカラークラスを一覧表示。
+                プロトタイプ作成やブランドカラーの検討に役立つよう、クラス名をそのままラベルにしています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-12">
+        <div className="flex flex-col items-center gap-3 pb-8 text-center">
+          <h2 className={`text-2xl font-semibold text-slate-900 dark:text-white ${kosugiMaru.className}`}>
+            ボタンの色一覧
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-300">
+            クリックするとクラス名がコピーされます。配色パターンの比較やデザインガイドライン作成にご活用ください。
+          </p>
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 md:grid-cols-6">
+          {bgClassList.map((cName) => {
+            const className = ['black', 'white'].includes(cName)
+              ? `bg-${cName}`
+              : cName;
+            return (
+              <Button
+                key={cName}
+                className={`${className} px-5 py-2 text-white hover:scale-[1.02] transition-transform`}
+              >
+                {cName}
+              </Button>
+            );
+          })}
+        </div>
+      </section>
     </div>
   );
 }

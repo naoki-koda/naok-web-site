@@ -1,21 +1,22 @@
+import { Button } from "@/components/ui/button";
 import {
   Drawer,
   DrawerClose,
   DrawerContent,
-  DrawerDescription,
   DrawerFooter,
   DrawerHeader,
   DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer"
-import { Button } from "@/components/ui/button"
+  DrawerTrigger
+} from "@/components/ui/drawer";
 import Link from 'next/link';
 
 export default function MyDrawer() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="outline" className="bg-orange-400 text-white px-8 py-3 text-lg">お問い合わせ</Button>
+        <Button variant="outline" className="bg-slate-900 text-white px-8 py-3 text-lg hover:brightness-105">
+          お問い合わせ
+        </Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
@@ -30,7 +31,7 @@ export default function MyDrawer() {
         {/*   /> */}
         {/* </div> */}
         <DrawerFooter>
-          <Button asChild className="bg-orange-400 hover:bg-sky-400">
+          <Button asChild className="bg-slate-900 text-white hover:brightness-105">
             <Link href="/contact">
               お問い合わせ
             </Link>

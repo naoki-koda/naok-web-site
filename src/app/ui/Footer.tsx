@@ -1,11 +1,11 @@
 
 
 import { kosugiMaru } from '@/app/ui/fonts';
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-black text-black dark:text-white border-t">
+    <footer className="bg-white dark:bg-slate-900 text-black dark:text-white border-t">
       <div className="max-w-7xl mx-auto px-4 py-6 text-center" >
         <h2 className="mb-2">NAOK WEB DEVELOP</h2>
         <div className="flex items-center justify-center gap-2 mb-3">
@@ -25,11 +25,11 @@ export default function Footer() {
       <div className="w-full mx-auto bg-gradient-to-r from-orange-400 to-sky-400">
         <div className="w-full bg-transparent h-9"></div>
         <div className="flex justify-between items-center">
-          <div className="flex-1 h-11 bg-white dark:bg-black"></div>
+          <div className="flex-1 h-11 bg-white dark:bg-slate-900"></div>
           <div className="w-24 h-11 bg-transparent"></div>
-          <div className="w-100 h-11 bg-white dark:bg-black"></div>
+          <div className="w-100 h-11 bg-white dark:bg-slate-900"></div>
           <div className="w-24 h-11 bg-transparent"></div>
-          <div className="flex-1 h-11 bg-white dark:bg-black"></div>
+          <div className="flex-1 h-11 bg-white dark:bg-slate-900"></div>
         </div>
         <div className="w-full bg-transparent h-10"></div>
       </div>

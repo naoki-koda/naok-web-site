@@ -14,7 +14,7 @@ export default function Page() {
       </p>
       <Link
         href="/"
-        className="inline-block rounded-md bg-sky-500 px-6 py-2 text-white hover:bg-sky-600 transition"
+        className="inline-block rounded-md bg-gradient-to-r from-orange-400 to-sky-400 px-6 py-2 text-white shadow-md shadow-orange-300/30 transition hover:brightness-105"
       >
         トップページへ戻る
       </Link>
