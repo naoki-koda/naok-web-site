@@ -104,7 +104,7 @@ export default function Page() {
   );
 }
 
-export function HeroBlock({ kosugiMaru }: { kosugiMaru: { className: string } }) {
+function HeroBlock({ kosugiMaru }: { kosugiMaru: { className: string } }) {
   return (
     <MotionConfig reducedMotion="user">
       <motion.div
