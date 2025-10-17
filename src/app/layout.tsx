@@ -1,10 +1,10 @@
+import Footer from '@/app/ui/Footer';
+import Header from '@/app/ui/Header';
 import type { Metadata } from "next";
+import { ThemeProvider } from 'next-themes';
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
-import Header from '@/app/ui/Header';
-import Footer from '@/app/ui/Footer';
 import "./globals.css";
-import { ThemeProvider } from 'next-themes';
 
 
 const geistSans = Geist({
@@ -20,13 +20,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.naok-webstudio.jp"),
   title: {
-    default: "名古屋市の個人事業主向けのホームページ制作 | nao.k WEB開発",
-    template: "%s | nao.k WEB開発",
+    default: "名古屋市の個人事業主向けのホームページ制作 | REEWA WEB",
+    template: "%s | REEWA WEB",
   },
-  description: "名古屋市を拠点とするnao.k WEB開発は、中小企業・個人事業主のためのSEOに強い高速なホームページ制作・運用を提供。お問い合わせ獲得に直結するUI/UXとローカルSEO対策までフルサポートします。",
-  applicationName: "nao.k WEB開発",
-  creator: "nao.k WEB開発",
-  publisher: "nao.k WEB開発",
+  description:
+    "名古屋市を拠点とするREEWA WEBは、中小企業・個人事業主のためのSEOに強い高速なホームページ制作・運用を提供。補助金相談、制作費の相場診断、DIYやフリーランスとの比較検討、運用保守までフルサポートします。",
+  applicationName: "REEWA WEB",
+  creator: "REEWA WEB",
+  publisher: "REEWA WEB",
   category: "business",
   alternates: {
     canonical: "https://www.naok-webstudio.jp/",
@@ -63,18 +64,25 @@ export const metadata: Metadata = {
     "Next.js 制作会社",
     "SPA サイト制作",
     "高速表示 Web制作",
+    "ホームページ制作 相場",
+    "ホームページ制作 補助金",
+    "ホームページ制作 フリーランス",
+    "ホームページ制作 自分で",
+    "ホームページ制作 料金表",
+    "ホームページ制作 運用保守",
   ],
   openGraph: {
-    title: "名古屋のホームページ制作・運用 | nao.k WEB開発",
-    description: "愛知・名古屋で成果につながるWebサイト制作。高速表示とSEOに強いNext.jsサイトでお問い合わせ獲得を支援します。",
+    title: "名古屋のホームページ制作・運用 | REEWA WEB開発",
+    description:
+      "愛知・名古屋で成果につながるWebサイト制作。制作費の相場や補助金の活用、DIY/フリーランスとの比較など多角的な視点でサポートし、高速表示とSEOに強いNext.jsサイトでお問い合わせ獲得を支援します。",
     url: "https://www.naok-webstudio.jp/",
-    siteName: "nao.k WEB開発",
+    siteName: "REEWA WEB",
     images: [
       {
         url: "/og-image.png", // public ディレクトリに置いたSNS用画像
         width: 1200,
         height: 630,
-        alt: "nao.k WEB開発のWebサイト制作イメージ",
+        alt: "REEWA WEBのWebサイト制作イメージ",
       },
     ],
     type: "website",
@@ -83,8 +91,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "名古屋のWebサイト制作・運用 | nao.k WEB開発",
-    description: "愛知・名古屋で売上に貢献するWebサイト制作ならnao.k WEB開発。低コスト・高品質・迅速な開発・運用・保守を提供。",
+    title: "名古屋のWebサイト制作・運用 | REEWA WEB開発",
+    description: "愛知・名古屋で売上に貢献するWebサイト制作ならREEWA WEB開発。低コスト・高品質・迅速な開発・運用・保守を提供。",
     site: "@naok_web_studio",
     creator: "@naok_web_studio",
     images: ["/og-image.png"],
@@ -108,7 +116,7 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
-                "name": "nao.k WEB開発",
+                "name": "REEWA WEB開発",
                 "url": "https://www.naok-webstudio.jp/",
                 "logo": "https://www.naok-webstudio.jp/logo.png",
                 "image": "https://www.naok-webstudio.jp/og-image.png",
@@ -127,11 +135,11 @@ export default function RootLayout({
               {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "nao.k WEB開発",
+                "name": "REEWA WEB開発",
                 "url": "https://www.naok-webstudio.jp/",
                 "publisher": {
                   "@type": "Organization",
-                  "name": "nao.k WEB開発",
+                  "name": "REEWA WEB",
                   "logo": {
                     "@type": "ImageObject",
                     "url": "https://www.naok-webstudio.jp/logo.png"
@@ -142,6 +150,44 @@ export default function RootLayout({
                   "target": "https://www.naok-webstudio.jp/?s={search_term_string}",
                   "query-input": "required name=search_term_string"
                 }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "ホームページ制作サービス一覧",
+                "itemListElement": [
+                  {
+                    "@type": "Service",
+                    "name": "ホームページ制作・リニューアル",
+                    "url": "https://www.naok-webstudio.jp/",
+                    "areaServed": ["Nagoya", "Aichi", "Osaka", "Fukuoka"],
+                    "description": "企業・クリニック・宿泊施設など業種別のホームページ制作。相場のご相談、1ページ制作、短納期対応までサポートします。"
+                  },
+                  {
+                    "@type": "Service",
+                    "name": "補助金・助成金を活用したホームページ制作",
+                    "url": "https://www.naok-webstudio.jp/price",
+                    "description": "小規模事業者持続化補助金やIT導入補助金を活用した制作費用の削減サポート。2024〜2025年の最新スケジュールに対応します。"
+                  },
+                  {
+                    "@type": "Service",
+                    "name": "ホームページ運用・SEO対策",
+                    "url": "https://www.naok-webstudio.jp/service",
+                    "description": "ローカルSEO、AIライティング支援、スマホ最適化、アクセス解析レポートなど運用・保守を一括で実施します。"
+                  },
+                  {
+                    "@type": "Service",
+                    "name": "DIY・内製支援プラン",
+                    "url": "https://www.naok-webstudio.jp/design",
+                    "description": "ワードプレスやノーコードツールで自分でホームページ制作を行いたい方向けに、テンプレート設計・講座・チェックリストを提供します。"
+                  },
+                  {
+                    "@type": "Service",
+                    "name": "フリーランス・委託案件サポート",
+                    "url": "https://www.naok-webstudio.jp/works",
+                    "description": "フリーランスデザイナー・開発者との協業やアウトソーシング先を探している企業向けに、要件定義からディレクションまで伴走します。"
+                  }
+                ]
               }
             ]),
           }}

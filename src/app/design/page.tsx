@@ -77,7 +77,7 @@ export default function Page() {
 
       <section className="mx-auto max-w-5xl px-6 py-12">
         <div className="flex flex-col items-center gap-3 pb-8 text-center">
-          <h2 className={`text-2xl font-semibold text-slate-900 dark:text-white ${kosugiMaru.className}`}>
+          <h2 className={`text-2xl font-semibold text-teal-950 dark:text-white ${kosugiMaru.className}`}>
             ボタンの色一覧
           </h2>
           <p className="text-sm text-slate-600 dark:text-slate-300">

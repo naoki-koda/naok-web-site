@@ -24,7 +24,7 @@ export default function PricingCard({
   return (
     <div
       className={cn(
-        "rounded-xl border border-orange-200/70 bg-white/95 p-6 text-slate-900 shadow-lg shadow-orange-200/40 flex flex-col justify-between",
+        "rounded-xl border border-orange-200/70 bg-white/95 p-6 text-teal-950 shadow-lg shadow-orange-200/40 flex flex-col justify-between",
         highlighted ? "border-orange-400 shadow-orange-300/50" : "",
       )}
     >

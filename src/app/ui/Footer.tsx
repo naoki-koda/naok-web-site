@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-white dark:bg-slate-900 text-black dark:text-white border-t">
       <div className="max-w-7xl mx-auto px-4 py-6 text-center" >
-        <h2 className="mb-2">NAOK WEB DEVELOP</h2>
+        <h2 className="mb-2">REEWA WEB DEVELOP</h2>
         <div className="flex items-center justify-center gap-2 mb-3">
           <Image
             src="/favicon.ico"
@@ -16,7 +16,7 @@ export default function Footer() {
             height={37}
             className="align-middle"
           />
-          <p className={`text-lg ${kosugiMaru.className}`}>nao.k WEB開発</p>
+          <p className={`text-lg ${kosugiMaru.className}`}>REEWA WEB</p>
         </div>
         <p className="mb-2 mb-8">愛知県名古屋市を中心としたWEBサイトの開発、運営</p>
         <p>著作権、及びお客様のプライバシー保護のため、サイト内の写真や内容の無断転載等はお断り致します。</p>

@@ -56,11 +56,11 @@ export default function Header() {
         className={`sticky top-0 z-50 h-16 bg-gradient-to-r from-orange-400 to-sky-400 px-4 shadow-md ${kosugiMaru.className}`}
       >
         <div className="mx-auto flex h-full max-w-5xl items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 text-slate-900">
+          <Link href="/" className="flex items-center gap-3 text-teal-950">
             <Image src="/favicon.ico" alt="Site Icon" width={40} height={40} className="rounded-lg" />
-            <span className="text-lg font-semibold leading-none">nao.k WEB開発</span>
+            <span className="text-2xl font-semibold leading-none">REEWA WEB</span>
           </Link>
-          {/* <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-900 md:flex">
+          {/* <nav className="hidden items-center gap-6 text-sm font-semibold text-teal-950 md:flex">
             {NAV_ITEMS.map(({ href, label }) => (
               <Link
                 key={href}
@@ -71,7 +71,7 @@ export default function Header() {
               </Link>
             ))}
           </nav> */}
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-900 md:flex">
+          <nav className="hidden items-center gap-6 text-sm font-semibold text-teal-950 md:flex">
             {NAV_ITEMS.map(({ href, label }) => (
                 <NavLinkDroplet key={href} href={href} label={label} />
             ))}
@@ -81,7 +81,7 @@ export default function Header() {
             aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-slate-900 shadow-sm transition hover:bg-white/50 md:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-teal-950 shadow-sm transition hover:bg-white/50 md:hidden"
           >
             {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
           </button>
@@ -99,7 +99,7 @@ export default function Header() {
 
       {isMenuOpen && (
         <nav
-          className={`fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col bg-gradient-to-br from-orange-400 to-sky-400 px-6 pb-12 pt-8 text-slate-900 md:hidden ${kosugiMaru.className}`}
+          className={`fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col bg-gradient-to-br from-orange-400 to-sky-400 px-6 pb-12 pt-8 text-teal-950 md:hidden ${kosugiMaru.className}`}
         >
           <div className="mx-auto w-full max-w-sm flex-1 space-y-6 overflow-y-auto">
             <div className="flex items-center justify-between text-white">
@@ -111,10 +111,10 @@ export default function Header() {
                   <Link
                     href={href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="group block rounded-3xl border border-white/20 bg-white/15 px-6 py-5 text-center text-slate-900 shadow-[0_20px_40px_-30px_rgba(15,23,42,0.45)] backdrop-blur transition hover:border-white/40 hover:bg-white/25 hover:text-white/90"
+                    className="group block rounded-3xl border border-white/20 bg-white/15 px-6 py-5 text-center text-teal-950 shadow-[0_20px_40px_-30px_rgba(15,23,42,0.45)] backdrop-blur transition hover:border-white/40 hover:bg-white/25 hover:text-white/90"
                   >
                     <div className="flex flex-col items-center gap-3">
-                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-slate-900 shadow-sm shadow-orange-200/40 transition group-hover:bg-white group-hover:text-orange-500">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/70 text-teal-950 shadow-sm shadow-orange-200/40 transition group-hover:bg-white group-hover:text-orange-500">
                         <Icon className="h-6 w-6" />
                       </span>
                       <div className="space-y-1">
@@ -136,7 +136,6 @@ export default function Header() {
   );
 }
 
-// 2) 同ファイルの下部に追加：水滴ホバー用コンポーネント
 function NavLinkDroplet({ href, label }: { href: string; label: string }) {
   // ホバー中のマウス位置で CSS 変数を更新
   const onMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -155,7 +154,7 @@ function NavLinkDroplet({ href, label }: { href: string; label: string }) {
       className="
         group relative isolate overflow-hidden
         rounded-full px-4 py-2
-        bg-white/30 text-slate-900
+        bg-white/30 text-teal-950
         transition
         hover:bg-white/40 hover:shadow-lg
         backdrop-blur-sm

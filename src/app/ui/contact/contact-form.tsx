@@ -35,7 +35,7 @@ export default function Form() {
       {/* <div className="pointer-events-none absolute -left-32 -bottom-32 h-80 w-80 rounded-full bg-orange-400/25 blur-3xl transition-all duration-700 group-hover:-translate-x-4 group-hover:translate-y-2" /> */}
 
       <div className="relative space-y-10">
-        <header className="space-y-4 text-slate-900 dark:text-white">
+        <header className="space-y-4 text-teal-950 dark:text-white">
           <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-sky-700 dark:bg-sky-500/20 dark:text-sky-200">
             CONTACT FORM
           </span>
@@ -154,7 +154,7 @@ export default function Form() {
               name="company"
               type="text"
               autoComplete="organization"
-              placeholder="例）株式会社NAO.K"
+              placeholder="例）株式会NAO.K"
               defaultValue={state.values?.company ?? ''}
               className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="company-error"

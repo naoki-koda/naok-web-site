@@ -71,14 +71,14 @@ export default function Page() {
                 CONTACT
               </span>
               <h1
-                className={`text-3xl leading-tight text-slate-900 md:text-4xl lg:text-[2.8rem] ${kosugiMaru.className}`}
+                className={`text-3xl leading-tight text-teal-950 md:text-4xl lg:text-[2.8rem] ${kosugiMaru.className}`}
               >
                 ホームページ制作・リニューアルに関するご相談はこちらから
               </h1>
-              <p className="text-sm leading-relaxed text-slate-900 md:text-base">
+              <p className="text-sm leading-relaxed text-teal-950 md:text-base">
                 サービスの魅力を伝え、成果につながるWebサイトを制作します。まだ要件が固まっていない段階でもお気軽にご相談ください。事業理解から集客戦略、公開後の運用まで一貫してサポートいたします。
               </p>
-              <ul className="space-y-3 text-sm text-slate-900">
+              <ul className="space-y-3 text-sm text-teal-950">
                 {heroHighlights.map((item) => (
                   <li key={item} className="flex items-start justify-center gap-3 text-left md:justify-start">
                     <span className="mt-1 flex h-6 w-6 flex-none items-center justify-center rounded-full bg-sky-400/40 text-xs font-semibold text-white">
@@ -96,21 +96,21 @@ export default function Page() {
                     <CalendarDaysIcon className="h-7 w-7" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">最短3営業日でサイト構成をご提案</p>
-                    <p className="text-xs text-slate-900">
+                    <p className="text-sm font-semibold text-teal-950">最短3営業日でサイト構成をご提案</p>
+                    <p className="text-xs text-teal-950">
                       ヒアリング後、ターゲットと導線設計をまとめた構成案をスピーディーにご提示します。
                     </p>
                   </div>
                 </div>
-                <div className="mt-6 grid gap-4 text-xs text-slate-900">
+                <div className="mt-6 grid gap-4 text-xs text-teal-950">
                   <p className="rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
-                    <strong className="block text-md text-slate-900">相談の多いテーマ</strong>
+                    <strong className="block text-md text-teal-950">相談の多いテーマ</strong>
                     ・新サービスの立ち上げ用コーポレートサイト<br />
                     ・既存サイトのSEO改善とCV導線の見直し<br />
                     ・LP量産を前提としたデザインシステム構築
                   </p>
                   <p className="rounded-2xl border border-white/20 bg-white/10 bg-slate px-4 py-3">
-                    <strong className="block text-md text-slate-900">対応エリア</strong>
+                    <strong className="block text-md text-teal-950">対応エリア</strong>
                     名古屋・東海エリアの対面打ち合わせに対応。全国のオンライン相談も歓迎しています。
                   </p>
                 </div>
@@ -125,7 +125,7 @@ export default function Page() {
           <Form />
           <aside className="space-y-6">
             <div className="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-xl shadow-slate-400/10 dark:border-white/10 dark:bg-slate-900/80 dark:shadow-none">
-              <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900 dark:text-white">
+              <h2 className="flex items-center gap-2 text-lg font-semibold text-teal-950 dark:text-white">
                 <SparklesIcon className="h-6 w-6 text-sky-500" />
                 制作フローとサポート体制
               </h2>
@@ -139,7 +139,7 @@ export default function Page() {
                       <Icon className="h-6 w-6" />
                     </span>
                     <div>
-                      <p className="text-sm font-semibold text-slate-900 dark:text-white">{title}</p>
+                      <p className="text-sm font-semibold text-teal-950 dark:text-white">{title}</p>
                       <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-300">{description}</p>
                     </div>
                   </li>
@@ -147,19 +147,19 @@ export default function Page() {
               </ul>
             </div>
             <div className="rounded-3xl border border-white/30 bg-gradient-to-br from-orange-400 to-sky-400 p-8 text-white shadow-xl shadow-orange-300/30">
-              <h2 className="flex items-center gap-2 text-lg font-semibold text-slate-900">
+              <h2 className="flex items-center gap-2 text-lg font-semibold text-teal-950">
                 <RocketLaunchIcon className="h-6 w-6 text-sky-300" />
                 ご相談〜公開までの流れ
               </h2>
               <ol className="mt-6 space-y-5 text-sm">
                 {timeline.map(({ title, description }) => (
-                  <li key={title} className="rounded-2xl border border-white/20 bg-white/10 p-4 text-slate-900">
+                  <li key={title} className="rounded-2xl border border-white/20 bg-white/10 p-4 text-teal-950">
                     <p className="font-semibold">{title}</p>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-900/85">{description}</p>
+                    <p className="mt-2 text-xs leading-relaxed text-teal-950/85">{description}</p>
                   </li>
                 ))}
               </ol>
-              <p className="mt-6 text-xs text-slate-900/80">
+              <p className="mt-6 text-xs text-teal-950/80">
                 スケジュールやご予算について不安な点があれば、フォーム内でお気軽にお知らせください。
               </p>
             </div>

@@ -45,24 +45,24 @@ export default function PricingPage() {
         <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24 md:px-10">
           <div className="grid gap-8 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:items-center">
             <div className="space-y-6 text-center md:text-left">
-              <span className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-slate-900/90">
+              <span className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-teal-950/90">
                 PRICING
               </span>
               <h1
-                className={`text-3xl leading-tight text-slate-900 md:text-4xl lg:text-[2.8rem] ${kosugiMaru.className}`}
+                className={`text-3xl leading-tight text-teal-950 md:text-4xl lg:text-[2.8rem] ${kosugiMaru.className}`}
               >
                 ビジネスの成長を支える<br className="hidden sm:inline" />
                 透明性のある料金プラン
               </h1>
-              <p className="text-sm leading-relaxed text-slate-900 md:text-base">
+              <p className="text-sm leading-relaxed text-teal-950 md:text-base">
                 1ページごとのシンプルな制作費と、運用体制に合わせた保守プランをご用意しています。
                 初回ヒアリングから公開後のサポートまで、成果へ直結するWebサイト運用をともに描きます。
               </p>
-              <div className="grid gap-3 text-left text-sm text-slate-900 md:max-w-lg">
+              <div className="grid gap-3 text-left text-sm text-teal-950 md:max-w-lg">
                 {heroHighlights.map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <span className="mt-1 flex h-7 w-7 flex-none items-center justify-center rounded-full bg-white/15">
-                      <SparklesIcon className="h-4 w-4 text-slate-900" />
+                      <SparklesIcon className="h-4 w-4 text-teal-950" />
                     </span>
                     <span>{item}</span>
                   </div>
@@ -72,24 +72,24 @@ export default function PricingPage() {
             <div className="hidden md:block">
               <div className="rounded-3xl border border-white/20 bg-white/10 p-8 shadow-[0_20px_60px_-40px_rgba(251,191,36,0.9)] backdrop-blur">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 text-slate-900">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/20 text-teal-950">
                     <PuzzlePieceIcon className="h-7 w-7" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">
+                    <p className="text-sm font-semibold text-teal-950">
                       要件に合わせた柔軟なページ構成
                     </p>
-                    <p className="text-xs text-slate-900/80">
+                    <p className="text-xs text-teal-950/80">
                       1ページ単位で拡張できるため、事業の成長に合わせた段階的なサイト構築が可能です。
                     </p>
                   </div>
                 </div>
                 <div className="mt-6 rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-xs text-white/80">
-                  <div className="flex items-center gap-2 text-slate-900">
+                  <div className="flex items-center gap-2 text-teal-950">
                     <ShieldCheckIcon className="h-5 w-5" />
                     <span className="text-sm font-semibold">制作費 + 運用保守で安心サポート</span>
                   </div>
-                  <p className="mt-3 leading-relaxed text-slate-900">
+                  <p className="mt-3 leading-relaxed text-teal-950">
                     ドメイン・サーバー管理、日々の微修正、アクセス動向の共有をワンストップで対応。サイトの成果を継続的に高めます。
                   </p>
                 </div>
@@ -113,7 +113,7 @@ export default function PricingPage() {
               note="テキスト・画像素材とヒアリング内容をもとに、貴社のブランドに沿ったデザインと導線を作成します。"
             />
             <div className="rounded-3xl border border-orange-200/70 bg-white p-8 shadow-xl shadow-orange-200/40 dark:border-white/10 dark:bg-slate-800/80 dark:shadow-none">
-              <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+              <h2 className="text-lg font-semibold text-teal-950 dark:text-white">
                 初期制作に含まれるもの
               </h2>
               <ul className="mt-6 space-y-3 text-sm text-slate-700 dark:text-slate-200">
@@ -132,7 +132,7 @@ export default function PricingPage() {
           </div>
 
           <div className="rounded-3xl bg-white/95 p-10 shadow-xl shadow-orange-200/30 dark:bg-slate-900/80 dark:shadow-none">
-            <h2 className="text-2xl font-semibold text-center text-slate-900 dark:text-white">
+            <h2 className="text-2xl font-semibold text-center text-teal-950 dark:text-white">
               月額運用・保守プラン
             </h2>
             <p className="mt-3 text-center text-sm text-slate-600 dark:text-slate-300">
@@ -169,7 +169,7 @@ export default function PricingPage() {
           </div>
 
           <div className="rounded-3xl border border-orange-200/70 bg-white/95 p-8 text-sm text-slate-600 shadow-lg shadow-orange-200/30 dark:border-white/10 dark:bg-slate-800/80 dark:text-slate-300">
-            <h3 className="text-base font-semibold text-slate-900 dark:text-white">ご契約にあたってのご留意事項</h3>
+            <h3 className="text-base font-semibold text-teal-950 dark:text-white">ご契約にあたってのご留意事項</h3>
             <ul className="mt-4 space-y-2">
               {cautionNotes.map((item) => (
                 <li key={item} className="flex items-start gap-3">

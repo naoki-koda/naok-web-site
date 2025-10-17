@@ -62,7 +62,7 @@ export default function Home() {
       {/* <div className="fixed bottom-0 left-1/2 -translate-x-1/2 pb-6 z-50">
         <MyDrawer />
       </div> */}
-      <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-slate-900">
+      <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-teal-950">
         <div className="absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-24 h-60 w-60 rounded-full bg-sky-400/40 blur-3xl" />
           <div className="absolute -bottom-40 right-[-15%] h-80 w-80 rounded-full bg-orange-400/35 blur-3xl" />
@@ -74,10 +74,10 @@ export default function Home() {
             <span className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-sky-200">
               NAGOYA WEB CREATIVE
             </span>
-            <h1 className={`mt-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl ${kosugiMaru.className}`}>
-              名古屋市で成果を<br className="hidden sm:inline" />出す。<br className="hidden sm:inline" />ホームページ制作を<br className="hidden sm:inline" />もっと美しく。
+            <h1 className={`mt-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl text-teal-950 ${kosugiMaru.className}`}>
+              名古屋市で成果を<br className="hidden sm:inline" />出す。<br/>ホームページ制作を<br className="hidden sm:inline" />もっと美しく。
             </h1>
-            <p className="mt-6 text-base leading-relaxed text-slate-900 md:text-lg">
+            <p className="mt-6 text-base leading-relaxed text-teal-950 md:text-lg">
               UXを重視したNext.jsサイトで表示スピードとSEOを両立。個人事業主・中小企業の集客やお問い合わせの増加をサポートします。
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
@@ -99,25 +99,25 @@ export default function Home() {
             <div className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-10 shadow-[0_35px_120px_-30px_rgba(14,165,233,0.55)] backdrop-blur">
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,theme(colors.sky.400)/45%,transparent_65%)]" />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,theme(colors.orange.400)/40%,transparent_55%)]" />
-              <div className="relative flex h-full flex-col justify-between text-left text-slate-900">
+              <div className="relative flex h-full flex-col justify-between text-left text-teal-950">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-300">Performance Focus</p>
                   <h2 className="mt-3 text-2xl font-bold">SPA × SEOで成果に直結</h2>
-                  <p className="mt-4 text-lg leading-relaxed text-slate-900">
+                  <p className="mt-4 text-lg leading-relaxed text-teal-950">
                     Core Web Vitals改善、ローカルSEO、問い合わせ導線設計までワンストップでサポート。ビジネスの成長を止めないフロントエンドを提供します。
                   </p>
                 </div>
-                <ul className="mt-6 space-y-3 text-md text-slate-900">
+                <ul className="mt-6 space-y-3 text-md text-teal-950">
                   <li className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-slate-900">01</span>
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-teal-950">01</span>
                     高速表示とモバイル最適化
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-slate-900">02</span>
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-teal-950">02</span>
                     名古屋エリア向けSEO対策
                   </li>
                   <li className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-slate-900">03</span>
+                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-teal-950">03</span>
                     集客を高めるUXライティング
                   </li>
                 </ul>
@@ -129,7 +129,7 @@ export default function Home() {
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-7 pb-2 gap-1 sm:p-10 font-[family-name:var(--font-geist-sans)]">
         <div className="flex flex-col gap-[32px] row-start-2 items-center">
           <p className={`text-2xl md:text-5xl text-center ${kosugiMaru.className} mt-0 pb-2`}>
-            nao.k WEB開発のサイトは
+            REEWA WEBのサイトは
           </p>
           <p className={`hidden sm:block text-4xl md:text-5xl text-center ${kosugiMaru.className} mb-1 mt-0 pb-2`}>
             早い、安い、売れる。
@@ -345,8 +345,8 @@ export default function Home() {
               <div className="max-w-4xl mx-auto text-center text-lg space-y-6">
                 <p>ただ見た目が綺麗なだけでは、<br />売れるサイトにはなりません。</p>
                 <p>戦略的に構成されたサイトは、<br />訪問者を顧客へと変える力を持っています。</p>
-                <strong className="underline">成果にこだわったサイトを提案します。</strong>
-              </div>
+              <strong className="underline">成果にこだわったサイトを提案します。</strong>
+                          </div>
             </section>
             <section
               id="faq"

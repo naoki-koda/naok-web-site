@@ -26,7 +26,7 @@ export default function InitPricingCard({
   return (
     <div
       className={cn(
-        "rounded-xl border border-orange-200/70 bg-white/95 p-6 text-slate-900 shadow-lg shadow-orange-200/40 flex flex-col justify-between item-center w-full max-w-full",
+        "rounded-xl border border-orange-200/70 bg-white/95 p-6 text-teal-950 shadow-lg shadow-orange-200/40 flex flex-col justify-between item-center w-full max-w-full",
         highlighted ? "border-orange-400 shadow-orange-300/50" : "",
         className
       )}
