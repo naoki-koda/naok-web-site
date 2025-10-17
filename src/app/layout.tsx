@@ -18,21 +18,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.naok-webstudio.jp"),
+  metadataBase: new URL("https://www.reewa-web.jp"),
   title: {
     default: "名古屋市の個人事業主向けのホームページ制作 | REEWA WEB",
     template: "%s | REEWA WEB",
   },
   description:
-    "名古屋市を拠点とするREEWA WEBは、中小企業・個人事業主のためのSEOに強い高速なホームページ制作・運用を提供。補助金相談、制作費の相場診断、DIYやフリーランスとの比較検討、運用保守までフルサポートします。",
+    "名古屋市を拠点とするREEWA WEBは、中小企業・個人事業主のためのSEOに強い高速なホームページ制作・運用を提供。美容/クリニック/ネイル/ペットサロンなど業種別サイト構築までトータルで支援します。",
   applicationName: "REEWA WEB",
   creator: "REEWA WEB",
   publisher: "REEWA WEB",
   category: "business",
   alternates: {
-    canonical: "https://www.naok-webstudio.jp/",
+    canonical: "https://www.reewa-web.jp/",
     languages: {
-      ja: "https://www.naok-webstudio.jp/",
+      ja: "https://www.reewa-web.jp/",
     },
   },
   robots: {
@@ -65,17 +65,37 @@ export const metadata: Metadata = {
     "SPA サイト制作",
     "高速表示 Web制作",
     "ホームページ制作 相場",
+    "ホームページ制作 相場 1ページ",
+    "ホームページ制作 1ページ 単価",
+    "ホームページ制作 10万円",
+    "ホームページ制作 30万",
     "ホームページ制作 補助金",
-    "ホームページ制作 フリーランス",
+    "ホームページ制作 補助金 2024",
+    "ホームページ制作 補助金 2025",
+    "ホームページ制作 フリーランス依頼",
+    "名古屋 ホームページ制作 フリーランス",
     "ホームページ制作 自分で",
+    "ホームページ制作 aiツール",
     "ホームページ制作 料金表",
     "ホームページ制作 運用保守",
+    "ホームページ制作 クリニック",
+    "ホームページ制作 歯科",
+    "ホームページ制作 ネイルサロン",
+    "ホームページ制作 美容室",
+    "ホームページ制作 ピアノ教室",
+    "ホームページ制作 ペットショップ",
+    "ホームページ制作会社 名古屋",
+    "ホームページ制作会社 選び方",
+    "ホームページ制作 フリーランス依頼",
+    "ホームページ制作 依頼 流れ",
+    "ホームページ制作 いくら",
+    "ホームページ制作 英語対応",
   ],
   openGraph: {
     title: "名古屋のホームページ制作・運用 | REEWA WEB開発",
     description:
-      "愛知・名古屋で成果につながるWebサイト制作。制作費の相場や補助金の活用、DIY/フリーランスとの比較など多角的な視点でサポートし、高速表示とSEOに強いNext.jsサイトでお問い合わせ獲得を支援します。",
-    url: "https://www.naok-webstudio.jp/",
+      "愛知・名古屋で成果につながるWebサイト制作。制作費の相場や1ページ単価、補助金・助成金の活用、AIツールや自作支援、業種別（クリニック・美容・ネイルサロン・ペットサロン等）の戦略、フリーランス協業まで多角的にサポートし、高速表示とSEOに強いNext.jsサイトでお問い合わせ獲得を支援します。",
+    url: "https://www.reewa-web.jp/",
     siteName: "REEWA WEB",
     images: [
       {
@@ -117,9 +137,9 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "ProfessionalService",
                 "name": "REEWA WEB開発",
-                "url": "https://www.naok-webstudio.jp/",
-                "logo": "https://www.naok-webstudio.jp/logo.png",
-                "image": "https://www.naok-webstudio.jp/og-image.png",
+                "url": "https://www.reewa-web.jp/",
+                "logo": "https://www.reewa-web.jp/logo.png",
+                "image": "https://www.reewa-web.jp/og-image.png",
                 "description": "名古屋市を拠点に、中小企業・個人事業主のためのSEOに強い高速なホームページ制作・運用を提供しています。",
                 "areaServed": ["JP", "Aichi", "Nagoya"],
                 "sameAs": [
@@ -136,18 +156,18 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "WebSite",
                 "name": "REEWA WEB開発",
-                "url": "https://www.naok-webstudio.jp/",
+                "url": "https://www.reewa-web.jp/",
                 "publisher": {
                   "@type": "Organization",
                   "name": "REEWA WEB",
                   "logo": {
                     "@type": "ImageObject",
-                    "url": "https://www.naok-webstudio.jp/logo.png"
+                    "url": "https://www.reewa-web.jp/logo.png"
                   }
                 },
                 "potentialAction": {
                   "@type": "SearchAction",
-                  "target": "https://www.naok-webstudio.jp/?s={search_term_string}",
+                  "target": "https://www.reewa-web.jp/?s={search_term_string}",
                   "query-input": "required name=search_term_string"
                 }
               },
@@ -159,33 +179,45 @@ export default function RootLayout({
                   {
                     "@type": "Service",
                     "name": "ホームページ制作・リニューアル",
-                    "url": "https://www.naok-webstudio.jp/",
+                    "url": "https://www.reewa-web.jp/",
                     "areaServed": ["Nagoya", "Aichi", "Osaka", "Fukuoka"],
                     "description": "企業・クリニック・宿泊施設など業種別のホームページ制作。相場のご相談、1ページ制作、短納期対応までサポートします。"
                   },
                   {
                     "@type": "Service",
                     "name": "補助金・助成金を活用したホームページ制作",
-                    "url": "https://www.naok-webstudio.jp/price",
+                    "url": "https://www.reewa-web.jp/price",
                     "description": "小規模事業者持続化補助金やIT導入補助金を活用した制作費用の削減サポート。2024〜2025年の最新スケジュールに対応します。"
                   },
                   {
                     "@type": "Service",
                     "name": "ホームページ運用・SEO対策",
-                    "url": "https://www.naok-webstudio.jp/service",
+                    "url": "https://www.reewa-web.jp/service",
                     "description": "ローカルSEO、AIライティング支援、スマホ最適化、アクセス解析レポートなど運用・保守を一括で実施します。"
                   },
                   {
                     "@type": "Service",
                     "name": "DIY・内製支援プラン",
-                    "url": "https://www.naok-webstudio.jp/design",
+                    "url": "https://www.reewa-web.jp/design",
                     "description": "ワードプレスやノーコードツールで自分でホームページ制作を行いたい方向けに、テンプレート設計・講座・チェックリストを提供します。"
                   },
                   {
                     "@type": "Service",
                     "name": "フリーランス・委託案件サポート",
-                    "url": "https://www.naok-webstudio.jp/works",
+                    "url": "https://www.reewa-web.jp/works",
                     "description": "フリーランスデザイナー・開発者との協業やアウトソーシング先を探している企業向けに、要件定義からディレクションまで伴走します。"
+                  },
+                  {
+                    "@type": "Service",
+                    "name": "業種特化型ホームページ制作",
+                    "url": "https://www.reewa-web.jp/works",
+                    "description": "クリニック・歯科・美容室・ネイルサロン・ペットショップ・宿泊施設など業種別の集客導線とデザインテンプレートをご提案します。"
+                  },
+                  {
+                    "@type": "Service",
+                    "name": "AI・多言語サイト活用支援",
+                    "url": "https://www.reewa-web.jp/service",
+                    "description": "ChatGPT等AIツールの導入、英語/多言語ページの制作、予約システム・SNS連携など拡張機能を組み合わせた運用をサポートします。"
                   }
                 ]
               }

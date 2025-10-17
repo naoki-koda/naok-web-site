@@ -22,6 +22,12 @@ const NAV_ITEMS = [
     icon: HomeIcon,
   },
   {
+    href: '/service',
+    label: 'SERVICE',
+    subLabel: 'サービス内容',
+    icon: PencilSquareIcon,
+  },
+  {
     href: '/works',
     label: 'WORKS',
     subLabel: '制作事例',
@@ -58,19 +64,9 @@ export default function Header() {
         <div className="mx-auto flex h-full max-w-5xl items-center justify-between">
           <Link href="/" className="flex items-center gap-3 text-teal-950">
             <Image src="/favicon.ico" alt="Site Icon" width={40} height={40} className="rounded-lg" />
-            <span className="text-2xl font-semibold leading-none">REEWA WEB</span>
+            <Image src="/reewaweb.svg" alt="service name" width={200} height={40} className="rounded-lg" />
+            {/* <span className="text-2xl font-semibold leading-none">REEWA WEB</span> */}
           </Link>
-          {/* <nav className="hidden items-center gap-6 text-sm font-semibold text-teal-950 md:flex">
-            {NAV_ITEMS.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className="rounded-full bg-white/30 px-4 py-2 transition hover:bg-white/50"
-              >
-                {label}
-              </Link>
-            ))}
-          </nav> */}
           <nav className="hidden items-center gap-6 text-sm font-semibold text-teal-950 md:flex">
             {NAV_ITEMS.map(({ href, label }) => (
                 <NavLinkDroplet key={href} href={href} label={label} />

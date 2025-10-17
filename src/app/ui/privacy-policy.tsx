@@ -1,9 +1,8 @@
-import React from 'react';
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-24">
-      <h1 className="text-3xl font-bold mb-6 text-center">個人情報保護方針</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center dark:text-white">個人情報保護方針</h1>
 
       <div className="max-h-96 overflow-y-scroll p-4 border rounded bg-white text-sm space-y-4 dark:text-gray-800">
         <p>

@@ -345,8 +345,8 @@ export default function Home() {
               <div className="max-w-4xl mx-auto text-center text-lg space-y-6">
                 <p>ただ見た目が綺麗なだけでは、<br />売れるサイトにはなりません。</p>
                 <p>戦略的に構成されたサイトは、<br />訪問者を顧客へと変える力を持っています。</p>
-              <strong className="underline">成果にこだわったサイトを提案します。</strong>
-                          </div>
+                <strong className="underline">成果にこだわったサイトを提案します。</strong>
+              </div>
             </section>
             <section
               id="faq"
