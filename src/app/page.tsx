@@ -2,6 +2,7 @@
 
 import { kosugiMaru } from '@/app/ui/fonts';
 import { AnimatedImage, CountableAnimation } from '@/app/ui/SliderImage';
+import Link from 'next/link';
 import Script from "next/script";
 import { useEffect, useState } from 'react';
 
@@ -37,6 +38,49 @@ export default function Home() {
     {
       question: "問い合わせにつながる導線設計は含まれていますか？",
       answer: "CTA配置やフォーム最適化、FAQコンテンツなど、問い合わせ獲得に直結するUXをプランニングします。",
+    },
+  ];
+
+  const verticalFocus = [
+    {
+      title: "美容・サロン向けホームページ制作",
+      description:
+        "美容室・ネイルサロン・エステ・ピラティススタジオなど、予約導線とSNS集客が重要な業種に特化。Instagram連携、ビフォーアフターギャラリー、スタッフ紹介、クーポン連動などをワンストップで構築します。",
+      highlights: [
+        "スマホファーストなUIとLINE/Instagram連携予約導線",
+        "口コミ・ホットペッパー・Googleビジネスプロフィール活用",
+        "美容医療LPやキャンペーンLPのスピード制作",
+      ],
+    },
+    {
+      title: "職人・工務店・製造業のブランドサイト",
+      description:
+        "匠の技・施工実績・職人ストーリーを伝え、BtoB/BtoC双方の信頼獲得を目指した構成。見積もり依頼フォーム、CAD図面・製品カタログのダウンロード、補助金情報など専門性をPRします。",
+      highlights: [
+        "施工事例・製品ギャラリー・お客様の声の見せ方",
+        "職人採用ページ・求人導線の設計",
+        "英語資料・多言語ページで海外取引にも対応",
+      ],
+    },
+    {
+      title: "飲食店・カフェ・宿泊施設の集客設計",
+      description:
+        "飲食店・カフェ・居酒屋・宿泊施設などローカル検索に強い導線を構築。Googleマップ対策、メニュー管理、ネット予約、季節イベントLP制作、インバウンド向け多言語化まで対応します。",
+      highlights: [
+        "フードメニュー・価格・アレルギー表示の管理ツール",
+        "食べログ・ぐるなび・Uber Eatsなど外部サービス導線",
+        "フォトツアーや宿泊プランの訴求強化、OTA連携提案",
+      ],
+    },
+    {
+      title: "クリニック・歯科・美容医療サイト",
+      description:
+        "医療広告ガイドライン・薬機法に配慮したコンテンツ制作と動線設計。ネット予約、初診案内、症例写真、AIによるFAQ生成、英語ページなど患者様の不安を解消する情報を整備します。",
+      highlights: [
+        "診療メニュー・料金表・医師紹介テンプレート",
+        "カウンセリング予約とLINE/メール自動返信の設定",
+        "口コミ施策・MEO対策・医療SEOライティング支援",
+      ],
     },
   ];
 
@@ -83,13 +127,13 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/35 transition hover:brightness-105"
+                className="inline-flex items-center justify-center rounded-full bg-teal-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/35 transition hover:brightness-105"
               >
                 サービス内容を見る
               </a>
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center bg-slate-900 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-sky-200 hover:text-sky-200"
+                className="inline-flex items-center justify-center bg-teal-950 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-sky-200 hover:text-sky-200"
               >
                 制作の相談をする
               </a>
@@ -348,6 +392,88 @@ export default function Home() {
                 <strong className="underline">成果にこだわったサイトを提案します。</strong>
               </div>
             </section>
+            {/* <section className="rounded-md bg-white/95 py-16 px-6 shadow-xl shadow-orange-200/40 mb-10 text-gray-900 dark:bg-gray-900/80 dark:text-white">
+              <h2 className="text-3xl font-bold text-center mb-6">キーワードから選ぶ課題解決ガイド</h2>
+              <p className="text-center text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
+                ホームページ制作のよく検索される疑問に対して、料金・相場・補助金・DIY・フリーランス協業などのテーマ別に解説コンテンツをご用意しています。気になる項目から詳細をご確認ください。
+              </p>
+              <div className="mx-auto grid gap-6 md:grid-cols-2">
+                <article className="rounded-3xl border border-orange-200/60 bg-white/90 p-6 shadow-md transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-800/70">
+                  <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">制作費・相場と料金表</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">
+                    「ホームページ制作 相場」「ホームページ制作 料金」「1ページ 単価」といったキーワードに対応。<Link href="/price" className="text-orange-500 underline hover:text-sky-400">料金ページ</Link>で月額・初期費用・各種サブスクプランと共に、個人事業主/法人別の費用感・勘定科目・減価償却のポイントまで整理しています。
+                  </p>
+                  <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
+                    <li>・月契約/年間契約の比較とビープラスト等の相場比較</li>
+                    <li>・制作費0円プラン、3万円〜30万円、10万円・50万円・100万円帯の費用シナリオ</li>
+                    <li>・1ページ構成やLP制作、リニューアル時のページ単価と内訳</li>
+                    <li>・医療・クリニック・宿泊施設など業種別費用感とサンプル見積もり</li>
+                  </ul>
+                </article>
+                <article className="rounded-3xl border border-orange-200/60 bg-white/90 p-6 shadow-md transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-800/70">
+                  <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">補助金・助成金の活用</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">
+                    「ホームページ制作 補助金」「小規模事業者持続化補助金 2025」「IT導入補助金 2024」など各種制度をフォロー。採択率を高める提案資料の整備から、群馬・京都・大阪など地域ごとの募集スケジュールも<Link href="/contact" className="text-orange-500 underline hover:text-sky-400">無料相談</Link>でご案内します。
+                  </p>
+                  <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
+                    <li>・2024〜2025年の公募スケジュールと採択事例（宿泊施設・美容サロン・製造業など）</li>
+                    <li>・補助金×SEO/リニューアルでの費用対効果シミュレーション</li>
+                    <li>・小規模事業者持続化補助金、IT導入補助金、ものづくり補助金の違いと必要書類</li>
+                  </ul>
+                </article>
+                <article className="rounded-3xl border border-orange-200/60 bg-white/90 p-6 shadow-md transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-800/70">
+                  <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">自分で作る・AI/ノーコード活用</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">
+                    「ホームページ制作 自分で」「ホームページ制作 無料」「ホームページ制作 AI」「ワードプレス 料金」といったセルフ制作ニーズに応えるテンプレート集を<Link href="/design" className="text-orange-500 underline hover:text-sky-400">デザインページ</Link>で公開。ChatGPTやCanva、ノーコードでの制作手順やGoogleビジネスプロフィールの連携方法も網羅しています。
+                  </p>
+                  <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
+                    <li>・無料/低価格ツール（Wix、STUDIO、WordPress、Notion）の比較</li>
+                    <li>・HTML/CSSで自作する場合の最低限のスキルとノーコード代替案</li>
+                    <li>・スマホだけで作る場合の注意点と推奨アプリ（Googleサイト、Canva等）</li>
+                    <li>・AIライティング/画像生成を使ったコンテンツ量産とSEO対策の共存方法</li>
+                  </ul>
+                </article>
+                <article className="rounded-3xl border border-orange-200/60 bg-white/90 p-6 shadow-md transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-800/70">
+                  <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">地域別・フリーランス協業</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">
+                    名古屋を中心に、大阪・福岡・東京・北海道など全国各地の制作会社やフリーランスとも連携。<Link href="/works" className="text-orange-500 underline hover:text-sky-400">制作事例</Link>では地域別の成功事例を紹介し、「フリーランス ホームページ制作 相場」「大阪 格安」などのキーワードで寄せられる相談にもお応えします。
+                  </p>
+                  <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
+                    <li>・歯科・美容室・製造業など業種別の集客シナリオ</li>
+                    <li>・丸投げ運用/部分委託/社内チームとのハイブリッド体制</li>
+                    <li>・英語・多言語サイト、ランディングページやAIチャットの導入</li>
+                  </ul>
+                </article>
+              </div>
+            </section> */}
+            <section className="rounded-md bg-gray-50 py-16 px-6 shadow-inner shadow-orange-200/30 mb-10 text-gray-900 dark:bg-slate-800/80 dark:text-white">
+              <h2 className="text-3xl font-bold text-center mb-6">業種別の集客特化型ホームページ制作</h2>
+              <p className="text-center text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
+                「ホームページ制作 美容」「ホームページ制作 サロン」「ホームページ制作 職人」「ホームページ制作 飲食店」など業種特有のニーズに対し、キーワード戦略とUI/UXを最適化した制作プランをご用意しています。
+              </p>
+              <div className="mx-auto grid gap-6 md:grid-cols-2">
+                {verticalFocus.map((item) => (
+                  <article
+                    key={item.title}
+                    className="rounded-3xl border border-orange-200/60 bg-white/95 p-6 text-slate-900 shadow-md shadow-orange-200/40 transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
+                  >
+                    <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">{item.description}</p>
+                    <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
+                      {item.highlights.map((point) => (
+                        <li key={point}>・{point}</li>
+                      ))}
+                    </ul>
+                    <Link
+                      href="/contact"
+                      className="mt-5 inline-flex items-center text-sm font-semibold text-orange-500 underline decoration-dotted hover:text-sky-400"
+                    >
+                      業種別の制作・相場相談をする
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            </section>
             <section
               id="faq"
               className="rounded-md py-16 px-6 bg-white/95 text-gray-900 shadow-xl shadow-orange-200/40 mb-10 dark:bg-gray-900/80 dark:text-white"
@@ -388,7 +514,7 @@ export default function Home() {
                   お問い合わせフォームへ
                 </a>
                 <a
-                  href="https://www.instagram.com/nao.k_web_studio/"
+                  href="https://www.instagram.com/reewa_web/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#515BD4] inline-flex items-center justify-center gap-2 rounded-full border border-white px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/15"

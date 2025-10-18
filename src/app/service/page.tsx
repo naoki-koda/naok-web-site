@@ -82,7 +82,7 @@ export default function ServicePage() {
               SERVICE
             </span>
             <h1 className={`text-3xl leading-tight text-white md:text-4xl lg:text-[2.8rem] ${kosugiMaru.className}`}>
-              ホームページ制作から運用・補助金活用まで<br className="hidden sm:inline" />
+              ホームページ制作から<br />運用・補助金活用まで<br className="hidden sm:inline" />
               ビジネス成長を支えるフルサポート
             </h1>
             <p className="text-sm leading-relaxed text-slate-100 md:text-base">
@@ -122,23 +122,6 @@ export default function ServicePage() {
               </Link>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-5xl px-6 py-16">
-        <div className="rounded-3xl border border-white/20 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 p-10 text-white shadow-xl shadow-slate-900/30">
-          <h2 className="text-2xl font-semibold text-center mb-6">地域別サポートエリアと協業ネットワーク</h2>
-          <p className="text-sm text-center text-white/80 mb-8">
-            名古屋を中心に、大阪・福岡・東京・北海道など全国の制作会社/フリーランスとパートナーシップを構築。現地での打ち合わせや業種特化パートナーの紹介が可能です。
-          </p>
-          <div className="grid gap-4 md:grid-cols-2">
-            {supportAreas.map((area) => (
-              <div key={area.area} className="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur">
-                <h3 className="text-lg font-semibold">{area.area}</h3>
-                <p className="mt-2 text-sm text-white/80">{area.detail}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
