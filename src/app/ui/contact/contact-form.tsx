@@ -367,7 +367,7 @@ export default function Form() {
           </p>
           <button
             type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-300 hover:brightness-105 dark:shadow-none"
+            className="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-300 hover:brightness-105 dark:orange-400"
           >
             無料で相談する
           </button>
