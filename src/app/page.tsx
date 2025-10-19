@@ -1,5 +1,6 @@
 'use client';
 
+import MyDrawer from '@/app/ui/Drawer';
 import { kosugiMaru } from '@/app/ui/fonts';
 import { AnimatedImage, CountableAnimation } from '@/app/ui/SliderImage';
 import Link from 'next/link';
@@ -103,9 +104,9 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      {/* <div className="fixed bottom-0 left-1/2 -translate-x-1/2 pb-6 z-50">
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 pb-6 z-50">
         <MyDrawer />
-      </div> */}
+      </div>
       <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-teal-950">
         <div className="absolute inset-0 -z-10">
           <div className="absolute -top-24 -left-24 h-60 w-60 rounded-full bg-sky-400/40 blur-3xl" />
@@ -127,7 +128,7 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-teal-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/35 transition hover:brightness-105"
+                className="inline-flex items-center justify-center rounded-full bg-teal-950 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/35 transition hover:brightness-105"
               >
                 サービス内容を見る
               </a>
