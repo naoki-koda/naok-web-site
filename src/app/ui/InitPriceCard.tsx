@@ -33,10 +33,6 @@ export default function InitPricingCard({
     >
       <div className="text-center">
         <h3 className="text-lg font-medium">{title}</h3>
-        {/* <p className="text-sm text-gray-800">{subtitle}</p> */}
-        🎉 <strong>事業開始キャンペーン</strong> 実施中！<br />
-
-
         <div className="mt-4">
           <p className="text-sm text-gray-800 text-center">{originalPrice}</p>
           <div className="inline-flex flex-col items-center gap-2 rounded-2xl bg-gradient-to-r from-orange-400/15 to-sky-400/15 px-6 py-3 shadow-inner shadow-orange-200/50">

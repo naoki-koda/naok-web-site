@@ -35,7 +35,7 @@ const cautionNotes = [
 
 export default function PricingPage() {
   return (
-    <div className="bg-slate-50/60 pb-24 dark:bg-slate-900">
+    <main className="bg-slate-50/60 pb-24 dark:bg-slate-900">
       <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-white">
         <div className="absolute inset-0 -z-10">
           <div className="absolute -top-36 -left-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
@@ -107,7 +107,7 @@ export default function PricingPage() {
               title="初期費用（ホームページ制作）"
               subtitle="ページ単位での制作料金"
               originalPrice=""
-              currentPrice="¥4,000"
+              currentPrice="¥10,000"
               period="1ページあたり（税込）"
               yearlyTotal=""
               note="テキスト・画像素材とヒアリング内容をもとに、貴社のブランドに沿ったデザインと導線を作成します。"
@@ -144,7 +144,7 @@ export default function PricingPage() {
                 subtitle="短期のキャンペーンやスポット運用に最適"
                 originalPrice=""
                 currentPrice="¥5,000"
-                period="月契約（税込）"
+                period="月額（税込）"
                 yearlyTotal=""
                 note="ドメイン・サーバー管理、小規模な文言修正、計測タグの更新など日常運用を幅広くカバーします。"
               />
@@ -153,9 +153,9 @@ export default function PricingPage() {
                 subtitle="継続的な改善とコスト最適化を重視する方向け"
                 originalPrice="年換算 ¥54,000"
                 currentPrice="¥4,500"
-                period="月額（年間契約・税込）"
+                period="月額（税込）"
                 yearlyTotal=""
-                note="月契約プランの内容に加え、四半期ごとのアクセスレポートと改善提案をお届けします。"
+                note="ドメイン・サーバー管理、小規模な文言修正、計測タグの更新など日常運用を幅広くカバーします。"
               />
             </div>
             <div className="mt-8 grid gap-3 text-sm text-slate-600 dark:text-slate-300 md:grid-cols-3">
@@ -184,6 +184,6 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

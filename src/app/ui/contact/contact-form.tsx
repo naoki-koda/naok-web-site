@@ -64,7 +64,7 @@ export default function Form() {
               placeholder="例）山田"
               required
               defaultValue={state.values?.lastName ?? ''}
-              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="lastName-error"
             />
             <div id="lastName-error" aria-live="polite" aria-atomic="true">
@@ -87,7 +87,7 @@ export default function Form() {
               placeholder="例）太郎"
               required
               defaultValue={state.values?.firstName ?? ''}
-              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="firstName-error"
             />
             <div id="firstName-error" aria-live="polite" aria-atomic="true">
@@ -109,7 +109,7 @@ export default function Form() {
               placeholder="例）ヤマダ"
               required
               defaultValue={state.values?.lastNameKana ?? ''}
-              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm uppercase tracking-[0.2em] shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm uppercase tracking-[0.2em] shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="lastNameKana-error"
             />
             <div id="lastNameKana-error" aria-live="polite" aria-atomic="true">
@@ -131,7 +131,7 @@ export default function Form() {
               placeholder="例）タロウ"
               required
               defaultValue={state.values?.firstNameKana ?? ''}
-              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm uppercase tracking-[0.2em] shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm uppercase tracking-[0.2em] shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="firstNameKana-error"
             />
             <div id="firstNameKana-error" aria-live="polite" aria-atomic="true">
@@ -156,7 +156,7 @@ export default function Form() {
               autoComplete="organization"
               placeholder="例）株式会NAO.K"
               defaultValue={state.values?.company ?? ''}
-              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="company-error"
             />
             <div id="company-error" aria-live="polite" aria-atomic="true">
@@ -178,7 +178,7 @@ export default function Form() {
               inputMode="tel"
               placeholder="例）090-1234-5678"
               defaultValue={state.values?.phone ?? ''}
-              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="phone-error"
             />
             <div id="phone-error" aria-live="polite" aria-atomic="true">
@@ -203,7 +203,7 @@ export default function Form() {
             placeholder="you@example.com"
             required
             defaultValue={state.values?.email ?? ''}
-            className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+            className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
             aria-describedby="email-error"
           />
           <div id="email-error" aria-live="polite" aria-atomic="true">
@@ -227,7 +227,7 @@ export default function Form() {
             placeholder="you@example.com"
             required
             defaultValue={state.values?.confirmEmail ?? ''}
-            className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+            className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
             aria-describedby="confirmEmail-error"
           />
           <div id="confirmEmail-error" aria-live="polite" aria-atomic="true">
@@ -249,7 +249,7 @@ export default function Form() {
             type="url"
             placeholder="https://www.example.com"
             defaultValue={state.values?.websiteUrl ?? ''}
-            className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+            className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
             aria-describedby="websiteUrl-error"
           />
           <div id="websiteUrl-error" aria-live="polite" aria-atomic="true">
@@ -266,7 +266,7 @@ export default function Form() {
               name="serviceType"
               defaultValue={state.values?.serviceType ?? ''}
               required
-              className="w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="serviceType-error"
             >
               <option value="" disabled>
@@ -275,7 +275,6 @@ export default function Form() {
               <option value="新規ホームページ制作">新規ホームページ制作</option>
               <option value="サイトリニューアル">サイトリニューアル</option>
               <option value="キャンペーン・LP制作">キャンペーン・LP制作</option>
-              <option value="ECサイト構築">ECサイト構築</option>
               <option value="運用・保守相談">運用・保守相談</option>
               <option value="その他">その他</option>
             </select>
@@ -286,22 +285,22 @@ export default function Form() {
 
           <div className="md:col-span-1">
             <label className="mb-2 block text-sm font-medium text-slate-800 dark:text-slate-100">
-              ご予算の目安 <span className="text-xs font-semibold text-rose-500">必須</span>
+              ページ数 <span className="text-xs font-semibold text-rose-500">必須</span>
             </label>
             <select
               name="budget"
               defaultValue={state.values?.budget ?? ''}
               required
-              className="w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="w-full rounded-2xl dark:text-slate-100 border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="budget-error"
             >
               <option value="" disabled>
                 選択してください
               </option>
-              <option value="〜30万円">〜30万円</option>
-              <option value="30〜60万円">30〜60万円</option>
-              <option value="60〜100万円">60〜100万円</option>
-              <option value="100万円以上">100万円以上</option>
+              <option value="〜5ページ">〜5ページ</option>
+              <option value="6〜10ページ">6〜10ページ</option>
+              <option value="11〜20ページ">11〜20ページ</option>
+              <option value="20ページ以上">20ページ以上</option>
               <option value="未定・相談したい">未定・相談したい</option>
             </select>
             <div id="budget-error" aria-live="polite" aria-atomic="true">
@@ -317,7 +316,7 @@ export default function Form() {
               name="schedule"
               defaultValue={state.values?.schedule ?? ''}
               required
-              className="w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="w-full rounded-2xl dark:text-slate-100 border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
               aria-describedby="schedule-error"
             >
               <option value="" disabled>
@@ -349,7 +348,7 @@ export default function Form() {
             placeholder="例）新しいサービスの立ち上げに伴いホームページを制作したい。競合との差別化、リード獲得に強いLPも併せて相談したいです。"
             required
             defaultValue={state.values?.message ?? ''}
-            className="mt-2 w-full rounded-3xl border border-slate-200/80 bg-white px-4 py-4 text-sm leading-relaxed shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+            className="mt-2 w-full dark:text-slate-100 rounded-3xl border border-slate-200/80 bg-white px-4 py-4 text-sm leading-relaxed shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
             aria-describedby="message-error"
           />
           <div id="message-error" aria-live="polite" aria-atomic="true">
@@ -367,7 +366,7 @@ export default function Form() {
           </p>
           <button
             type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-slate-900 px-10 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-300 hover:brightness-105 dark:orange-400"
+            className="inline-flex items-center justify-center rounded-full bg-orange-400 px-10 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-300 hover:brightness-105 dark:orange-400"
           >
             無料で相談する
           </button>

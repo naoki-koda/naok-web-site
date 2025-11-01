@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Page() {
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-50 dark:bg-gray-900">
+    <main className="flex justify-center items-center h-screen bg-gray-50 dark:bg-gray-900">
       <div className="text-center">
         <div className="text-6xl mb-4 animate-pulse">😢</div>
         <h1 className={`text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100 ${kosugiMaru.className}`}>
@@ -28,6 +28,6 @@ export default function Page() {
           </Link>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

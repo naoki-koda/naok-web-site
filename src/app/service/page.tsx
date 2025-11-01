@@ -66,7 +66,7 @@ const industryHighlights = [
 
 export default function ServicePage() {
   return (
-    <div className="bg-slate-50/60 dark:bg-slate-900 min-h-screen pb-24">
+    <main className="bg-slate-50/60 dark:bg-slate-900 min-h-screen pb-24">
       <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-white">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.12)_0,rgba(255,255,255,0.12)_1px,transparent_1px,transparent_80px)] opacity-70" />
@@ -187,6 +187,6 @@ export default function ServicePage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

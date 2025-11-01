@@ -109,7 +109,7 @@ export default function Home() {
       </div>
       <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-teal-950">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-24 -left-24 h-60 w-60 rounded-full bg-sky-400/40 blur-3xl" />
+      <div className="absolute -top-24 -left-24 h-60 w-60 rounded-full bg-sky-400/40 blur-3xl" />
           <div className="absolute -bottom-40 right-[-15%] h-80 w-80 rounded-full bg-orange-400/35 blur-3xl" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,theme(colors.orange.400)/28%,theme(colors.sky.400)/18%,transparent_70%)]" />
           <div className="absolute inset-0 bg-slate-900/35" />
@@ -128,15 +128,15 @@ export default function Home() {
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-teal-950 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/35 transition hover:brightness-105"
+                className="inline-flex items-center justify-center rounded-full bg-white/60 px-6 py-3 text-sm font-semibold text-teal-950 shadow-lg shadow-orange-300/35 transition hover:brightness-105"
               >
                 サービス内容を見る
               </a>
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center bg-teal-950 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:border-sky-200 hover:text-sky-200"
+                className="inline-flex items-center justify-center bg-orange-400 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold shadow-lg shadow-orange-300/35 text-white transition hover:border-sky-200 hover:text-sky-200"
               >
-                制作の相談をする
+                無料お見積もり
               </a>
             </div>
           </div>

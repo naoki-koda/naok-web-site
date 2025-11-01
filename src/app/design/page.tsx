@@ -42,7 +42,7 @@ export default function Page() {
     shadeList.map((shade) => `bg-${cName}-${shade}`)
   );
   return (
-    <div className="min-h-screen bg-slate-50/60 pb-24 dark:bg-slate-900">
+    <main className="min-h-screen bg-slate-50/60 pb-24 dark:bg-slate-900">
       <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-white">
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.12)_0,rgba(255,255,255,0.12)_1px,transparent_1px,transparent_80px)] opacity-70" />
@@ -54,22 +54,6 @@ export default function Page() {
         </div>
         <div className="relative mx-auto max-w-5xl px-6 py-16 sm:py-20 md:px-10">
           <div className="mx-auto max-w-3xl space-y-6 rounded-[2.75rem] border border-white/25 bg-white/10 px-8 py-12 text-center shadow-[0_20px_60px_-30px_rgba(15,23,42,0.45)] backdrop-blur-xl">
-            {/* <div className="space-y-6">
-              <span className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/90 shadow-inner shadow-white/20">
-                DESIGN SYSTEM
-              </span>
-              <h1
-                className={`text-3xl leading-tight text-white md:text-4xl lg:text-[2.8rem] ${kosugiMaru.className}`}
-              >
-                Tailwind カラーパレットで
-                <br className="hidden sm:inline" />
-                ボタンデザインを素早く確認
-              </h1>
-              <p className="text-sm leading-relaxed text-slate-100 md:text-base">
-                Tailwind CSS で利用できるカラークラスを一覧表示。
-                プロトタイプ作成やブランドカラーの検討に役立つよう、クラス名をそのままラベルにしています。
-              </p>
-            </div> */}
             <HeroBlock kosugiMaru={kosugiMaru} />
           </div>
         </div>
@@ -100,7 +84,7 @@ export default function Page() {
           })}
         </div>
       </section>
-    </div>
+    </main>
   );
 }
 

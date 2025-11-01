@@ -232,7 +232,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider>
           <Header />
-          <main>{children}</main>
+          {children}
           <Footer />
         </ThemeProvider>
       </body>

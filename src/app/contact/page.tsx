@@ -56,7 +56,7 @@ const timeline = [
 
 export default function Page() {
   return (
-    <div className="bg-slate-50/60 pb-24 dark:bg-slate-900">
+    <main className="bg-slate-50/60 pb-24 dark:bg-slate-900">
       <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-white">
         <div className="absolute inset-0 -z-10">
           <div className="absolute -top-40 -left-24 h-72 w-72 rounded-full bg-sky-400/40 blur-3xl" />
@@ -168,6 +168,6 @@ export default function Page() {
       </section>
 
       <PrivacyPolicyContent />
-    </div>
+    </main>
   );
 }

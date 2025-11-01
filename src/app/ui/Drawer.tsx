@@ -14,7 +14,7 @@ export default function MyDrawer() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="outline" className="bg-gradient-to-r from-orange-400 to-sky-400 text-white px-8 py-3 text-lg hover:brightness-105">
+        <Button variant="outline" className="bg-orange-400 text-white px-8 py-3 text-lg hover:brightness-105">
           お問い合わせ
         </Button>
       </DrawerTrigger>
@@ -25,9 +25,9 @@ export default function MyDrawer() {
         </DrawerHeader>
 
         <DrawerFooter>
-          <Button asChild className="bg-slate-950 text-white hover:brightness-105">
+          <Button asChild className="inline-flex items-center justify-center bg-orange-400 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold shadow-lg shadow-orange-300/35 text-white transition hover:border-sky-200 hover:text-sky-200">
             <Link href="/contact">
-              メールでお問い合わせ
+              メールで無料お見積もり
             </Link>
           </Button>
             <a

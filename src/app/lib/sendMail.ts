@@ -87,7 +87,7 @@ export async function sendMail(_prevState: State, formData: FormData): Promise<S
     phone,
     websiteUrl,
     serviceType,
-    budget,
+    budget: pageCount,
     schedule,
     message,
   } = validatedFields.data;
@@ -119,7 +119,7 @@ export async function sendMail(_prevState: State, formData: FormData): Promise<S
   【電話番号】${formatField(phone)}
   【現状サイトURL】${formatField(websiteUrl)}
   【依頼内容】${serviceType}
-  【想定予算】${budget}
+  【ページ数】${pageCount}
   【希望納期】${schedule}
   【メッセージ】
   ${message}
