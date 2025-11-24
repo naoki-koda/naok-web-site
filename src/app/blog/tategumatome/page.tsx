@@ -1,6 +1,7 @@
+import { kosugiMaru } from '@/app/ui/fonts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { kosugiMaru } from '@/app/ui/fonts';
+import React from 'react';
 
 const selectionCriteria = [
   {
@@ -139,6 +140,9 @@ export default function Page() {
             <span className="font-semibold text-amber-700"> 袖野建具店</span>
             を選出しました。建具・造作の老舗からデザイナー常駐のショップまで、公式サイトで開示されている特徴・施工エリア・相談方法を整理しています。
           </p>
+          <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+5SDQIA+40T2+5Z6WX" rel="nofollow">
+          <img width="468" height="60" alt="" src="https://www28.a8.net/svt/bgt?aid=251124233350&wid=001&eno=01&mid=s00000018767001004000&mc=1"></img></a>
+          <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45IGP5+5SDQIA+40T2+5Z6WX" alt=""></img>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {selectionCriteria.map((item) => (
               <div key={item.title} className="rounded-2xl border border-amber-100 bg-amber-50/70 p-4">
@@ -150,7 +154,8 @@ export default function Page() {
         </section>
 
         <section className="mt-16 space-y-10">
-          {ranking.map((shop) => (
+          {ranking.map((shop, index) => (
+            <React.Fragment key={shop.rank}>
             <div
               key={shop.rank}
               className="rounded-3xl border border-slate-100 bg-white/90 p-8 shadow-lg shadow-slate-100 transition hover:-translate-y-1 hover:shadow-amber-100/60"
@@ -190,6 +195,14 @@ export default function Page() {
                 </div>
               </div>
             </div>
+            {index === 1 && (
+                <>
+                  <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+5U61BM+3OGM+601S1" rel="nofollow">
+                  <img width="300" height="250" alt="" src="https://www23.a8.net/svt/bgt?aid=251124233353&wid=001&eno=01&mid=s00000017167001008000&mc=1"></img></a>
+                  <img width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45IGP5+5U61BM+3OGM+601S1" alt=""></img>
+                </>
+            )}
+            </React.Fragment>
           ))}
         </section>
 
@@ -211,7 +224,9 @@ export default function Page() {
             、<span className="text-white">③ 納期と予算の許容幅</span> をセットで伝えると打ち合わせがスムーズです。
           </p>
         </section>
-
+        <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+62I3SI+4KYW+60H7L" rel="nofollow">
+        <img width="468" height="120" alt="" src="https://www21.a8.net/svt/bgt?aid=251124233367&wid=001&eno=01&mid=s00000021380001010000&mc=1"></img></a>
+        <img width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45IGP5+62I3SI+4KYW+60H7L" alt=""></img>
         <section className="mt-16 rounded-3xl bg-white/90 p-8 shadow-lg shadow-slate-100">
           <h3 className="text-xl font-semibold text-slate-900">参考にした情報源</h3>
           <p className="mt-4 text-sm text-slate-600">
@@ -233,6 +248,9 @@ export default function Page() {
             ))}
           </ul>
         </section>
+        <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+68GFUA+1KUO+631SX" rel="nofollow">
+        <img width="300" height="300" alt="" src="https://www22.a8.net/svt/bgt?aid=251124233377&wid=001&eno=01&mid=s00000007368001022000&mc=1"></img></a>
+        <img width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=45IGP5+68GFUA+1KUO+631SX" alt=""></img>
       </article>
     </main>
   );
