@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React from "react";
 
 const companies = [
   {
@@ -111,6 +112,10 @@ export default function Page() {
           名古屋で確かな品質と対応力を持つ左官業務店をリサーチし、特色ごとにランキング形式でまとめました。
           第一位は、かべだんネットワークの中でも信頼が厚い「田口業務店」です。
         </p>
+        <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+1KK78Y+2DS2+BZ0Z5" rel="nofollow">
+        <img  width="468" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=251124233095&wid=001&eno=01&mid=s00000011117002011000&mc=1"></img>
+        </a>
+        <img  width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=45IGP5+1KK78Y+2DS2+BZ0Z5" alt=""></img>
         <div className="grid gap-4 md:grid-cols-3 text-sm text-gray-600">
           <div className="bg-gray-50 border border-gray-100 rounded-xl p-4">
             <p className="font-semibold text-gray-800">対象エリア</p>
@@ -126,51 +131,67 @@ export default function Page() {
           </div>
         </div>
       </section>
+      <a href="https://rpx.a8.net/svt/ejp?a8mat=45IGP4+CM9RCI+2HOM+7JK8H&rakuten=y&a8ejpredirect=http%3A%2F%2Fhb.afl.rakuten.co.jp%2Fhgc%2F0eb4cf04.fd65a65c.0eb4cf05.fa3f041c%2Fa25112454085_45IGP4_CM9RCI_2HOM_7JK8H%3Fpc%3Dhttp%253A%252F%252Fgora.golf.rakuten.co.jp%252F%26m%3Dhttp%253A%252F%252Fwww.rakuten.co.jp%252F" rel="nofollow">
+      <img src="http://hbb.afl.rakuten.co.jp/hsb/0eb47d8e.4bad3230.0eb47d8d.fb51150d/" ></img></a>
+      <img width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=45IGP4+CM9RCI+2HOM+7JK8H" alt=""></img>
 
       <section className="space-y-10">
-        {companies.map((company) => (
-          <article
-            key={company.rank}
+{companies.map((company, index) => (
+        <React.Fragment key={company.rank}>
+            <article
             className="border border-gray-100 shadow-sm rounded-2xl p-6 md:p-10 space-y-6 bg-white"
-          >
+            >
             <div className="flex items-center gap-4">
-              <span className="text-4xl font-black text-brand">
+                <span className="text-4xl font-black text-brand">
                 {company.rank}
-              </span>
-              <div>
+                </span>
+                <div>
                 <p className="text-sm uppercase tracking-[0.2em] text-gray-500">
-                  RANKING
+                    RANKING
                 </p>
                 <h2 className="text-2xl font-bold text-gray-900">
-                  {company.name}
+                    {company.name}
                 </h2>
                 <p className="text-sm text-gray-600">{company.area}</p>
-              </div>
+                </div>
             </div>
+
             <p className="text-gray-700 leading-relaxed">{company.description}</p>
+
             <div className="bg-gray-50 rounded-xl p-4">
-              <p className="text-sm font-semibold text-gray-800 mb-1">
-                得意サービス
-              </p>
-              <p className="text-gray-700 text-sm">{company.services}</p>
+                <p className="text-sm font-semibold text-gray-800 mb-1">得意サービス</p>
+                <p className="text-gray-700 text-sm">{company.services}</p>
             </div>
+
             <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm">
-              {company.strengths.map((point) => (
+                {company.strengths.map((point) => (
                 <li key={point}>{point}</li>
-              ))}
+                ))}
             </ul>
+
             <div className="pt-4">
-              <Link
+                <Link
                 href={company.link}
                 className="inline-flex items-center text-brand font-semibold hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
-              >
+                >
                 公式サイトで詳細を見る
                 <span aria-hidden className="ml-1">→</span>
-              </Link>
+                </Link>
             </div>
-          </article>
+            </article>
+
+            {/* 🔥 2 件目の後だけ表示するコンポーネント */}
+            {index === 1 && (
+                <>
+                    <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+432376+Y92+7XUF8X" rel="nofollow">
+                    <img  width="468" height="60" alt="" src="https://www24.a8.net/svt/bgt?aid=251124233247&wid=001&eno=01&mid=s00000004439048011000&mc=1"></img>
+                    </a>
+                    <img width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45IGP5+432376+Y92+7XUF8X" alt=""></img>
+                </>
+            )}
+        </React.Fragment>
         ))}
       </section>
 
@@ -190,20 +211,9 @@ export default function Page() {
           ))}
         </div>
       </section>
-
-      <section className="bg-brand text-white rounded-3xl p-8 md:p-12 space-y-4">
-        <h2 className="text-2xl font-bold">建具・造作家具の相談もまとめてどうぞ</h2>
-        <p className="text-sm md:text-base text-white/90">
-          袖野建具店では、左官仕上げと相性のよい建具や造作家具の製作相談を承っています。
-          「漆喰の壁に馴染む扉が欲しい」「和モダンの造作家具を一緒に考えたい」など、この記事を読んで興味を持った方はお気軽にご相談ください。
-        </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center justify-center px-6 py-3 bg-white/90 text-brand font-semibold rounded-full hover:bg-white transition"
-        >
-          無料相談はこちら
-        </Link>
-      </section>
+      <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+59XAR6+53VG+5ZMCH" rel="nofollow">
+      <img  width="300" height="250" alt="" src="https://www29.a8.net/svt/bgt?aid=251124233319&wid=001&eno=01&mid=s00000023830001006000&mc=1"></img></a>
+      <img  width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45IGP5+59XAR6+53VG+5ZMCH" alt=""></img>
     </main>
   );
 }
