@@ -13,6 +13,15 @@ const posts = [
     accent: 'from-amber-100 via-white to-amber-50',
   },
   {
+    slug: '/blog/hotelmatome',
+    title: 'ホテル会員プログラムの予約・ポイントランキング',
+    description:
+      'Marriott BonvoyやHilton Honorsなど、アプリ体験とポイント還元の2軸で国内外チェーンを比較。スマホ予約の快適さと無料宿泊までの距離を見える化しました。',
+    tags: ['ホテル', 'ポイント', '旅行'],
+    readTime: '約9分',
+    accent: 'from-rose-100 via-white to-rose-50',
+  },
+  {
     slug: '/blog/sakanmatome',
     title: '名古屋の左官職人・工務店まとめ',
     description:

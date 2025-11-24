@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 会員になるべきホテルブランドの予約、ポイントシステムランキングまとめ
 
-## Getting Started
+## 目的
+国内の大手ホテルチェーンは数十者存在します。
+旅行の度に色々なホテルチェーンを利用するのは楽しいですが、
+一つのホテルチェーンに絞って宿泊するとポイントが貯まり安く
+無料で宿泊できる特典や、宿泊時の待遇が良くなるグレードがアップしていきます。
+そこで今回はどのホテルが最も幸せな旅を提供してくれるか
 
-First, run the development server:
+・スマホ、WEBアプリの予約システムの秀逸さ
+・宿泊によって加算される各社のポイントの付与率
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+の二つの観点で大手ホテルチェーンを比較してみようと思います。
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 結論
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+早速ですが、ランキングを発表させていただきます。
+1位、マリオット（Marriott International）
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2位、ヒルトン（Hilton Hotels & Resorts）
 
-## Learn More
+3位、ハイアット（Hyatt Hotels）
 
-To learn more about Next.js, take a look at the following resources:
+4位、プリンスホテル（Prince Hotels）
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5位、三井ガーデンホテル（Mitsui Garden Hotel）
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+6位、アパホテル
 
-## Deploy on Vercel
+7位、東横イン
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+8位、星野リゾート
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+##　詳細
+
+### マリオット
+
+堂々の1位はマリオット!
+評価された理由
+理由はスマホアプリのUI/UXの優秀さ
+専用クレジットカードによるポイントの還元率
+宿泊金額に対してポイント付与、
+宿泊してもポイントをプレゼント
+グレードの待遇
+
+### 星野リゾート
+評価された理由
+スマホアプリが存在せずWEBサイトのみで予約システムを展開
+ハイエンドクラスの"星のや"ではOMOポイントが付与されない。
+高額なだけに残念、、、
+システムに対しては内製化を行いあまりコストを掛けないようにしている。
+ただ、その分のホテルの運営を強化されている！！
+
+
+
