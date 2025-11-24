@@ -54,7 +54,7 @@ export default function PrivacyPolicyPage() {
 
         <p className="text-xs text-gray-500 pt-4">
           制定日：2025年7月10日<br />
-          お問い合わせ先：info@example.com
+          お問い合わせ先：naoki.koda1997@gmail.com
         </p>
       </div>
     </div>
