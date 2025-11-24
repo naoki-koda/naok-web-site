@@ -2,7 +2,42 @@ import { kosugiMaru } from '@/app/ui/fonts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import React from 'react';
+// app/components/ConversationIntro.tsx
+type Role = "advisor" | "user";
 
+type Message = {
+  id: number;
+  role: Role;
+  name: string;
+  text: string;
+};
+
+const messages: Message[] = [
+  {
+    id: 1,
+    role: "user",
+    name: "ご相談者",
+    text: "名古屋で造作家具をお願いしたいんですが、どこに頼めばいいか全然わからなくて……。"
+  },
+  {
+    id: 2,
+    role: "advisor",
+    name: "アドバイザー",
+    text: "でしたら、職人さんの技術と提案力のバランスが良いお店を選ぶのがポイントですね。"
+  },
+  {
+    id: 3,
+    role: "user",
+    name: "ご相談者",
+    text: "ネットで調べても情報がバラバラで、比較しづらいんですよね。"
+  },
+  {
+    id: 4,
+    role: "advisor",
+    name: "アドバイザー",
+    text: "この記事では、名古屋でおすすめの造作家具店を厳選してご紹介します。まずは第1位の袖野建具店さんから見ていきましょう。"
+  }
+];
 const selectionCriteria = [
   {
     title: '職人の実績と専門性',
@@ -143,6 +178,44 @@ export default function Page() {
           <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+5SDQIA+40T2+5Z6WX" rel="nofollow">
           <img width="468" height="60" alt="" src="https://www28.a8.net/svt/bgt?aid=251124233350&wid=001&eno=01&mid=s00000018767001004000&mc=1"></img></a>
           <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45IGP5+5SDQIA+40T2+5Z6WX" alt=""></img>
+          <div className="space-y-4">
+              {messages.map((msg) => {
+              const isAdvisor = msg.role === "advisor";  
+              return (
+                  <div
+                  key={msg.id}
+                  className={`flex items-start gap-3 ${
+                      isAdvisor ? "justify-start" : "justify-end"
+                  }`}
+                  >
+                  {/* アイコン（丸いイニシャル） */}
+                  {isAdvisor && (
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white shrink-0">
+                      A
+                      </div>
+                  )}  
+                  <div
+                      className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm
+                      ${
+                          isAdvisor
+                          ? "bg-white text-slate-900 border border-slate-100"
+                          : "bg-emerald-500 text-white"
+                      }`}
+                  >
+                      <p className="mb-1 text-[11px] font-semibold opacity-70">
+                      {msg.name}
+                      </p>
+                      <p>{msg.text}</p>
+                  </div>  
+                  {!isAdvisor && (
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white shrink-0">
+                      Q
+                      </div>
+                  )}
+                  </div>
+              );
+              })}
+          </div>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {selectionCriteria.map((item) => (
               <div key={item.title} className="rounded-2xl border border-amber-100 bg-amber-50/70 p-4">
