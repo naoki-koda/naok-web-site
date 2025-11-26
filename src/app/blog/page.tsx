@@ -22,6 +22,15 @@ const posts = [
     accent: 'from-rose-100 via-white to-rose-50',
   },
   {
+    slug: '/blog/aienappmatome',
+    title: 'AI英会話アプリまとめ',
+    description:
+      'SpeakやSpifulなど、ビジネス英語に効くAI英会話アプリを比較。料金・強み・無料体験情報を網羅しました。',
+    tags: ['AI学習', '英会話', 'アプリ'],
+    readTime: '約10分',
+    accent: 'from-indigo-100 via-white to-blue-50',
+  },
+  {
     slug: '/blog/sakanmatome',
     title: '名古屋の左官職人・工務店まとめ',
     description:
