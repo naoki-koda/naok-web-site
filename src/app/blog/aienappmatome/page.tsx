@@ -24,8 +24,8 @@ export default function Page() {
         </span>
         <h1 className="text-2xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
           【{currentYear}年版】<br className="hidden sm:block" />
-          AI英会話アプリおすすめ7選！<br />
-          <span className="text-blue-600">ビジネス英語を「恥をかかずに」マスターする</span>
+          AI英会話アプリ<br/>おすすめ7選！<br />
+          <span className="text-blue-600">ビジネス英語を「恥をかかずに」<br/>マスターする</span>
         </h1>
         <p className="mt-6 text-lg text-gray-600">
           「オンライン英会話は緊張する」「予約が面倒で続かない」...そんな悩みを解決するのが、最新のAI英会話です。
