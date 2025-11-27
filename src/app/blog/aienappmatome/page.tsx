@@ -22,7 +22,7 @@ export default function Page() {
         <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-100 rounded-full">
           Business English Strategy
         </span>
-        <h1 className="text-3xl font-extrabold leading-tight text-gray-900 sm:text-4xl lg:text-5xl">
+        <h1 className="text-2xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
           【{currentYear}年版】<br className="hidden sm:block" />
           AI英会話アプリおすすめ7選！<br />
           <span className="text-blue-600">ビジネス英語を「恥をかかずに」マスターする</span>
