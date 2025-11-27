@@ -46,6 +46,12 @@ const NAV_ITEMS = [
     icon: CurrencyDollarIcon,
   },
   {
+    href: '/blog',
+    label: 'BLOG',
+    subLabel: 'ブログ',
+    icon: CurrencyDollarIcon,
+  },
+  {
     href: '/contact',
     label: 'CONTACT',
     subLabel: 'お問い合わせ',
