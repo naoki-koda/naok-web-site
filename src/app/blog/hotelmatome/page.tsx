@@ -1,4 +1,3 @@
-import { kosugiMaru } from '@/app/ui/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -205,42 +204,20 @@ export default function Page() {
     <main className="bg-gradient-to-b from-rose-50 via-white to-slate-50">
       <article className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <header className="rounded-[32px] bg-white/90 p-10 shadow-xl shadow-rose-100 ring-1 ring-rose-100">
-          <p className="text-sm font-semibold uppercase tracking-widest text-rose-500">Hotel Loyalty Ranking</p>
-          <h1 className={`mt-4 text-3xl font-bold text-slate-900 sm:text-4xl ${kosugiMaru.className}`}>
-            会員になるべきホテルブランドの予約・ポイントシステム
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-700">
-            旅行のたびにホテルを変える楽しさもありますが、ロイヤリティプログラムを活用するとアップグレードや無料宿泊などの特典が加速します。ここでは
-            <span className="font-semibold text-rose-600"> 予約体験 </span>
-            と<span className="font-semibold text-rose-600"> ポイント還元</span>の2軸で国内外の大手チェーンを比較しました。
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {selectionCriteria.map((item) => (
-              <div key={item.title} className="rounded-2xl border border-rose-100 bg-rose-50/70 p-4">
-                <p className="text-sm font-semibold text-rose-600">{item.title}</p>
-                <p className="mt-2 text-sm text-slate-700 leading-relaxed">{item.detail}</p>
-              </div>
-            ))}
-          </div>
-        </header>
-      <header className="mb-12 text-center">
-        <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-100 rounded-full">
-          Business English Strategy
-        </span>
-        <h1 className="text-2xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
+          <h1 className="text-2xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
           【{currentYear}年版】<br className="hidden sm:block" />
           国内ホテル<br/>おすすめ8選！<br />
-          <span className="text-blue-600">会員になるべきホテルブランドの予約<br/>ポイントシステム</span>
-        </h1>
-        <p className="mt-6 text-lg text-gray-600">
-            旅行のたびにホテルを変える楽しさもありますが、ロイヤリティプログラムを活用するとアップグレードや無料宿泊などの特典が加速します。ここでは
-            <span className="font-semibold text-rose-600"> 予約体験 </span>
-            と<span className="font-semibold text-rose-600"> ポイント還元</span>の2軸で国内外の大手チェーンを比較しました。
-        </p>
-        <div className="mt-4 text-sm text-gray-500">
+          <span className="text-blue-600">会員になるべきホテルブランドの<br/>予約ポイントシステム</span>
+          </h1>
+          <p className="mt-6 text-lg text-gray-600">
+              旅行のたびにホテルを変える楽しさもありますが、ロイヤリティプログラムを活用するとアップグレードや無料宿泊などの特典が加速します。ここでは
+              <span className="font-semibold text-rose-600"> 予約体験 </span>
+              と<span className="font-semibold text-rose-600"> ポイント還元</span>の2軸で国内外の大手チェーンを比較しました。
+          </p>
+          <div className="mt-4 text-sm text-gray-500">
           最終更新: 2025年11月
-        </div>
-      </header>
+          </div>
+        </header>
 
         <section className="mt-12 rounded-[32px] border border-rose-100/80 bg-white/95 p-8 shadow-lg shadow-rose-100">
           <h2 className="text-2xl font-bold text-slate-900">結論：まず押さえておくべきブランド</h2>
