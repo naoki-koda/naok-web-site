@@ -25,12 +25,11 @@ export default function SalonCard({ salon }: { salon: Salon }) {
 
       <div className="p-6">
         {/* 画像エリア（本番ではNext/Imageを使用） */}
-        <div className="mb-6 aspect-video w-full overflow-hidden rounded-xl bg-gray-200">
-           {/* <Image src={salon.image} alt={salon.name}... /> */}
+        {/* <div className="mb-6 aspect-video w-full overflow-hidden rounded-xl bg-gray-200">
            <div className="flex h-full w-full items-center justify-center text-gray-400">
              Image Placeholder ({salon.name})
-           </div>
-        </div>
+           </div> */}
+        {/* </div> */}
 
         {/* 特徴タグ */}
         <div className="mb-4 flex flex-wrap gap-2">
