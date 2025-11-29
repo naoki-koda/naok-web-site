@@ -120,7 +120,7 @@ export default function Home() {
               NAGOYA WEB CREATIVE
             </span>
             <h1 className={`mt-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl text-teal-950 ${kosugiMaru.className}`}>
-              名古屋市で成果を<br className="hidden sm:inline" />出す。<br/>ホームページ制作を<br className="hidden sm:inline" />もっと美しく。
+              名古屋で成果を<br className="hidden sm:inline" />出す。<br/>ホームページ制作を<br className="hidden sm:inline" />もっと美しく。
             </h1>
             <p className="mt-6 text-base leading-relaxed text-teal-950 md:text-lg">
               UXを重視したNext.jsサイトで表示スピードとSEOを両立。個人事業主・中小企業の集客やお問い合わせの増加をサポートします。

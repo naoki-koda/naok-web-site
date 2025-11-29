@@ -8,7 +8,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.reewa-web.jp"),
   title: {
-    default: "名古屋市の個人事業主向けのホームページ制作 | REEWA WEB",
+    default: "名古屋の個人事業主に向けたホームページ制作 | REEWA WEB",
     template: "%s | REEWA WEB",
   },
   description:
@@ -132,7 +132,7 @@ export default function RootLayout({
                 "url": "https://www.reewa-web.jp/",
                 "logo": "https://www.reewa-web.jp/logo.png",
                 "image": "https://www.reewa-web.jp/og-image.png",
-                "description": "名古屋市を拠点に、中小企業・個人事業主のためのSEOに強い高速なホームページ制作・運用を提供しています。",
+                "description": "名古屋を拠点に、中小企業・個人事業主のためのSEOに強い高速なホームページ制作・運用を提供しています。",
                 "areaServed": ["JP", "Aichi", "Nagoya"],
                 "sameAs": [
                   "https://www.instagram.com/nao.k_web_studio/"
