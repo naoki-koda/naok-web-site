@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.naok-webstudio.jp
+Host: https://www.reewa-web.jp
 
 # Sitemaps
-Sitemap: https://www.naok-webstudio.jp/sitemap.xml
+Sitemap: https://www.reewa-web.jp/sitemap.xml

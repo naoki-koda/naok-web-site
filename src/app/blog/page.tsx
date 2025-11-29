@@ -31,6 +31,15 @@ const posts = [
     accent: 'from-indigo-100 via-white to-blue-50',
   },
   {
+    slug: '/blog/nagoya/personal-color',
+    title: '名古屋のパーソナルカラー診断まとめ',
+    description:
+      '名駅・栄・大須エリアで人気のサロンを調査。16タイプ診断や学割、プレ花嫁向けなど目的別に比較できます。',
+    tags: ['名古屋', 'パーソナルカラー', '美容'],
+    readTime: '約8分',
+    accent: 'from-pink-100 via-white to-rose-50',
+  },
+  {
     slug: '/blog/sakanmatome',
     title: '名古屋の左官職人・工務店まとめ',
     description:

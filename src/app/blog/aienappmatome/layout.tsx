@@ -1,20 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_JP } from "next/font/google";
 import Link from "next/link";
-
-// フォントの最適化読み込み
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-noto-sans-jp",
-  display: "swap",
-});
 
 // サイト全体のメタデータ設定（SEOベース）
 export const metadata: Metadata = {
@@ -36,8 +21,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`${inter.variable} ${notoSansJP.variable}`}>
-      <div className="min-h-screen bg-slate-50 text-slate-800 font-sans flex flex-col antialiased">
+    <div className="font-sans">
+      <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col antialiased">
         {/* ▼ ステマ規制対応（全ページ共通） ▼ */}
         <div className="bg-slate-100 py-1 text-center">
           <p className="text-[10px] text-slate-500">
@@ -55,7 +40,7 @@ export default function RootLayout({
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
                 </svg>
               </div>
-              <span className={`text-lg font-bold tracking-tight text-slate-900 ${inter.className}`}>
+              <span className="text-lg font-bold tracking-tight text-slate-900">
                 BizEnglish <span className="text-blue-600">AI</span> Lab
               </span>
             </Link>

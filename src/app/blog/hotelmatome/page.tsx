@@ -200,6 +200,7 @@ const dataSources = [
 ];
 
 export default function Page() {
+  const currentYear = new Date().getFullYear();
   return (
     <main className="bg-gradient-to-b from-rose-50 via-white to-slate-50">
       <article className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
@@ -222,6 +223,24 @@ export default function Page() {
             ))}
           </div>
         </header>
+      <header className="mb-12 text-center">
+        <span className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-100 rounded-full">
+          Business English Strategy
+        </span>
+        <h1 className="text-2xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
+          【{currentYear}年版】<br className="hidden sm:block" />
+          国内ホテル<br/>おすすめ8選！<br />
+          <span className="text-blue-600">会員になるべきホテルブランドの予約<br/>ポイントシステム</span>
+        </h1>
+        <p className="mt-6 text-lg text-gray-600">
+            旅行のたびにホテルを変える楽しさもありますが、ロイヤリティプログラムを活用するとアップグレードや無料宿泊などの特典が加速します。ここでは
+            <span className="font-semibold text-rose-600"> 予約体験 </span>
+            と<span className="font-semibold text-rose-600"> ポイント還元</span>の2軸で国内外の大手チェーンを比較しました。
+        </p>
+        <div className="mt-4 text-sm text-gray-500">
+          最終更新: 2025年11月
+        </div>
+      </header>
 
         <section className="mt-12 rounded-[32px] border border-rose-100/80 bg-white/95 p-8 shadow-lg shadow-rose-100">
           <h2 className="text-2xl font-bold text-slate-900">結論：まず押さえておくべきブランド</h2>
@@ -329,27 +348,6 @@ export default function Page() {
                         </p>
                     ))}
                     </div>
-                </div>
-                )}
-                {hotel.rank === 1 && (
-                <div className="mt-8 rounded-3xl bg-gradient-to-br from-amber-50 via-white to-amber-100 p-4 shadow-inner sm:p-6">
-                    <Link
-                    href="https://americanexpress.com/ja-jp/referral/marriott-bonvoy-premium?ref=nAOKIvxoN&XLINK=MYCP"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                    >
-                    <Image
-                        src="/mbppromote.png"
-                        alt="Marriott Bonvoy Amex Premium カード紹介"
-                        width={800}
-                        height={420}
-                        className="mx-auto h-auto w-full max-w-3xl rounded-2xl object-cover"
-                    />
-                    </Link>
-                    <p className="mt-3 text-center text-xs text-slate-600">
-                    * 紹介リンク経由でMarriott Bonvoy アメリカン・エキスプレス・プレミアムカードに申し込むと、入会特典ポイントが貯まりやすくなります。
-                    </p>
                 </div>
                 )}
             </article>

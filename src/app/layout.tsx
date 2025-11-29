@@ -2,20 +2,8 @@ import Footer from '@/app/ui/Footer';
 import Header from '@/app/ui/Header';
 import type { Metadata } from "next";
 import { ThemeProvider } from 'next-themes';
-import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.reewa-web.jp"),
@@ -229,7 +217,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className="font-sans antialiased">
         <ThemeProvider>
           <Header />
           {children}
