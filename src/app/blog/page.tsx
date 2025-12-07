@@ -1,6 +1,6 @@
+import { kosugiMaru } from '@/app/ui/fonts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { kosugiMaru } from '@/app/ui/fonts';
 
 const posts = [
   {
@@ -40,6 +40,15 @@ const posts = [
     accent: 'from-pink-100 via-white to-rose-50',
   },
   {
+    slug: '/blog/nagoya/hairsalon/nakaku',
+    title: '名古屋・中区の美容院おすすめ4選',
+    description:
+      '栄/矢場町エリアで人気のサロンを王道・トレンド・デザインカラー・髪質改善の4タイプに分類。価格帯や予約の取りやすさまでまとめています。',
+    tags: ['名古屋', '美容院', 'ヘアサロン'],
+    readTime: '約9分',
+    accent: 'from-rose-100 via-white to-rose-200',
+  },
+  {
     slug: '/blog/sakanmatome',
     title: '名古屋の左官職人・工務店まとめ',
     description:
@@ -62,10 +71,10 @@ export default function BlogIndexPage() {
         <header className="rounded-3xl bg-white/90 p-10 shadow-lg shadow-slate-100 ring-1 ring-slate-100">
           <p className="text-sm font-semibold uppercase tracking-widest text-amber-500">Blog Archive</p>
           <h1 className={`mt-4 text-3xl font-bold text-slate-900 sm:text-4xl ${kosugiMaru.className}`}>
-            名古屋の住まいづくりまとめ記事
+            名古屋のお役立ちまとめ記事
           </h1>
           <p className="mt-4 text-base leading-relaxed text-slate-700">
-            職人や専門店のリサーチ結果をまとめた記事を随時公開しています。施工エリアや打ち合わせ方法など、公式情報に基づいて整理しているので比較検討にご活用ください。
+            専門店のリサーチ結果をまとめた記事を随時公開しています。施工エリアや打ち合わせ方法など、公式情報に基づいて整理しているので比較検討にご活用ください。
           </p>
           <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-500">
             <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1">#名古屋</span>
