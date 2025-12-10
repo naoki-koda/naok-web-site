@@ -49,6 +49,15 @@ const posts = [
     accent: 'from-rose-100 via-white to-rose-200',
   },
   {
+    slug: '/blog/nagoya/hairsalon/nagoyaeki',
+    title: '名古屋駅周辺の美容院おすすめ4選',
+    description:
+      '名駅から徒歩3分圏内で通えるサロンを厳選。コスパ×髪質改善×韓国ヘアまで、ホットペッパービューティーのリンク付きで紹介しています。',
+    tags: ['名古屋駅', '美容院', 'ヘアサロン'],
+    readTime: '約8分',
+    accent: 'from-rose-50 via-white to-amber-50',
+  },
+  {
     slug: '/blog/sakanmatome',
     title: '名古屋の左官職人・工務店まとめ',
     description:
