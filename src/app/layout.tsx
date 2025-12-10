@@ -1,10 +1,10 @@
 import Footer from '@/app/ui/Footer';
 import Header from '@/app/ui/Header';
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { ThemeProvider } from 'next-themes';
 import Script from "next/script";
 import "./globals.css";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.reewa-web.jp"),
   title: {
@@ -138,6 +138,7 @@ export default function RootLayout({
         <ThemeProvider>
           <Header />
           {children}
+          <Analytics/>
           <Footer />
         </ThemeProvider>
       </body>
