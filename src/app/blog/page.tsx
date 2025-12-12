@@ -49,6 +49,15 @@ const posts = [
     accent: 'from-rose-100 via-white to-rose-200',
   },
   {
+    slug: '/blog/nagoya/hairsalon/sakae',
+    title: '名古屋・栄の美容院おすすめ4選',
+    description:
+      '栄で人気のサロンを王道・トレンド・デザインカラー・髪質改善の4タイプに分類。価格帯や予約の取りやすさまでまとめています。',
+    tags: ['名古屋', '美容院', 'ヘアサロン'],
+    readTime: '約9分',
+    accent: 'from-rose-100 via-white to-rose-200',
+  },
+  {
     slug: '/blog/nagoya/hairsalon/nagoyaeki',
     title: '名古屋駅周辺の美容院おすすめ4選',
     description:
