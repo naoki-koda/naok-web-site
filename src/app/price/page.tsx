@@ -1,36 +1,36 @@
-'use client';
+"use client";
 
-import { kosugiMaru } from '@/app/ui/fonts';
-import InitPricingCard from '@/app/ui/InitPriceCard';
-import PricingCard from '@/app/ui/priceCard';
+import { kosugiMaru } from "@/app/ui/fonts";
+import InitPricingCard from "@/app/ui/InitPriceCard";
+import PricingCard from "@/app/ui/priceCard";
 import {
   PuzzlePieceIcon,
   ShieldCheckIcon,
   SparklesIcon,
-} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
 
 const heroHighlights = [
-  '戦略ヒアリングとサイト構成案の作成',
-  'レスポンシブデザインと基本SEO設定',
-  'お問い合わせ導線・CTAの最適化',
+  "戦略ヒアリングとサイト構成案の作成",
+  "レスポンシブデザインと基本SEO設定",
+  "お問い合わせ導線・CTAの最適化",
 ];
 
 const productionIncludes = [
-  '戦略ヒアリングとサイト構成案の作成',
-  'デザイン制作とレスポンシブコーディング',
-  '基本的なSEO設定と計測タグの設置',
+  "戦略ヒアリングとサイト構成案の作成",
+  "デザイン制作とレスポンシブコーディング",
+  "基本的なSEO設定と計測タグの設置",
 ];
 
 const maintenanceHighlights = [
-  'ドメイン・サーバーの契約代行と更新管理',
-  '小規模な文言修正・画像差し替え対応',
-  '月次の稼働状況・アクセスサマリー共有',
+  "ドメイン・サーバーの契約代行と更新管理",
+  "小規模な文言修正・画像差し替え対応",
+  "月次の稼働状況・アクセスサマリー共有",
 ];
 
 const cautionNotes = [
-  '価格は税込表示です。特別な機能開発は別途お見積りとなります。',
-  'ページ数やコンテンツボリュームに応じて制作期間が変動します。',
-  '掲載の内容は予告なく変更する場合があります。最新情報はお問い合わせください。',
+  "価格は税込表示です。特別な機能開発は別途お見積りとなります。",
+  "ページ数やコンテンツボリュームに応じて制作期間が変動します。",
+  "掲載の内容は予告なく変更する場合があります。最新情報はお問い合わせください。",
 ];
 
 export default function PricingPage() {
@@ -51,7 +51,8 @@ export default function PricingPage() {
               <h1
                 className={`text-3xl leading-tight text-teal-950 md:text-4xl lg:text-[2.8rem] ${kosugiMaru.className}`}
               >
-                ビジネスの成長を支える<br className="hidden sm:inline" />
+                ビジネスの成長を支える
+                <br className="hidden sm:inline" />
                 透明性のある料金プラン
               </h1>
               <p className="text-sm leading-relaxed text-teal-950 md:text-base">
@@ -87,7 +88,9 @@ export default function PricingPage() {
                 <div className="mt-6 rounded-2xl border border-white/20 bg-white/10 px-5 py-4 text-xs text-white/80">
                   <div className="flex items-center gap-2 text-teal-950">
                     <ShieldCheckIcon className="h-5 w-5" />
-                    <span className="text-sm font-semibold">制作費 + 運用保守で安心サポート</span>
+                    <span className="text-sm font-semibold">
+                      制作費 + 運用保守で安心サポート
+                    </span>
                   </div>
                   <p className="mt-3 leading-relaxed text-teal-950">
                     ドメイン・サーバー管理、日々の微修正、アクセス動向の共有をワンストップで対応。サイトの成果を継続的に高めます。
@@ -107,7 +110,7 @@ export default function PricingPage() {
               title="初期費用（ホームページ制作）"
               subtitle="ページ単位での制作料金"
               originalPrice=""
-              currentPrice="¥10,000"
+              currentPrice="¥30,000"
               period="1ページあたり（税込）"
               yearlyTotal=""
               note="テキスト・画像素材とヒアリング内容をもとに、貴社のブランドに沿ったデザインと導線を作成します。"
@@ -125,7 +128,9 @@ export default function PricingPage() {
                 ))}
                 <li className="flex items-start gap-3">
                   <span className="mt-1 h-2 w-2 flex-none rounded-full bg-gradient-to-r from-orange-400 to-sky-400" />
-                  <span>追加ページも同額で柔軟に拡張できます。お気軽にご相談ください。</span>
+                  <span>
+                    追加ページも同額で柔軟に拡張できます。お気軽にご相談ください。
+                  </span>
                 </li>
               </ul>
             </div>
@@ -169,7 +174,9 @@ export default function PricingPage() {
           </div>
 
           <div className="rounded-3xl border border-orange-200/70 bg-white/95 p-8 text-sm text-slate-600 shadow-lg shadow-orange-200/30 dark:border-white/10 dark:bg-slate-800/80 dark:text-slate-300">
-            <h3 className="text-base font-semibold text-teal-950 dark:text-white">ご契約にあたってのご留意事項</h3>
+            <h3 className="text-base font-semibold text-teal-950 dark:text-white">
+              ご契約にあたってのご留意事項
+            </h3>
             <ul className="mt-4 space-y-2">
               {cautionNotes.map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -179,7 +186,14 @@ export default function PricingPage() {
               ))}
             </ul>
             <p className="mt-4">
-              詳細は<a href="/termsOfService" className="ml-1 font-semibold text-orange-500 underline hover:text-sky-400">ご利用規約</a>をご確認ください。
+              詳細は
+              <a
+                href="/termsOfService"
+                className="ml-1 font-semibold text-orange-500 underline hover:text-sky-400"
+              >
+                ご利用規約
+              </a>
+              をご確認ください。
             </p>
           </div>
         </div>
