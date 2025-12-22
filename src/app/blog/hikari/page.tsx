@@ -87,69 +87,69 @@ const ranking = [
 
 const fiberPlanComparisons = [
   {
-    rank: '1位',
-    plan: 'コミュファ光（1G ホーム）',
-    monthly: '3,980円〜5,170円',
-    monthlyNote: '※スタート割等適用時',
-    initial: '実質無料',
-    initialNote: '※事務手数料770円のみ',
-    feature: '今回の「最強」枠',
-    detail: 'エディオンならさらにポイント還元あり',
+    rank: "1位",
+    plan: "コミュファ光（1G ホーム）",
+    monthly: "3,980円〜5,170円",
+    monthlyNote: "※スタート割等適用時",
+    initial: "実質無料",
+    initialNote: "※事務手数料770円のみ",
+    feature: "今回の「最強」枠",
+    detail: "エディオンならさらにポイント還元あり",
   },
   {
-    rank: '注意',
-    plan: 'ソフトバンク光（10Gb プラン）',
-    monthly: '6,380円',
-    monthlyNote: '※1Gより高額',
-    initial: '実質無料',
-    initialNote: '※事務手数料3,300円',
-    feature: '今回の「非推奨」枠',
-    detail: 'オーバースペックで月額が高い',
+    rank: "注意",
+    plan: "ソフトバンク光（10Gb プラン）",
+    monthly: "6,380円",
+    monthlyNote: "※1Gより高額",
+    initial: "実質無料",
+    initialNote: "※事務手数料3,300円",
+    feature: "今回の「非推奨」枠",
+    detail: "オーバースペックで月額が高い",
   },
   {
-    rank: '参考',
-    plan: 'ソフトバンク光（1Gb プラン）',
-    monthly: '5,720円',
-    initial: '実質無料',
-    feature: '一般的なコラボ光の価格',
+    rank: "参考",
+    plan: "ソフトバンク光（1Gb プラン）",
+    monthly: "5,720円",
+    initial: "実質無料",
+    feature: "一般的なコラボ光の価格",
   },
   {
-    rank: '2位',
-    plan: 'ドコモ光（1G タイプA）',
-    monthly: '5,720円',
-    initial: '完全無料',
-    initialNote: '（特典による）',
-    feature: 'ドコモユーザー向け',
-    detail: '工事費「完全無料」が強み',
+    rank: "2位",
+    plan: "ドコモ光（1G タイプA）",
+    monthly: "5,720円",
+    initial: "完全無料",
+    initialNote: "（特典による）",
+    feature: "ドコモユーザー向け",
+    detail: "工事費「完全無料」が強み",
   },
   {
-    rank: '3位',
-    plan: '楽天ひかり（1G ファミリー）',
-    monthly: '5,280円',
-    initial: '実質無料不可',
-    initialNote: '（約2万円自己負担）',
-    feature: 'SPU目当て以外は初期費用が高く非推奨',
+    rank: "3位",
+    plan: "楽天ひかり（1G ファミリー）",
+    monthly: "5,280円",
+    initial: "実質無料不可",
+    initialNote: "（約2万円自己負担）",
+    feature: "SPU目当て以外は初期費用が高く非推奨",
   },
 ];
 
 const fiberPlanDetails = [
   {
-    title: 'コミュファ光（エディオン申込）',
+    title: "コミュファ光（エディオン申込）",
     description:
-      '公式キャンペーン＋店頭ポイントの二重取りができ、1年目の実質月額が大幅に下がる。独自回線で夕方の混雑も感じにくい。',
-    note: 'まずは近隣のエディオンで実測値とキャンペーンを確認。',
+      "公式キャンペーン＋店頭ポイントの二重取りができ、1年目の実質月額が大幅に下がる。独自回線で夕方の混雑も感じにくい。",
+    note: "まずは近隣のエディオンで実測値とキャンペーンを確認。",
   },
   {
-    title: 'ソフトバンク光（10Gb / 1Gb）',
+    title: "ソフトバンク光（10Gb / 1Gb）",
     description:
-      '10Gbpsは年間約2万円のコスト増。1Gbpsならおうち割のメリットは取れるので、用途に合わせて1Gbpsを選べば十分。',
-    note: '「標準は10Gbps」という営業トークに注意。',
+      "10Gbpsは年間約2万円のコスト増。1Gbpsならおうち割のメリットは取れるので、用途に合わせて1Gbpsを選べば十分。",
+    note: "「標準は10Gbps」という営業トークに注意。",
   },
   {
-    title: 'ドコモ光 / 楽天ひかり',
+    title: "ドコモ光 / 楽天ひかり",
     description:
-      'コミュファが入らない地域や他キャリアユーザー向け。ドコモ光は特典で工事費が完全無料。楽天はSPU目的以外は初期費用負担が大きい。',
-    note: 'スマホセット割と工事費条件を同時にチェック。',
+      "コミュファが入らない地域や他キャリアユーザー向け。ドコモ光は特典で工事費が完全無料。楽天はSPU目的以外は初期費用負担が大きい。",
+    note: "スマホセット割と工事費条件を同時にチェック。",
   },
 ];
 
@@ -189,7 +189,7 @@ export default function Page() {
         </p>
       </header>
 
-      <section className="mb-12 bg-slate-50 border border-slate-100 rounded-3xl p-6">
+      <section className="mb-6 bg-slate-50 border border-slate-100 rounded-3xl p-6">
         <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
           <StarIcon className="w-5 h-5 text-amber-500" />
           この記事のターゲット（ペルソナ）
@@ -204,10 +204,34 @@ export default function Page() {
         </ul>
       </section>
 
-      <section id="comparison" className="mb-16">
+      <div className="flex justify-center mb-3">
+        <a
+          href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G3W7ZM+ZXM+I7NE9"
+          rel="nofollow"
+        >
+          <img
+            width="300"
+            height="250"
+            alt=""
+            src="https://www26.a8.net/svt/bgt?aid=251217386974&wid=001&eno=01&mid=s00000004657003059000&mc=1"
+          ></img>
+        </a>
+        <img
+          width="1"
+          height="1"
+          src="https://www15.a8.net/0.gif?a8mat=45KGKQ+G3W7ZM+ZXM+I7NE9"
+          alt=""
+        ></img>
+      </div>
+
+      <section id="comparison" className="mb-8">
         <div className="flex items-center mb-6">
-          <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">3</span>
-          <h2 className="text-2xl font-bold text-gray-900">主要光回線の料金・初期費用早見表</h2>
+          <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">
+            3
+          </span>
+          <h2 className="text-2xl font-bold text-gray-900">
+            主要光回線の料金・初期費用早見表
+          </h2>
         </div>
         <p className="text-sm text-slate-600 mb-4">
           1年目の実質コスト・初期費用・特徴をまとめました。10Gbpsの押し売りに引っ掛からないためにも、まずはここで全体像を把握してください。
@@ -225,38 +249,109 @@ export default function Page() {
             </thead>
             <tbody>
               {fiberPlanComparisons.map((item) => (
-                <tr key={`${item.rank}-${item.plan}`} className="border-t border-slate-100">
-                  <td className="px-4 py-4 font-semibold text-slate-900">{item.rank}</td>
+                <tr
+                  key={`${item.rank}-${item.plan}`}
+                  className="border-t border-slate-100"
+                >
+                  <td className="px-4 py-4 font-semibold text-slate-900">
+                    {item.rank}
+                  </td>
                   <td className="px-4 py-4">
                     <p className="font-semibold text-slate-900">{item.plan}</p>
                   </td>
                   <td className="px-4 py-4">
-                    <p className="font-semibold text-slate-900">{item.monthly}</p>
-                    {item.monthlyNote && <p className="text-xs text-slate-500">{item.monthlyNote}</p>}
+                    <p className="font-semibold text-slate-900">
+                      {item.monthly}
+                    </p>
+                    {item.monthlyNote && (
+                      <p className="text-xs text-slate-500">
+                        {item.monthlyNote}
+                      </p>
+                    )}
                   </td>
                   <td className="px-4 py-4">
-                    <p className="font-semibold text-slate-900">{item.initial}</p>
-                    {item.initialNote && <p className="text-xs text-slate-500">{item.initialNote}</p>}
+                    <p className="font-semibold text-slate-900">
+                      {item.initial}
+                    </p>
+                    {item.initialNote && (
+                      <p className="text-xs text-slate-500">
+                        {item.initialNote}
+                      </p>
+                    )}
                   </td>
                   <td className="px-4 py-4">
-                    <p className="font-semibold text-slate-900">{item.feature}</p>
-                    {item.detail && <p className="text-xs text-slate-500 mt-1">{item.detail}</p>}
+                    <p className="font-semibold text-slate-900">
+                      {item.feature}
+                    </p>
+                    {item.detail && (
+                      <p className="text-xs text-slate-500 mt-1">
+                        {item.detail}
+                      </p>
+                    )}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        <div className="flex justify-center p-3">
+          <a
+            href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G8NOTU+4F7Y+HWAG1"
+            rel="nofollow"
+          >
+            <img
+              width="300"
+              height="250"
+              alt=""
+              src="https://www29.a8.net/svt/bgt?aid=251217386982&wid=001&eno=01&mid=s00000020635003006000&mc=1"
+            ></img>
+          </a>
+          <img
+            width="1"
+            height="1"
+            src="https://www12.a8.net/0.gif?a8mat=45KGKQ+G8NOTU+4F7Y+HWAG1"
+            alt=""
+          ></img>
+        </div>
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {fiberPlanDetails.map((detail) => (
-            <article key={detail.title} className="p-4 rounded-2xl border border-slate-100 bg-white shadow-sm">
-              <h3 className="text-base font-semibold text-slate-900">{detail.title}</h3>
-              <p className="mt-2 text-sm text-slate-600">{detail.description}</p>
-              <p className="mt-3 text-xs font-semibold text-blue-600">{detail.note}</p>
+            <article
+              key={detail.title}
+              className="p-4 rounded-2xl border border-slate-100 bg-white shadow-sm"
+            >
+              <h3 className="text-base font-semibold text-slate-900">
+                {detail.title}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                {detail.description}
+              </p>
+              <p className="mt-3 text-xs font-semibold text-blue-600">
+                {detail.note}
+              </p>
             </article>
           ))}
         </div>
       </section>
+
+      <div className="flex justify-center gap-3 p-6">
+        <a
+          href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G53376+3CP0+BZO4H"
+          rel="nofollow"
+        >
+          <img
+            width="300"
+            height="250"
+            alt=""
+            src="https://www28.a8.net/svt/bgt?aid=251217386976&wid=001&eno=01&mid=s00000015642002014000&mc=1"
+          ></img>
+        </a>
+        <img
+          width="1"
+          height="1"
+          src="https://www19.a8.net/0.gif?a8mat=45KGKQ+G53376+3CP0+BZO4H"
+          alt=""
+        ></img>
+      </div>
 
       <section className="mb-16 prose prose-slate max-w-none">
         <h2>はじめに：光回線選びで損をしないために</h2>
@@ -274,7 +369,7 @@ export default function Page() {
         </p>
       </section>
 
-      <section id="ranking" className="mb-16">
+      <section id="ranking" className="mb-8">
         <div className="flex items-center mb-6">
           <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">
             1
@@ -303,6 +398,25 @@ export default function Page() {
         </blockquote>
       </section>
 
+      <div className="flex justify-center mb-8">
+        <a
+          href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G2PCS2+1ZWM+6QMKH"
+          rel="nofollow"
+        >
+          <img
+            width="336"
+            height="280"
+            alt=""
+            src="https://www29.a8.net/svt/bgt?aid=251217386972&wid=001&eno=01&mid=s00000009319001132000&mc=1"
+          ></img>
+        </a>
+        <img
+          width="1"
+          height="1"
+          src="https://www19.a8.net/0.gif?a8mat=45KGKQ+G2PCS2+1ZWM+6QMKH"
+          alt=""
+        ></img>
+      </div>
       <section className="mb-16 bg-amber-50 border border-amber-100 rounded-3xl p-6">
         <div className="flex items-center gap-3 mb-4">
           <ExclamationTriangleIcon className="w-8 h-8 text-amber-500" />
@@ -330,7 +444,7 @@ export default function Page() {
         </p>
       </section>
 
-      <section className="mb-16">
+      <section>
         <div className="flex items-center mb-6">
           <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">
             4
@@ -379,6 +493,26 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <div className="flex justify-center p-3">
+        <a
+          href="https://px.a8.net/svt/ejp?a8mat=45K8T3+SKTTE+45DI+68MF5"
+          rel="nofollow"
+        >
+          <img
+            width="300"
+            height="250"
+            alt=""
+            src="https://www28.a8.net/svt/bgt?aid=251207319048&wid=001&eno=01&mid=s00000019359001048000&mc=1"
+          ></img>
+        </a>
+        <img
+          width="1"
+          height="1"
+          src="https://www19.a8.net/0.gif?a8mat=45K8T3+SKTTE+45DI+68MF5"
+          alt=""
+        ></img>
+      </div>
 
       <section className="mb-16 prose prose-slate max-w-none">
         <h2>まとめ：必要な速度を、最もお得な窓口で</h2>

@@ -13,6 +13,15 @@ const posts = [
     accent: 'from-amber-100 via-white to-amber-50',
   },
   {
+    slug: '/blog/hikari',
+    title: '【東海地方】エディオン×コミュファ光が最強な理由',
+    description:
+      '東海エリアで光回線を選ぶならエディオン店頭×コミュファ光一択。独自回線の実測値とポイント還元で通信費を最適化しつつ、10Gプランの押し売りを避ける方法を解説。',
+    tags: ['光回線', 'コミュファ光', '東海'],
+    readTime: '約12分',
+    accent: 'from-blue-100 via-white to-sky-50',
+  },
+  {
     slug: '/blog/hotelmatome',
     title: 'ホテル会員プログラムの予約・ポイントランキング',
     description:
