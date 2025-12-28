@@ -166,7 +166,7 @@ const killerPhrases = [
 ];
 
 export default function Page() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear() + 1;
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-12 sm:px-6 lg:px-8 bg-white text-slate-800 font-sans">
@@ -177,8 +177,12 @@ export default function Page() {
         </span>
         <h1 className="text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl">
           【東海地方】光回線の結論
-          <br className="hidden md:block" />
-          <span className="text-blue-600">エディオン × コミュファ光が最強</span>
+          <br />
+          <span className="text-blue-600">
+            エディオン
+            <br /> × <br />
+            コミュファ光が最強
+          </span>
         </h1>
         <p className="mt-6 text-lg text-gray-600">
           「最大◯◯円還元！」の広告に惑わされず、必要な速度と確実な特典を両立する方法を徹底解説。
