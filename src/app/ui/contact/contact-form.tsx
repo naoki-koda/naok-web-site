@@ -3,6 +3,7 @@
 import { sendMail, State } from '@/app/lib/sendMail';
 import { useRouter } from 'next/navigation';
 import { useActionState, useEffect } from 'react';
+import { PhoneField } from './phone-field';
 
 type FieldName = keyof NonNullable<State['errors']>;
 
@@ -163,28 +164,11 @@ export default function Form() {
               {renderError('company')}
             </div>
           </div>
-          <div>
-            <label
-              htmlFor="phone"
-              className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
-            >
-              <span>電話番号</span>
-              <span className="text-xs font-semibold text-slate-400 dark:text-slate-500">任意</span>
-            </label>
-            <input
-              id="phone"
-              name="phone"
-              type="tel"
-              inputMode="tel"
-              placeholder="例）090-1234-5678"
-              defaultValue={state.values?.phone ?? ''}
-              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
-              aria-describedby="phone-error"
-            />
-            <div id="phone-error" aria-live="polite" aria-atomic="true">
-              {renderError('phone')}
-            </div>
-          </div>
+          <PhoneField
+            defaultValue={state.values?.phone ?? ''}
+            error={renderError('phone')}
+            name="phone"
+          />
         </div>
 
         <div>
