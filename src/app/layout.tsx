@@ -83,6 +83,10 @@ export default function RootLayout({
   return (
     <html lang="ja" suppressHydrationWarning>
       <head>
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-5536800197332393"
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1YSXLNJL1Q"
           strategy="afterInteractive"
