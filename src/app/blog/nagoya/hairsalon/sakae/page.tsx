@@ -306,9 +306,8 @@ export default function NagoyaHairSalonSakaePage() {
 
         <div className="mt-8 space-y-10">
           {salons.map((salon, index) => (
-            <React.Fragment>
+            <React.Fragment key={salon.id}>
               <article
-                key={salon.id}
                 id={salon.id}
                 className="scroll-mt-28 overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-lg ring-1 ring-rose-50"
               >

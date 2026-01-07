@@ -1,8 +1,8 @@
 // lib/utils.ts
 
-import { clsx } from "clsx"; // or classnames
+import { clsx, type ClassValue } from "clsx"; // or classnames
 import { twMerge } from "tailwind-merge"; // Tailwindのクラス衝突を解決
 
-export function cn(...inputs: any[]) {
+export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(...inputs));
 }

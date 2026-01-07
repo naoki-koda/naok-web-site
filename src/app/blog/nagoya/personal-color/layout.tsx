@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: '名古屋のパーソナルカラー診断おすすめ10選【2025年最新】',
@@ -31,9 +32,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* パンくずリスト（SEO上の階層構造を明確化） */}
       <nav className="bg-gray-100 py-3 px-4 text-xs md:text-sm text-gray-500">
         <ol className="container mx-auto max-w-4xl flex items-center space-x-2">
-          <li><a href="/" className="hover:underline">Home</a></li>
+          <li><Link href="/" className="hover:underline">Home</Link></li>
           <li>&gt;</li>
-          <li><a href="/nagoya" className="hover:underline">名古屋エリア</a></li>
+          <li><Link href="/nagoya" className="hover:underline">名古屋エリア</Link></li>
           <li>&gt;</li>
           <li className="font-semibold text-gray-700">パーソナルカラー診断</li>
         </ol>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import React from 'react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: '名古屋・中区（栄/矢場町）の美容院おすすめ4選【2025年最新版】',
@@ -32,21 +33,21 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <nav className="bg-rose-50 py-3 px-4 text-xs text-rose-500 md:text-sm">
         <ol className="mx-auto flex max-w-5xl items-center space-x-2">
           <li>
-            <a href="/" className="hover:underline">
+            <Link href="/" className="hover:underline">
               Home
-            </a>
+            </Link>
           </li>
           <li>&gt;</li>
           <li>
-            <a href="/blog" className="hover:underline">
+            <Link href="/blog" className="hover:underline">
               美容コラム
-            </a>
+            </Link>
           </li>
           <li>&gt;</li>
           <li>
-            <a href="/blog/nagoya" className="hover:underline">
+            <Link href="/blog/nagoya" className="hover:underline">
               名古屋エリア
-            </a>
+            </Link>
           </li>
           <li>&gt;</li>
           <li className="font-semibold text-rose-700">中区 美容院まとめ</li>
