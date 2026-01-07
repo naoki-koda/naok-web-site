@@ -7,12 +7,13 @@ import styles from "./content.module.css";
 export default async function BlogDetailPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
+  const { id } = await params;
   const post = await microcms
     .get({
       endpoint: "blogs",
-      contentId: params.id,
+      contentId: id,
     })
     .catch(() => null);
 
