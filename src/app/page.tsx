@@ -4,6 +4,7 @@ import MyDrawer from "@/app/ui/Drawer";
 import { kosugiMaru } from "@/app/ui/fonts";
 import { AnimatedImage, CountableAnimation } from "@/app/ui/SliderImage";
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 
@@ -88,6 +89,19 @@ export default function Home() {
       ],
     },
   ];
+
+  const featuredWork = {
+    title: "そでの建具 様",
+    category: "制作実績",
+    url: "https://www.sodeno-tategu.jp/",
+    description:
+      "「名古屋 建具店」の検索結果で1位を獲得。公開から半年でお問い合わせ6件、成約2件を実現し、制作費用分の利益を計上しました。",
+    points: [
+      "「名古屋 建具店」の検索結果で上位表示を実現",
+      "公開から半年でお問い合わせ6件を獲得",
+      "2件の成約につながり、制作費用分の利益を計上",
+    ],
+  };
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -630,6 +644,77 @@ export default function Home() {
                     </Link>
                   </article>
                 ))}
+              </div>
+            </section>
+            <section className="rounded-md bg-white/95 px-6 py-16 text-gray-900 shadow-xl shadow-orange-200/40 mb-10 dark:bg-gray-900/80 dark:text-white">
+              <div className="mx-auto max-w-5xl">
+                <div className="text-center">
+                  <span className="inline-flex items-center justify-center rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-500 dark:border-orange-300/30 dark:bg-orange-400/10 dark:text-orange-300">
+                    Works Showcase
+                  </span>
+                  <h2 className="mt-5 text-3xl font-bold">制作実績のご紹介</h2>
+                  <p className="mt-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 md:text-base">
+                    実際に公開しているサイトの一例として、建具製作工房のホームページをご紹介します。
+                  </p>
+                </div>
+                <article className="mt-10 overflow-hidden rounded-[2rem] border border-orange-200/70 bg-gradient-to-br from-orange-50 via-white to-sky-50 shadow-lg shadow-orange-200/30 dark:border-white/10 dark:bg-slate-900/90">
+                  <div className="grid gap-8 p-8 md:grid-cols-[1.1fr_0.9fr] md:p-10">
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-500">
+                        {featuredWork.category}
+                      </p>
+                      <h3 className="mt-4 text-2xl font-bold md:text-3xl">
+                        {featuredWork.title}
+                      </h3>
+                      <p className="mt-4 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                        {featuredWork.description}
+                      </p>
+                      <ul className="mt-6 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                        {featuredWork.points.map((point) => (
+                          <li
+                            key={point}
+                            className="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-white/5"
+                          >
+                            <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-orange-400 to-sky-400 text-xs font-bold text-white">
+                              ✓
+                            </span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="flex flex-col justify-between rounded-[1.75rem] border border-white/70 bg-white/80 p-6 shadow-md dark:border-white/10 dark:bg-white/5">
+                      <div>
+                        <div className="overflow-hidden rounded-2xl border border-orange-100 bg-slate-100 shadow-sm dark:border-white/10 dark:bg-slate-800">
+                          <Image
+                            src="/sodeno.png"
+                            alt="そでの建具様のホームページ紹介画像"
+                            width={1200}
+                            height={800}
+                            className="h-auto w-full object-cover"
+                          />
+                        </div>
+                        <p className="mt-6 text-sm font-semibold text-gray-500 dark:text-gray-400">
+                          掲載サイト
+                        </p>
+                        <p className="mt-3 break-all text-lg font-medium text-gray-900 dark:text-white">
+                          {featuredWork.url}
+                        </p>
+                        <p className="mt-5 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                          職人仕事の信頼感を伝える構成と検索導線の設計により、公開後の集客と成約まで成果につながった事例です。
+                        </p>
+                      </div>
+                      <a
+                        href={featuredWork.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-400 to-sky-400 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/30 transition hover:brightness-105"
+                      >
+                        サイトを見る
+                      </a>
+                    </div>
+                  </div>
+                </article>
               </div>
             </section>
             <section
