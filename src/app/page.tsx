@@ -41,6 +41,11 @@ export default function Home() {
         "モバイルでの表示速度を最優先して設計し、画像の最適化や遅延読み込みを組み込んで離脱率を下げます。",
     },
     {
+      question: "PWAに対応したホームページ制作は可能ですか？",
+      answer:
+        "はい。ホーム画面追加やアプリライクな導線設計を見据えたPWA対応サイトの設計に対応しています。表示速度やモバイルUXも含めて、Webサイトを使いやすく最適化します。",
+    },
+    {
       question: "問い合わせにつながる導線設計は含まれていますか？",
       answer:
         "CTA配置やフォーム最適化、FAQコンテンツなど、問い合わせ獲得に直結するUXをプランニングします。",
@@ -115,8 +120,36 @@ export default function Home() {
       },
     })),
   };
+
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "PWA対応ホームページ制作",
+    name: "REEWA WEBのPWA対応ホームページ制作",
+    provider: {
+      "@type": "ProfessionalService",
+      name: "REEWA WEB",
+      url: "https://www.reewa-web.jp/",
+    },
+    areaServed: {
+      "@type": "City",
+      name: "名古屋市",
+    },
+    description:
+      "Next.jsを用いた高速なホームページ制作に加え、PWA対応を見据えたアプリライクなUI、モバイル最適化、SEO設計まで一貫して提供します。",
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      url: "https://www.reewa-web.jp/contact",
+    },
+  };
   return (
     <main>
+      <Script
+        id="service-structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
       <Script
         id="faq-structured-data"
         type="application/ld+json"
@@ -153,7 +186,7 @@ export default function Home() {
               もっと美しく。
             </h1>
             <p className="mt-6 text-base leading-relaxed text-teal-950 md:text-lg">
-              UXを重視したNext.jsサイトで表示スピードとSEOを両立。個人事業主・中小企業の集客やお問い合わせの増加をサポートします。
+              UXを重視したNext.jsサイトで表示スピードとSEOを両立。PWA対応も見据えた設計で、個人事業主・中小企業の集客やお問い合わせの増加をサポートします。
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
               <a
@@ -184,7 +217,7 @@ export default function Home() {
                   </h2>
                   <p className="mt-4 text-lg leading-relaxed text-teal-950">
                     Core Web
-                    Vitals改善、ローカルSEO、問い合わせ導線設計までワンストップでサポート。ビジネスの成長を止めないフロントエンドを提供します。
+                    Vitals改善、PWAを見据えたモバイルUX、ローカルSEO、問い合わせ導線設計までワンストップでサポート。ビジネスの成長を止めないフロントエンドを提供します。
                   </p>
                 </div>
                 <ul className="mt-6 space-y-3 text-md text-teal-950">
@@ -204,7 +237,7 @@ export default function Home() {
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-teal-950">
                       03
                     </span>
-                    集客を高めるUXライティング
+                    PWAを見据えたアプリライクUX
                   </li>
                 </ul>
               </div>
@@ -275,7 +308,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl text-center font-bold mb-4">
                 WordPressより高速、
                 <br />
-                SPAなWEBサイトを提供します。
+                SPA・PWA対応のWEBサイトを提供します。
               </h2>
               <img
                 src="/fastIcon.webp"
@@ -283,9 +316,9 @@ export default function Home() {
                 className="w-48 mx-auto h-auto"
               />
               <p className="text-base md:text-xl mb-6 max-w-2xl mx-auto">
-                SPAとは表示スピードにこだわったWebサイト
+                SPAとPWAで表示スピードと使いやすさにこだわったWebサイト
                 <br />
-                表示スピードがあなたのビジネスの価値を高めます。
+                ホーム画面追加やアプリのような操作感まで見据えて設計します。
                 <br />
                 このWEBサイトで体感してください。
               </p>
@@ -321,22 +354,22 @@ export default function Home() {
                 </div>
                 <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
                   <h4 className="text-xl font-bold mb-2 text-center">
+                    PWAを見据えた設計
+                  </h4>
+                  <p>
+                    ホーム画面追加や
+                    <br />
+                    アプリライクな導線にも対応。
+                  </p>
+                </div>
+                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+                  <h4 className="text-xl font-bold mb-2 text-center">
                     静的サイト生成（SSG）
                   </h4>
                   <p>
                     サーバーレスでHTMLを事前に生成。
                     <br />
                     圧倒的な表示スピード。
-                  </p>
-                </div>
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
-                  <h4 className="text-xl font-bold mb-2 text-center">
-                    軽量な設計
-                  </h4>
-                  <p>
-                    余計なJSを使わず
-                    <br />
-                    モバイルでもスムーズに表示。
                   </p>
                 </div>
               </div>

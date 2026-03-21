@@ -11,16 +11,22 @@ export const metadata: Metadata = {
   title: {
     // 「名古屋」「ホームページ制作」を左側に寄せ、SPAや不動産などの強みを強調
     default:
-      "名古屋のホームページ制作会社 REEWA WEB | 高速SPA・不動産・集客特化",
+      "名古屋のホームページ制作会社 REEWA WEB | 高速SPA・PWA・集客特化",
     template: "%s | 名古屋のホームページ制作 REEWA WEB",
   },
   description:
-    "名古屋を拠点とするホームページ制作会社 REEWA WEB。Next.js/SPAによる爆速・堅牢なサイト制作で、不動産業界や中小企業のWeb集客を支援。「脱WordPress」で保守性・表示速度を最大化。名古屋市近郊のSEO対策・運用保守もお任せください。",
+    "名古屋を拠点とするホームページ制作会社 REEWA WEB。Next.js/SPA・PWA対応による高速でアプリのように使いやすいサイト制作で、不動産業界や中小企業のWeb集客を支援。「脱WordPress」で保守性・表示速度を最大化。名古屋市近郊のSEO対策・運用保守もお任せください。",
   applicationName: "REEWA WEB",
   authors: [{ name: "REEWA WEB" }],
   creator: "REEWA WEB",
   publisher: "REEWA WEB",
   category: "technology",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "REEWA WEB",
+    statusBarStyle: "default",
+  },
   alternates: {
     canonical: "/",
     languages: {
@@ -43,16 +49,18 @@ export const metadata: Metadata = {
     "名古屋 ホームページ制作",
     "名古屋 ホームページ制作会社",
     "名古屋 ホームページ制作 SPA",
+    "名古屋 ホームページ制作 PWA",
     "名古屋 ホームページ制作 不動産",
     "Next.js 制作代行",
+    "PWA 開発",
     "脱WordPress",
     "高速Webサイト制作",
     "愛知県 WEB制作",
   ],
   openGraph: {
-    title: "名古屋のホームページ制作会社 REEWA WEB | 次世代の高速Webサイト制作",
+    title: "名古屋のホームページ制作会社 REEWA WEB | 高速SPA・PWA対応Webサイト制作",
     description:
-      "名古屋で「本当に成果が出る」SPAサイト・不動産サイトを作るならREEWA WEB。最新技術Next.jsで、競合に差をつける表示速度とSEOを実現します。",
+      "名古屋で「本当に成果が出る」SPAサイト・PWA対応サイトを作るならREEWA WEB。最新技術Next.jsで、競合に差をつける表示速度とSEOを実現します。",
     url: "https://www.reewa-web.jp/",
     siteName: "REEWA WEB",
     images: [
@@ -70,7 +78,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "名古屋のホームページ制作会社 REEWA WEB",
     description:
-      "高速SPA・不動産向けサイト制作に強い、名古屋のWeb制作スタジオ。最新技術でビジネスを加速させます。",
+      "高速SPA・PWA対応サイト制作に強い、名古屋のWeb制作スタジオ。最新技術でビジネスを加速させます。",
     images: ["/og-image.png"],
   },
 };
@@ -116,7 +124,13 @@ export default function RootLayout({
               logo: "https://www.reewa-web.jp/logo.png",
               image: "https://www.reewa-web.jp/og-image.png",
               description:
-                "名古屋市を拠点に、SPA(Next.js)を活用した高速なホームページ制作を提供。不動産業界向けサイトや集客に特化したWeb制作に強みがあります。",
+                "名古屋市を拠点に、SPA(Next.js)とPWAに対応した高速なホームページ制作を提供。不動産業界向けサイトや集客に特化したWeb制作に強みがあります。",
+              serviceType: [
+                "ホームページ制作",
+                "Next.jsサイト制作",
+                "PWA対応Web制作",
+                "SEO対策",
+              ],
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "名古屋市",
@@ -131,6 +145,7 @@ export default function RootLayout({
               knowsAbout: [
                 "Single Page Application",
                 "Next.js",
+                "Progressive Web App",
                 "Search Engine Optimization",
                 "Real Estate Web Design",
                 "WordPress Migration",
