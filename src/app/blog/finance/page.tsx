@@ -381,7 +381,6 @@ export default function FinancePage() {
             <div className="relative mx-auto w-full max-w-[320px] shrink-0 rounded-[28px] border border-white/80 bg-white/95 p-3 shadow-xl shadow-emerald-200/50">
               <a href={adLink} rel="nofollow" className="block">
                 <img
-                  border={0}
                   width={300}
                   height={250}
                   alt="住宅関連サービスの広告"
@@ -390,7 +389,6 @@ export default function FinancePage() {
                 />
               </a>
               <img
-                border={0}
                 width={1}
                 height={1}
                 src={adTrackingPixel}
