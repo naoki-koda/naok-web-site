@@ -2,23 +2,14 @@
 
 import MyDrawer from "@/app/ui/Drawer";
 import { kosugiMaru } from "@/app/ui/fonts";
+import GlassHero from "@/app/ui/GlassHero";
 import { AnimatedImage, CountableAnimation } from "@/app/ui/SliderImage";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import sectionStyles from "./home-sections.module.css";
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  // 初期表示（右からスライドイン）
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 300); // 少し遅れて表示
-    return () => clearTimeout(timer);
-  }, []);
-
   const faqItems = [
     {
       question: "名古屋でSEOに強いホームページ制作を依頼できますか？",
@@ -108,6 +99,35 @@ export default function Home() {
     ],
   };
 
+  const glassNotes = [
+    {
+      label: "Fast Loading",
+      title: "速いだけで、印象が変わる。",
+      text: "最初の表示で待たせない。軽さそのものをブランド体験に変えます。",
+    },
+    {
+      label: "Lead Design",
+      title: "導線まで、透明に設計する。",
+      text: "CTA、予約、問い合わせまでの流れを迷わせずに整理します。",
+    },
+    {
+      label: "Local SEO",
+      title: "名古屋で見つかる、を前提に。",
+      text: "地域キーワードと構造化データを組み合わせて検索導線を整えます。",
+    },
+  ];
+
+  const glassTags = [
+    "NAGOYA",
+    "SEO",
+    "PWA",
+    "UX",
+    "NEXT.js",
+    "MOBILE FIRST",
+    "STRUCTURED DATA",
+    "FAST UI",
+  ];
+
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -158,93 +178,7 @@ export default function Home() {
       <div className="fixed bottom-0 left-1/2 -translate-x-1/2 pb-6 z-50">
         <MyDrawer />
       </div>
-      <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-teal-950">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-24 -left-24 h-60 w-60 rounded-full bg-sky-400/40 blur-3xl" />
-          <div className="absolute -bottom-40 right-[-15%] h-80 w-80 rounded-full bg-orange-400/35 blur-3xl" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,theme(colors.orange.400)/28%,theme(colors.sky.400)/18%,transparent_70%)]" />
-          <div className="absolute inset-0 bg-slate-900/35" />
-        </div>
-        <div
-          className={`relative mx-auto flex min-h-[520px] max-w-7xl flex-col gap-12 px-4 py-20 transition-all duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          } md:flex-row md:items-center`}
-        >
-          <div className="flex-1 text-center md:text-left">
-            <span className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-sky-200">
-              NAGOYA WEB CREATIVE
-            </span>
-            <h1
-              className={`mt-6 text-4xl font-bold leading-tight md:text-5xl lg:text-6xl text-teal-950 ${kosugiMaru.className}`}
-            >
-              名古屋で成果を
-              <br className="hidden sm:inline" />
-              出す。
-              <br />
-              ホームページ制作を
-              <br className="hidden sm:inline" />
-              もっと美しく。
-            </h1>
-            <p className="mt-6 text-base leading-relaxed text-teal-950 md:text-lg">
-              UXを重視したNext.jsサイトで表示スピードとSEOを両立。PWA対応も見据えた設計で、個人事業主・中小企業の集客やお問い合わせの増加をサポートします。
-            </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center md:justify-start">
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center rounded-full bg-white/60 px-6 py-3 text-sm font-semibold text-teal-950 shadow-lg shadow-orange-300/35 transition hover:brightness-105"
-              >
-                サービス内容を見る
-              </a>
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center bg-orange-400 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold shadow-lg shadow-orange-300/35 text-white transition hover:border-sky-200 hover:text-sky-200"
-              >
-                無料お見積もり
-              </a>
-            </div>
-          </div>
-          <div className="relative flex-1">
-            <div className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-10 shadow-[0_35px_120px_-30px_rgba(14,165,233,0.55)] backdrop-blur">
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,theme(colors.sky.400)/45%,transparent_65%)]" />
-              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,theme(colors.orange.400)/40%,transparent_55%)]" />
-              <div className="relative flex h-full flex-col justify-between text-left text-teal-950">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-300">
-                    Performance Focus
-                  </p>
-                  <h2 className="mt-3 text-2xl font-bold">
-                    SPA × SEOで成果に直結
-                  </h2>
-                  <p className="mt-4 text-lg leading-relaxed text-teal-950">
-                    Core Web
-                    Vitals改善、PWAを見据えたモバイルUX、ローカルSEO、問い合わせ導線設計までワンストップでサポート。ビジネスの成長を止めないフロントエンドを提供します。
-                  </p>
-                </div>
-                <ul className="mt-6 space-y-3 text-md text-teal-950">
-                  <li className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-teal-950">
-                      01
-                    </span>
-                    高速表示とモバイル最適化
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-teal-950">
-                      02
-                    </span>
-                    名古屋エリア向けSEO対策
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-r from-orange-400/40 to-sky-400/40 text-teal-950">
-                      03
-                    </span>
-                    PWAを見据えたアプリライクUX
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <GlassHero tags={glassTags} notes={glassNotes} />
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-7 pb-2 gap-1 sm:p-10 font-[family-name:var(--font-geist-sans)]">
         <div className="flex flex-col gap-[32px] row-start-2 items-center">
           <p
@@ -294,9 +228,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="bg-white text-gray-900">
+          <div className={`${sectionStyles.contentShell} text-gray-900`}>
             {/* ヒーローセクション */}
-            <section className="rounded-md bg-gradient-to-br from-orange-400 to-sky-400 text-white py-12 px-6 text-center">
+            <section
+              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-white`}
+            >
               <div className="hidden sm:block">
                 <AnimatedImage
                   triggerId="section-4"
@@ -325,24 +261,21 @@ export default function Home() {
             </section>
 
             {/* 技術的な速さの説明 */}
-            <section className="rounded-md py-16 px-6 bg-gray-50 dark:bg-gradient-to-br from-slate-600 to-slate-900 mb-10 text-gray-900 dark:text-white">
+            <section
+              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
+            >
               <h3
-                className="relative block w-fit mx-auto text-3xl font-bold text-center mb-12
-                        text-slate-800 dark:text-white
-                        px-8 py-5 rounded-[2rem]
-                        border border-white/15 bg-white/10 backdrop-blur-xl
-                        shadow-[0_8px_32px_rgba(14,165,233,0.35)]
-                        before:content-[''] before:absolute before:inset-0
-                        before:bg-gradient-to-tr before:from-orange-400/30 before:to-sky-400/30
-                        before:rounded-[2rem] before:-z-10"
+                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800 dark:text-white`}
               >
                 どうして、
                 <br />
                 そんなに速いの？
               </h3>
 
-              <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10 text-center g-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+              <div
+                className={`${sectionStyles.infoGrid} max-w-5xl mx-auto mb-10 text-center`}
+              >
+                <div className={sectionStyles.infoCard}>
                   <h4 className="md:text-xl font-bold mb-2 text-center">
                     Next.js の SPA構成
                   </h4>
@@ -352,7 +285,7 @@ export default function Home() {
                     再読み込みが不要でストレスゼロ。
                   </p>
                 </div>
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+                <div className={sectionStyles.infoCard}>
                   <h4 className="text-xl font-bold mb-2 text-center">
                     PWAを見据えた設計
                   </h4>
@@ -362,7 +295,7 @@ export default function Home() {
                     アプリライクな導線にも対応。
                   </p>
                 </div>
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+                <div className={sectionStyles.infoCard}>
                   <h4 className="text-xl font-bold mb-2 text-center">
                     静的サイト生成（SSG）
                   </h4>
@@ -395,7 +328,9 @@ export default function Home() {
             </section>
 
             {/* 安さの説明 */}
-            <section className="rounded-md bg-gradient-to-br from-orange-400 to-sky-400 text-white py-12 px-6 text-center">
+            <section
+              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-white`}
+            >
               <div className="hidden sm:block">
                 <AnimatedImage
                   triggerId="section-5"
@@ -426,23 +361,20 @@ export default function Home() {
               </p>
             </section>
 
-            <section className="rounded-md py-16 px-6 bg-gray-50 dark:dark:bg-gradient-to-br from-slate-600 to-slate-900  mb-10 text-gray-900 dark:text-white">
+            <section
+              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
+            >
               <h3
-                className="relative block w-fit mx-auto text-3xl font-bold text-center mb-12
-                        text-slate-800 dark:text-white
-                        px-8 py-5 rounded-[2rem]
-                        border border-white/15 bg-white/10 backdrop-blur-xl
-                        shadow-[0_8px_32px_rgba(14,165,233,0.35)]
-                        before:content-[''] before:absolute before:inset-0
-                        before:bg-gradient-to-tr before:from-orange-400/30 before:to-sky-400/30
-                        before:rounded-[2rem] before:-z-10"
+                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800 dark:text-white`}
               >
                 どうして、
                 <br />
                 そんなに安いの？
               </h3>
-              <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10 text-center g-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+              <div
+                className={`${sectionStyles.infoGrid} max-w-5xl mx-auto mb-10 text-center`}
+              >
+                <div className={sectionStyles.infoCard}>
                   <h4 className="text-xl font-bold mb-2 text-center">
                     すべてを自社で対応
                   </h4>
@@ -452,7 +384,7 @@ export default function Home() {
                     外注せずワンストップ。
                   </p>
                 </div>
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+                <div className={sectionStyles.infoCard}>
                   <h4 className="text-xl font-bold mb-2 text-center">
                     中間マージンゼロ
                   </h4>
@@ -462,7 +394,7 @@ export default function Home() {
                     価格を抑えられます。
                   </p>
                 </div>
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+                <div className={sectionStyles.infoCard}>
                   <h4 className="text-xl font-bold mb-2 text-center">
                     効率的な開発体制
                   </h4>
@@ -492,7 +424,9 @@ export default function Home() {
             </section>
 
             {/* 売れるの説明 */}
-            <section className="rounded-md bg-gradient-to-br from-orange-400 to-sky-400 text-white py-12 px-6 text-center">
+            <section
+              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-white`}
+            >
               <div className="hidden sm:block">
                 <AnimatedImage
                   triggerId="section-3"
@@ -520,23 +454,20 @@ export default function Home() {
               </p>
             </section>
 
-            <section className="rounded-md py-16 px-6 bg-gray-50 border-orange-400 shadow-xl shadow-orange-200/40 dark:bg-gradient-to-br from-slate-600 to-slate-900  mb-10 text-gray-900 dark:text-white">
+            <section
+              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
+            >
               <h3
-                className="relative block w-fit mx-auto text-3xl font-bold text-center mb-12
-                        text-slate-800 dark:text-white
-                        px-8 py-5 rounded-[2rem]
-                        border border-white/15 bg-white/10 backdrop-blur-xl
-                        shadow-[0_8px_32px_rgba(14,165,233,0.35)]
-                        before:content-[''] before:absolute before:inset-0
-                        before:bg-gradient-to-tr before:from-orange-400/30 before:to-sky-400/30
-                        before:rounded-[2rem] before:-z-10"
+                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800 dark:text-white`}
               >
                 どうして、
                 <br />
                 そんなに売れるの？
               </h3>
-              <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 mb-10 text-center g-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+              <div
+                className={`${sectionStyles.infoGrid} max-w-5xl mx-auto mb-10 text-center`}
+              >
+                <div className={sectionStyles.infoCard}>
                   <h4 className="text-xl font-bold mb-2 text-center">
                     導線重視の構成
                   </h4>
@@ -546,7 +477,7 @@ export default function Home() {
                     CTAやナビゲーション設計。
                   </p>
                 </div>
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+                <div className={sectionStyles.infoCard}>
                   <h4 className="text-xl font-bold mb-2 text-center">
                     高速レンダリング
                   </h4>
@@ -557,7 +488,7 @@ export default function Home() {
                     SEO に有利
                   </p>
                 </div>
-                <div className="bg-orange-200/40 dark:bg-gray-700 p-6 rounded shadow-xl shadow-orange-400/30">
+                <div className={sectionStyles.infoCard}>
                   <h4 className="text-xl font-bold mb-2 text-center">
                     レスポンシブデザイン対応
                   </h4>
@@ -643,7 +574,9 @@ export default function Home() {
                 </article>
               </div>
             </section> */}
-            <section className="rounded-md bg-gray-50 py-16 px-6 shadow-inner shadow-orange-200/30 mb-10 text-gray-900 dark:bg-slate-800/80 dark:text-white">
+            <section
+              className={`${sectionStyles.surfaceSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
+            >
               <h2 className="text-3xl font-bold text-center mb-6">
                 業種別の集客特化型ホームページ制作
               </h2>
@@ -656,7 +589,7 @@ export default function Home() {
                 {verticalFocus.map((item) => (
                   <article
                     key={item.title}
-                    className="rounded-3xl border border-orange-200/60 bg-white/95 p-6 text-slate-900 shadow-md shadow-orange-200/40 transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
+                    className="rounded-3xl border border-orange-200/60 bg-white/95 p-6 text-slate-900 shadow-md shadow-orange-200/25 transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
                   >
                     <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">
                       {item.title}
@@ -679,7 +612,9 @@ export default function Home() {
                 ))}
               </div>
             </section>
-            <section className="rounded-md bg-white/95 px-6 py-16 text-gray-900 shadow-xl shadow-orange-200/40 mb-10 dark:bg-gray-900/80 dark:text-white">
+            <section
+              className={`${sectionStyles.surfaceSection} px-6 py-16 mb-10 text-gray-900 dark:text-white`}
+            >
               <div className="mx-auto max-w-5xl">
                 <div className="text-center">
                   <span className="inline-flex items-center justify-center rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-500 dark:border-orange-300/30 dark:bg-orange-400/10 dark:text-orange-300">
@@ -690,7 +625,9 @@ export default function Home() {
                     実際に公開しているサイトの一例として、建具製作工房のホームページをご紹介します。
                   </p>
                 </div>
-                <article className="mt-10 overflow-hidden rounded-[2rem] border border-orange-200/70 bg-gradient-to-br from-orange-50 via-white to-sky-50 shadow-lg shadow-orange-200/30 dark:border-white/10 dark:bg-slate-900/90">
+                <article
+                  className={`${sectionStyles.featuredCard} mt-10 dark:border-white/10 dark:bg-slate-900/90`}
+                >
                   <div className="grid gap-8 p-8 md:grid-cols-[1.1fr_0.9fr] md:p-10">
                     <div>
                       <p className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-500">
@@ -752,7 +689,7 @@ export default function Home() {
             </section>
             <section
               id="faq"
-              className="rounded-md py-16 px-6 bg-white/95 text-gray-900 shadow-xl shadow-orange-200/40 mb-10 dark:bg-gray-900/80 dark:text-white"
+              className={`${sectionStyles.surfaceSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
             >
               <h2 className="text-3xl font-bold text-center mb-4">
                 よくあるご質問
@@ -764,7 +701,7 @@ export default function Home() {
                 {faqItems.map((item) => (
                   <details
                     key={item.question}
-                    className="group rounded-2xl border border-orange-200/60 bg-white/95 p-6 shadow-md transition hover:border-orange-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/80 dark:hover:border-orange-300/60"
+                    className={`${sectionStyles.faqItem} group p-6 transition hover:border-orange-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/80 dark:hover:border-orange-300/60`}
                   >
                     <summary className="flex cursor-pointer items-center justify-between text-left text-lg font-semibold text-gray-900 dark:text-white [&::-webkit-details-marker]:hidden">
                       <span>{item.question}</span>
@@ -783,7 +720,7 @@ export default function Home() {
             {/* CTAセクション */}
             <section
               id="contact"
-              className="rounded-md bg-gradient-to-r from-orange-400 to-sky-400 text-white py-12 px-6 text-center"
+              className={`${sectionStyles.ctaSection} py-12 px-6 text-center text-white`}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 まずはお気軽に

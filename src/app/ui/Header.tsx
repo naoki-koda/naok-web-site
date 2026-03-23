@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { kosugiMaru } from '@/app/ui/fonts';
+import { kosugiMaru } from "@/app/ui/fonts";
 import {
   Bars3Icon,
   CurrencyDollarIcon,
@@ -9,52 +9,52 @@ import {
   PencilSquareIcon,
   PhotoIcon,
   XMarkIcon,
-} from '@heroicons/react/24/outline';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
+} from "@heroicons/react/24/outline";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
 const NAV_ITEMS = [
   {
-    href: '/',
-    label: 'Top',
-    subLabel: 'トップページ',
+    href: "/",
+    label: "TOP",
+    subLabel: "トップページ",
     icon: HomeIcon,
   },
   {
-    href: '/service',
-    label: 'SERVICE',
-    subLabel: 'サービス内容',
+    href: "/service",
+    label: "SERVICE",
+    subLabel: "サービス内容",
     icon: PencilSquareIcon,
   },
   {
-    href: '/works',
-    label: 'WORKS',
-    subLabel: '制作事例',
+    href: "/works",
+    label: "WORKS",
+    subLabel: "制作事例",
     icon: PhotoIcon,
   },
   {
-    href: '/design',
-    label: 'DESIGN',
-    subLabel: 'デザイン',
+    href: "/design",
+    label: "DESIGN",
+    subLabel: "デザイン",
     icon: PencilSquareIcon,
   },
   {
-    href: '/price',
-    label: 'PRICE',
-    subLabel: '料金プラン',
+    href: "/price",
+    label: "PRICE",
+    subLabel: "料金プラン",
     icon: CurrencyDollarIcon,
   },
   {
-    href: '/blog',
-    label: 'BLOG',
-    subLabel: 'ブログ',
+    href: "/blog",
+    label: "BLOG",
+    subLabel: "ブログ",
     icon: CurrencyDollarIcon,
   },
   {
-    href: '/contact',
-    label: 'CONTACT',
-    subLabel: 'お問い合わせ',
+    href: "/contact",
+    label: "CONTACT",
+    subLabel: "お問い合わせ",
     icon: EnvelopeIcon,
   },
 ];
@@ -69,23 +69,39 @@ export default function Header() {
       >
         <div className="mx-auto flex h-full max-w-5xl items-center justify-between">
           <Link href="/" className="flex items-center gap-3 text-teal-950">
-            <Image src="/favicon.ico" alt="Site Icon" width={40} height={40} className="rounded-lg" />
-            <Image src="/reewaweb.svg" alt="service name" width={200} height={40} className="rounded-lg" />
+            <Image
+              src="/favicon.ico"
+              alt="Site Icon"
+              width={40}
+              height={40}
+              className="rounded-lg"
+            />
+            <Image
+              src="/reewaweb.svg"
+              alt="service name"
+              width={200}
+              height={40}
+              className="rounded-lg"
+            />
             {/* <span className="text-2xl font-semibold leading-none">REEWA WEB</span> */}
           </Link>
           <nav className="hidden items-center gap-6 text-sm font-semibold text-teal-950 md:flex">
             {NAV_ITEMS.map(({ href, label }) => (
-                <NavLinkDroplet key={href} href={href} label={label} />
+              <NavLinkDroplet key={href} href={href} label={label} />
             ))}
           </nav>
           <button
             type="button"
-            aria-label={isMenuOpen ? 'メニューを閉じる' : 'メニューを開く'}
+            aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
             aria-expanded={isMenuOpen}
             onClick={() => setIsMenuOpen((prev) => !prev)}
             className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/30 text-teal-950 shadow-sm transition hover:bg-white/50 md:hidden"
           >
-            {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
+            {isMenuOpen ? (
+              <XMarkIcon className="h-6 w-6" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" />
+            )}
           </button>
         </div>
       </header>
@@ -104,8 +120,7 @@ export default function Header() {
           className={`fixed inset-x-0 top-16 bottom-0 z-50 flex flex-col bg-gradient-to-br from-orange-400 to-sky-400 px-6 pb-12 pt-8 text-teal-950 md:hidden ${kosugiMaru.className}`}
         >
           <div className="mx-auto w-full max-w-sm flex-1 space-y-6 overflow-y-auto">
-            <div className="flex items-center justify-between text-white">
-            </div>
+            <div className="flex items-center justify-between text-white"></div>
 
             <ul className="flex flex-col space-y-4">
               {NAV_ITEMS.map(({ href, label, subLabel, icon: Icon }) => (
@@ -120,7 +135,9 @@ export default function Header() {
                         <Icon className="h-6 w-6" />
                       </span>
                       <div className="space-y-1">
-                        <span className="block text-base font-semibold">{label}</span>
+                        <span className="block text-base font-semibold">
+                          {label}
+                        </span>
                         <div className="mx-auto h-px w-14 bg-gradient-to-r from-orange-400 to-sky-400" />
                         <span className="block text-xs tracking-wide text-slate-700 group-hover:text-white/80">
                           {subLabel}
@@ -145,8 +162,8 @@ function NavLinkDroplet({ href, label }: { href: string; label: string }) {
     const rect = el.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    el.style.setProperty('--x', `${x}px`);
-    el.style.setProperty('--y', `${y}px`);
+    el.style.setProperty("--x", `${x}px`);
+    el.style.setProperty("--y", `${y}px`);
   };
 
   return (
@@ -181,8 +198,8 @@ function NavLinkDroplet({ href, label }: { href: string; label: string }) {
           mix-blend-screen
         "
         style={{
-          left: 'var(--x)',
-          top: 'var(--y)',
+          left: "var(--x)",
+          top: "var(--y)",
         }}
       />
       {/* うっすら縁の光彩（iOS感） */}
