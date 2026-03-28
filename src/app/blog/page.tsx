@@ -31,6 +31,15 @@ const posts = [
     accent: 'from-rose-100 via-white to-rose-50',
   },
   {
+    slug: '/blog/finance',
+    title: '年収900万円で6,000万円の家は無謀？住宅ローン戦略',
+    description:
+      '自営業300万円×公務員600万円の夫婦を例に、借入額ではなく35年総コストで住宅ローンを判断する考え方を整理。光熱費・修繕費・インフレまで含めて解説しています。',
+    tags: ['住宅ローン', '家計', '資金計画'],
+    readTime: '約11分',
+    accent: 'from-emerald-100 via-white to-teal-50',
+  },
+  {
     slug: '/blog/aienappmatome',
     title: 'AI英会話アプリまとめ',
     description:

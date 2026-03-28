@@ -1,9 +1,6 @@
 .contentShell {
   position: relative;
   width: 100%;
-  background:
-    radial-gradient(circle at top, rgba(251, 146, 60, 0.08), transparent 28%),
-    linear-gradient(180deg, #fff7ed 0%, #ffffff 18%, #f8fafc 100%);
 }
 
 .featureHero {

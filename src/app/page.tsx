@@ -262,10 +262,10 @@ export default function Home() {
 
             {/* 技術的な速さの説明 */}
             <section
-              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
+              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900`}
             >
               <h3
-                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800 dark:text-white`}
+                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800`}
               >
                 どうして、
                 <br />
@@ -362,10 +362,10 @@ export default function Home() {
             </section>
 
             <section
-              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
+              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900`}
             >
               <h3
-                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800 dark:text-white`}
+                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800`}
               >
                 どうして、
                 <br />
@@ -455,10 +455,10 @@ export default function Home() {
             </section>
 
             <section
-              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
+              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900`}
             >
               <h3
-                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800 dark:text-white`}
+                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800`}
               >
                 どうして、
                 <br />
@@ -575,12 +575,12 @@ export default function Home() {
               </div>
             </section> */}
             <section
-              className={`${sectionStyles.surfaceSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
+              className={`${sectionStyles.surfaceSection} py-16 px-6 mb-10 text-gray-900`}
             >
               <h2 className="text-3xl font-bold text-center mb-6">
                 業種別の集客特化型ホームページ制作
               </h2>
-              <p className="text-center text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
+              <p className="text-center text-sm md:text-base text-gray-600 max-w-3xl mx-auto mb-10">
                 「ホームページ制作 美容」「ホームページ制作
                 サロン」「ホームページ制作 職人」「ホームページ制作
                 飲食店」など業種特有のニーズに対し、キーワード戦略とUI/UXを最適化した制作プランをご用意しています。
@@ -589,15 +589,15 @@ export default function Home() {
                 {verticalFocus.map((item) => (
                   <article
                     key={item.title}
-                    className="rounded-3xl border border-orange-200/60 bg-white/95 p-6 text-slate-900 shadow-md shadow-orange-200/25 transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-slate-900/80 dark:text-white"
+                    className="rounded-3xl border border-orange-200/60 bg-white/95 p-6 text-slate-900 shadow-md shadow-orange-200/25 transition hover:border-orange-300 hover:shadow-xl"
                   >
-                    <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">
+                    <h3 className="text-xl font-semibold text-orange-600">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">
+                    <p className="mt-3 text-sm leading-relaxed text-gray-700">
                       {item.description}
                     </p>
-                    <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
+                    <ul className="mt-4 space-y-2 text-xs text-gray-600">
                       {item.highlights.map((point) => (
                         <li key={point}>・{point}</li>
                       ))}
@@ -613,20 +613,20 @@ export default function Home() {
               </div>
             </section>
             <section
-              className={`${sectionStyles.surfaceSection} px-6 py-16 mb-10 text-gray-900 dark:text-white`}
+              className={`${sectionStyles.surfaceSection} px-6 py-16 mb-10 text-gray-900`}
             >
               <div className="mx-auto max-w-5xl">
                 <div className="text-center">
-                  <span className="inline-flex items-center justify-center rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-500 dark:border-orange-300/30 dark:bg-orange-400/10 dark:text-orange-300">
+                  <span className="inline-flex items-center justify-center rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-500">
                     Works Showcase
                   </span>
                   <h2 className="mt-5 text-3xl font-bold">制作実績のご紹介</h2>
-                  <p className="mt-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 md:text-base">
+                  <p className="mt-4 text-sm leading-relaxed text-gray-600 md:text-base">
                     実際に公開しているサイトの一例として、建具製作工房のホームページをご紹介します。
                   </p>
                 </div>
                 <article
-                  className={`${sectionStyles.featuredCard} mt-10 dark:border-white/10 dark:bg-slate-900/90`}
+                  className={`${sectionStyles.featuredCard} mt-10`}
                 >
                   <div className="grid gap-8 p-8 md:grid-cols-[1.1fr_0.9fr] md:p-10">
                     <div>
@@ -636,14 +636,14 @@ export default function Home() {
                       <h3 className="mt-4 text-2xl font-bold md:text-3xl">
                         {featuredWork.title}
                       </h3>
-                      <p className="mt-4 text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                      <p className="mt-4 text-base leading-relaxed text-gray-700">
                         {featuredWork.description}
                       </p>
-                      <ul className="mt-6 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                      <ul className="mt-6 space-y-3 text-sm text-gray-700">
                         {featuredWork.points.map((point) => (
                           <li
                             key={point}
-                            className="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm dark:bg-white/5"
+                            className="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm"
                           >
                             <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-orange-400 to-sky-400 text-xs font-bold text-white">
                               ✓
@@ -653,9 +653,9 @@ export default function Home() {
                         ))}
                       </ul>
                     </div>
-                    <div className="flex flex-col justify-between rounded-[1.75rem] border border-white/70 bg-white/80 p-6 shadow-md dark:border-white/10 dark:bg-white/5">
+                    <div className="flex flex-col justify-between rounded-[1.75rem] border border-white/70 bg-white/80 p-6 shadow-md">
                       <div>
-                        <div className="overflow-hidden rounded-2xl border border-orange-100 bg-slate-100 shadow-sm dark:border-white/10 dark:bg-slate-800">
+                        <div className="overflow-hidden rounded-2xl border border-orange-100 bg-slate-100 shadow-sm">
                           <Image
                             src="/sodeno.png"
                             alt="袖野建具様のホームページ紹介画像"
@@ -664,13 +664,13 @@ export default function Home() {
                             className="h-auto w-full object-cover"
                           />
                         </div>
-                        <p className="mt-6 text-sm font-semibold text-gray-500 dark:text-gray-400">
+                        <p className="mt-6 text-sm font-semibold text-gray-500">
                           掲載サイト
                         </p>
-                        <p className="mt-3 break-all text-lg font-medium text-gray-900 dark:text-white">
+                        <p className="mt-3 break-all text-lg font-medium text-gray-900">
                           {featuredWork.url}
                         </p>
-                        <p className="mt-5 text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                        <p className="mt-5 text-sm leading-relaxed text-gray-600">
                           職人仕事の信頼感を伝える構成と検索導線の設計により、公開後の集客と成約まで成果につながった事例です。
                         </p>
                       </div>
@@ -689,27 +689,27 @@ export default function Home() {
             </section>
             <section
               id="faq"
-              className={`${sectionStyles.surfaceSection} py-16 px-6 mb-10 text-gray-900 dark:text-white`}
+              className={`${sectionStyles.surfaceSection} py-16 px-6 mb-10 text-gray-900`}
             >
               <h2 className="text-3xl font-bold text-center mb-4">
                 よくあるご質問
               </h2>
-              <p className="text-base md:text-lg text-center text-gray-600 dark:text-gray-300 mb-10">
+              <p className="text-base md:text-lg text-center text-gray-600 mb-10">
                 SEOや集客、制作フローに関して寄せられるお問い合わせをまとめました。気になる点があればお気軽にご相談ください。
               </p>
               <div className="mx-auto max-w-4xl space-y-6">
                 {faqItems.map((item) => (
                   <details
                     key={item.question}
-                    className={`${sectionStyles.faqItem} group p-6 transition hover:border-orange-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800/80 dark:hover:border-orange-300/60`}
+                    className={`${sectionStyles.faqItem} group p-6 transition hover:border-orange-300 hover:shadow-lg`}
                   >
-                    <summary className="flex cursor-pointer items-center justify-between text-left text-lg font-semibold text-gray-900 dark:text-white [&::-webkit-details-marker]:hidden">
+                    <summary className="flex cursor-pointer items-center justify-between text-left text-lg font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
                       <span>{item.question}</span>
                       <span className="ml-6 text-2xl font-normal text-sky-400 transition-transform duration-300 group-open:rotate-45">
                         +
                       </span>
                     </summary>
-                    <p className="mt-4 text-base leading-relaxed text-gray-600 dark:text-gray-300">
+                    <p className="mt-4 text-base leading-relaxed text-gray-600">
                       {item.answer}
                     </p>
                   </details>
