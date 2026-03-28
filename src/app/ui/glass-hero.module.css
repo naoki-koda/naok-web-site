@@ -157,11 +157,37 @@
   }
 
   .glassCanvas {
+    display: flex;
     gap: 0.9rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    padding: 0 0.25rem 0.5rem;
+    scroll-padding-left: 0.25rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .glassCanvas::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .glassCanvas::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 9999px;
+  }
+
+  .mainPanel,
+  .summaryGrid {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
   }
 
   .summaryGrid {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(15rem, 75vw);
+    grid-template-columns: none;
+    width: max-content;
   }
 
   .mainPanel,
@@ -170,8 +196,12 @@
     border-radius: 1.75rem;
   }
 
+  .mainPanel {
+    width: min(24rem, 86vw);
+  }
+
   .ribbonPanel {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
   }
 }

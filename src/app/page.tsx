@@ -87,7 +87,7 @@ export default function Home() {
   ];
 
   const featuredWork = {
-    title: "そでの建具 様",
+    title: "袖野建具 様",
     category: "制作実績",
     url: "https://www.sodeno-tategu.jp/",
     description:
@@ -231,7 +231,7 @@ export default function Home() {
           <div className={`${sectionStyles.contentShell} text-gray-900`}>
             {/* ヒーローセクション */}
             <section
-              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-white`}
+              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-slate-950`}
             >
               <div className="hidden sm:block">
                 <AnimatedImage
@@ -329,7 +329,7 @@ export default function Home() {
 
             {/* 安さの説明 */}
             <section
-              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-white`}
+              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-slate-950`}
             >
               <div className="hidden sm:block">
                 <AnimatedImage
@@ -425,7 +425,7 @@ export default function Home() {
 
             {/* 売れるの説明 */}
             <section
-              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-white`}
+              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-slate-950`}
             >
               <div className="hidden sm:block">
                 <AnimatedImage
@@ -658,7 +658,7 @@ export default function Home() {
                         <div className="overflow-hidden rounded-2xl border border-orange-100 bg-slate-100 shadow-sm dark:border-white/10 dark:bg-slate-800">
                           <Image
                             src="/sodeno.png"
-                            alt="そでの建具様のホームページ紹介画像"
+                            alt="袖野建具様のホームページ紹介画像"
                             width={1200}
                             height={800}
                             className="h-auto w-full object-cover"
@@ -720,7 +720,7 @@ export default function Home() {
             {/* CTAセクション */}
             <section
               id="contact"
-              className={`${sectionStyles.ctaSection} py-12 px-6 text-center text-white`}
+              className={`${sectionStyles.ctaSection} py-12 px-6 text-center text-slate-950`}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
                 まずはお気軽に

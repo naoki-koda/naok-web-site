@@ -116,12 +116,12 @@ export default function ServicePage() {
             >
               ホームページ制作から
               <br />
-              運用・補助金活用まで
+              令和時代の事業サイトの広め方をサポート
               <br className="hidden sm:inline" />
-              ビジネス成長を支えるフルサポート
+              二人三脚で御社の事業をお力添えします。
             </h1>
             <p className="text-sm leading-relaxed text-slate-100 md:text-base">
-              「制作費の相場を知りたい」「補助金を使ってコストを抑えたい」「業種に合わせたデザインが必要」「AIや多言語サイトを試したい」「フリーランスと協業したい」といった多様なニーズに対し、戦略立案から運用まで伴走します。
+              「制作費の相場を知りたい」「業種に合わせたデザインが必要」「AIや多言語サイトを試したい」「フリーランスと協業したい」といった多様なニーズに対し、戦略立案から運用まで伴走します。
             </p>
             <div className="flex flex-wrap justify-center gap-3 text-xs text-white/90">
               <span className="rounded-full border border-white/30 bg-white/15 px-3 py-1">
