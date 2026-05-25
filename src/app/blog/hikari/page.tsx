@@ -1,3 +1,4 @@
+import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
 import {
   BoltIcon,
   CheckCircleIcon,
@@ -208,25 +209,7 @@ export default function Page() {
         </ul>
       </section>
 
-      <div className="flex justify-center mb-3">
-        <a
-          href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G3W7ZM+ZXM+I7NE9"
-          rel="nofollow"
-        >
-          <img
-            width="300"
-            height="250"
-            alt=""
-            src="https://www26.a8.net/svt/bgt?aid=251217386974&wid=001&eno=01&mid=s00000004657003059000&mc=1"
-          ></img>
-        </a>
-        <img
-          width="1"
-          height="1"
-          src="https://www15.a8.net/0.gif?a8mat=45KGKQ+G3W7ZM+ZXM+I7NE9"
-          alt=""
-        ></img>
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[0]} />
 
       <section id="comparison" className="mb-8">
         <div className="flex items-center mb-6">
@@ -298,25 +281,7 @@ export default function Page() {
             </tbody>
           </table>
         </div>
-        <div className="flex justify-center p-3">
-          <a
-            href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G8NOTU+4F7Y+HWAG1"
-            rel="nofollow"
-          >
-            <img
-              width="300"
-              height="250"
-              alt=""
-              src="https://www29.a8.net/svt/bgt?aid=251217386982&wid=001&eno=01&mid=s00000020635003006000&mc=1"
-            ></img>
-          </a>
-          <img
-            width="1"
-            height="1"
-            src="https://www12.a8.net/0.gif?a8mat=45KGKQ+G8NOTU+4F7Y+HWAG1"
-            alt=""
-          ></img>
-        </div>
+        <RakutenAffiliateAd ad={rakutenAds[1]} />
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {fiberPlanDetails.map((detail) => (
             <article
@@ -337,25 +302,7 @@ export default function Page() {
         </div>
       </section>
 
-      <div className="flex justify-center gap-3 p-6">
-        <a
-          href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G53376+3CP0+BZO4H"
-          rel="nofollow"
-        >
-          <img
-            width="300"
-            height="250"
-            alt=""
-            src="https://www28.a8.net/svt/bgt?aid=251217386976&wid=001&eno=01&mid=s00000015642002014000&mc=1"
-          ></img>
-        </a>
-        <img
-          width="1"
-          height="1"
-          src="https://www19.a8.net/0.gif?a8mat=45KGKQ+G53376+3CP0+BZO4H"
-          alt=""
-        ></img>
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[2]} />
 
       <section className="mb-16 prose prose-slate max-w-none">
         <h2>はじめに：光回線選びで損をしないために</h2>
@@ -402,25 +349,7 @@ export default function Page() {
         </blockquote>
       </section>
 
-      <div className="flex justify-center mb-8">
-        <a
-          href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G2PCS2+1ZWM+6QMKH"
-          rel="nofollow"
-        >
-          <img
-            width="336"
-            height="280"
-            alt=""
-            src="https://www29.a8.net/svt/bgt?aid=251217386972&wid=001&eno=01&mid=s00000009319001132000&mc=1"
-          ></img>
-        </a>
-        <img
-          width="1"
-          height="1"
-          src="https://www19.a8.net/0.gif?a8mat=45KGKQ+G2PCS2+1ZWM+6QMKH"
-          alt=""
-        ></img>
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[3]} />
       <section className="mb-16 bg-amber-50 border border-amber-100 rounded-3xl p-6">
         <div className="flex items-center gap-3 mb-4">
           <ExclamationTriangleIcon className="w-8 h-8 text-amber-500" />
@@ -498,25 +427,7 @@ export default function Page() {
         </div>
       </section>
 
-      <div className="flex justify-center p-3">
-        <a
-          href="https://px.a8.net/svt/ejp?a8mat=45K8T3+SKTTE+45DI+68MF5"
-          rel="nofollow"
-        >
-          <img
-            width="300"
-            height="250"
-            alt=""
-            src="https://www28.a8.net/svt/bgt?aid=251207319048&wid=001&eno=01&mid=s00000019359001048000&mc=1"
-          ></img>
-        </a>
-        <img
-          width="1"
-          height="1"
-          src="https://www19.a8.net/0.gif?a8mat=45K8T3+SKTTE+45DI+68MF5"
-          alt=""
-        ></img>
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[0]} />
 
       <section className="mb-16 prose prose-slate max-w-none">
         <h2>まとめ：必要な速度を、最もお得な窓口で</h2>

@@ -1,3 +1,4 @@
+import RakutenAffiliateAd, { rakutenAds } from '@/app/blog/RakutenAffiliateAd';
 import type { Salon } from '@/app/types/salon';
 import { generateItemListSchema } from '@/app/utils/schema';
 import React from 'react';
@@ -160,17 +161,7 @@ export default function NagoyaHairSalonNagoyaEkiPage() {
           <div className="mt-4 text-sm text-gray-500">最終更新: {currentYear}年 / 監修: 名古屋ビューティー編集部</div>
         </div>
       </header>
-      <div className="m-10 flex justify-center">
-        <a href="https://px.a8.net/svt/ejp?a8mat=45IGP6+2A5U9E+4H2M+6BMG1" rel="nofollow">
-          <img
-            width="300"
-            height="250"
-            alt=""
-            src="https://www25.a8.net/svt/bgt?aid=251124234138&wid=001&eno=01&mid=s00000020875001062000&mc=1"
-          />
-        </a>
-        <img width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45IGP6+2A5U9E+4H2M+6BMG1" alt="" />
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[0]} />
 
       <section id="summary" className="mx-auto max-w-5xl px-4 py-10 md:px-6">
         <h2 className="text-2xl font-bold text-gray-900">まずはタイプ別にサロンを把握</h2>
@@ -318,92 +309,16 @@ export default function NagoyaHairSalonNagoyaEkiPage() {
               </article>
 
               {index === 0 && (
-                <div className="flex justify-center gap-3 p-2">
-                  <a href="https://px.a8.net/svt/ejp?a8mat=45K8T3+SKTTE+45DI+6LP3L" rel="nofollow">
-                    <img
-                      width="250"
-                      height="250"
-                      alt=""
-                      src="https://www24.a8.net/svt/bgt?aid=251207319048&wid=001&eno=01&mid=s00000019359001109000&mc=1"
-                    />
-                  </a>
-                  <img width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45K8T3+SKTTE+45DI+6LP3L" alt="" />
-                  <a href="https://px.a8.net/svt/ejp?a8mat=45K8T3+UYK8I+D6Q+3N12TD" rel="nofollow">
-                    <img
-                      width="300"
-                      height="250"
-                      alt=""
-                      src="https://www26.a8.net/svt/bgt?aid=251207319052&wid=001&eno=01&mid=s00000001709022008000&mc=1"
-                    />
-                  </a>
-                  <img width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45K8T3+UYK8I+D6Q+3N12TD" alt="" />
-                </div>
+                <RakutenAffiliateAd ad={rakutenAds[1]} />
               )}
               {index === 1 && (
-                <div className="flex justify-center gap-3 p-2">
-                  <a href="https://px.a8.net/svt/ejp?a8mat=45K8T2+757A42+4RJK+601S1" rel="nofollow">
-                    <img
-                      width="300"
-                      height="250"
-                      alt=""
-                      src="https://www25.a8.net/svt/bgt?aid=251207318432&wid=001&eno=01&mid=s00000022232001008000&mc=1"
-                    />
-                  </a>
-                  <img width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=45K8T2+757A42+4RJK+601S1" alt="" />
-                  <a href="https://px.a8.net/svt/ejp?a8mat=45IJ10+BDM8Z6+5TSI+5YZ75" rel="nofollow">
-                    <img
-                      width="300"
-                      height="250"
-                      alt=""
-                      src="https://www23.a8.net/svt/bgt?aid=251127252688&wid=001&eno=01&mid=s00000027189001003000&mc=1"
-                    />
-                  </a>
-                  <img width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=45IJ10+BDM8Z6+5TSI+5YZ75" alt="" />
-                </div>
+                <RakutenAffiliateAd ad={rakutenAds[2]} />
               )}
               {index === 2 && (
-                <div className="flex justify-center gap-3 p-2">
-                  <a href="https://px.a8.net/svt/ejp?a8mat=45K8T3+4RGV02+1KYA+2Z8DRL" rel="nofollow">
-                    <img
-                      width="300"
-                      height="250"
-                      alt=""
-                      src="https://www24.a8.net/svt/bgt?aid=251207319288&wid=001&eno=01&mid=s00000007381018011000&mc=1"
-                    />
-                  </a>
-                  <img width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=45K8T3+4RGV02+1KYA+2Z8DRL" alt="" />
-                  <a href="https://px.a8.net/svt/ejp?a8mat=45K8T3+2WSB8Y+5ESS+5ZMCH" rel="nofollow">
-                    <img
-                      width="300"
-                      height="250"
-                      alt=""
-                      src="https://www20.a8.net/svt/bgt?aid=251207319176&wid=001&eno=01&mid=s00000025246001006000&mc=1"
-                    />
-                  </a>
-                  <img width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45K8T3+2WSB8Y+5ESS+5ZMCH" alt="" />
-                </div>
+                <RakutenAffiliateAd ad={rakutenAds[3]} />
               )}
               {index === 3 && (
-                <div className="flex justify-center gap-3 p-2">
-                  <a href="https://px.a8.net/svt/ejp?a8mat=45K8T3+2QTZ76+5DM0+631SX" rel="nofollow">
-                    <img
-                      width="300"
-                      height="250"
-                      alt=""
-                      src="https://www23.a8.net/svt/bgt?aid=251207319166&wid=001&eno=01&mid=s00000025092001022000&mc=1"
-                    />
-                  </a>
-                  <img width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45K8T3+2QTZ76+5DM0+631SX" alt="" />
-                  <a href="https://px.a8.net/svt/ejp?a8mat=45K8T3+2WSB8Y+5ESS+5ZMCH" rel="nofollow">
-                    <img
-                      width="300"
-                      height="250"
-                      alt=""
-                      src="https://www20.a8.net/svt/bgt?aid=251207319176&wid=001&eno=01&mid=s00000025246001006000&mc=1"
-                    />
-                  </a>
-                  <img width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45K8T3+2WSB8Y+5ESS+5ZMCH" alt="" />
-                </div>
+                <RakutenAffiliateAd ad={rakutenAds[0]} />
               )}
             </React.Fragment>
           ))}

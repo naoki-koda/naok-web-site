@@ -1,4 +1,5 @@
 // app/nagoya/personal-color/page.tsx
+import RakutenAffiliateAd, { rakutenAds } from '@/app/blog/RakutenAffiliateAd';
 import ComparisonTable from '@/app/blog/nagoya/personal-color/ComparisonTables';
 import { salons } from '@/app/data/salons';
 import { generateItemListSchema } from '@/app/utils/schema'; // 調査データを格納したJSON
@@ -35,50 +36,26 @@ export default function NagoyaPersonalColorPage() {
         {/* 3. クイック比較表（ユーザーの即時離脱を防ぐ） */}
         <h2 className="text-2xl font-bold mb-6 text-gray-800">迷ったらココ！目的別おすすめサロン</h2>
         <ComparisonTable salons={salons} />
-        <div className="m-8 flex justify-center">
-          <a href="https://px.a8.net/svt/ejp?a8mat=45IJ10+BBTY5U+34VM+25F7I9" rel="nofollow">
-          <img width="468" height="60" alt="" src="https://www22.a8.net/svt/bgt?aid=251127252685&wid=001&eno=01&mid=s00000014629013004000&mc=1"></img></a>
-          <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45IJ10+BBTY5U+34VM+25F7I9" alt=""></img>
-        </div>
+        <RakutenAffiliateAd ad={rakutenAds[0]} />
         {/* 4. サロン詳細リスト */}
         <div className="mt-12 space-y-8">
           {salons.map((salon, idx) => (
             <React.Fragment key={salon.rank}>
               <SalonCard key={salon.id} salon={salon} />
               {idx === 0 && (
-              <div className="mt-10 flex justify-center">
-                <a href="https://px.a8.net/svt/ejp?a8mat=45IJ10+BDM8Z6+5TSI+5Z6WX" rel="nofollow">
-                <img width="300" height="250" alt="" src="https://www23.a8.net/svt/bgt?aid=251127252688&wid=001&eno=01&mid=s00000027189001004000&mc=1"></img></a>
-                <img width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=45IJ10+BDM8Z6+5TSI+5Z6WX" alt=""></img>
-              </div>
+                <RakutenAffiliateAd ad={rakutenAds[1]} />
               )}
               {idx === 1 && (
-              <div className="mt-10 flex justify-center">
-                <a href="https://px.a8.net/svt/ejp?a8mat=45IJ0V+1MCI2A+2DDC+CEJQUP" rel="nofollow">
-                <img width="300" height="250" alt="" src="https://www25.a8.net/svt/bgt?aid=251127247098&wid=001&eno=01&mid=s00000011064075003000&mc=1"></img></a>
-                <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45IJ0V+1MCI2A+2DDC+CEJQUP" alt=""></img>
-              </div>
+                <RakutenAffiliateAd ad={rakutenAds[2]} />
               )}
               {idx === 2 && (
-              <div className="mt-10 flex justify-center">
-                <a href="https://px.a8.net/svt/ejp?a8mat=45IGP6+28DJG2+5JEM+5Z6WX" rel="nofollow">
-                <img width="300" height="250" alt="" src="https://www29.a8.net/svt/bgt?aid=251124234135&wid=001&eno=01&mid=s00000025843001004000&mc=1"></img></a>
-                <img width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45IGP6+28DJG2+5JEM+5Z6WX" alt=""></img>
-              </div>
+                <RakutenAffiliateAd ad={rakutenAds[3]} />
               )}
               {idx === 3 && (
-              <div className="mt-10 flex justify-center">
-                <a href="https://px.a8.net/svt/ejp?a8mat=45IJ0V+1O4SVM+3Q7E+1TJLZL" rel="nofollow">
-                <img width="300" height="250" alt="" src="https://www21.a8.net/svt/bgt?aid=251127247101&wid=001&eno=01&mid=s00000017393011009000&mc=1"></img></a>
-                <img width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=45IJ0V+1O4SVM+3Q7E+1TJLZL" alt=""></img>
-              </div>
+                <RakutenAffiliateAd ad={rakutenAds[0]} />
               )}
               {idx === 4 && (
-              <div className="mt-10 flex justify-center">
-                <a href="https://px.a8.net/svt/ejp?a8mat=45IJ0V+1OQ8HE+4YJS+60WN5" rel="nofollow">
-                <img width="300" height="250" alt="" src="https://www20.a8.net/svt/bgt?aid=251127247102&wid=001&eno=01&mid=s00000023140001012000&mc=1"></img></a>
-                <img width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45IJ0V+1OQ8HE+4YJS+60WN5" alt=""></img>
-              </div>
+                <RakutenAffiliateAd ad={rakutenAds[1]} />
               )}
             </React.Fragment>
           ))}

@@ -1,3 +1,4 @@
+import RakutenAffiliateAd, { rakutenAds } from '@/app/blog/RakutenAffiliateAd';
 import { kosugiMaru } from '@/app/ui/fonts';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -222,11 +223,7 @@ export default function Page() {
             ))}
           </div>
         </section>
-        <div className="p-3">
-         <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+5SDQIA+40T2+5Z6WX" rel="nofollow">
-         <img width="468" height="60" alt="" src="https://www28.a8.net/svt/bgt?aid=251124233350&wid=001&eno=01&mid=s00000018767001004000&mc=1"></img></a>
-         <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45IGP5+5SDQIA+40T2+5Z6WX" alt=""></img>
-        </div>
+        <RakutenAffiliateAd ad={rakutenAds[0]} />
         <section className="space-y-10">
           {ranking.map((shop, index) => (
             <React.Fragment key={shop.rank}>
@@ -270,11 +267,7 @@ export default function Page() {
               </div>
             </div>
             {index === 1 && (
-                <>
-                  <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+5U61BM+3OGM+601S1" rel="nofollow">
-                  <img width="300" height="250" alt="" src="https://www23.a8.net/svt/bgt?aid=251124233353&wid=001&eno=01&mid=s00000017167001008000&mc=1"></img></a>
-                  <img width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45IGP5+5U61BM+3OGM+601S1" alt=""></img>
-                </>
+              <RakutenAffiliateAd ad={rakutenAds[1]} />
             )}
             </React.Fragment>
           ))}
@@ -298,11 +291,7 @@ export default function Page() {
             、<span className="text-white">③ 納期と予算の許容幅</span> をセットで伝えると打ち合わせがスムーズです。
           </p>
         </section>
-        <div className="p-4">
-          <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+62I3SI+4KYW+60H7L" rel="nofollow">
-          <img width="468" height="120" alt="" src="https://www21.a8.net/svt/bgt?aid=251124233367&wid=001&eno=01&mid=s00000021380001010000&mc=1"></img></a>
-          <img width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=45IGP5+62I3SI+4KYW+60H7L" alt=""></img>
-        </div>
+        <RakutenAffiliateAd ad={rakutenAds[2]} />
         <section className="mt-16 rounded-3xl bg-white/90 p-8 shadow-lg shadow-slate-100">
           <h3 className="text-xl font-semibold text-slate-900">参考にした情報源</h3>
           <p className="mt-4 text-sm text-slate-600">
@@ -324,9 +313,7 @@ export default function Page() {
             ))}
           </ul>
         </section>
-        <a href="https://px.a8.net/svt/ejp?a8mat=45IGP5+68GFUA+1KUO+631SX" rel="nofollow">
-        <img width="300" height="300" alt="" src="https://www22.a8.net/svt/bgt?aid=251124233377&wid=001&eno=01&mid=s00000007368001022000&mc=1"></img></a>
-        <img width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=45IGP5+68GFUA+1KUO+631SX" alt=""></img>
+        <RakutenAffiliateAd ad={rakutenAds[3]} />
       </article>
     </main>
   );

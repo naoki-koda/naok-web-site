@@ -1,3 +1,4 @@
+import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
 import Link from "next/link";
 import React from "react";
 
@@ -108,25 +109,7 @@ export default function Page() {
           名古屋で確かな品質と対応力を持つ左官業務店をリサーチし、特色ごとにランキング形式でまとめました。
           第一位は、かべだんネットワークの中でも信頼が厚い「田口業務店」です。
         </p>
-        <div className="flex justify-center p-3">
-          <a
-            href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G3W7ZM+ZXM+I7NE9"
-            rel="nofollow"
-          >
-            <img
-              width="300"
-              height="250"
-              alt=""
-              src="https://www21.a8.net/svt/bgt?aid=251217386974&wid=001&eno=01&mid=s00000004657003059000&mc=1"
-            ></img>
-          </a>
-          <img
-            width="1"
-            height="1"
-            src="https://www15.a8.net/0.gif?a8mat=45KGKQ+G3W7ZM+ZXM+I7NE9"
-            alt=""
-          ></img>
-        </div>
+        <RakutenAffiliateAd ad={rakutenAds[0]} />
         <div className="grid gap-4 md:grid-cols-3 text-sm text-gray-600">
           <div className="bg-gray-50 border border-gray-100 rounded-xl p-4">
             <p className="font-semibold text-gray-800">対象エリア</p>
@@ -142,25 +125,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <div className="flex justify-center p-3">
-        <a
-          href="https://px.a8.net/svt/ejp?a8mat=45K8T3+RZE7M+1AGI+63H8H"
-          rel="nofollow"
-        >
-          <img
-            width="468"
-            height="240"
-            alt=""
-            src="https://www20.a8.net/svt/bgt?aid=251207319047&wid=001&eno=01&mid=s00000006021001024000&mc=1"
-          ></img>
-        </a>
-        <img
-          width="1"
-          height="1"
-          src="https://www19.a8.net/0.gif?a8mat=45K8T3+RZE7M+1AGI+63H8H"
-          alt=""
-        ></img>
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[1]} />
 
       <section className="space-y-10">
         {companies.map((company, index) => (
@@ -215,67 +180,13 @@ export default function Page() {
 
             {/* 🔥 2 件目の後だけ表示するコンポーネント */}
             {index === 0 && (
-              <div className="flex justify-center p-3">
-                <a
-                  href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G53376+3CP0+BZO4H"
-                  rel="nofollow"
-                >
-                  <img
-                    width="300"
-                    height="250"
-                    alt=""
-                    src="https://www26.a8.net/svt/bgt?aid=251217386976&wid=001&eno=01&mid=s00000015642002014000&mc=1"
-                  ></img>
-                </a>
-                <img
-                  width="1"
-                  height="1"
-                  src="https://www10.a8.net/0.gif?a8mat=45KGKQ+G53376+3CP0+BZO4H"
-                  alt=""
-                ></img>
-              </div>
+              <RakutenAffiliateAd ad={rakutenAds[2]} />
             )}
             {index === 1 && (
-              <div className="flex justify-center p-3">
-                <a
-                  href="https://px.a8.net/svt/ejp?a8mat=45IGP5+432376+Y92+7XUF8X"
-                  rel="nofollow"
-                >
-                  <img
-                    width="468"
-                    height="60"
-                    alt=""
-                    src="https://www24.a8.net/svt/bgt?aid=251124233247&wid=001&eno=01&mid=s00000004439048011000&mc=1"
-                  ></img>
-                </a>
-                <img
-                  width="1"
-                  height="1"
-                  src="https://www16.a8.net/0.gif?a8mat=45IGP5+432376+Y92+7XUF8X"
-                  alt=""
-                ></img>
-              </div>
+              <RakutenAffiliateAd ad={rakutenAds[3]} />
             )}
             {index === 3 && (
-              <div className="flex justify-center p-3">
-                <a
-                  href="https://px.a8.net/svt/ejp?a8mat=45KGKQ+G8NOTU+4F7Y+HWAG1"
-                  rel="nofollow"
-                >
-                  <img
-                    width="300"
-                    height="250"
-                    alt=""
-                    src="https://www20.a8.net/svt/bgt?aid=251217386982&wid=001&eno=01&mid=s00000020635003006000&mc=1"
-                  ></img>
-                </a>
-                <img
-                  width="1"
-                  height="1"
-                  src="https://www19.a8.net/0.gif?a8mat=45KGKQ+G8NOTU+4F7Y+HWAG1"
-                  alt=""
-                ></img>
-              </div>
+              <RakutenAffiliateAd ad={rakutenAds[0]} />
             )}
           </React.Fragment>
         ))}
@@ -299,25 +210,7 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <div className="flex justify-center p-3">
-        <a
-          href="https://px.a8.net/svt/ejp?a8mat=45IGP5+59XAR6+53VG+5ZMCH"
-          rel="nofollow"
-        >
-          <img
-            width="300"
-            height="250"
-            alt=""
-            src="https://www29.a8.net/svt/bgt?aid=251124233319&wid=001&eno=01&mid=s00000023830001006000&mc=1"
-          ></img>
-        </a>
-        <img
-          width="1"
-          height="1"
-          src="https://www13.a8.net/0.gif?a8mat=45IGP5+59XAR6+53VG+5ZMCH"
-          alt=""
-        ></img>
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[1]} />
     </main>
   );
 }

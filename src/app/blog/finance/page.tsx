@@ -1,4 +1,5 @@
 import { kosugiMaru } from "@/app/ui/fonts";
+import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
 import type { Metadata } from "next";
 
 type Role = "advisor" | "user";
@@ -123,13 +124,6 @@ export const metadata: Metadata = {
   description:
     "借入額だけでなく、光熱費・修繕費・インフレまで含めた生涯コストで住宅ローンを考える記事。自営業300万円と公務員600万円のペアローン戦略を具体例で解説します。",
 };
-
-const adLink =
-  "https://px.a8.net/svt/ejp?a8mat=4AZLSE+1FSQEQ+5ULO+5YZ75";
-const adImage =
-  "https://www20.a8.net/svt/bgt?aid=260322062087&wid=001&eno=01&mid=s00000027294001003000&mc=1";
-const adTrackingPixel =
-  "https://www19.a8.net/0.gif?a8mat=4AZLSE+1FSQEQ+5ULO+5YZ75";
 
 export default function FinancePage() {
   return (
@@ -378,23 +372,8 @@ export default function FinancePage() {
               </p>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[320px] shrink-0 rounded-[28px] border border-white/80 bg-white/95 p-3 shadow-xl shadow-emerald-200/50">
-              <a href={adLink} rel="nofollow" className="block">
-                <img
-                  width={300}
-                  height={250}
-                  alt="住宅関連サービスの広告"
-                  src={adImage}
-                  className="h-auto w-full rounded-2xl"
-                />
-              </a>
-              <img
-                width={1}
-                height={1}
-                src={adTrackingPixel}
-                alt=""
-                className="pointer-events-none absolute opacity-0"
-              />
+            <div className="shrink-0">
+              <RakutenAffiliateAd ad={rakutenAds[3]} />
             </div>
           </div>
         </aside>

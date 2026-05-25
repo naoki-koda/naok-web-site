@@ -1,4 +1,5 @@
 import { apps } from '@/app/data/app';
+import RakutenAffiliateAd, { rakutenAds } from '@/app/blog/RakutenAffiliateAd';
 import ComparisonTable from '@/components/ComparisonTable';
 import JsonLd from '@/components/JsonLd';
 import { CheckCircleIcon, XCircleIcon } from '@heroicons/react/24/solid';
@@ -35,11 +36,7 @@ export default function Page() {
           最終更新: 2025年11月 • 監修: AI教育アナリスト
         </div>
       </header>
-      <div className="m-10 flex justify-center">
-        <a href="https://px.a8.net/svt/ejp?a8mat=45IGP6+2A5U9E+4H2M+6BMG1" rel="nofollow">
-        <img width="300" height="250" alt="" src="https://www25.a8.net/svt/bgt?aid=251124234138&wid=001&eno=01&mid=s00000020875001062000&mc=1"></img></a>
-        <img width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45IGP6+2A5U9E+4H2M+6BMG1" alt=""></img>
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[0]} />
 
       {/* 導入：なぜAIなのか？ */}
       <section className="prose prose-lg prose-blue mx-auto mb-12">
@@ -58,11 +55,7 @@ export default function Page() {
         </ul>
       </section>
 
-      <div className="m-10 flex justify-center">
-        <a href="https://px.a8.net/svt/ejp?a8mat=45IJ0V+1OQ8HE+4YJS+60WN5" rel="nofollow">
-        <img width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=251127247102&wid=001&eno=01&mid=s00000023140001012000&mc=1"></img></a>
-        <img width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=45IJ0V+1OQ8HE+4YJS+60WN5" alt=""></img>
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[1]} />
 
       {/* 比較テーブル */}
       <section id="comparison" className="mb-16">
@@ -151,11 +144,7 @@ export default function Page() {
           </article>
         ))}
       </section>
-      <div className="m-10 flex justify-center">
-        <a href="https://px.a8.net/svt/ejp?a8mat=45IGP6+1XNQK2+4XZI+609HT" rel="nofollow">
-        <img width="300" height="250" alt="" src="https://www28.a8.net/svt/bgt?aid=251124234117&wid=001&eno=01&mid=s00000023067001009000&mc=1"></img></a>
-        <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45IGP6+1XNQK2+4XZI+609HT" alt=""></img>
-      </div>
+      <RakutenAffiliateAd ad={rakutenAds[2]} />
       {/* 締めくくり */}
       <section className="mt-16 pt-8 border-t border-gray-200 text-center">
         <h2 className="text-2xl font-bold mb-4">迷ったらまずは「体験」から</h2>
