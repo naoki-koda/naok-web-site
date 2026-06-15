@@ -49,7 +49,7 @@ export default function NagoyaPersonalColorPage() {
                 <RakutenAffiliateAd ad={rakutenAds[2]} />
               )}
               {idx === 2 && (
-                <RakutenAffiliateAd ad={rakutenAds[3]} />
+                <RakutenAffiliateAd ad={rakutenAds[0]} />
               )}
               {idx === 3 && (
                 <RakutenAffiliateAd ad={rakutenAds[0]} />

@@ -304,7 +304,7 @@ export default function NagoyaHairSalonNakakuPage() {
                     <RakutenAffiliateAd ad={rakutenAds[2]} />
                 )}
                 { index === 2 && (
-                    <RakutenAffiliateAd ad={rakutenAds[3]} />
+                    <RakutenAffiliateAd ad={rakutenAds[0]} />
                 )}
                 { index === 3 && (
                     <RakutenAffiliateAd ad={rakutenAds[0]} />

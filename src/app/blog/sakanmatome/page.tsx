@@ -183,7 +183,7 @@ export default function Page() {
               <RakutenAffiliateAd ad={rakutenAds[2]} />
             )}
             {index === 1 && (
-              <RakutenAffiliateAd ad={rakutenAds[3]} />
+              <RakutenAffiliateAd ad={rakutenAds[0]} />
             )}
             {index === 3 && (
               <RakutenAffiliateAd ad={rakutenAds[0]} />

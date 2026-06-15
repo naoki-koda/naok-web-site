@@ -313,7 +313,7 @@ export default function Page() {
             ))}
           </ul>
         </section>
-        <RakutenAffiliateAd ad={rakutenAds[3]} />
+        <RakutenAffiliateAd ad={rakutenAds[0]} />
       </article>
     </main>
   );

@@ -4,38 +4,35 @@ export type RakutenAd = {
   imageSrc: string;
   title: string;
   price: string;
+  priceCheckedAt?: string;
 };
 
 const rakutenLogo = 'https://static.affiliate.rakuten.co.jp/makelink/rl.svg';
 
 export const rakutenAds: RakutenAd[] = [
   {
-    href: 'https://hb.afl.rakuten.co.jp/ichiba/53f50baf.f71f19bc.53f50bb0.2ab5d8e8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdecori%2Fy-342%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
-    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/53f50baf.f71f19bc.53f50bb0.2ab5d8e8/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdecori%2Fy-342%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
-    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/53f50baf.f71f19bc.53f50bb0.2ab5d8e8/?me_id=1431235&item_id=10000319&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fdecori%2Fcabinet%2F12282578%2Fimgrc0114070921.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
-    title: '＼ 総合ランキング2日連続第1位獲得／ご好評につき予約販売特価 65％OFFクーポン継続配布中！NISHIZARC 保冷剤 ステンレス保冷剤 長時間 強力保冷 小型 クーラーボックス 繰り返し使える 冷蔵 冷凍対応 熱中症対策 急速冷却 アイスパック お弁当 釣り キャンプ BBQ',
-    price: '価格：2,880円～（税込、送料無料)',
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4365.6407db04.54ed436a.d1a2ddb0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdarkangel%2Fto2305-1114%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4365.6407db04.54ed436a.d1a2ddb0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdarkangel%2Fto2305-1114%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54ed4365.6407db04.54ed436a.d1a2ddb0/?me_id=1224379&item_id=10036035&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fdarkangel%2Fcabinet%2F12863863%2F06%2F1114-main-260602-2-1.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: '74%OFF!【大反響延長：3,980円→999円！】※1人様3枚まで※【年間ランキング4位】さらてろパジャマ ルームウェア レディース 上下セット さらてろリブ セットアップ 長袖 ウエストゴム ハイウエスト 腹巻 ワンマイルウェア 部屋着 【 ルームウェア上下セット】',
+    price: '価格：999円（税込、送料無料)',
+    priceCheckedAt: '2026/6/15',
   },
   {
-    href: 'https://hb.afl.rakuten.co.jp/ichiba/53f50f12.3f8b536f.53f50f13.7cfce3c7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-interior%2Fqrt01%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
-    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/53f50f12.3f8b536f.53f50f13.7cfce3c7/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Ft-interior%2Fqrt01%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
-    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/53f50f12.3f8b536f.53f50f13.7cfce3c7/?me_id=1411961&item_id=10000236&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Ft-interior%2Fcabinet%2Fitem%2Fusual%2Fqrt01_bp1.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
-    title: '[レビュー特典有り] NERUS 正規品 とろとろケット 洗える 掛け布団 布団 タオルケット ブランケット 肌掛け布団 肌布団 くしゅくしゅケット とろーり とろける とろとろ ケット 夏 夏用 夏布団 冷感 夏掛け布団 夏用布団 QRT01',
-    price: '価格：2,980円～（税込、送料無料)',
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4492.6c070c6a.54ed4493.e1f216be/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkawasui%2F10000130%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4492.6c070c6a.54ed4493.e1f216be/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkawasui%2F10000130%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54ed4492.6c070c6a.54ed4493.e1f216be/?me_id=1206971&item_id=10000130&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fkawasui%2Fcabinet%2Ftiti%2Fota-dai80_601tm.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: '父の日 まだ間に合う ギフト うなぎ 国産 かわすい 冷凍 うなぎ蒲焼き 3種セット ウナギ 鰻 蒲焼き ひつまぶし グルメ 内祝い ギフト お取り寄せ 【うなぎ屋かわすい】 送料無料 プレゼント 父の日ギフト2026 お中元 御中元',
+    price: '価格：5,990円～（税込、送料無料)',
+    priceCheckedAt: '2026/6/15',
   },
   {
-    href: 'https://hb.afl.rakuten.co.jp/ichiba/53f53b65.9a931d00.53f53b66.2cde603a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpmone%2F4520260411843%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
-    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/53f53b65.9a931d00.53f53b66.2cde603a/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fpmone%2F4520260411843%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
-    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/53f53b65.9a931d00.53f53b66.2cde603a/?me_id=1240930&item_id=10031565&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fpmone%2Fcabinet%2F4520260411843.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
-    title: '【TVで話題】【すぐ飲める粉末タイプ】『簡単 ひし茶 30包』ヒシエキス 菱エキス　 AGE終末糖化物質 お湯で溶かす分包タイプ',
-    price: '価格：2,480円（税込、送料無料)',
-  },
-  {
-    href: 'https://hb.afl.rakuten.co.jp/ichiba/53f54426.19437ef1.53f54427.16fa0e77/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnippon-shinyaku-shop%2F4510e%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
-    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/53f54426.19437ef1.53f54427.16fa0e77/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fnippon-shinyaku-shop%2F4510e%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
-    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/53f54426.19437ef1.53f54427.16fa0e77/?me_id=1340863&item_id=10000215&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fnippon-shinyaku-shop%2Fcabinet%2Fcf%2F11096597%2F4510e_260414.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
-    title: 'プロテイン ホエイプロテイン ウィンゾーン パーフェクトチョイス 1kg 日本新薬 WPC タンパク質 BCAA EAA ビタミン ミネラル 選べる風味 WINZONE シェイカーありなし 男性 女性 男女兼用 筋トレ 置き換え ダイエット 美容',
-    price: '価格：5,380円～（税込、送料無料)',
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/54ed45cf.ae51c5b7.54ed45d0.c5f5a167/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbrighte-onlineshop%2Fbrt-fl170%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54ed45cf.ae51c5b7.54ed45d0.c5f5a167/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbrighte-onlineshop%2Fbrt-fl170%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54ed45cf.ae51c5b7.54ed45d0.c5f5a167/?me_id=1424517&item_id=10000000&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbrighte-onlineshop%2Fcabinet%2F10566429%2F10575588%2F10661392%2Fbrt-fl170_260611.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: '＜今なら19,800円相当！＞ラヴィットで紹介【セットイベント開催中】 ELEKI LIFT 【公式】美顔器 リフトアップ ブライト エレキリフト / Brighte 美顔器 | ems 美容 美容家電 角質汚れ フェイスライン エイジングケア クーポン適応条件あり',
+    price: '価格：58,000円（税込、送料無料)',
+    priceCheckedAt: '2026/6/15',
   },
 ];
 
@@ -70,7 +67,10 @@ export default function RakutenAffiliateAd({ ad }: { ad: RakutenAd }) {
                 {ad.title}
               </a>
               <br />
-              <span>{ad.price}</span> <span className="text-[#BBB]">(2026/5/19時点)</span>
+              <span>{ad.price}</span>{" "}
+              <span className="text-[#BBB]">
+                ({ad.priceCheckedAt ?? "2026/5/19"}時点)
+              </span>
             </p>
             <div className="m-2.5 flex items-center justify-between gap-2">
               <a href={ad.href} target="_blank" rel="nofollow sponsored noopener" className="min-w-0 break-words">

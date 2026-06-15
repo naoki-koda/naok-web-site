@@ -349,7 +349,7 @@ export default function Page() {
         </blockquote>
       </section>
 
-      <RakutenAffiliateAd ad={rakutenAds[3]} />
+      <RakutenAffiliateAd ad={rakutenAds[0]} />
       <section className="mb-16 bg-amber-50 border border-amber-100 rounded-3xl p-6">
         <div className="flex items-center gap-3 mb-4">
           <ExclamationTriangleIcon className="w-8 h-8 text-amber-500" />

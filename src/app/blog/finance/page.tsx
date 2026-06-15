@@ -1,5 +1,8 @@
 import { kosugiMaru } from "@/app/ui/fonts";
-import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
+import RakutenAffiliateAd, {
+  rakutenAds,
+  type RakutenAd,
+} from "@/app/blog/RakutenAffiliateAd";
 import type { Metadata } from "next";
 
 type Role = "advisor" | "user";
@@ -118,6 +121,19 @@ const summaryCards = [
   },
 ];
 
+const deLonghiRakutenAd: RakutenAd = {
+  href:
+    "https://hb.afl.rakuten.co.jp/ichiba/54ed012e.5446bc0a.54ed012f.107e4536/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdelonghi%2F0132213169%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+  buttonHref:
+    "https://hb.afl.rakuten.co.jp/ichiba/54ed012e.5446bc0a.54ed012f.107e4536/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdelonghi%2F0132213169%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==",
+  imageSrc:
+    "https://hbb.afl.rakuten.co.jp/hgb/54ed012e.5446bc0a.54ed012f.107e4536/?me_id=1363152&item_id=10002655&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fdelonghi%2Fcabinet%2Fitem%2Fthumb%2F0132213169.jpg%3F_ex%3D240x240&s=240x240&t=picttext",
+  title:
+    "【数量限定】＼楽天ランキング1位／デロンギ マグニフィカS 全自動コーヒーマシン エスプレッソマシン [ECAM22112B] デロンギコーヒーメーカー コーヒーメーカー 豆から挽く エスプレッソ カプチーノ カフェラテ 全自動 コーヒー豆 在宅勤務 テレワーク 公式",
+  price: "価格：69,800円（税込、送料無料)",
+  priceCheckedAt: "2026/6/15",
+};
+
 export const metadata: Metadata = {
   title:
     "年収900万円で6,000万円の家は無謀？自営業×公務員夫婦の住宅ローン戦略",
@@ -168,6 +184,10 @@ export default function FinancePage() {
             ))}
           </div>
         </header>
+
+        <aside aria-label="さらてろパジャマのPR">
+          <RakutenAffiliateAd ad={rakutenAds[0]} />
+        </aside>
 
         <section className="mt-10 rounded-[32px] border border-slate-200 bg-white/85 p-6 shadow-lg shadow-slate-100 sm:p-8">
           <div className="flex items-center justify-between gap-4 border-b border-slate-100 pb-4">
@@ -333,6 +353,27 @@ export default function FinancePage() {
           </div>
         </section>
 
+        <aside className="mt-10 overflow-hidden rounded-[32px] border border-amber-100 bg-white/90 p-6 shadow-lg shadow-amber-100/50 sm:p-8">
+          <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
+            <div className="max-w-2xl">
+              <p className="inline-flex rounded-full bg-amber-600 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white">
+                PR
+              </p>
+              <h2 className="mt-4 text-2xl font-bold text-slate-900">
+                毎日使う家電は、使用頻度で投資価値を考える
+              </h2>
+              <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+                家づくりでは建物だけでなく、暮らしを支える家電の予算も必要です。
+                毎日使うものは、価格だけでなく、手間を減らせるか、長く使えるかまで含めて比較すると選びやすくなります。
+              </p>
+            </div>
+
+            <div className="shrink-0">
+              <RakutenAffiliateAd ad={deLonghiRakutenAd} />
+            </div>
+          </div>
+        </aside>
+
         <section className="mt-10 rounded-[32px] bg-white/85 p-6 shadow-lg shadow-slate-100 ring-1 ring-slate-100 sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
             4. マクロ視点
@@ -373,7 +414,7 @@ export default function FinancePage() {
             </div>
 
             <div className="shrink-0">
-              <RakutenAffiliateAd ad={rakutenAds[3]} />
+              <RakutenAffiliateAd ad={rakutenAds[1]} />
             </div>
           </div>
         </aside>
