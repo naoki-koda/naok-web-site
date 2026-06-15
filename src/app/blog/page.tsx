@@ -4,6 +4,15 @@ import Link from 'next/link';
 
 const posts = [
   {
+    slug: '/blog/hiphopmatome',
+    title: 'おすすめの日本人ヒップホッパー3選',
+    description:
+      '1位YZERR、2位GADORO、3位Tohji。それぞれの背景、音楽性、最初に聴きたい代表曲をランキング形式で紹介します。',
+    tags: ['ヒップホップ', '日本語ラップ', '音楽'],
+    readTime: '約8分',
+    accent: 'from-violet-200 via-white to-amber-100',
+  },
+  {
     slug: '/blog/tategumatome',
     title: '名古屋のおすすめ造作家具店まとめ',
     description:
