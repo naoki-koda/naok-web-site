@@ -1,6 +1,4 @@
-import RakutenAffiliateAd, {
-  rakutenAds,
-} from "@/app/blog/RakutenAffiliateAd";
+import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
 import { kosugiMaru } from "@/app/ui/fonts";
 import type { Metadata } from "next";
 
@@ -18,6 +16,7 @@ const artists = [
       {
         title: "Kawasaki Drift / BAD HOP",
         note: "メンバーそれぞれの個性と川崎という原点が一度に分かる代表曲。",
+        youtubeUrl: "https://www.youtube.com/watch?v=I4t8Fuk-SCQ",
       },
       {
         title: "Life Style / BAD HOP",
@@ -43,6 +42,7 @@ const artists = [
       {
         title: "クズ",
         note: "欠点や後悔を正面から言葉にする、GADOROの原点が伝わる代表曲。",
+        youtubeUrl: "https://www.youtube.com/watch?v=8OU9dbFjsT0",
       },
       {
         title: "カタツムリ",
@@ -68,6 +68,7 @@ const artists = [
       {
         title: "Higher",
         note: "Tohjiの浮遊感とアンセミックな強さをつかみやすい入口。",
+        youtubeUrl: "https://www.youtube.com/watch?v=L5dhhdhO4Yw",
       },
       {
         title: "Super Ocean Man",
@@ -102,53 +103,59 @@ const sources = [
 ];
 
 export const metadata: Metadata = {
-  title: "おすすめの日本人ヒップホッパー3選｜YZERR・GADORO・Tohji",
+  title:
+    "ADHDとヒップホップは相性がいい？集中のスイッチになる日本人ラッパー3選",
   description:
-    "おすすめの日本人ヒップホッパーをランキング形式で紹介。1位YZERR、2位GADORO、3位Tohjiの背景、音楽性、最初に聴きたい代表曲をまとめました。",
+    "ADHD傾向のある人が集中のスイッチを入れたいときに聴きたい日本人ヒップホッパーを紹介。1位YZERR、2位GADORO、3位Tohjiの背景、音楽性、代表曲をまとめました。",
 };
 
 export default function HipHopMatomePage() {
   return (
-    <main className="bg-[linear-gradient(180deg,#08090d_0%,#111827_45%,#f8fafc_45%)]">
+    <main className="bg-[linear-gradient(180deg,#fff7ed_0%,#fef3c7_32%,#f8fafc_70%)]">
       <article className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <header className="overflow-hidden rounded-[32px] border border-white/10 bg-black/70 p-7 text-white shadow-2xl sm:p-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-400">
-            Japanese Hip-Hop Guide
+        <header className="overflow-hidden rounded-[32px] border border-amber-200 bg-white/90 p-7 text-slate-950 shadow-2xl shadow-amber-200/50 sm:p-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-600">
+            ADHD × Hip-Hop
           </p>
           <h1
             className={`mt-5 text-3xl leading-tight font-bold sm:text-5xl ${kosugiMaru.className}`}
           >
-            おすすめのヒップホッパー3選
+            ADHD気質に刺さる
+            <br />
+            おすすめヒップホッパー3選
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-            ストリートから巨大な舞台へ進んだYZERR、言葉で人生をひっくり返したGADORO、
-            音の感覚そのものを更新するTohji。背景と代表曲を知ると、
-            3人の違いがより鮮明に聴こえます。
+          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-700 sm:text-lg">
+            ADHDの診断や治療の話ではなく、集中のスイッチを入れたいときの音楽ガイドです。
+            ヒップホップの強いビート、短いフレーズの反復、感情を一気に持ち上げる言葉は、
+            気が散りやすい時間にもリズムを作ってくれます。
+            ここでは、作業前・移動中・気分を切り替えたい瞬間に相性がいい3人を選びました。
           </p>
+
+          <aside aria-label="おすすめ商品のPR">
+            <RakutenAffiliateAd ad={rakutenAds[3]} />
+          </aside>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
             {artists.map((artist) => (
               <a
                 key={artist.name}
                 href={`#rank-${artist.rank}`}
-                className="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10"
+                className="rounded-2xl border border-amber-100 bg-amber-50/80 p-4 transition hover:bg-amber-100"
               >
-                <span className="text-xs font-semibold text-amber-400">
+                <span className="text-xs font-semibold text-amber-700">
                   RANK {artist.rank}
                 </span>
                 <span className="mt-1 block text-xl font-bold">
                   {artist.name}
                 </span>
-                <span className="text-sm text-slate-400">
-                  {artist.reading}
-                </span>
+                <span className="text-sm text-slate-600">{artist.reading}</span>
               </a>
             ))}
           </div>
         </header>
 
         <aside aria-label="おすすめ商品のPR">
-          <RakutenAffiliateAd ad={rakutenAds[0]} />
+          <RakutenAffiliateAd ad={rakutenAds[5]} />
         </aside>
 
         <section className="rounded-[32px] bg-white p-6 shadow-xl shadow-slate-300/30 sm:p-9">
@@ -226,6 +233,16 @@ export default function HipHopMatomePage() {
                           <p className="mt-1 text-sm leading-6 text-slate-600">
                             {song.note}
                           </p>
+                          {"youtubeUrl" in song && (
+                            <a
+                              href={song.youtubeUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-3 inline-flex rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white transition hover:bg-red-700"
+                            >
+                              YouTubeで聴く
+                            </a>
+                          )}
                         </div>
                       </div>
                     ))}

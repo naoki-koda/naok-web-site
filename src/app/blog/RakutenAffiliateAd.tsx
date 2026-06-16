@@ -34,6 +34,30 @@ export const rakutenAds: RakutenAd[] = [
     price: '価格：58,000円（税込、送料無料)',
     priceCheckedAt: '2026/6/15',
   },
+  {
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/54f0880d.6704acc5.54f0880e.d943f1d3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkingsmarche%2Fpmdr1%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54f0880d.6704acc5.54f0880e.d943f1d3/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkingsmarche%2Fpmdr1%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54f0880d.6704acc5.54f0880e.d943f1d3/?me_id=1439080&item_id=10000972&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fkingsmarche%2Fcabinet%2Fmerchandise%2Fs0088%2Fpmdr%2F1.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: '学習タイマー ポモドーロタイマー勉強タイマー 充電式 電池式 ミュート ラーニングタイマー 無音 振動 12面体 サイコロ ダイヤル式自習 仕事 トマトタイマー ポマドーロ 知育 試験 仕事 資格 集中 インテリア アラーム バイブ 集中 休憩 時間管理 コンパクト ポマドーロ',
+    price: '価格：1,480円～（税込、送料無料)',
+    priceCheckedAt: '2026/6/16',
+  },
+  {
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/54f08bb1.57acefb7.54f08bb2.0c857e5b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-x1%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54f08bb1.57acefb7.54f08bb2.0c857e5b/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fgracevally%2Fgrace-x1%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54f08bb1.57acefb7.54f08bb2.0c857e5b/?me_id=1411453&item_id=10000003&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fgracevally%2Fcabinet%2F09355687%2F09355695%2F12855263%2Fx1front-2026old.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: '楽天ランキング1位＼81%OFF＆P2倍で2,174円！／2024年間MVP ワイヤレスイヤホン bluetoothイヤホン 残量表示 Bluetooth5.4 ENC ノイズキャンセリング 自動ペアリング 36H連続再生 Type‐C急速充電 IPX7防水 AAC対応 マイク内蔵 iPhone/Android 旅行',
+    price: '価格：2,780円（税込、送料無料)',
+    priceCheckedAt: '2026/6/16',
+  },
+  {
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/54f09aa3.38c09df6.54f09aa4.d82bc94e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fugreen-gear%2F45298%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54f09aa3.38c09df6.54f09aa4.d82bc94e/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fugreen-gear%2F45298%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54f09aa3.38c09df6.54f09aa4.d82bc94e/?me_id=1400231&item_id=10001076&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fugreen-gear%2Fcabinet%2F10122288%2F45298.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: 'UGREEN Finder slim 紛失防止タグ スリム 超薄型財布ファインダー AirTag 代替 SmartTrack Card Appleの「探す」に対応 スマートタグ スマートトラッカー GPSトラッカー IP68 充電式 置き忘れ防止 トラッカーカード 財布 キー 荷物タグ用 タグ',
+    price: '価格：3,999円（税込、送料無料)',
+    priceCheckedAt: '2026/6/16',
+  },
 ];
 
 export default function RakutenAffiliateAd({ ad }: { ad: RakutenAd }) {
