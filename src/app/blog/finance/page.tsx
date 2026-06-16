@@ -1,8 +1,8 @@
-import { kosugiMaru } from "@/app/ui/fonts";
 import RakutenAffiliateAd, {
   rakutenAds,
   type RakutenAd,
 } from "@/app/blog/RakutenAffiliateAd";
+import { kosugiMaru } from "@/app/ui/fonts";
 import type { Metadata } from "next";
 
 type Role = "advisor" | "user";
@@ -56,42 +56,37 @@ const introMessages: Message[] = [
 const strategyPoints = [
   "夫は自営業300万円、妻は公務員600万円。収入の安定性と節税感覚の両方を持つ世帯構成。",
   "ペアローンで妻の信用力を活かしつつ、夫婦それぞれが住宅ローン控除を取りにいく設計。",
+  "実際に住宅ローン控除で、夫婦合計およそ30万円が戻ってきた年がありました。",
   "借入額だけでなく、住んだ後の固定費削減まで含めて『払えるか』を判断。",
 ];
 
 const equipmentCards = [
   {
     title: "断熱等級6",
-    body:
-      "冷暖房効率を底上げし、夏冬の光熱費を圧縮。室温の安定はヒートショック対策や睡眠の質にも直結します。",
+    body: "冷暖房効率を底上げし、夏冬の光熱費を圧縮。室温の安定はヒートショック対策や睡眠の質にも直結します。",
   },
   {
     title: "太陽光発電 + エコワン",
-    body:
-      "電気とガスを分散して持つことで、どちらかの価格が上がっても家計のダメージを和らげられます。エネルギー高騰への保険として機能します。",
+    body: "電気とガスを分散して持つことで、どちらかの価格が上がっても家計のダメージを和らげられます。エネルギー高騰への保険として機能します。",
   },
   {
     title: "メンテナンス負担の低い外装",
-    body:
-      "初期費用を少し積んで塗り替えや補修の頻度を下げると、10年後・15年後の大きな出費を避けやすくなります。",
+    body: "初期費用を少し積んで塗り替えや補修の頻度を下げると、10年後・15年後の大きな出費を避けやすくなります。",
   },
 ];
 
 const macroPoints = [
   {
     title: "現金の安心は、インフレ局面では目減りする",
-    body:
-      "物価が上がる時代は、手元現金の購買力が下がります。低金利で固定資産を持つことは、実質的に借金の価値が薄まる方向に働きます。",
+    body: "物価が上がる時代は、手元現金の購買力が下がります。低金利で固定資産を持つことは、実質的に借金の価値が薄まる方向に働きます。",
   },
   {
     title: "高性能住宅は『消費』だけで終わりにくい",
-    body:
-      "断熱性や設備性能が高い家は、中古で見たときにも説明しやすい価値が残りやすく、住み替えや売却の際の防御力になります。",
+    body: "断熱性や設備性能が高い家は、中古で見たときにも説明しやすい価値が残りやすく、住み替えや売却の際の防御力になります。",
   },
   {
     title: "金利は単体で見るのではなく、家計全体で考える",
-    body:
-      "固定金利は返済額が読める安心があり、変動金利は当初負担を軽くしやすい選択です。重要なのは、金利差よりも将来の家計耐性です。",
+    body: "固定金利は返済額が読める安心があり、変動金利は当初負担を軽くしやすい選択です。重要なのは、金利差よりも将来の家計耐性です。",
   },
 ];
 
@@ -122,8 +117,7 @@ const summaryCards = [
 ];
 
 const deLonghiRakutenAd: RakutenAd = {
-  href:
-    "https://hb.afl.rakuten.co.jp/ichiba/54ed012e.5446bc0a.54ed012f.107e4536/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdelonghi%2F0132213169%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
+  href: "https://hb.afl.rakuten.co.jp/ichiba/54ed012e.5446bc0a.54ed012f.107e4536/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdelonghi%2F0132213169%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D",
   buttonHref:
     "https://hb.afl.rakuten.co.jp/ichiba/54ed012e.5446bc0a.54ed012f.107e4536/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdelonghi%2F0132213169%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==",
   imageSrc:
@@ -135,8 +129,7 @@ const deLonghiRakutenAd: RakutenAd = {
 };
 
 export const metadata: Metadata = {
-  title:
-    "年収900万円で6,000万円の家は無謀？自営業×公務員夫婦の住宅ローン戦略",
+  title: "年収900万円で6,000万円の家は無謀？自営業×公務員夫婦の住宅ローン戦略",
   description:
     "借入額だけでなく、光熱費・修繕費・インフレまで含めた生涯コストで住宅ローンを考える記事。自営業300万円と公務員600万円のペアローン戦略を具体例で解説します。",
 };
@@ -164,7 +157,9 @@ export default function FinancePage() {
               大切なのは、借金額ではなく、住んだ後まで含めた支出の総額です。
             </p>
           </div>
-
+          <aside aria-label="さらてろパジャマのPR">
+            <RakutenAffiliateAd ad={rakutenAds[0]} />
+          </aside>
           <div className="grid gap-4 px-6 py-8 sm:px-10 lg:grid-cols-3">
             {summaryCards.map((card) => (
               <div
@@ -185,9 +180,55 @@ export default function FinancePage() {
           </div>
         </header>
 
-        <aside aria-label="さらてろパジャマのPR">
-          <RakutenAffiliateAd ad={rakutenAds[0]} />
+        <aside aria-label="UGREEN紛失防止タグのPR">
+          <RakutenAffiliateAd ad={rakutenAds[5]} />
         </aside>
+
+        <section className="mt-10 rounded-[32px] border border-emerald-200 bg-[linear-gradient(135deg,rgba(236,253,245,0.98),rgba(255,255,255,0.96))] p-6 shadow-lg shadow-emerald-100/60 sm:p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
+            Conclusion
+          </p>
+          <h2 className="mt-3 text-2xl font-bold text-slate-900">
+            結論：住宅ローン単体ではなく「住居費の総月額」で比べる
+          </h2>
+          <p className="mt-5 text-base leading-8 text-slate-700">
+            6,000万円の家が高いかどうかは、住宅ローンの返済額だけでは判断できません。
+            本当に比べるべきなのは、
+            <span className="font-semibold text-emerald-800">
+              住宅ローン + 光熱費 - 住宅ローン控除
+            </span>
+            で見た実質負担です。賃貸なら
+            <span className="font-semibold text-emerald-800">
+              家賃 + 光熱費
+            </span>
+            と比べる。マンション購入を検討しているなら、
+            <span className="font-semibold text-emerald-800">
+              マンションのローン + 修繕積立金 + 管理費 + 駐車場代 + 光熱費 - 住宅ローン控除
+            </span>
+            まで含めて比較するのがおすすめです。
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-3xl border border-emerald-100 bg-white/90 p-5">
+              <h3 className="text-lg font-bold text-slate-900">注文住宅</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-700">
+                住宅ローン + 光熱費 - 住宅ローン控除
+              </p>
+            </div>
+            <div className="rounded-3xl border border-emerald-100 bg-white/90 p-5">
+              <h3 className="text-lg font-bold text-slate-900">賃貸</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-700">
+                家賃 + 光熱費
+              </p>
+            </div>
+            <div className="rounded-3xl border border-emerald-100 bg-white/90 p-5">
+              <h3 className="text-lg font-bold text-slate-900">マンション購入</h3>
+              <p className="mt-3 text-sm leading-7 text-slate-700">
+                ローン + 修繕積立金 + 管理費 + 駐車場代 + 光熱費 -
+                住宅ローン控除
+              </p>
+            </div>
+          </div>
+        </section>
 
         <section className="mt-10 rounded-[32px] border border-slate-200 bg-white/85 p-6 shadow-lg shadow-slate-100 sm:p-8">
           <div className="flex items-center justify-between gap-4 border-b border-slate-100 pb-4">
@@ -246,7 +287,9 @@ export default function FinancePage() {
             })}
           </div>
         </section>
-
+        <aside aria-label="おすすめ商品のPR">
+          <RakutenAffiliateAd ad={rakutenAds[4]} />
+        </aside>
         <section className="mt-10 rounded-[32px] bg-white/85 p-6 shadow-lg shadow-slate-100 ring-1 ring-slate-100 sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
             1. はじめに
@@ -263,9 +306,7 @@ export default function FinancePage() {
           </p>
           <p className="mt-4 text-base leading-8 text-slate-700">
             だからこそ、判断軸はローン返済額ではなく、
-            <span className="font-semibold text-emerald-800">
-              生涯コスト
-            </span>
+            <span className="font-semibold text-emerald-800">生涯コスト</span>
             です。注文住宅のファイナンスは、目先の月額を抑えるゲームではなく、
             35年間の総支出を最適化する設計だと考えた方が失敗しにくくなります。
           </p>
@@ -276,13 +317,18 @@ export default function FinancePage() {
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300">
               2. 実録
             </p>
-            <h2 className="mt-3 text-2xl font-bold">
-              わが家のペアローン戦略
-            </h2>
+            <h2 className="mt-3 text-2xl font-bold">わが家のペアローン戦略</h2>
             <p className="mt-5 text-base leading-8 text-slate-200">
               わが家は、夫が自営業で年収300万円、妻が公務員で年収600万円の世帯です。
               単純な年収倍率だけ見ると、6,000万円は高く見えるかもしれません。
               ただ、実際には収入の性質が違うからこそ、組み方次第で家計はかなり安定します。
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-200">
+              さらに大きかったのが住宅ローン控除です。ペアローンにしたことで夫婦それぞれが控除を使え、
+              わが家では合計でおよそ30万円が戻ってきた年がありました。
+              控除額は借入残高、所得税・住民税、住宅性能などで変わりますが、
+              「毎月の返済額」だけでなく「税金がどれだけ戻るか」まで含めて見ると、
+              6,000万円という数字の見え方はかなり変わります。
             </p>
             <div className="mt-6 space-y-4">
               {strategyPoints.map((point) => (
@@ -325,7 +371,9 @@ export default function FinancePage() {
             </div>
           </aside>
         </section>
-
+        <aside aria-label="おすすめ商品のPR">
+          <RakutenAffiliateAd ad={rakutenAds[7]} />
+        </aside>
         <section className="mt-10 rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,rgba(255,251,235,0.95),rgba(255,255,255,0.96))] p-6 shadow-lg shadow-amber-100/50 sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
             3. 設備選び
@@ -344,7 +392,9 @@ export default function FinancePage() {
                 key={card.title}
                 className="rounded-3xl border border-amber-100 bg-white/90 p-5"
               >
-                <h3 className="text-lg font-bold text-slate-900">{card.title}</h3>
+                <h3 className="text-lg font-bold text-slate-900">
+                  {card.title}
+                </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-700">
                   {card.body}
                 </p>

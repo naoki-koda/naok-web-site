@@ -58,6 +58,22 @@ export const rakutenAds: RakutenAd[] = [
     price: '価格：3,999円（税込、送料無料)',
     priceCheckedAt: '2026/6/16',
   },
+  {
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4365.6407db04.54ed436a.d1a2ddb0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdarkangel%2Fpa2301-3635%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4365.6407db04.54ed436a.d1a2ddb0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdarkangel%2Fpa2301-3635%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54ed4365.6407db04.54ed436a.d1a2ddb0/?me_id=1224379&item_id=10035877&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fdarkangel%2Fcabinet%2F12863863%2F13035010%2F13076206%2F3635-main-260316.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: '47%OFF!【期間限定：3,790円→1,999円！】 速乾 UVカット イージー コクーンパンツ レディース ボトム パンツ カーブパンツ チノパンツ バレルレッグ 春 夏 秋 冬 低身長 高身長 洗濯可【 イージーコクーンパンツ】',
+    price: '価格：1,999円（税込、送料無料)',
+    priceCheckedAt: '2026/6/16',
+  },
+  {
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4365.6407db04.54ed436a.d1a2ddb0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdarkangel%2Ftp2201-3166%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4365.6407db04.54ed436a.d1a2ddb0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdarkangel%2Ftp2201-3166%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54ed4365.6407db04.54ed436a.d1a2ddb0/?me_id=1224379&item_id=10035358&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fdarkangel%2Fcabinet%2F12863863%2F13285998%2F3166-main-260518-1.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: '60％OFF【期間限定：1枚790円！3枚購入クーポンで】【年間ランキング7位】 ロンT レイヤード シアー トップス tシャツ 長袖 ハイネック クルーネック ボートネック サイドスリット 重ね着 インナー【シアーロングスリーブTシャツ】シースルー UV 紫外線',
+    price: '価格：1,590円（税込、送料無料)',
+    priceCheckedAt: '2026/6/16',
+  },
 ];
 
 export default function RakutenAffiliateAd({ ad }: { ad: RakutenAd }) {
