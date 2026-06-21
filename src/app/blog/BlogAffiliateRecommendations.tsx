@@ -1,6 +1,6 @@
 import { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
 
-const recommendedAds = rakutenAds.slice(0, 3);
+const recommendedAds = [rakutenAds[0], rakutenAds[1], rakutenAds[2]];
 
 export default function BlogAffiliateRecommendations() {
   return (

@@ -452,7 +452,7 @@ export default function NagoyaHairSalonSakaePage() {
                 </div>
               </article>
               {index === 0 && (
-                <RakutenAffiliateAd ad={rakutenAds[1]} />
+                <RakutenAffiliateAd ad={rakutenAds[0]} />
               )}
               {index === 1 && (
                 <RakutenAffiliateAd ad={rakutenAds[2]} />

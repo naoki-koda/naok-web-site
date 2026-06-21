@@ -11,20 +11,20 @@ const rakutenLogo = 'https://static.affiliate.rakuten.co.jp/makelink/rl.svg';
 
 export const rakutenAds: RakutenAd[] = [
   {
-    href: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4365.6407db04.54ed436a.d1a2ddb0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdarkangel%2Fto2305-1114%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
-    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4365.6407db04.54ed436a.d1a2ddb0/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fdarkangel%2Fto2305-1114%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
-    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54ed4365.6407db04.54ed436a.d1a2ddb0/?me_id=1224379&item_id=10036035&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fdarkangel%2Fcabinet%2F12863863%2F06%2F1114-main-260602-2-1.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
-    title: '74%OFF!【大反響延長：3,980円→999円！】※1人様3枚まで※【年間ランキング4位】さらてろパジャマ ルームウェア レディース 上下セット さらてろリブ セットアップ 長袖 ウエストゴム ハイウエスト 腹巻 ワンマイルウェア 部屋着 【 ルームウェア上下セット】',
-    price: '価格：999円（税込、送料無料)',
-    priceCheckedAt: '2026/6/15',
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/55199e5d.f76ee30c.55199e5e.04fb9768/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshuuemura%2Fshu30001jp%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/55199e5d.f76ee30c.55199e5e.04fb9768/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fshuuemura%2Fshu30001jp%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/55199e5d.f76ee30c.55199e5e.04fb9768/?me_id=1380407&item_id=10000018&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fshuuemura%2Fcabinet%2F12824584%2F13204797%2Fimgrc0139581916.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: '【ポイント10倍 6/20(土) 20:00～6/26(金) 1:59まで】アルティム8∞ ベストセラーキット / ブライト クレンジングオイル キット | 楽天市場店限定 洗顔 メイク落とし 毛穴 洗顔料 スキンケア 美容 化粧落とし shu uemura シュウウエムラ 正規品 送料無料 楽天ベストコスメ',
+    price: '価格：13,200円～（税込、送料別)',
+    priceCheckedAt: '2026/6/21',
   },
   {
-    href: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4492.6c070c6a.54ed4493.e1f216be/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkawasui%2F10000130%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
-    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/54ed4492.6c070c6a.54ed4493.e1f216be/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fkawasui%2F10000130%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
-    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/54ed4492.6c070c6a.54ed4493.e1f216be/?me_id=1206971&item_id=10000130&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fkawasui%2Fcabinet%2Ftiti%2Fota-dai80_601tm.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
-    title: '父の日 まだ間に合う ギフト うなぎ 国産 かわすい 冷凍 うなぎ蒲焼き 3種セット ウナギ 鰻 蒲焼き ひつまぶし グルメ 内祝い ギフト お取り寄せ 【うなぎ屋かわすい】 送料無料 プレゼント 父の日ギフト2026 お中元 御中元',
-    price: '価格：5,990円～（税込、送料無料)',
-    priceCheckedAt: '2026/6/15',
+    href: 'https://hb.afl.rakuten.co.jp/ichiba/551996cb.81781b5a.551996cc.2f60a102/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbungen-shop%2Fshu-sk-4935421773232-2%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',
+    buttonHref: 'https://hb.afl.rakuten.co.jp/ichiba/551996cb.81781b5a.551996cc.2f60a102/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbungen-shop%2Fshu-sk-4935421773232-2%2F%3Fscid%3Daf_pc_bbtn&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ==',
+    imageSrc: 'https://hbb.afl.rakuten.co.jp/hgb/551996cb.81781b5a.551996cc.2f60a102/?me_id=1422885&item_id=10002392&pc=https%3A%2F%2Fthumbnail.image.rakuten.co.jp%2F%400_mall%2Fbungen-shop%2Fcabinet%2Fshohin%2Fshu-sk%2F4935421773232-2_z.jpg%3F_ex%3D240x240&s=240x240&t=picttext',
+    title: '【2個セット】shu uemura シュウウエムラ A/O+P.M.クリアユースラディアントクレンジングオイル 450mL',
+    price: '価格：17,500円（税込、送料無料)',
+    priceCheckedAt: '2026/6/21',
   },
   {
     href: 'https://hb.afl.rakuten.co.jp/ichiba/54ed45cf.ae51c5b7.54ed45d0.c5f5a167/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fbrighte-onlineshop%2Fbrt-fl170%2F&link_type=picttext&ut=eyJwYWdlIjoiaXRlbSIsInR5cGUiOiJwaWN0dGV4dCIsInNpemUiOiIyNDB4MjQwIiwibmFtIjoxLCJuYW1wIjoicmlnaHQiLCJjb20iOjEsImNvbXAiOiJkb3duIiwicHJpY2UiOjEsImJvciI6MSwiY29sIjoxLCJiYnRuIjoxLCJwcm9kIjowLCJhbXAiOmZhbHNlfQ%3D%3D',

@@ -132,7 +132,7 @@ export default function HipHopMatomePage() {
           </p>
 
           <aside aria-label="おすすめ商品のPR">
-            <RakutenAffiliateAd ad={rakutenAds[3]} />
+            <RakutenAffiliateAd ad={rakutenAds[0]} />
           </aside>
 
           <div className="mt-8 grid gap-3 sm:grid-cols-3">
