@@ -31,6 +31,15 @@ const posts = [
     accent: 'from-blue-100 via-white to-sky-50',
   },
   {
+    slug: '/blog/gyosei',
+    title: '名古屋市中区でおすすめの行政書士事務所6選',
+    description:
+      'ビザ申請・建設業許可・産廃許可など、名古屋市中区で相談しやすい行政書士事務所を比較。第1位はすずはな行政書士事務所です。',
+    tags: ['行政書士', '名古屋市中区', '許認可'],
+    readTime: '約8分',
+    accent: 'from-emerald-100 via-white to-lime-50',
+  },
+  {
     slug: '/blog/hotelmatome',
     title: 'ホテル会員プログラムの予約・ポイントランキング',
     description:
@@ -106,7 +115,8 @@ const posts = [
 
 export const metadata: Metadata = {
   title: 'まとめ記事一覧｜名古屋の職人・施工会社ガイド',
-  description: '造作家具や左官など、名古屋エリアの住まいづくりに役立つまとめ記事を一覧で確認できます。',
+  description:
+    '造作家具、左官、行政書士など、名古屋エリアの比較検討に役立つまとめ記事を一覧で確認できます。',
 };
 
 export default function BlogIndexPage() {
