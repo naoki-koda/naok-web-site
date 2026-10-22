@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // サイト全体のメタデータ設定（SEOベース）
 export const metadata: Metadata = {
-  metadataBase: new URL('https://your-domain.com'), // 本番ドメインに書き換えてください
+  metadataBase: new URL('https://www.reewa-web.jp'),
   title: {
     template: '%s | BizEnglish AI Lab',
     default: 'BizEnglish AI Lab | ビジネス英語×AI学習の専門情報サイト',

@@ -13,6 +13,9 @@ import {
 } from 'lucide-react';
 import { salons } from '@/app/data/salons';
 
+const siteUrl = 'https://www.reewa-web.jp';
+const ogImage = '/blog/opengraph-image';
+
 // ▼ 詳細ページ用の拡張データ（本来はDBやCMSから取得しますが、ここでは定数として定義）
 // リサーチ結果に基づく詳細情報をマッピング
 const salonDetails: Record<
@@ -157,7 +160,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${salon.name} | 名古屋のパーソナルカラー診断口コミ・予約`,
       description: `${salon.name}の特徴、料金、アクセス情報を詳しく解説。失敗しないサロン選びのために。`,
-      images: [salon.image ?? '/og-salon.png'],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: `${salon.name} | 名古屋のパーソナルカラー診断` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${salon.name} | 名古屋のパーソナルカラー診断口コミ・予約`,
+      description: `${salon.name}の特徴、料金、アクセス情報を詳しく解説。`,
+      images: [ogImage],
     },
   };
 }
@@ -176,9 +185,9 @@ export default async function SalonDetailPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'BeautySalon',
     name: salon.name,
-    image: salon.image ? `https://yourdomain.com${salon.image}` : undefined,
-    '@id': `https://yourdomain.com/nagoya-personal-color/${salon.id}`,
-    url: `https://yourdomain.com/nagoya-personal-color/${salon.id}`,
+    image: `${siteUrl}${ogImage}`,
+    '@id': `${siteUrl}/blog/nagoya/personal-color/${salon.id}`,
+    url: `${siteUrl}/blog/nagoya/personal-color/${salon.id}`,
     telephone: '052-000-0000', // データがあれば入れる
     address: {
       '@type': 'PostalAddress',

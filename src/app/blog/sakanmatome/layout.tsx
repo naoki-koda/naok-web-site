@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 const title = '名古屋の左官職人・左官工務店まとめ｜おすすめ5社の特徴と得意領域';
 const description =
   '名古屋エリアで左官工事を依頼したい方向けに、自然素材の仕上げに強い職人から大規模案件に対応する施工会社まで厳選5社を比較。対応エリア、強み、サービス内容を整理しました。';
+const ogImage = '/blog/opengraph-image';
 
 export const metadata: Metadata = {
   title,
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
     description,
     type: 'article',
     siteName: 'naok-web',
+    images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
+    images: [ogImage],
   },
 };
 

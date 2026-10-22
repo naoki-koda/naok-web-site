@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 const title = '名古屋のおすすめ造作家具店まとめ｜袖野建具店ほか厳選5社';
 const description =
   '建具職人が手がける老舗からデザイナー常駐のインテリアショップまで、名古屋で造作家具・特注収納を任せられる5社を比較。施工エリアや打ち合わせフローを整理しました。';
+const ogImage = '/blog/opengraph-image';
 
 export const metadata: Metadata = {
   title,
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
     description,
     type: 'article',
     siteName: 'naok-web',
+    images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
+    images: [ogImage],
   },
 };
 

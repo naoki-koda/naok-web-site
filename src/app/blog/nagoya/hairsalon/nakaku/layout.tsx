@@ -2,28 +2,33 @@ import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 
+const siteUrl = 'https://www.reewa-web.jp';
+const pagePath = '/blog/nagoya/hairsalon/nakaku';
+const ogImage = '/blog/opengraph-image';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: '名古屋・中区（栄/矢場町）の美容院おすすめ4選【2025年最新版】',
   description:
     '栄・矢場町エリアで人気の美容院をタイプ別に厳選。王道サロン、トレンド透明感カラー、デザインカラー、髪質改善など目的別に選び方と価格帯、予約のコツ、Googleマップ情報をまとめました。',
   keywords: ['名古屋 美容院', '栄 美容室', '中区 ヘアサロン', '髪質改善 名古屋', 'ハイトーン 名古屋'],
   alternates: {
-    canonical: 'https://yourdomain.com/blog/nagoya/hairsalon/nakaku',
+    canonical: pagePath,
   },
   openGraph: {
     title: '名古屋・中区美容院まとめ｜栄/矢場町のおすすめサロン4選',
     description:
       '失敗したくない王道サロンから派手髪・髪質改善まで、栄・矢場町エリアの美容院をタイプ別に比較。価格帯・ターゲット・予約の注意点をチェック。',
-    url: 'https://yourdomain.com/blog/nagoya/hairsalon/nakaku',
+    url: `${siteUrl}${pagePath}`,
     locale: 'ja_JP',
     type: 'article',
-    images: ['/og-image-nagoya-hair.jpg'],
+    images: [{ url: ogImage, width: 1200, height: 630, alt: '名古屋・中区美容院まとめ' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '栄/矢場町の美容院おすすめ4選',
     description: 'トレンドカラー・デザインカラー・髪質改善が得意な名古屋・中区の人気サロンを徹底比較。',
-    images: ['/og-image-nagoya-hair.jpg'],
+    images: [ogImage],
   },
 };
 

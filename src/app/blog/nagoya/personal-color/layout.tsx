@@ -1,20 +1,25 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+const siteUrl = 'https://www.reewa-web.jp';
+const pagePath = '/blog/nagoya/personal-color';
+const ogImage = '/blog/opengraph-image';
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: '名古屋のパーソナルカラー診断おすすめ10選【2025年最新】',
   description:
     '名駅・栄・大須エリアを中心に、16タイプ診断・学割・ペアプラン・プレ花嫁向けプランなどを提供する人気サロンを徹底比較。料金や予約方法など失敗しないサロン選びのポイントを解説します。',
   keywords: ['名古屋', 'パーソナルカラー診断', '16タイプ', '学割', '骨格診断', 'プレ花嫁'],
   alternates: {
-    canonical: 'https://yourdomain.com/blog/nagoya/personal-color',
+    canonical: pagePath,
   },
   openGraph: {
     title: '名古屋のパーソナルカラー診断おすすめサロン【最新版】',
     description:
       '名古屋駅・栄・大須で人気のサロンを厳選。料金・診断タイプ・口コミを比較して自分に合うサロンを見つけましょう。',
-    url: 'https://yourdomain.com/blog/nagoya/personal-color',
-    images: ['/og-image-nagoya-color.jpg'],
+    url: `${siteUrl}${pagePath}`,
+    images: [{ url: ogImage, width: 1200, height: 630, alt: '名古屋のパーソナルカラー診断おすすめサロン' }],
     type: 'article',
     locale: 'ja_JP',
   },
@@ -22,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '名古屋のパーソナルカラー診断まとめ',
     description: '16タイプ診断や学割対応サロンなどを厳選紹介。料金や口コミをチェック！',
-    images: ['/og-image-nagoya-color.jpg'],
+    images: [ogImage],
   },
 };
 

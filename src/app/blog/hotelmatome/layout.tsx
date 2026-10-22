@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 const title = '会員になるべきホテルブランドの予約・ポイントシステムランキング';
 const description =
   'マリオットやヒルトンなど大手ホテルチェーンを、公式アプリの使い勝手とポイント還元率の2軸で比較。アップグレードや無料宿泊を狙う旅好きに向けたロイヤリティプログラムのまとめです。';
+const ogImage = '/blog/opengraph-image';
 
 export const metadata: Metadata = {
   title,
@@ -14,11 +15,13 @@ export const metadata: Metadata = {
     description,
     type: 'article',
     siteName: 'naok-web',
+    images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
+    images: [ogImage],
   },
 };
 

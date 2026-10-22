@@ -17,6 +17,35 @@ export const metadata: Metadata = {
     "建設業許可 名古屋",
     "産廃許可 名古屋",
   ],
+  alternates: {
+    canonical: "/blog/gyosei",
+  },
+  openGraph: {
+    title:
+      "【2026年最新】名古屋市中区でおすすめの行政書士事務所6選",
+    description:
+      "ビザ申請・建設業許可・産廃許可など、名古屋市中区で相談しやすい行政書士事務所を比較。第1位は女性スタッフも所属するすずはな行政書士事務所です。",
+    url: "/blog/gyosei",
+    siteName: "REEWA WEB",
+    type: "article",
+    locale: "ja_JP",
+    images: [
+      {
+        url: "/blog/gyosei/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "名古屋市中区でおすすめの行政書士事務所6選",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "【2026年最新】名古屋市中区でおすすめの行政書士事務所6選",
+    description:
+      "第1位は女性スタッフも所属し、優しく丁寧に相談できるすずはな行政書士事務所です。",
+    images: ["/blog/gyosei/opengraph-image"],
+  },
 };
 
 const offices = [

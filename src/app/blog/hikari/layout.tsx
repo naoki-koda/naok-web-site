@@ -3,8 +3,9 @@ import Link from 'next/link';
 import Script from 'next/script';
 import type { ReactNode } from 'react';
 
-const baseUrl = 'https://your-domain.com';
+const baseUrl = 'https://www.reewa-web.jp';
 const canonicalPath = '/blog/hikari';
+const ogImage = '/blog/opengraph-image';
 const pageTitle = '【東海地方】光回線の結論。エディオン×コミュファ光が最強な理由';
 const description =
   '東海エリアで通信費を最適化したい方向けに、エディオン×コミュファ光のメリットや10Gbpsプランの注意点を徹底解説。独自回線の実測値やポイント還元の活用法まで紹介します。';
@@ -42,11 +43,13 @@ export const metadata: Metadata = {
     url: `${baseUrl}${canonicalPath}`,
     locale: 'ja_JP',
     siteName: 'Tokai Fiber Lab',
+    images: [{ url: ogImage, width: 1200, height: 630, alt: pageTitle }],
   },
   twitter: {
     card: 'summary_large_image',
     title: pageTitle,
     description,
+    images: [ogImage],
   },
   other: {
     'article:author': 'Tokai Fiber Lab 編集部',
@@ -93,7 +96,7 @@ const articleLd = {
     name: 'Tokai Fiber Lab',
     logo: {
       '@type': 'ImageObject',
-      url: `${baseUrl}/ogp.png`,
+      url: `${baseUrl}${ogImage}`,
     },
   },
 };

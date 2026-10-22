@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const SITE_URL = "https://naok-web.com";
+const SITE_URL = "https://www.reewa-web.jp";
 const PAGE_PATH = "/blog/nagoya/hairsalon/sakae";
+const OG_IMAGE = "/blog/opengraph-image";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -31,12 +32,14 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${PAGE_PATH}`,
     siteName: "Nagoya Beauty Journal",
     locale: "ja_JP",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "栄で本当におすすめな美容院5選" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "栄で本当におすすめな美容院5選",
     description:
       "トレンドボブ、完全個室の髪質改善、デザインカラー、パーマ特化など栄の人気サロンをまとめてチェック。",
+    images: [OG_IMAGE],
   },
   other: {
     "article:section": "Beauty",

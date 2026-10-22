@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-const SITE_URL = 'https://naok-web.com';
+const SITE_URL = 'https://www.reewa-web.jp';
 const PAGE_PATH = '/blog/nagoya/hairsalon/nagoyaeki';
+const OG_IMAGE = '/blog/opengraph-image';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -28,12 +29,14 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${PAGE_PATH}`,
     siteName: 'Nagoya Beauty Journal',
     locale: 'ja_JP',
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: '名古屋駅徒歩3分内の美容院おすすめ4選' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '名古屋駅徒歩3分内の美容院おすすめ4選',
     description:
       '名駅で人気の髪質改善・韓国ヘアサロンを厳選掲載。アクセス・価格目安・予約導線をチェック。',
+    images: [OG_IMAGE],
   },
   other: {
     'article:section': 'Beauty',
