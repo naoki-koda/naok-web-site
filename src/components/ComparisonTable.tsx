@@ -1,4 +1,4 @@
-import { apps } from '@/app/data/app';
+import { apps, getAppLink } from '@/app/data/app';
 import { StarIcon } from '@heroicons/react/24/solid';
 
 export default function ComparisonTable() {
@@ -49,10 +49,14 @@ export default function ComparisonTable() {
                   {app.trialDays > 0? `${app.trialDays}日間` : '無料版あり'}
                 </td>
                 <td className="px-4 py-4 text-center whitespace-nowrap">
-                  <a href={app.affiliateLink} target="_blank" rel="nofollow noreferrer" 
-                     className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded transition-colors">
-                    公式サイト
-                  </a>
+                  {getAppLink(app) ? (
+                    <a href={getAppLink(app)} target="_blank" rel="nofollow sponsored noopener"
+                       className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded transition-colors">
+                      公式サイト
+                    </a>
+                  ) : (
+                    <span className="text-xs text-gray-400">-</span>
+                  )}
                 </td>
               </tr>
             ))}

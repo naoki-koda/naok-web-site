@@ -1,8 +1,12 @@
-import { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
+import type { RakutenAd } from "@/app/blog/RakutenAffiliateAd";
 
-const recommendedAds = [rakutenAds[0], rakutenAds[1], rakutenAds[2]];
-
-export default function BlogAffiliateRecommendations() {
+export default function BlogAffiliateRecommendations({
+  ads,
+  heading = "この記事に関連するおすすめ商品",
+}: {
+  ads: RakutenAd[];
+  heading?: string;
+}) {
   return (
     <aside
       aria-labelledby="blog-affiliate-recommendations"
@@ -17,15 +21,15 @@ export default function BlogAffiliateRecommendations() {
             id="blog-affiliate-recommendations"
             className="mt-2 text-2xl font-bold text-slate-900"
           >
-            暮らしに役立つおすすめ商品
+            {heading}
           </h2>
         </div>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {recommendedAds.map((ad) => (
+        <div className="mt-8 flex flex-wrap justify-center gap-6">
+          {ads.slice(0, 3).map((ad) => (
             <article
               key={ad.href}
-              className="flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+              className="flex w-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm md:w-[calc((100%-3rem)/3)]"
             >
               <a
                 href={ad.href}

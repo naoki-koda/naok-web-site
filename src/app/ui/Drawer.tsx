@@ -14,8 +14,11 @@ export default function MyDrawer() {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button variant="outline" className="bg-orange-400 text-white px-8 py-3 text-lg hover:brightness-105">
-          お問い合わせ
+        <Button
+          variant="outline"
+          className="rounded-full border-none bg-[#f0b429] px-8 py-3 text-lg font-bold text-[#15181d] shadow-none hover:brightness-95"
+        >
+          無料で相談する
         </Button>
       </DrawerTrigger>
       <DrawerContent>
@@ -25,7 +28,10 @@ export default function MyDrawer() {
         </DrawerHeader>
 
         <DrawerFooter>
-          <Button asChild className="inline-flex items-center justify-center bg-orange-400 rounded-full border border-white/30 px-6 py-3 text-sm font-semibold shadow-lg shadow-orange-300/35 text-white transition hover:border-sky-200 hover:text-sky-200">
+          <Button
+            asChild
+            className="inline-flex items-center justify-center rounded-full bg-[#f0b429] px-6 py-3 text-sm font-bold text-[#15181d] shadow-none transition hover:brightness-95"
+          >
             <Link href="/contact">
               メールで無料お見積もり
             </Link>

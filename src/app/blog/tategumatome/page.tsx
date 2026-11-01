@@ -1,4 +1,5 @@
-import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import RakutenAffiliateAd from "@/app/blog/RakutenAffiliateAd";
 import { kosugiMaru } from "@/app/ui/fonts";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -241,7 +242,6 @@ export default function Page() {
             ))}
           </div>
         </section>
-        <RakutenAffiliateAd ad={rakutenAds[0]} />
         <section className="space-y-10">
           {ranking.map((shop, index) => (
             <React.Fragment key={shop.rank}>
@@ -298,7 +298,8 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              {index === 1 && <RakutenAffiliateAd ad={rakutenAds[4]} />}
+              {index === 1 && <RakutenAffiliateAd ad={blogRakutenAds.tategu[2]} />}
+              {index === 3 && <RakutenAffiliateAd ad={blogRakutenAds.tategu[3]} />}
             </React.Fragment>
           ))}
         </section>
@@ -329,7 +330,7 @@ export default function Page() {
             をセットで伝えると打ち合わせがスムーズです。
           </p>
         </section>
-        <RakutenAffiliateAd ad={rakutenAds[2]} />
+        <RakutenAffiliateAd ad={blogRakutenAds.tategu[0]} />
         <section className="mt-16 rounded-3xl bg-white/90 p-8 shadow-lg shadow-slate-100">
           <h3 className="text-xl font-semibold text-slate-900">
             参考にした情報源
@@ -353,7 +354,7 @@ export default function Page() {
             ))}
           </ul>
         </section>
-        <RakutenAffiliateAd ad={rakutenAds[0]} />
+        <RakutenAffiliateAd ad={blogRakutenAds.tategu[1]} />
       </article>
     </main>
   );

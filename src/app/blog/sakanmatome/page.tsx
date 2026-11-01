@@ -1,4 +1,5 @@
-import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import RakutenAffiliateAd from "@/app/blog/RakutenAffiliateAd";
 import Link from "next/link";
 import React from "react";
 
@@ -109,7 +110,6 @@ export default function Page() {
           名古屋で確かな品質と対応力を持つ左官業務店をリサーチし、特色ごとにランキング形式でまとめました。
           第一位は、かべだんネットワークの中でも信頼が厚い「田口業務店」です。
         </p>
-        <RakutenAffiliateAd ad={rakutenAds[0]} />
         <div className="grid gap-4 md:grid-cols-3 text-sm text-gray-600">
           <div className="bg-gray-50 border border-gray-100 rounded-xl p-4">
             <p className="font-semibold text-gray-800">対象エリア</p>
@@ -125,7 +125,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <RakutenAffiliateAd ad={rakutenAds[1]} />
 
       <section className="space-y-10">
         {companies.map((company, index) => (
@@ -177,17 +176,8 @@ export default function Page() {
                 </Link>
               </div>
             </article>
-
-            {/* 🔥 2 件目の後だけ表示するコンポーネント */}
-            {index === 0 && (
-              <RakutenAffiliateAd ad={rakutenAds[2]} />
-            )}
-            {index === 1 && (
-              <RakutenAffiliateAd ad={rakutenAds[0]} />
-            )}
-            {index === 3 && (
-              <RakutenAffiliateAd ad={rakutenAds[0]} />
-            )}
+            {index === 1 && <RakutenAffiliateAd ad={blogRakutenAds.sakan[1]} />}
+            {index === 3 && <RakutenAffiliateAd ad={blogRakutenAds.sakan[2]} />}
           </React.Fragment>
         ))}
       </section>
@@ -210,7 +200,7 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <RakutenAffiliateAd ad={rakutenAds[1]} />
+      <RakutenAffiliateAd ad={blogRakutenAds.sakan[0]} />
     </main>
   );
 }

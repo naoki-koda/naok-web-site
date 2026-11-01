@@ -76,6 +76,25 @@ export default function Page() {
             </span>
           </a>
 
+          {/* すずはな行政書士事務所 */}
+          <a
+            href="https://www.suzuhana-gyosei.jp/ja"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-6 text-left"
+          >
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
+              すずはな行政書士事務所 様
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 text-base mb-3">
+              名古屋市中区の行政書士事務所の公式サイト。
+              ビザ申請や許認可の案内をわかりやすく整理し、日本語・英語・中国語の3言語に対応しています。
+            </p>
+            <span className="text-orange-500 font-medium">
+              → Webサイトを見る
+            </span>
+          </a>
+
           {/* 2つめの実績 */}
           <a
             href="https://www.c-ent.jp/"

@@ -1,45 +1,91 @@
 "use client";
 
 import MyDrawer from "@/app/ui/Drawer";
-import { kosugiMaru } from "@/app/ui/fonts";
-import GlassHero from "@/app/ui/GlassHero";
-import { AnimatedImage, CountableAnimation } from "@/app/ui/SliderImage";
+import { shipporiAntiqueB1, zenKaku } from "@/app/ui/fonts";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
-import sectionStyles from "./home-sections.module.css";
+import type { ReactNode } from "react";
+import styles from "./home-sections.module.css";
 
 export default function Home() {
-  const faqItems = [
+  const measures = [
+    { label: "表示速度", note: "Next.js SPA + SSG", value: "リロード 0" },
+    { label: "制作費用", note: "1ページあたり", value: "3万円〜" },
+    { label: "制作実績", note: "名古屋 建具店の検索結果", value: "1位" },
+    { label: "セキュリティ", note: "PHP・公開DBを使わない静的配信", value: "PHP 0" },
+  ];
+
+  const speedPoints = [
     {
-      question: "名古屋でSEOに強いホームページ制作を依頼できますか？",
-      answer:
-        "はい。コアウェブバイタルの改善と構造化データの設計を標準で行い、名古屋などの地域キーワードでの検索流入を狙えるよう内部施策を実装します。",
+      title: "Next.js のSPA構成",
+      text: "ページを移るたびの再読み込みがなく、クリックした瞬間に次の画面へ切り替わります。",
     },
     {
-      question: "制作後の検索キーワード対策もサポートしてもらえますか？",
-      answer:
-        "公開後は検索クエリのレポート共有、コンテンツ改善提案、ローカルSEO対策のアドバイスまで継続サポートします。",
+      title: "PWAを見据えた設計",
+      text: "ホーム画面への追加など、アプリに近い使い方ができるところまで見越して作ります。",
     },
     {
-      question: "Q&Aやブログなどのコンテンツ更新はお願いできますか？",
-      answer:
-        "ご要望に合わせてヒアリングし、集客につながるQ&Aやナレッジ記事の企画・作成・更新まで代行いたします。",
+      title: "静的サイト生成（SSG）",
+      text: "サーバーに毎回問い合わせず、事前に用意したHTMLを表示するため速くなります。",
+    },
+  ];
+
+  const pricePoints = [
+    {
+      title: "すべてを自社で対応",
+      text: "開発・運用・保守・打ち合わせまで外注せず、ワンストップで担当します。",
     },
     {
-      question: "スマホ表示のパフォーマンスはどのくらい重要視していますか？",
-      answer:
-        "モバイルでの表示速度を最優先して設計し、画像の最適化や遅延読み込みを組み込んで離脱率を下げます。",
+      title: "中間マージンゼロ",
+      text: "代理店や営業担当を挟まないため、その分のコストがかかりません。",
     },
     {
-      question: "PWAに対応したホームページ制作は可能ですか？",
-      answer:
-        "はい。ホーム画面追加やアプリライクな導線設計を見据えたPWA対応サイトの設計に対応しています。表示速度やモバイルUXも含めて、Webサイトを使いやすく最適化します。",
+      title: "効率的な開発体制",
+      text: "実績のある開発手法を使い、短い納期と低いコストを両立させます。",
+    },
+  ];
+
+  const sellPoints = [
+    {
+      title: "導線重視の構成",
+      text: "訪れた人がどう動くかを想定して、CTAやナビゲーションを設計します。",
     },
     {
-      question: "問い合わせにつながる導線設計は含まれていますか？",
-      answer:
-        "CTA配置やフォーム最適化、FAQコンテンツなど、問い合わせ獲得に直結するUXをプランニングします。",
+      title: "高速レンダリング",
+      text: "表示速度はCore Web Vitalsの評価に直結し、検索での見つかりやすさにつながります。",
+    },
+    {
+      title: "レスポンシブデザイン対応",
+      text: "多くの人が使うスマホの画面で、見やすく・使いやすく・買いやすく整えます。",
+    },
+  ];
+
+  const securityComparison = [
+    {
+      label: "公開サーバーで動くもの",
+      php: "アクセスのたびにPHPプログラムが実行される",
+      reewa: "事前に生成したHTMLを配信。サーバーで動く処理は最小限",
+    },
+    {
+      label: "データベース",
+      php: "公開サーバー上で稼働し、SQLインジェクションの標的になりやすい",
+      reewa: "公開サイト側にデータベースを置かない",
+    },
+    {
+      label: "管理画面",
+      php: "ログイン画面（/wp-admin など）が公開され、不正ログインを狙われる",
+      reewa: "公開サイトに管理画面を置かず、更新はヘッドレスCMSで別管理",
+    },
+    {
+      label: "プラグイン",
+      php: "第三者製プラグインの脆弱性が侵入口になりやすい",
+      reewa: "必要な機能だけを自社で実装し、依存パッケージを管理",
+    },
+    {
+      label: "改ざんへの備え",
+      php: "サーバー上のファイルが書き換えられると、そのまま公開される",
+      reewa: "公開ファイルはビルド時に固定。問題があっても再デプロイですぐ戻せる",
     },
   ];
 
@@ -88,44 +134,63 @@ export default function Home() {
 
   const featuredWork = {
     title: "袖野建具 様",
-    category: "制作実績",
     url: "https://www.sodeno-tategu.jp/",
     description:
-      "「名古屋 建具店」の検索結果で1位を獲得。公開から半年でお問い合わせ6件、成約2件を実現し、制作費用分の利益を計上しました。",
-    points: [
-      "「名古屋 建具店」の検索結果で上位表示を実現",
-      "公開から半年でお問い合わせ6件を獲得",
-      "2件の成約につながり、制作費用分の利益を計上",
+      "「名古屋 建具店」の検索結果で1位を獲得。公開から半年でお問い合わせ6件、成約2件につながり、制作費用分の利益を回収しました。",
+    stats: [
+      { label: "検索結果「名古屋 建具店」", value: "1位" },
+      { label: "公開から半年のお問い合わせ", value: "6件" },
+      { label: "成約", value: "2件" },
     ],
   };
 
-  const glassNotes = [
+  const otherWorks = [
     {
-      label: "Fast Loading",
-      title: "速いだけで、印象が変わる。",
-      text: "最初の表示で待たせない。軽さそのものをブランド体験に変えます。",
-    },
-    {
-      label: "Lead Design",
-      title: "導線まで、透明に設計する。",
-      text: "CTA、予約、問い合わせまでの流れを迷わせずに整理します。",
-    },
-    {
-      label: "Local SEO",
-      title: "名古屋で見つかる、を前提に。",
-      text: "地域キーワードと構造化データを組み合わせて検索導線を整えます。",
+      title: "すずはな行政書士事務所 様",
+      url: "https://www.suzuhana-gyosei.jp/ja",
+      image: "/suzuhana.jpg",
+      description:
+        "名古屋市中区の行政書士事務所の公式サイト。ビザ申請や建設業・廃棄物などの許認可を、初めての方にもわかりやすく案内する構成で制作しました。",
+      tags: ["日本語・英語・中国語の3言語対応", "Next.js", "許認可・入管業務"],
     },
   ];
 
-  const glassTags = [
-    "NAGOYA",
-    "SEO",
-    "PWA",
-    "UX",
-    "NEXT.js",
-    "MOBILE FIRST",
-    "STRUCTURED DATA",
-    "FAST UI",
+  const faqItems = [
+    {
+      question: "WordPressなどのPHP製サイトと比べて、セキュリティは大丈夫ですか？",
+      answer:
+        "公開サーバーでPHPやデータベースを動かさず、事前に生成したページを配信する構成のため、PHP製CMSで多い管理画面への不正ログインやプラグインの脆弱性を突いた攻撃の入口がありません。利用しているライブラリのセキュリティ更新も継続して適用します。",
+    },
+    {
+      question: "名古屋でSEOに強いホームページ制作を依頼できますか？",
+      answer:
+        "はい。コアウェブバイタルの改善と構造化データの設計を標準で行い、名古屋などの地域キーワードでの検索流入を狙えるよう内部施策を実装します。",
+    },
+    {
+      question: "制作後の検索キーワード対策もサポートしてもらえますか？",
+      answer:
+        "公開後は検索クエリのレポート共有、コンテンツ改善提案、ローカルSEO対策のアドバイスまで継続サポートします。",
+    },
+    {
+      question: "Q&Aやブログなどのコンテンツ更新はお願いできますか？",
+      answer:
+        "ご要望に合わせてヒアリングし、集客につながるQ&Aやナレッジ記事の企画・作成・更新まで代行いたします。",
+    },
+    {
+      question: "スマホ表示のパフォーマンスはどのくらい重要視していますか？",
+      answer:
+        "モバイルでの表示速度を最優先して設計し、画像の最適化や遅延読み込みを組み込んで離脱率を下げます。",
+    },
+    {
+      question: "PWAに対応したホームページ制作は可能ですか？",
+      answer:
+        "はい。ホーム画面追加やアプリライクな導線設計を見据えたPWA対応サイトの設計に対応しています。表示速度やモバイルUXも含めて、Webサイトを使いやすく最適化します。",
+    },
+    {
+      question: "問い合わせにつながる導線設計は含まれていますか？",
+      answer:
+        "CTA配置やフォーム最適化、FAQコンテンツなど、問い合わせ獲得に直結するUXをプランニングします。",
+    },
   ];
 
   const faqJsonLd = {
@@ -163,8 +228,9 @@ export default function Home() {
       url: "https://www.reewa-web.jp/contact",
     },
   };
+
   return (
-    <main>
+    <main className={`${styles.page} ${zenKaku.className} pb-16`}>
       <Script
         id="service-structured-data"
         type="application/ld+json"
@@ -175,602 +241,461 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 pb-6 z-50">
+
+      <div className="fixed bottom-6 left-1/2 z-50 -translate-x-1/2">
         <MyDrawer />
       </div>
-      <GlassHero tags={glassTags} notes={glassNotes} />
-      <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-7 pb-2 gap-1 sm:p-10 font-[family-name:var(--font-geist-sans)]">
-        <div className="flex flex-col gap-[32px] row-start-2 items-center">
-          <p
-            className={`text-2xl md:text-5xl text-center ${kosugiMaru.className} mt-0 pb-2`}
-          >
-            REEWA WEBのサイトは
-          </p>
-          <p
-            className={`hidden sm:block text-4xl md:text-5xl text-center ${kosugiMaru.className} mb-1 mt-0 pb-2`}
-          >
-            早い、安い、売れる。
-          </p>
-          <div className="block md:hidden">
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-20 mt-5">
-              <div>
-                <CountableAnimation
-                  triggerId="section-0"
-                  srcLight="/Hfirst_black.PNG"
-                  srcDark="/Hfirst_black.PNG"
-                  alt="Concept Image"
-                  count={1}
-                  size="19rem"
-                  lastPosition={{ top: 105, left: 145 }}
-                />
-              </div>
-              <div>
-                <CountableAnimation
-                  triggerId="section-1"
-                  srcLight="/Hcheap_black.PNG"
-                  srcDark="/Hcheap_black.PNG"
-                  alt="Concept Image"
-                  count={2}
-                  size="15rem"
-                  lastPosition={{ top: 95, left: 120 }}
-                />
-              </div>
-              <div>
-                <CountableAnimation
-                  triggerId="section-2"
-                  srcLight="/Hsell_black.PNG"
-                  srcDark="/Hsell_black.PNG"
-                  alt="Concept Image"
-                  count={3}
-                  size="18rem"
-                  lastPosition={{ top: 115, left: 130 }}
-                />
-              </div>
+
+      {/* ヒーロー */}
+      <section className="mx-auto max-w-6xl px-6 pt-16 pb-14 md:pt-24 md:pb-20">
+        <div className="grid gap-12 md:grid-cols-[1.15fr_0.85fr] md:items-start">
+          <div>
+            <h1
+              className={`${shipporiAntiqueB1.className} text-5xl leading-[1.15] md:text-6xl`}
+            >
+              速い。安い。
+              <br />
+              売れる。
+            </h1>
+            <p className="mt-6 max-w-md text-base leading-relaxed text-[#5b5748] md:text-lg">
+              名古屋を拠点に、美容室・工務店・クリニックなど地域の中小事業者向けにNext.js製の高速サイトを制作しています。打ち合わせから公開後の運用まで、外注せず自社だけで対応します。
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm font-bold">
+              <Link
+                href="/contact"
+                className="border-b-2 border-[#15181d] pb-1 transition-colors hover:border-[#f0b429]"
+              >
+                無料で相談する
+              </Link>
+              <Link
+                href="/works"
+                className="border-b-2 border-transparent pb-1 text-[#5b5748] transition-colors hover:border-[#15181d] hover:text-[#15181d]"
+              >
+                制作実績を見る
+              </Link>
             </div>
           </div>
-          <div className={`${sectionStyles.contentShell} text-gray-900`}>
-            {/* ヒーローセクション */}
-            <section
-              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-slate-950`}
-            >
-              <div className="hidden sm:block">
-                <AnimatedImage
-                  triggerId="section-4"
-                  srcLight="/first_light.PNG"
-                  srcDark="/first_light.PNG"
-                  alt="速さをアピールする画像"
-                />
-              </div>
-              <h2 className="text-3xl md:text-5xl text-center font-bold mb-4">
-                WordPressより高速、
-                <br />
-                SPA・PWA対応のWEBサイトを提供します。
-              </h2>
-              <img
-                src="/fastIcon.webp"
-                alt="Fast Image Logo"
-                className="w-48 mx-auto h-auto"
-              />
-              <p className="text-base md:text-xl mb-6 max-w-2xl mx-auto">
-                SPAとPWAで表示スピードと使いやすさにこだわったWebサイト
-                <br />
-                ホーム画面追加やアプリのような操作感まで見据えて設計します。
-                <br />
-                このWEBサイトで体感してください。
-              </p>
-            </section>
 
-            {/* 技術的な速さの説明 */}
-            <section
-              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900`}
-            >
-              <h3
-                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800`}
-              >
-                どうして、
-                <br />
-                そんなに速いの？
-              </h3>
-
-              <div
-                className={`${sectionStyles.infoGrid} max-w-5xl mx-auto mb-10 text-center`}
-              >
-                <div className={sectionStyles.infoCard}>
-                  <h4 className="md:text-xl font-bold mb-2 text-center">
-                    Next.js の SPA構成
-                  </h4>
-                  <p>
-                    リロード0でページ遷移が瞬時。
-                    <br />
-                    再読み込みが不要でストレスゼロ。
-                  </p>
-                </div>
-                <div className={sectionStyles.infoCard}>
-                  <h4 className="text-xl font-bold mb-2 text-center">
-                    PWAを見据えた設計
-                  </h4>
-                  <p>
-                    ホーム画面追加や
-                    <br />
-                    アプリライクな導線にも対応。
-                  </p>
-                </div>
-                <div className={sectionStyles.infoCard}>
-                  <h4 className="text-xl font-bold mb-2 text-center">
-                    静的サイト生成（SSG）
-                  </h4>
-                  <p>
-                    サーバーレスでHTMLを事前に生成。
-                    <br />
-                    圧倒的な表示スピード。
-                  </p>
-                </div>
-              </div>
-
-              <h3 className="text-xl font-bold text-center mb-12">
-                表示スピードは、ビジネス成果に直結
-              </h3>
-              <div className="max-w-4xl mx-auto text-center text-base space-y-6">
-                <p>
-                  表示が遅いと約50%以上のユーザーが
-                  <br />
-                  離脱すると言われています。
-                </p>
-                <p>
-                  高速表示は、ユーザー体験を高め
-                  <br />
-                  Google検索にも強くなります。
-                </p>
-                <strong className="underline">
-                  スピードこそ、信頼と売上アップのカギです。
-                </strong>
-              </div>
-            </section>
-
-            {/* 安さの説明 */}
-            <section
-              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-slate-950`}
-            >
-              <div className="hidden sm:block">
-                <AnimatedImage
-                  triggerId="section-5"
-                  srcLight="/cheap_light.PNG"
-                  srcDark="/cheap_light.PNG"
-                  alt="安さをアピールする画像"
-                />
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                ホームページ制作費が
-                <br />
-                1ページにつき
-                <strong className="underline">3万円</strong>
-              </h2>
-              <img
-                src="/cheapIcon.webp"
-                alt="Cheap Image Logo"
-                className="w-48 mx-auto h-auto"
-              />
-              <p className="text-base md:text-xl mb-6 max-w-2xl mx-auto">
-                {/* 私は一人で Web サイトの開発から運用・保守<br /> */}
-                最新のフレームワークを採用して開発時間の短縮。
-                <br />
-                営業、打ち合わせまで全てを弊社スタッフが担当し、
-                <br />
-                外注費や中間マージンを徹底的に省いています。
-                <br />
-              </p>
-            </section>
-
-            <section
-              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900`}
-            >
-              <h3
-                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800`}
-              >
-                どうして、
-                <br />
-                そんなに安いの？
-              </h3>
-              <div
-                className={`${sectionStyles.infoGrid} max-w-5xl mx-auto mb-10 text-center`}
-              >
-                <div className={sectionStyles.infoCard}>
-                  <h4 className="text-xl font-bold mb-2 text-center">
-                    すべてを自社で対応
-                  </h4>
-                  <p>
-                    開発・運用・保守・打ち合わせまで、
-                    <br />
-                    外注せずワンストップ。
-                  </p>
-                </div>
-                <div className={sectionStyles.infoCard}>
-                  <h4 className="text-xl font-bold mb-2 text-center">
-                    中間マージンゼロ
-                  </h4>
-                  <p>
-                    代理店や営業コストが無いため、
-                    <br />
-                    価格を抑えられます。
-                  </p>
-                </div>
-                <div className={sectionStyles.infoCard}>
-                  <h4 className="text-xl font-bold mb-2 text-center">
-                    効率的な開発体制
-                  </h4>
-                  <p>
-                    実績ある開発手法を
-                    <br />
-                    活用し、短納期＆低コストを実現。
-                  </p>
-                </div>
-              </div>
-              <h3 className="text-3xl font-bold text-center mb-12">
-                安さと品質の両立を実現
-              </h3>
-              <div className="text-base md:text-lg max-w-4xl mx-auto text-center space-y-6">
-                <p>「安かろう悪かろう」ではありません。</p>
-                <p>
-                  開発〜運用まで全てを一貫して請け負うからこそ、
-                  <br />
-                  伝達ミスやロスのない高品質な制作が可能です。
-                </p>
-                <strong className="underline">
-                  ご相談から納品まで
-                  <br />
-                  誠実・スピーディーに対応します。
-                </strong>
-              </div>
-            </section>
-
-            {/* 売れるの説明 */}
-            <section
-              className={`${sectionStyles.featureHero} py-12 px-6 text-center text-slate-950`}
-            >
-              <div className="hidden sm:block">
-                <AnimatedImage
-                  triggerId="section-3"
-                  srcLight="/sell_light.PNG"
-                  srcDark="/sell_light.PNG"
-                  alt="売れるをアピールする画像"
-                />
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                売れるサイトには、
-                <br />
-                <strong className="underline">理由</strong>があります。
-              </h2>
-              <img
-                src="/buyIcon.webp"
-                alt="Buy Image Logo"
-                className="w-48 mx-auto h-auto"
-              />
-              <p className="text-base md:text-xl mb-6 max-w-2xl mx-auto">
-                デザインだけでなく、
-                <br />
-                導線設計・文章構成・ユーザー心理までを意識した
-                <br />
-                「成果の出る」サイトを制作します。
-              </p>
-            </section>
-
-            <section
-              className={`${sectionStyles.glassSection} py-16 px-6 mb-10 text-gray-900`}
-            >
-              <h3
-                className={`${sectionStyles.glassHeading} mb-12 text-3xl font-bold text-center text-slate-800`}
-              >
-                どうして、
-                <br />
-                そんなに売れるの？
-              </h3>
-              <div
-                className={`${sectionStyles.infoGrid} max-w-5xl mx-auto mb-10 text-center`}
-              >
-                <div className={sectionStyles.infoCard}>
-                  <h4 className="text-xl font-bold mb-2 text-center">
-                    導線重視の構成
-                  </h4>
-                  <p>
-                    ユーザーの行動を想定した
-                    <br />
-                    CTAやナビゲーション設計。
-                  </p>
-                </div>
-                <div className={sectionStyles.infoCard}>
-                  <h4 className="text-xl font-bold mb-2 text-center">
-                    高速レンダリング
-                  </h4>
-                  <p>
-                    Core Web Vitals(Googleの評価) <br />
-                    のスコアが高くなりやすく、
-                    <br />
-                    SEO に有利
-                  </p>
-                </div>
-                <div className={sectionStyles.infoCard}>
-                  <h4 className="text-xl font-bold mb-2 text-center">
-                    レスポンシブデザイン対応
-                  </h4>
-                  <p>
-                    多くの訪問者が使うスマホで、
-                    <br />
-                    見やすく・使いやすく・買いやすく。
-                  </p>
-                </div>
-              </div>
-              <h2 className="text-3xl font-bold text-center mb-12">
-                「見られる」から
-                <br />
-                「売れる」へ
-              </h2>
-              <div className="max-w-4xl mx-auto text-center text-lg space-y-6">
-                <p>
-                  ただ見た目が綺麗なだけでは、
-                  <br />
-                  売れるサイトにはなりません。
-                </p>
-                <p>
-                  戦略的に構成されたサイトは、
-                  <br />
-                  訪問者を顧客へと変える力を持っています。
-                </p>
-                <strong className="underline">
-                  成果にこだわったサイトを提案します。
-                </strong>
-              </div>
-            </section>
-            {/* <section className="rounded-md bg-white/95 py-16 px-6 shadow-xl shadow-orange-200/40 mb-10 text-gray-900 dark:bg-gray-900/80 dark:text-white">
-              <h2 className="text-3xl font-bold text-center mb-6">キーワードから選ぶ課題解決ガイド</h2>
-              <p className="text-center text-sm md:text-base text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10">
-                ホームページ制作のよく検索される疑問に対して、料金・相場・補助金・DIY・フリーランス協業などのテーマ別に解説コンテンツをご用意しています。気になる項目から詳細をご確認ください。
-              </p>
-              <div className="mx-auto grid gap-6 md:grid-cols-2">
-                <article className="rounded-3xl border border-orange-200/60 bg-white/90 p-6 shadow-md transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-800/70">
-                  <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">制作費・相場と料金表</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">
-                    「ホームページ制作 相場」「ホームページ制作 料金」「1ページ 単価」といったキーワードに対応。<Link href="/price" className="text-orange-500 underline hover:text-sky-400">料金ページ</Link>で月額・初期費用・各種サブスクプランと共に、個人事業主/法人別の費用感・勘定科目・減価償却のポイントまで整理しています。
-                  </p>
-                  <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
-                    <li>・月契約/年間契約の比較とビープラスト等の相場比較</li>
-                    <li>・制作費0円プラン、3万円〜30万円、10万円・50万円・100万円帯の費用シナリオ</li>
-                    <li>・1ページ構成やLP制作、リニューアル時のページ単価と内訳</li>
-                    <li>・医療・クリニック・宿泊施設など業種別費用感とサンプル見積もり</li>
-                  </ul>
-                </article>
-                <article className="rounded-3xl border border-orange-200/60 bg-white/90 p-6 shadow-md transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-800/70">
-                  <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">補助金・助成金の活用</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">
-                    「ホームページ制作 補助金」「小規模事業者持続化補助金 2025」「IT導入補助金 2024」など各種制度をフォロー。採択率を高める提案資料の整備から、群馬・京都・大阪など地域ごとの募集スケジュールも<Link href="/contact" className="text-orange-500 underline hover:text-sky-400">無料相談</Link>でご案内します。
-                  </p>
-                  <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
-                    <li>・2024〜2025年の公募スケジュールと採択事例（宿泊施設・美容サロン・製造業など）</li>
-                    <li>・補助金×SEO/リニューアルでの費用対効果シミュレーション</li>
-                    <li>・小規模事業者持続化補助金、IT導入補助金、ものづくり補助金の違いと必要書類</li>
-                  </ul>
-                </article>
-                <article className="rounded-3xl border border-orange-200/60 bg-white/90 p-6 shadow-md transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-800/70">
-                  <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">自分で作る・AI/ノーコード活用</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">
-                    「ホームページ制作 自分で」「ホームページ制作 無料」「ホームページ制作 AI」「ワードプレス 料金」といったセルフ制作ニーズに応えるテンプレート集を<Link href="/design" className="text-orange-500 underline hover:text-sky-400">デザインページ</Link>で公開。ChatGPTやCanva、ノーコードでの制作手順やGoogleビジネスプロフィールの連携方法も網羅しています。
-                  </p>
-                  <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
-                    <li>・無料/低価格ツール（Wix、STUDIO、WordPress、Notion）の比較</li>
-                    <li>・HTML/CSSで自作する場合の最低限のスキルとノーコード代替案</li>
-                    <li>・スマホだけで作る場合の注意点と推奨アプリ（Googleサイト、Canva等）</li>
-                    <li>・AIライティング/画像生成を使ったコンテンツ量産とSEO対策の共存方法</li>
-                  </ul>
-                </article>
-                <article className="rounded-3xl border border-orange-200/60 bg-white/90 p-6 shadow-md transition hover:border-orange-300 hover:shadow-xl dark:border-white/10 dark:bg-gray-800/70">
-                  <h3 className="text-xl font-semibold text-orange-600 dark:text-orange-300">地域別・フリーランス協業</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-700 dark:text-gray-200">
-                    名古屋を中心に、大阪・福岡・東京・北海道など全国各地の制作会社やフリーランスとも連携。<Link href="/works" className="text-orange-500 underline hover:text-sky-400">制作事例</Link>では地域別の成功事例を紹介し、「フリーランス ホームページ制作 相場」「大阪 格安」などのキーワードで寄せられる相談にもお応えします。
-                  </p>
-                  <ul className="mt-4 space-y-2 text-xs text-gray-600 dark:text-gray-300">
-                    <li>・歯科・美容室・製造業など業種別の集客シナリオ</li>
-                    <li>・丸投げ運用/部分委託/社内チームとのハイブリッド体制</li>
-                    <li>・英語・多言語サイト、ランディングページやAIチャットの導入</li>
-                  </ul>
-                </article>
-              </div>
-            </section> */}
-            <section
-              className={`${sectionStyles.surfaceSection} py-16 px-6 mb-10 text-gray-900`}
-            >
-              <h2 className="text-3xl font-bold text-center mb-6">
-                業種別の集客特化型ホームページ制作
-              </h2>
-              <p className="text-center text-sm md:text-base text-gray-600 max-w-3xl mx-auto mb-10">
-                「ホームページ制作 美容」「ホームページ制作
-                サロン」「ホームページ制作 職人」「ホームページ制作
-                飲食店」など業種特有のニーズに対し、キーワード戦略とUI/UXを最適化した制作プランをご用意しています。
-              </p>
-              <div className="mx-auto grid gap-6 md:grid-cols-2">
-                {verticalFocus.map((item) => (
-                  <article
-                    key={item.title}
-                    className="rounded-3xl border border-orange-200/60 bg-white/95 p-6 text-slate-900 shadow-md shadow-orange-200/25 transition hover:border-orange-300 hover:shadow-xl"
-                  >
-                    <h3 className="text-xl font-semibold text-orange-600">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-gray-700">
-                      {item.description}
-                    </p>
-                    <ul className="mt-4 space-y-2 text-xs text-gray-600">
-                      {item.highlights.map((point) => (
-                        <li key={point}>・{point}</li>
-                      ))}
-                    </ul>
-                    <Link
-                      href="/contact"
-                      className="mt-5 inline-flex items-center text-sm font-semibold text-orange-500 underline decoration-dotted hover:text-sky-400"
-                    >
-                      業種別の制作・相場相談をする
-                    </Link>
-                  </article>
-                ))}
-              </div>
-            </section>
-            <section
-              className={`${sectionStyles.surfaceSection} px-6 py-16 mb-10 text-gray-900`}
-            >
-              <div className="mx-auto max-w-5xl">
-                <div className="text-center">
-                  <span className="inline-flex items-center justify-center rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-orange-500">
-                    Works Showcase
+          <div className={styles.scale}>
+            {measures.map((m) => (
+              <div key={m.label} className={styles.scaleRow}>
+                <p className="text-xs font-bold text-[#5b5748]">
+                  {m.label}
+                  <span className="ml-2 font-normal text-[#8a8370]">
+                    {m.note}
                   </span>
-                  <h2 className="mt-5 text-3xl font-bold">制作実績のご紹介</h2>
-                  <p className="mt-4 text-sm leading-relaxed text-gray-600 md:text-base">
-                    実際に公開しているサイトの一例として、建具製作工房のホームページをご紹介します。
-                  </p>
-                </div>
-                <article
-                  className={`${sectionStyles.featuredCard} mt-10`}
+                </p>
+                <p
+                  className={`${shipporiAntiqueB1.className} mt-1 text-3xl md:text-4xl`}
                 >
-                  <div className="grid gap-8 p-8 md:grid-cols-[1.1fr_0.9fr] md:p-10">
-                    <div>
-                      <p className="text-sm font-semibold uppercase tracking-[0.25em] text-sky-500">
-                        {featuredWork.category}
-                      </p>
-                      <h3 className="mt-4 text-2xl font-bold md:text-3xl">
-                        {featuredWork.title}
-                      </h3>
-                      <p className="mt-4 text-base leading-relaxed text-gray-700">
-                        {featuredWork.description}
-                      </p>
-                      <ul className="mt-6 space-y-3 text-sm text-gray-700">
-                        {featuredWork.points.map((point) => (
-                          <li
-                            key={point}
-                            className="flex items-start gap-3 rounded-2xl bg-white/80 px-4 py-3 shadow-sm"
-                          >
-                            <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-orange-400 to-sky-400 text-xs font-bold text-white">
-                              ✓
-                            </span>
-                            <span>{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="flex flex-col justify-between rounded-[1.75rem] border border-white/70 bg-white/80 p-6 shadow-md">
-                      <div>
-                        <div className="overflow-hidden rounded-2xl border border-orange-100 bg-slate-100 shadow-sm">
-                          <Image
-                            src="/sodeno.png"
-                            alt="袖野建具様のホームページ紹介画像"
-                            width={1200}
-                            height={800}
-                            className="h-auto w-full object-cover"
-                          />
-                        </div>
-                        <p className="mt-6 text-sm font-semibold text-gray-500">
-                          掲載サイト
-                        </p>
-                        <p className="mt-3 break-all text-lg font-medium text-gray-900">
-                          {featuredWork.url}
-                        </p>
-                        <p className="mt-5 text-sm leading-relaxed text-gray-600">
-                          職人仕事の信頼感を伝える構成と検索導線の設計により、公開後の集客と成約まで成果につながった事例です。
-                        </p>
-                      </div>
-                      <a
-                        href={featuredWork.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-8 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-orange-400 to-sky-400 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/30 transition hover:brightness-105"
-                      >
-                        サイトを見る
-                      </a>
-                    </div>
-                  </div>
-                </article>
+                  {m.value}
+                </p>
               </div>
-            </section>
-            <section
-              id="faq"
-              className={`${sectionStyles.surfaceSection} py-16 px-6 mb-10 text-gray-900`}
-            >
-              <h2 className="text-3xl font-bold text-center mb-4">
-                よくあるご質問
-              </h2>
-              <p className="text-base md:text-lg text-center text-gray-600 mb-10">
-                SEOや集客、制作フローに関して寄せられるお問い合わせをまとめました。気になる点があればお気軽にご相談ください。
-              </p>
-              <div className="mx-auto max-w-4xl space-y-6">
-                {faqItems.map((item) => (
-                  <details
-                    key={item.question}
-                    className={`${sectionStyles.faqItem} group p-6 transition hover:border-orange-300 hover:shadow-lg`}
-                  >
-                    <summary className="flex cursor-pointer items-center justify-between text-left text-lg font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
-                      <span>{item.question}</span>
-                      <span className="ml-6 text-2xl font-normal text-sky-400 transition-transform duration-300 group-open:rotate-45">
-                        +
-                      </span>
-                    </summary>
-                    <p className="mt-4 text-base leading-relaxed text-gray-600">
-                      {item.answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
-            </section>
-
-            {/* CTAセクション */}
-            <section
-              id="contact"
-              className={`${sectionStyles.ctaSection} py-12 px-6 text-center text-slate-950`}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                まずはお気軽に
-                <br />
-                ご相談ください！
-              </h2>
-              <p className="mb-6 text-lg">
-                スピーディーなサイト制作で、
-                <br />
-                あなたのビジネスを後押しします。
-              </p>
-              <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-orange-500 shadow-lg shadow-orange-200/40 transition hover:brightness-110"
-                >
-                  お問い合わせフォームへ
-                </a>
-                <a
-                  href="https://www.instagram.com/reewa_web/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#515BD4] inline-flex items-center justify-center gap-2 rounded-full border border-white px-8 py-3 text-sm font-semibold text-white transition hover:bg-white/15"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="h-5 w-5"
-                    aria-hidden="true"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
-                    <path d="M16 11.37a4.5 4.5 0 1 1-3.11-4.25" />
-                    <circle
-                      cx="17.5"
-                      cy="6.5"
-                      r="0.75"
-                      fill="currentColor"
-                      stroke="none"
-                    />
-                  </svg>
-                  Instagramから問い合わせ
-                </a>
-              </div>
-            </section>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* 速い */}
+      <section id="speed" className={`${styles.band} mx-auto max-w-6xl px-6`}>
+        <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+          <div>
+            <IconTile src="/fastIcon.webp" label="速い" />
+            <p className={`${shipporiAntiqueB1.className} mt-6 text-6xl md:text-7xl`}>
+              0
+            </p>
+            <p className="mt-2 text-lg font-bold">
+              リロードで止まらないサイト
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
+              WordPressより高速に動く、SPA・PWA対応のサイトを作ります。ページを移るたびに読み込みが入らないので、見ている人を待たせません。
+            </p>
+          </div>
+          <div>
+            <div className={styles.specList}>
+              {speedPoints.map((item) => (
+                <div key={item.title} className={styles.specItem}>
+                  <p className="font-bold">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#5b5748]">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className={`${styles.pullquote} mt-8`}>
+              <p className="text-sm leading-relaxed text-[#5b5748]">
+                表示が遅いサイトは、半数以上の人がそのまま離れてしまうといわれています。速さは使いやすさだけでなく、検索での見つかりやすさにも直結します。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 安い */}
+      <section id="price" className={`${styles.band} mx-auto max-w-6xl px-6`}>
+        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr] md:gap-16">
+          <div className="md:order-1">
+            <div className={styles.specList}>
+              {pricePoints.map((item) => (
+                <div key={item.title} className={styles.specItem}>
+                  <p className="font-bold">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#5b5748]">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className={`${styles.pullquote} mt-8`}>
+              <p className="text-sm leading-relaxed text-[#5b5748]">
+                「安かろう悪かろう」ではありません。開発から運用まで一人で担当するからこそ伝達のロスがなく、ご相談から納品まで誠実に対応できます。
+              </p>
+            </div>
+          </div>
+          <div className="md:order-2">
+            <IconTile src="/cheapIcon.webp" label="安い" />
+            <p
+              className={`${shipporiAntiqueB1.className} mt-6 text-5xl md:text-6xl`}
+            >
+              3万円〜
+            </p>
+            <p className="mt-2 text-lg font-bold">1ページあたりの制作費</p>
+            <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
+              最新のフレームワークで開発時間を短縮し、営業・打ち合わせまで自社スタッフが担当することで、外注費や中間マージンを省いています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 売れる */}
+      <section id="sell" className={`${styles.band} mx-auto max-w-6xl px-6`}>
+        <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+          <div>
+            <IconTile src="/buyIcon.webp" label="売れる" />
+            <p className={`${shipporiAntiqueB1.className} mt-6 text-6xl md:text-7xl`}>
+              理由
+            </p>
+            <p className="mt-2 text-lg font-bold">
+              売れるサイトには、理由があります
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
+              デザインだけでなく、導線設計・文章構成・ユーザー心理までを意識した「成果の出る」サイトを制作します。
+            </p>
+          </div>
+          <div>
+            <div className={styles.specList}>
+              {sellPoints.map((item) => (
+                <div key={item.title} className={styles.specItem}>
+                  <p className="font-bold">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#5b5748]">
+                    {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className={`${styles.pullquote} mt-8`}>
+              <p className="text-sm leading-relaxed text-[#5b5748]">
+                見た目が整っているだけでは売れません。行動を起こしやすい導線と検索に強い作りを組み合わせて、「見られる」を「売れる」に変えます。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 守れる */}
+      <section id="security" className={`${styles.band} mx-auto max-w-6xl px-6`}>
+        <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+          <div>
+            <IconTile label="守れる">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.6"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="h-full w-full text-white"
+                aria-hidden="true"
+              >
+                <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z" />
+                <path d="m8.8 12.2 2.3 2.3 4.3-4.6" />
+              </svg>
+            </IconTile>
+            <p className={`${shipporiAntiqueB1.className} mt-6 text-6xl md:text-7xl`}>
+              PHP 0
+            </p>
+            <p className="mt-2 text-lg font-bold">
+              狙われる入口を、最初から作らない
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
+              WordPressをはじめとするPHP製のサイトは、プログラム・データベース・管理画面がすべて公開サーバー上で動くため、攻撃の入口が多くなりがちです。REEWA
+              WEBのサイトはPHPを使わず、事前に生成したページを配信する構成にしています。
+            </p>
+          </div>
+          <div>
+            <div className={styles.compareTable}>
+              <div className={styles.compareHead}>
+                <span />
+                <span>一般的なPHP製サイト</span>
+                <span className="text-[#15181d]">REEWA WEB（Next.js）</span>
+              </div>
+              {securityComparison.map((row) => (
+                <div key={row.label} className={styles.compareRow}>
+                  <p className="text-sm font-bold">{row.label}</p>
+                  <p className="text-sm leading-relaxed text-[#8a8370]">
+                    <span className="mr-2 text-xs font-bold md:hidden">PHP製</span>
+                    {row.php}
+                  </p>
+                  <p className="text-sm font-bold leading-relaxed">
+                    <span className="mr-2 text-xs text-[#b7811a] md:hidden">REEWA WEB</span>
+                    {row.reewa}
+                  </p>
+                </div>
+              ))}
+            </div>
+            <div className={`${styles.pullquote} mt-8`}>
+              <p className="text-sm leading-relaxed text-[#5b5748]">
+                どんな仕組みでも、脆弱性を完全にゼロにすることはできません。だからこそ攻撃される入口そのものを減らす作りを選び、使っているライブラリのセキュリティ更新も継続して適用しています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 業種別 */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <h2 className="text-2xl font-bold md:text-3xl">
+          業種に合わせて、集客の設計を変える
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#5b5748] md:text-base">
+          美容、工務店、飲食、クリニックなど、業種ごとに効果的な見せ方と導線は変わります。それぞれの業種で実際に重視しているポイントをまとめました。
+        </p>
+        <div>
+          {verticalFocus.map((item) => (
+            <div key={item.title} className={styles.verticalRow}>
+              <div className="grid gap-6 md:grid-cols-[0.9fr_1.6fr] md:gap-12">
+                <div>
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <Link
+                    href="/contact"
+                    className="mt-4 inline-block border-b-2 border-transparent text-sm font-bold text-[#5b5748] transition-colors hover:border-[#15181d] hover:text-[#15181d]"
+                  >
+                    相談する
+                  </Link>
+                </div>
+                <div>
+                  <p className="text-sm leading-relaxed text-[#5b5748]">
+                    {item.description}
+                  </p>
+                  <ul className="mt-4 space-y-1.5 text-xs leading-relaxed text-[#5b5748]">
+                    {item.highlights.map((h) => (
+                      <li key={h} className="flex gap-2">
+                        <span
+                          aria-hidden="true"
+                          className="mt-[0.45em] h-[3px] w-[3px] shrink-0 rounded-full bg-[#f0b429]"
+                        />
+                        <span>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 制作実績 */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <h2 className="text-2xl font-bold md:text-3xl">制作実績</h2>
+        <p className="mt-6 text-xl font-bold">{featuredWork.title}</p>
+        <div className={`${styles.caseBand} mt-4 p-8 md:p-12`}>
+          <div className="grid gap-10 md:grid-cols-2 md:items-center">
+            <div>
+              <p className="text-sm leading-relaxed text-[#c9c4ad]">
+                {featuredWork.description}
+              </p>
+              <div className="mt-8">
+                {featuredWork.stats.map((s) => (
+                  <div
+                    key={s.label}
+                    className={`${styles.caseStat} flex items-baseline justify-between gap-4 py-4`}
+                  >
+                    <span className="text-sm text-[#c9c4ad]">{s.label}</span>
+                    <span
+                      className={`${shipporiAntiqueB1.className} text-3xl text-[#f0b429]`}
+                    >
+                      {s.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <a
+                href={featuredWork.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-block border-b-2 border-[#f0b429] pb-1 text-sm font-bold"
+              >
+                サイトを見る
+              </a>
+            </div>
+            <div className="overflow-hidden rounded-xl">
+              <Image
+                src="/sodeno.png"
+                alt="袖野建具様のホームページ紹介画像"
+                width={1200}
+                height={800}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        {otherWorks.map((work) => (
+          <a
+            key={work.url}
+            href={work.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.workRow} group mt-10 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center`}
+          >
+            <div className="overflow-hidden rounded-xl bg-white">
+              <Image
+                src={work.image}
+                alt={`${work.title}のホームページ紹介画像`}
+                width={1200}
+                height={630}
+                className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+              />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold md:text-2xl">{work.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
+                {work.description}
+              </p>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {work.tags.map((tag) => (
+                  <li
+                    key={tag}
+                    className="rounded-full border border-[#15181d]/20 px-3 py-1 text-xs font-bold text-[#5b5748]"
+                  >
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+              <span className="mt-6 inline-block border-b-2 border-[#f0b429] pb-1 text-sm font-bold">
+                サイトを見る
+              </span>
+            </div>
+          </a>
+        ))}
+
+        <Link
+          href="/works"
+          className="mt-10 inline-block border-b-2 border-transparent pb-1 text-sm font-bold text-[#5b5748] transition-colors hover:border-[#15181d] hover:text-[#15181d]"
+        >
+          制作実績をすべて見る
+        </Link>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="mx-auto max-w-4xl px-6 py-16">
+        <h2 className="text-2xl font-bold md:text-3xl">よくあるご質問</h2>
+        <p className="mt-3 text-sm leading-relaxed text-[#5b5748] md:text-base">
+          SEOや集客、制作フローについてよく聞かれることをまとめました。気になる点があれば、お気軽にご相談ください。
+        </p>
+        <div className="mt-10">
+          {faqItems.map((item) => (
+            <details key={item.question} className={`${styles.faqItem} group py-5`}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left font-bold [&::-webkit-details-marker]:hidden">
+                <span>{item.question}</span>
+                <span className="shrink-0 text-xl font-normal text-[#5b5748] transition-transform duration-300 group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-[#5b5748]">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section
+        id="contact"
+        className={`${styles.ctaBand} mx-auto max-w-6xl rounded-2xl px-6 py-16 text-center md:px-16`}
+      >
+        <h2 className={`${shipporiAntiqueB1.className} text-3xl md:text-4xl`}>
+          まずは、話してみませんか。
+        </h2>
+        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#c9c4ad] md:text-base">
+          料金や進め方のご相談だけでも大丈夫です。スピード感のあるやりとりで、公開までお付き合いします。
+        </p>
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center rounded-full bg-[#f0b429] px-8 py-3 text-sm font-bold text-[#15181d] transition hover:brightness-95"
+          >
+            無料で相談する
+          </Link>
+          <a
+            href="https://www.instagram.com/reewa_web/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-[#eae6da]/40 px-8 py-3 text-sm font-bold text-[#eae6da] transition hover:border-[#eae6da]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              className="h-5 w-5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+              <path d="M16 11.37a4.5 4.5 0 1 1-3.11-4.25" />
+              <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
+            </svg>
+            Instagramで相談する
+          </a>
+        </div>
+      </section>
     </main>
+  );
+}
+
+// 「速い・安い・売れる・守れる」を表すアイコンを、目盛り付きのダークタイルに載せる
+function IconTile({
+  src,
+  label,
+  children,
+}: {
+  src?: string;
+  label: string;
+  children?: ReactNode;
+}) {
+  return (
+    <div className="flex items-center gap-4">
+      <div className={styles.iconTile}>
+        {src ? (
+          // アニメーションWebPのため最適化せずそのまま配信する
+          <Image
+            src={src}
+            alt=""
+            width={96}
+            height={96}
+            unoptimized
+            className="h-full w-full object-contain"
+          />
+        ) : (
+          children
+        )}
+      </div>
+      <p className="text-sm font-bold tracking-[0.2em] text-[#5b5748]">
+        {label}
+      </p>
+    </div>
   );
 }

@@ -1,4 +1,6 @@
-import RakutenAffiliateAd, { rakutenAds } from '@/app/blog/RakutenAffiliateAd';
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import BlogAffiliateRecommendations from "@/app/blog/BlogAffiliateRecommendations";
+import RakutenAffiliateAd from "@/app/blog/RakutenAffiliateAd";
 import type { Salon } from '@/app/types/salon';
 import { generateItemListSchema } from '@/app/utils/schema';
 import React from 'react';
@@ -134,208 +136,211 @@ export default function NagoyaHairSalonNakakuPage() {
   const jsonLd = generateItemListSchema(salons);
 
   return (
-    <main className="min-h-screen bg-rose-50">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <>
+      <main className="min-h-screen bg-rose-50">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <header className="bg-white shadow-sm">
-        <div className="mx-auto max-w-5xl px-4 py-12 md:px-6">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">Nagoya Hair Salon Guide</p>
-          <h1 className="mt-3 text-3xl font-bold text-gray-900 md:text-4xl">
-            名古屋・中区（栄/矢場町）<br className="md:hidden" />
-            美容院おすすめ4選
-          </h1>
-          <p className="mt-4 text-gray-600 leading-relaxed">
-            パーソナルカラー診断ページの構成を活かしつつ、「失敗したくない」「トレンドを追いたい」「派手髪を楽しみたい」「艶髪を育てたい」という4つのニーズにフォーカスしたまとめ記事です。
-            価格帯・ターゲット層・予約の取りやすさ・Googleマップの位置情報まで一気に確認できます。
+        <header className="bg-white shadow-sm">
+          <div className="mx-auto max-w-5xl px-4 py-12 md:px-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-rose-500">Nagoya Hair Salon Guide</p>
+            <h1 className="mt-3 text-3xl font-bold text-gray-900 md:text-4xl">
+              名古屋・中区（栄/矢場町）<br className="md:hidden" />
+              美容院おすすめ4選
+            </h1>
+            <p className="mt-4 text-gray-600 leading-relaxed">
+              パーソナルカラー診断ページの構成を活かしつつ、「失敗したくない」「トレンドを追いたい」「派手髪を楽しみたい」「艶髪を育てたい」という4つのニーズにフォーカスしたまとめ記事です。
+              価格帯・ターゲット層・予約の取りやすさ・Googleマップの位置情報まで一気に確認できます。
+            </p>
+            <div className="mt-6 text-sm text-gray-500">最終更新: {new Date().getFullYear()}年 / 監修: 名古屋ビューティー編集部</div>
+          </div>
+        </header>
+
+        <section className="mx-auto max-w-5xl px-4 py-10 md:px-6">
+          <h2 className="text-2xl font-bold text-gray-900">まずはタイプ別にサロンを把握</h2>
+          <p className="mt-2 text-sm text-gray-600">
+            それぞれの強みを一言で把握できるサマリーです。気になったサロンをタップして詳細に進んでください。
           </p>
-          <div className="mt-6 text-sm text-gray-500">最終更新: {new Date().getFullYear()}年 / 監修: 名古屋ビューティー編集部</div>
-        </div>
-      </header>
-
-      <section className="mx-auto max-w-5xl px-4 py-10 md:px-6">
-        <h2 className="text-2xl font-bold text-gray-900">まずはタイプ別にサロンを把握</h2>
-        <p className="mt-2 text-sm text-gray-600">
-          それぞれの強みを一言で把握できるサマリーです。気になったサロンをタップして詳細に進んでください。
-        </p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {salons.map((salon) => (
-            <a
-              key={salon.id}
-              href={`#${salon.id}`}
-              className="rounded-2xl border border-rose-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-rose-300 hover:shadow-lg"
-            >
-              <p className="text-xs font-semibold text-rose-500">{salon.category}</p>
-              <h3 className="mt-1 text-lg font-bold text-gray-900">{salon.name}</h3>
-              <p className="text-sm text-gray-600">{salon.tagline}</p>
-              <div className="mt-3 flex flex-wrap gap-2 text-xs text-rose-600">
-                <span className="rounded-full bg-rose-50 px-3 py-1 font-semibold">{salon.area}</span>
-                <span className="rounded-full bg-rose-50 px-3 py-1 font-semibold">{salon.priceGuide}</span>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-5xl px-4 pb-16 md:px-6">
-        <h2 className="text-2xl font-bold text-gray-900">目的別おすすめヘアサロン 詳細レビュー</h2>
-        <p className="mt-2 text-sm text-gray-600">
-          それぞれのサロンについて、選ばれる理由・価格帯・ターゲット層・予約の注意点・Googleマップをまとめました。
-        </p>
-
-        <div className="mt-8 space-y-10">
-          {salons.map((salon, index) => (
-            <React.Fragment key={salon.id}>
-                <article
-                id={salon.id}
-                className="scroll-mt-28 overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-lg ring-1 ring-rose-50"
-                >
-                <div className="bg-gradient-to-r from-rose-50 to-white px-6 py-5">
-                    <p className="text-xs font-semibold text-rose-500">{salon.category}</p>
-                    <div className="mt-2 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-                    <h3 className="text-2xl font-bold text-gray-900">
-                        #{salon.rank} {salon.name}
-                    </h3>
-                    <span className="text-sm font-semibold text-rose-600">{salon.area}</span>
-                    </div>
-                    <p className="mt-2 text-sm text-gray-600">{salon.tagline}</p>
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {salons.map((salon) => (
+              <a
+                key={salon.id}
+                href={`#${salon.id}`}
+                className="rounded-2xl border border-rose-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-rose-300 hover:shadow-lg"
+              >
+                <p className="text-xs font-semibold text-rose-500">{salon.category}</p>
+                <h3 className="mt-1 text-lg font-bold text-gray-900">{salon.name}</h3>
+                <p className="text-sm text-gray-600">{salon.tagline}</p>
+                <div className="mt-3 flex flex-wrap gap-2 text-xs text-rose-600">
+                  <span className="rounded-full bg-rose-50 px-3 py-1 font-semibold">{salon.area}</span>
+                  <span className="rounded-full bg-rose-50 px-3 py-1 font-semibold">{salon.priceGuide}</span>
                 </div>
+              </a>
+            ))}
+          </div>
+        </section>
 
-                <div className="space-y-8 px-6 py-6 md:px-8">
-                    <p className="text-gray-700 leading-relaxed">{salon.description}</p>
-
-                    <div className="grid gap-5 md:grid-cols-2">
-                    <div className="rounded-2xl border border-rose-100 bg-rose-50/60 p-5">
-                        <h4 className="text-sm font-semibold text-rose-700">おすすめの理由</h4>
-                        <ul className="mt-3 space-y-2 text-sm text-gray-700">
-                        {salon.reasons.map((reason) => (
-                            <li key={reason} className="flex items-start gap-2">
-                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-rose-500" />
-                            {reason}
-                            </li>
-                        ))}
-                        </ul>
-                    </div>
-                    <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
-                        <h4 className="text-sm font-semibold text-gray-800">メニュー目安</h4>
-                        <ul className="mt-3 space-y-2 text-sm text-gray-700">
-                        {salon.menuExamples.map((menu) => (
-                            <li key={menu} className="flex items-start gap-2">
-                            <span className="mt-1 text-gray-400">•</span>
-                            {menu}
-                            </li>
-                        ))}
-                        </ul>
-                    </div>
-                    </div>
-
-                    <div className="grid gap-4 md:grid-cols-3">
-                    <div className="rounded-xl border border-rose-100 p-4">
-                        <p className="text-xs uppercase tracking-[0.2em] text-rose-400">Price</p>
-                        <p className="mt-1 text-lg font-bold text-rose-600">{salon.priceGuide}</p>
-                        {salon.priceRange && (
-                        <p className="text-xs text-gray-500">
-                            参考レンジ: ¥{salon.priceRange.min.toLocaleString()}〜¥{salon.priceRange.max.toLocaleString()}
-                        </p>
-                        )}
-                    </div>
-                    <div className="rounded-xl border border-gray-100 p-4">
-                        <p className="text-xs uppercase tracking-[0.2em] text-gray-400">Target</p>
-                        <p className="mt-1 text-lg font-bold text-gray-800">{salon.target}</p>
-                        <p className="text-xs text-gray-500">得意な年代やライフスタイル</p>
-                    </div>
-                    <div className="rounded-xl border border-gray-100 p-4">
-                        <p className="text-xs uppercase tracking-[0.2em] text-gray-400">Booking</p>
-                        <p className="mt-1 text-sm font-semibold text-gray-800">{salon.bookingNote}</p>
-                    </div>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2">
-                    {salon.features.map((feature) => (
-                        <span key={feature} className="rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-600">
-                        {feature}
-                        </span>
-                    ))}
-                    </div>
-
-                    <div className="space-y-3 rounded-2xl border border-gray-100 p-4">
-                    <p className="text-sm font-semibold text-gray-800">Googleマップ</p>
-                    <div className="relative w-full overflow-hidden rounded-xl border border-gray-200">
-                        <iframe
-                        src={salon.mapEmbedUrl}
-                        title={`${salon.name}の地図`}
-                        loading="lazy"
-                        className="h-64 w-full border-0"
-                        allowFullScreen
-                        referrerPolicy="no-referrer-when-downgrade"
-                        />
-                    </div>
-                    <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                        <div>
-                        <p className="text-sm font-semibold text-gray-700">アクセス</p>
-                        <p className="text-sm text-gray-600">{salon.access}</p>
-                        </div>
-                        <div className="flex flex-col gap-2 md:flex-row">
-                        <a
-                            href={salon.mapLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-lg bg-rose-600 px-4 py-2 text-center text-sm font-bold text-white shadow-lg transition hover:bg-rose-700"
-                        >
-                            Googleマップを開く
-                        </a>
-                        <a
-                            href={salon.link}
-                            target="_blank"
-                            rel="nofollow noopener noreferrer"
-                            className="rounded-lg border border-rose-200 px-4 py-2 text-center text-sm font-bold text-rose-600 transition hover:bg-rose-50"
-                        >
-                            公式/予約ページを見る
-                        </a>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </article>
-
-                { index === 0 && (
-                    <RakutenAffiliateAd ad={rakutenAds[0]} />
-                )}
-                { index === 1 && (
-                    <RakutenAffiliateAd ad={rakutenAds[2]} />
-                )}
-                { index === 2 && (
-                    <RakutenAffiliateAd ad={rakutenAds[0]} />
-                )}
-                { index === 3 && (
-                    <RakutenAffiliateAd ad={rakutenAds[0]} />
-                )}
-            </React.Fragment>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-5xl px-4 py-10 md:px-6">
-          <h2 className="text-2xl font-bold text-gray-900">予約で失敗しないための+αアドバイス</h2>
-          <ul className="mt-4 space-y-3 text-sm text-gray-700">
-            <li>
-              <span className="font-semibold text-rose-600">価格帯:</span> カット+カラーが15,000〜20,000円前後ならミドルハイクラス。デザインカラーはブリーチ回数で料金が大きく変わるので、相談時に「希望の色味と予算」をセットで伝えると安心です。
-            </li>
-            <li>
-              <span className="font-semibold text-rose-600">ターゲット年代:</span> AFLOATとLondjeloudは大人女性、LORENとTHE ORDERは20代〜30代の感度高め層との相性が抜群。自分のライフスタイルに近いお客様が多いサロンは、仕上がりイメージの共有がスムーズです。
-            </li>
-            <li>
-              <span className="font-semibold text-rose-600">予約の取りやすさ:</span> トップスタイリストは土日の午前枠から埋まります。気になるサロンはGoogleマップで場所を押さえつつ、2週間前までにWeb予約を入れておくのが中区攻略のコツです。
-            </li>
-            <li>
-              <span className="font-semibold text-rose-600">Googleマップ:</span> 栄・矢場町エリアはビルが密集しているため、地図のストリートビューで入り口をチェックしておくと迷いません。友人とシェアして待ち合わせにも便利です。
-            </li>
-          </ul>
-          <p className="mt-6 text-sm text-gray-600">
-            それぞれのサロンが得意とする領域は異なるので、この記事をブックマークして目的に合わせて選んでみてください。
+        <section className="mx-auto max-w-5xl px-4 pb-16 md:px-6">
+          <h2 className="text-2xl font-bold text-gray-900">目的別おすすめヘアサロン 詳細レビュー</h2>
+          <p className="mt-2 text-sm text-gray-600">
+            それぞれのサロンについて、選ばれる理由・価格帯・ターゲット層・予約の注意点・Googleマップをまとめました。
           </p>
-        </div>
-      </section>
-    </main>
+
+          <div className="mt-8 space-y-10">
+            {salons.map((salon, index) => (
+              <React.Fragment key={salon.id}>
+                  <article
+                  id={salon.id}
+                  className="scroll-mt-28 overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-lg ring-1 ring-rose-50"
+                  >
+                  <div className="bg-gradient-to-r from-rose-50 to-white px-6 py-5">
+                      <p className="text-xs font-semibold text-rose-500">{salon.category}</p>
+                      <div className="mt-2 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+                      <h3 className="text-2xl font-bold text-gray-900">
+                          #{salon.rank} {salon.name}
+                      </h3>
+                      <span className="text-sm font-semibold text-rose-600">{salon.area}</span>
+                      </div>
+                      <p className="mt-2 text-sm text-gray-600">{salon.tagline}</p>
+                  </div>
+
+                  <div className="space-y-8 px-6 py-6 md:px-8">
+                      <p className="text-gray-700 leading-relaxed">{salon.description}</p>
+
+                      <div className="grid gap-5 md:grid-cols-2">
+                      <div className="rounded-2xl border border-rose-100 bg-rose-50/60 p-5">
+                          <h4 className="text-sm font-semibold text-rose-700">おすすめの理由</h4>
+                          <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                          {salon.reasons.map((reason) => (
+                              <li key={reason} className="flex items-start gap-2">
+                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-rose-500" />
+                              {reason}
+                              </li>
+                          ))}
+                          </ul>
+                      </div>
+                      <div className="rounded-2xl border border-gray-100 bg-gray-50 p-5">
+                          <h4 className="text-sm font-semibold text-gray-800">メニュー目安</h4>
+                          <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                          {salon.menuExamples.map((menu) => (
+                              <li key={menu} className="flex items-start gap-2">
+                              <span className="mt-1 text-gray-400">•</span>
+                              {menu}
+                              </li>
+                          ))}
+                          </ul>
+                      </div>
+                      </div>
+
+                      <div className="grid gap-4 md:grid-cols-3">
+                      <div className="rounded-xl border border-rose-100 p-4">
+                          <p className="text-xs uppercase tracking-[0.2em] text-rose-400">Price</p>
+                          <p className="mt-1 text-lg font-bold text-rose-600">{salon.priceGuide}</p>
+                          {salon.priceRange && (
+                          <p className="text-xs text-gray-500">
+                              参考レンジ: ¥{salon.priceRange.min.toLocaleString()}〜¥{salon.priceRange.max.toLocaleString()}
+                          </p>
+                          )}
+                      </div>
+                      <div className="rounded-xl border border-gray-100 p-4">
+                          <p className="text-xs uppercase tracking-[0.2em] text-gray-400">Target</p>
+                          <p className="mt-1 text-lg font-bold text-gray-800">{salon.target}</p>
+                          <p className="text-xs text-gray-500">得意な年代やライフスタイル</p>
+                      </div>
+                      <div className="rounded-xl border border-gray-100 p-4">
+                          <p className="text-xs uppercase tracking-[0.2em] text-gray-400">Booking</p>
+                          <p className="mt-1 text-sm font-semibold text-gray-800">{salon.bookingNote}</p>
+                      </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                      {salon.features.map((feature) => (
+                          <span key={feature} className="rounded-full bg-rose-50 px-3 py-1 text-xs font-semibold text-rose-600">
+                          {feature}
+                          </span>
+                      ))}
+                      </div>
+
+                      <div className="space-y-3 rounded-2xl border border-gray-100 p-4">
+                      <p className="text-sm font-semibold text-gray-800">Googleマップ</p>
+                      <div className="relative w-full overflow-hidden rounded-xl border border-gray-200">
+                          <iframe
+                          src={salon.mapEmbedUrl}
+                          title={`${salon.name}の地図`}
+                          loading="lazy"
+                          className="h-64 w-full border-0"
+                          allowFullScreen
+                          referrerPolicy="no-referrer-when-downgrade"
+                          />
+                      </div>
+                      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                          <div>
+                          <p className="text-sm font-semibold text-gray-700">アクセス</p>
+                          <p className="text-sm text-gray-600">{salon.access}</p>
+                          </div>
+                          <div className="flex flex-col gap-2 md:flex-row">
+                          <a
+                              href={salon.mapLink}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="rounded-lg bg-rose-600 px-4 py-2 text-center text-sm font-bold text-white shadow-lg transition hover:bg-rose-700"
+                          >
+                              Googleマップを開く
+                          </a>
+                          <a
+                              href={salon.link}
+                              target="_blank"
+                              rel="nofollow noopener noreferrer"
+                              className="rounded-lg border border-rose-200 px-4 py-2 text-center text-sm font-bold text-rose-600 transition hover:bg-rose-50"
+                          >
+                              公式/予約ページを見る
+                          </a>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+                  </article>
+
+                  { index === 0 && (
+                      <RakutenAffiliateAd ad={blogRakutenAds.hairsalon[0]} />
+                  )}
+                  { index === 2 && (
+                      <RakutenAffiliateAd ad={blogRakutenAds.hairsalon[1]} />
+                  )}
+                  {index === 1 && (
+                      <RakutenAffiliateAd ad={blogRakutenAds.hairsalon[4]} />
+                  )}
+                  {index === 3 && (
+                      <RakutenAffiliateAd ad={blogRakutenAds.hairsalon[5]} />
+                  )}
+              </React.Fragment>
+            ))}
+          </div>
+        </section>
+
+        <section className="bg-white">
+          <div className="mx-auto max-w-5xl px-4 py-10 md:px-6">
+            <h2 className="text-2xl font-bold text-gray-900">予約で失敗しないための+αアドバイス</h2>
+            <ul className="mt-4 space-y-3 text-sm text-gray-700">
+              <li>
+                <span className="font-semibold text-rose-600">価格帯:</span> カット+カラーが15,000〜20,000円前後ならミドルハイクラス。デザインカラーはブリーチ回数で料金が大きく変わるので、相談時に「希望の色味と予算」をセットで伝えると安心です。
+              </li>
+              <li>
+                <span className="font-semibold text-rose-600">ターゲット年代:</span> AFLOATとLondjeloudは大人女性、LORENとTHE ORDERは20代〜30代の感度高め層との相性が抜群。自分のライフスタイルに近いお客様が多いサロンは、仕上がりイメージの共有がスムーズです。
+              </li>
+              <li>
+                <span className="font-semibold text-rose-600">予約の取りやすさ:</span> トップスタイリストは土日の午前枠から埋まります。気になるサロンはGoogleマップで場所を押さえつつ、2週間前までにWeb予約を入れておくのが中区攻略のコツです。
+              </li>
+              <li>
+                <span className="font-semibold text-rose-600">Googleマップ:</span> 栄・矢場町エリアはビルが密集しているため、地図のストリートビューで入り口をチェックしておくと迷いません。友人とシェアして待ち合わせにも便利です。
+              </li>
+            </ul>
+            <p className="mt-6 text-sm text-gray-600">
+              それぞれのサロンが得意とする領域は異なるので、この記事をブックマークして目的に合わせて選んでみてください。
+            </p>
+          </div>
+        </section>
+      </main>
+      <BlogAffiliateRecommendations ads={[blogRakutenAds.hairsalon[2], blogRakutenAds.hairsalon[6], blogRakutenAds.hairsalon[3]]} heading="髪のホームケアに" />
+    </>
   );
 }

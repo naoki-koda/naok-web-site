@@ -44,3 +44,7 @@ next-env.d.ts
 /public/sitemap-0.xml
 /public/robots.txt
 /public/robots-*.txt
+
+#claude
+.claude
+.agents

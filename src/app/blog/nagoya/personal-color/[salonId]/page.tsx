@@ -1,3 +1,5 @@
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import BlogAffiliateRecommendations from "@/app/blog/BlogAffiliateRecommendations";
 // app/nagoya-personal-color/[salonId]/page.tsx
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -216,196 +218,199 @@ export default async function SalonDetailPage({ params }: PageProps) {
   };
 
   return (
-    <div className="bg-slate-50 pb-20">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <>
+      <div className="bg-slate-50 pb-20">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
 
-      {/* ヒーローセクション */}
-      <div className="relative bg-white pb-8 pt-6 shadow-sm">
-        <div className="mx-auto max-w-3xl px-4">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-rose-50 px-3 py-1 text-xs font-bold text-rose-600">
-            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-rose-600 text-[10px] text-white">
-              {salon.rank}
-            </span>
-            名古屋おすすめランキング {salon.rank}位
-          </div>
-          <h1 className="mb-4 text-2xl font-extrabold text-slate-900 sm:text-3xl md:text-4xl">
-            {salon.name}
-          </h1>
-          <div className="flex flex-wrap gap-2 text-sm text-slate-600">
-            <span className="flex items-center gap-1">
-              <MapPin className="h-4 w-4 text-rose-500" />
-              {salon.area}
-            </span>
-            <span className="flex items-center gap-1">
-              <Sparkles className="h-4 w-4 text-rose-500" />
-              {salon.type}
-            </span>
+        {/* ヒーローセクション */}
+        <div className="relative bg-white pb-8 pt-6 shadow-sm">
+          <div className="mx-auto max-w-3xl px-4">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-rose-50 px-3 py-1 text-xs font-bold text-rose-600">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-rose-600 text-[10px] text-white">
+                {salon.rank}
+              </span>
+              名古屋おすすめランキング {salon.rank}位
+            </div>
+            <h1 className="mb-4 text-2xl font-extrabold text-slate-900 sm:text-3xl md:text-4xl">
+              {salon.name}
+            </h1>
+            <div className="flex flex-wrap gap-2 text-sm text-slate-600">
+              <span className="flex items-center gap-1">
+                <MapPin className="h-4 w-4 text-rose-500" />
+                {salon.area}
+              </span>
+              <span className="flex items-center gap-1">
+                <Sparkles className="h-4 w-4 text-rose-500" />
+                {salon.type}
+              </span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="mx-auto max-w-3xl px-4 py-8">
+        <div className="mx-auto max-w-3xl px-4 py-8">
         
-        {/* メイン画像・キャッチコピー */}
-        <div className="mb-10 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-100">
-           {/* 本番ではNext/Image */}
-          <div className="aspect-video w-full bg-slate-200 flex items-center justify-center text-slate-400">
-             {salon.name} Main Image
+          {/* メイン画像・キャッチコピー */}
+          <div className="mb-10 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-100">
+             {/* 本番ではNext/Image */}
+            <div className="aspect-video w-full bg-slate-200 flex items-center justify-center text-slate-400">
+               {salon.name} Main Image
+            </div>
+            <div className="p-6">
+              <p className="text-lg font-bold leading-relaxed text-slate-800">
+                {salon.description}
+              </p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {detail.usp.map((point, i) => (
+                  <div key={i} className="rounded-xl bg-rose-50 p-4">
+                    <h3 className="mb-2 flex items-center gap-2 font-bold text-rose-700">
+                      <CheckCircle2 className="h-5 w-5" />
+                      {point.title}
+                    </h3>
+                    <p className="text-sm text-slate-700">{point.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="p-6">
-            <p className="text-lg font-bold leading-relaxed text-slate-800">
-              {salon.description}
-            </p>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {detail.usp.map((point, i) => (
-                <div key={i} className="rounded-xl bg-rose-50 p-4">
-                  <h3 className="mb-2 flex items-center gap-2 font-bold text-rose-700">
-                    <CheckCircle2 className="h-5 w-5" />
-                    {point.title}
-                  </h3>
-                  <p className="text-sm text-slate-700">{point.description}</p>
+
+          {/* メニュー・料金表 */}
+          <section className="mb-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+            <h2 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900">
+              <CreditCard className="h-6 w-6 text-rose-500" />
+              メニュー・料金
+            </h2>
+            <div className="space-y-4">
+              {detail.menus.map((menu, idx) => (
+                <div key={idx} className="flex flex-col justify-between border-b border-slate-100 pb-4 last:border-0 last:pb-0 sm:flex-row sm:items-start sm:gap-4">
+                  <div className="flex-1">
+                    <h3 className="font-bold text-slate-900">{menu.name}</h3>
+                    <p className="mt-1 text-sm text-slate-600">{menu.description}</p>
+                  </div>
+                  <div className="mt-2 shrink-0 text-right sm:mt-0">
+                    <p className="text-lg font-bold text-rose-600">{menu.price}</p>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
+            <div className="mt-6 rounded-lg bg-slate-50 p-3 text-xs text-slate-500">
+               <p>支払い方法: {detail.payment}</p>
+            </div>
+          </section>
 
-        {/* メニュー・料金表 */}
-        <section className="mb-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-          <h2 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900">
-            <CreditCard className="h-6 w-6 text-rose-500" />
-            メニュー・料金
-          </h2>
-          <div className="space-y-4">
-            {detail.menus.map((menu, idx) => (
-              <div key={idx} className="flex flex-col justify-between border-b border-slate-100 pb-4 last:border-0 last:pb-0 sm:flex-row sm:items-start sm:gap-4">
-                <div className="flex-1">
-                  <h3 className="font-bold text-slate-900">{menu.name}</h3>
-                  <p className="mt-1 text-sm text-slate-600">{menu.description}</p>
+          {/* 口コミ・評判 */}
+          <section className="mb-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+            <h2 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900">
+              <Sparkles className="h-6 w-6 text-rose-500" />
+              口コミ・評判
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {detail.reviews.map((review, idx) => (
+                <div key={idx} className="rounded-xl border border-slate-100 bg-slate-50/50 p-4">
+                  <div className="mb-2 flex items-center gap-1 text-yellow-500">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <span key={i}>★</span>
+                    ))}
+                  </div>
+                  <h3 className="mb-2 font-bold text-slate-800">{review.title}</h3>
+                  <p className="text-sm leading-relaxed text-slate-600">
+                    {review.content}
+                  </p>
                 </div>
-                <div className="mt-2 shrink-0 text-right sm:mt-0">
-                  <p className="text-lg font-bold text-rose-600">{menu.price}</p>
+              ))}
+            </div>
+            <div className="mt-4 text-center">
+              <a href={salon.link} target="_blank" rel="nofollow" className="text-sm text-blue-600 underline">
+                もっと口コミを見る（公式サイト/予約サイト）
+              </a>
+            </div>
+          </section>
+
+          {/* 店舗情報・アクセス */}
+          <section className="mb-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
+            <h2 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900">
+              <MapPin className="h-6 w-6 text-rose-500" />
+              アクセス・店舗情報
+            </h2>
+            <div className="space-y-4 text-sm">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-slate-400" />
+                <div>
+                  <p className="font-bold text-slate-900">住所</p>
+                  <p className="text-slate-600">{detail.address}</p>
                 </div>
               </div>
-            ))}
-          </div>
-          <div className="mt-6 rounded-lg bg-slate-50 p-3 text-xs text-slate-500">
-             <p>支払い方法: {detail.payment}</p>
-          </div>
-        </section>
-
-        {/* 口コミ・評判 */}
-        <section className="mb-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-          <h2 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900">
-            <Sparkles className="h-6 w-6 text-rose-500" />
-            口コミ・評判
-          </h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {detail.reviews.map((review, idx) => (
-              <div key={idx} className="rounded-xl border border-slate-100 bg-slate-50/50 p-4">
-                <div className="mb-2 flex items-center gap-1 text-yellow-500">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <span key={i}>★</span>
-                  ))}
+              <div className="flex items-start gap-3">
+                <ArrowRight className="mt-0.5 h-5 w-5 shrink-0 text-slate-400" />
+                <div>
+                  <p className="font-bold text-slate-900">アクセス</p>
+                  <p className="text-slate-600">{detail.access}</p>
                 </div>
-                <h3 className="mb-2 font-bold text-slate-800">{review.title}</h3>
-                <p className="text-sm leading-relaxed text-slate-600">
-                  {review.content}
-                </p>
               </div>
-            ))}
-          </div>
-          <div className="mt-4 text-center">
-            <a href={salon.link} target="_blank" rel="nofollow" className="text-sm text-blue-600 underline">
-              もっと口コミを見る（公式サイト/予約サイト）
-            </a>
-          </div>
-        </section>
-
-        {/* 店舗情報・アクセス */}
-        <section className="mb-10 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-100">
-          <h2 className="mb-6 flex items-center gap-2 text-xl font-bold text-slate-900">
-            <MapPin className="h-6 w-6 text-rose-500" />
-            アクセス・店舗情報
-          </h2>
-          <div className="space-y-4 text-sm">
-            <div className="flex items-start gap-3">
-              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-slate-400" />
-              <div>
-                <p className="font-bold text-slate-900">住所</p>
-                <p className="text-slate-600">{detail.address}</p>
+               <div className="flex items-start gap-3">
+                <Clock className="mt-0.5 h-5 w-5 shrink-0 text-slate-400" />
+                <div>
+                  <p className="font-bold text-slate-900">営業時間</p>
+                  <p className="text-slate-600">{detail.hours}</p>
+                </div>
               </div>
             </div>
-            <div className="flex items-start gap-3">
-              <ArrowRight className="mt-0.5 h-5 w-5 shrink-0 text-slate-400" />
-              <div>
-                <p className="font-bold text-slate-900">アクセス</p>
-                <p className="text-slate-600">{detail.access}</p>
-              </div>
+            {/* Google Maps Embed Placeholder */}
+            <div className="mt-6 aspect-video w-full overflow-hidden rounded-xl bg-slate-100">
+              <iframe 
+                src={detail.mapUrl} 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
-             <div className="flex items-start gap-3">
-              <Clock className="mt-0.5 h-5 w-5 shrink-0 text-slate-400" />
-              <div>
-                <p className="font-bold text-slate-900">営業時間</p>
-                <p className="text-slate-600">{detail.hours}</p>
-              </div>
+          </section>
+
+          {/* コンバージョンエリア */}
+          <div className="rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 p-8 text-center text-white shadow-lg">
+            <h2 className="mb-4 text-2xl font-bold">
+              {salon.name}で<br />
+              「似合う」を見つけよう
+            </h2>
+            <p className="mb-8 text-rose-100">
+              人気のサロンは数ヶ月先まで埋まることもあります。<br />
+              まずは空き状況をチェックしてみましょう。
+            </p>
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+              <a
+                href={salon.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 font-bold text-rose-600 shadow-md transition hover:bg-rose-50"
+              >
+                <CalendarCheck className="mr-2 h-5 w-5" />
+                公式サイトで予約する
+              </a>
+              {/* ホットペッパー等がある場合 */}
+               <a
+                href={salon.link}
+                target="_blank"
+                rel="nofollow noreferrer"
+                className="inline-flex items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-4 font-bold text-white transition hover:bg-white/10"
+              >
+                クーポンを見る
+              </a>
             </div>
           </div>
-          {/* Google Maps Embed Placeholder */}
-          <div className="mt-6 aspect-video w-full overflow-hidden rounded-xl bg-slate-100">
-            <iframe 
-              src={detail.mapUrl} 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0 }} 
-              loading="lazy" 
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+
+          <div className="mt-8 text-center">
+            <Link href="/blog/nagoya/personal-color" className="text-sm font-medium text-slate-500 hover:text-rose-600">
+              ← 名古屋のサロンランキング一覧に戻る
+            </Link>
           </div>
-        </section>
 
-        {/* コンバージョンエリア */}
-        <div className="rounded-2xl bg-gradient-to-br from-rose-500 to-pink-600 p-8 text-center text-white shadow-lg">
-          <h2 className="mb-4 text-2xl font-bold">
-            {salon.name}で<br />
-            「似合う」を見つけよう
-          </h2>
-          <p className="mb-8 text-rose-100">
-            人気のサロンは数ヶ月先まで埋まることもあります。<br />
-            まずは空き状況をチェックしてみましょう。
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <a
-              href={salon.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 font-bold text-rose-600 shadow-md transition hover:bg-rose-50"
-            >
-              <CalendarCheck className="mr-2 h-5 w-5" />
-              公式サイトで予約する
-            </a>
-            {/* ホットペッパー等がある場合 */}
-             <a
-              href={salon.link}
-              target="_blank"
-              rel="nofollow noreferrer"
-              className="inline-flex items-center justify-center rounded-full border-2 border-white bg-transparent px-8 py-4 font-bold text-white transition hover:bg-white/10"
-            >
-              クーポンを見る
-            </a>
-          </div>
         </div>
-
-        <div className="mt-8 text-center">
-          <Link href="/blog/nagoya/personal-color" className="text-sm font-medium text-slate-500 hover:text-rose-600">
-            ← 名古屋のサロンランキング一覧に戻る
-          </Link>
-        </div>
-
       </div>
-    </div>
+      <BlogAffiliateRecommendations ads={blogRakutenAds.personalColor} heading="パーソナルカラー診断の前後に" />
+    </>
   );
 }

@@ -1,4 +1,7 @@
-import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import BlogAffiliateRecommendations from "@/app/blog/BlogAffiliateRecommendations";
+import A8AffiliateAd, { a8Ads } from "@/app/blog/A8AffiliateAd";
+import RakutenAffiliateAd from "@/app/blog/RakutenAffiliateAd";
 import {
   BoltIcon,
   CheckCircleIcon,
@@ -170,281 +173,286 @@ export default function Page() {
   const currentYear = new Date().getFullYear() + 1;
 
   return (
-    <main className="max-w-3xl mx-auto px-4 py-12 sm:px-6 lg:px-8 bg-white text-slate-800 font-sans">
-      <header className="mb-12 text-center">
-        <span className="inline-flex items-center gap-2 px-4 py-1 mb-4 text-xs font-semibold tracking-widest text-blue-700 uppercase bg-blue-50 rounded-full">
-          <BoltIcon className="w-4 h-4" />
-          Tokai Fiber Insight
-        </span>
-        <h1 className="text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl">
-          【東海地方】光回線の結論
-          <br />
-          <span className="text-blue-600">
-            エディオン
-            <br /> × <br />
-            コミュファ光が最強
+    <>
+      <main className="max-w-3xl mx-auto px-4 py-12 sm:px-6 lg:px-8 bg-white text-slate-800 font-sans">
+        <header className="mb-12 text-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1 mb-4 text-xs font-semibold tracking-widest text-blue-700 uppercase bg-blue-50 rounded-full">
+            <BoltIcon className="w-4 h-4" />
+            Tokai Fiber Insight
           </span>
-        </h1>
-        <p className="mt-6 text-lg text-gray-600">
-          「最大◯◯円還元！」の広告に惑わされず、必要な速度と確実な特典を両立する方法を徹底解説。
-          {currentYear}年版の最新事情を、エディオン利用者目線でまとめました。
-        </p>
-        <p className="mt-3 text-sm text-gray-500">
-          最終更新：{currentYear}年 • 想定読者：東海エリア在住のau / UQユーザー
-        </p>
-      </header>
+          <h1 className="text-3xl font-extrabold leading-tight text-gray-900 md:text-4xl">
+            【東海地方】光回線の結論
+            <br />
+            <span className="text-blue-600">
+              エディオン
+              <br /> × <br />
+              コミュファ光が最強
+            </span>
+          </h1>
+          <p className="mt-6 text-lg text-gray-600">
+            「最大◯◯円還元！」の広告に惑わされず、必要な速度と確実な特典を両立する方法を徹底解説。
+            {currentYear}年版の最新事情を、エディオン利用者目線でまとめました。
+          </p>
+          <p className="mt-3 text-sm text-gray-500">
+            最終更新：{currentYear}年 • 想定読者：東海エリア在住のau / UQユーザー
+          </p>
+        </header>
 
-      <section className="mb-6 bg-slate-50 border border-slate-100 rounded-3xl p-6">
-        <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-          <StarIcon className="w-5 h-5 text-amber-500" />
-          この記事のターゲット（ペルソナ）
-        </h2>
-        <ul className="space-y-3 text-sm text-slate-700">
-          {personaPoints.map((point) => (
-            <li key={point} className="flex items-start gap-2">
-              <CheckCircleIcon className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-              <span>{point}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <RakutenAffiliateAd ad={rakutenAds[0]} />
-
-      <section id="comparison" className="mb-8">
-        <div className="flex items-center mb-6">
-          <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">
-            3
-          </span>
-          <h2 className="text-2xl font-bold text-gray-900">
-            主要光回線の料金・初期費用早見表
+        <section className="mb-6 bg-slate-50 border border-slate-100 rounded-3xl p-6">
+          <h2 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+            <StarIcon className="w-5 h-5 text-amber-500" />
+            この記事のターゲット（ペルソナ）
           </h2>
-        </div>
-        <p className="text-sm text-slate-600 mb-4">
-          1年目の実質コスト・初期費用・特徴をまとめました。10Gbpsの押し売りに引っ掛からないためにも、まずはここで全体像を把握してください。
-        </p>
-        <div className="overflow-x-auto rounded-2xl border border-slate-100">
-          <table className="min-w-full text-sm text-left text-slate-700">
-            <thead className="bg-slate-50 text-xs uppercase tracking-widest text-slate-500">
-              <tr>
-                <th className="px-4 py-3">順位</th>
-                <th className="px-4 py-3">光回線（プラン）</th>
-                <th className="px-4 py-3">月額費用（1年目目安）</th>
-                <th className="px-4 py-3">初期費用（工事費・手数料）</th>
-                <th className="px-4 py-3">特徴</th>
-              </tr>
-            </thead>
-            <tbody>
-              {fiberPlanComparisons.map((item) => (
-                <tr
-                  key={`${item.rank}-${item.plan}`}
-                  className="border-t border-slate-100"
-                >
-                  <td className="px-4 py-4 font-semibold text-slate-900">
-                    {item.rank}
-                  </td>
-                  <td className="px-4 py-4">
-                    <p className="font-semibold text-slate-900">{item.plan}</p>
-                  </td>
-                  <td className="px-4 py-4">
-                    <p className="font-semibold text-slate-900">
-                      {item.monthly}
-                    </p>
-                    {item.monthlyNote && (
-                      <p className="text-xs text-slate-500">
-                        {item.monthlyNote}
-                      </p>
-                    )}
-                  </td>
-                  <td className="px-4 py-4">
-                    <p className="font-semibold text-slate-900">
-                      {item.initial}
-                    </p>
-                    {item.initialNote && (
-                      <p className="text-xs text-slate-500">
-                        {item.initialNote}
-                      </p>
-                    )}
-                  </td>
-                  <td className="px-4 py-4">
-                    <p className="font-semibold text-slate-900">
-                      {item.feature}
-                    </p>
-                    {item.detail && (
-                      <p className="text-xs text-slate-500 mt-1">
-                        {item.detail}
-                      </p>
-                    )}
-                  </td>
+          <ul className="space-y-3 text-sm text-slate-700">
+            {personaPoints.map((point) => (
+              <li key={point} className="flex items-start gap-2">
+                <CheckCircleIcon className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="comparison" className="mb-8">
+          <div className="flex items-center mb-6">
+            <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">
+              3
+            </span>
+            <h2 className="text-2xl font-bold text-gray-900">
+              主要光回線の料金・初期費用早見表
+            </h2>
+          </div>
+          <p className="text-sm text-slate-600 mb-4">
+            1年目の実質コスト・初期費用・特徴をまとめました。10Gbpsの押し売りに引っ掛からないためにも、まずはここで全体像を把握してください。
+          </p>
+          <div className="overflow-x-auto rounded-2xl border border-slate-100">
+            <table className="min-w-full text-sm text-left text-slate-700">
+              <thead className="bg-slate-50 text-xs uppercase tracking-widest text-slate-500">
+                <tr>
+                  <th className="px-4 py-3">順位</th>
+                  <th className="px-4 py-3">光回線（プラン）</th>
+                  <th className="px-4 py-3">月額費用（1年目目安）</th>
+                  <th className="px-4 py-3">初期費用（工事費・手数料）</th>
+                  <th className="px-4 py-3">特徴</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <RakutenAffiliateAd ad={rakutenAds[1]} />
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
-          {fiberPlanDetails.map((detail) => (
-            <article
-              key={detail.title}
-              className="p-4 rounded-2xl border border-slate-100 bg-white shadow-sm"
-            >
-              <h3 className="text-base font-semibold text-slate-900">
-                {detail.title}
-              </h3>
-              <p className="mt-2 text-sm text-slate-600">
-                {detail.description}
-              </p>
-              <p className="mt-3 text-xs font-semibold text-blue-600">
-                {detail.note}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <RakutenAffiliateAd ad={rakutenAds[2]} />
-
-      <section className="mb-16 prose prose-slate max-w-none">
-        <h2>はじめに：光回線選びで損をしないために</h2>
-        <p>
-          キャッシュバック金額だけを比較して契約したものの、月額料金が高くて結果的に損をする——そんな相談が後を絶ちません。
-          結論を先に言えば、
-          <strong>
-            東海地方に住んでいるならエディオン店頭で「コミュファ光」を申し込むのが最適解
-          </strong>
-          です。
-        </p>
-        <blockquote>{killerPhrases[0]}</blockquote>
-        <p>
-          いま最優先すべきは「混雑時にも安定して速いこと」と「確実に受け取れる特典」の両立。これを実現できるのがエディオン特約のコミュファ光です。
-        </p>
-      </section>
-
-      <section id="ranking" className="mb-8">
-        <div className="flex items-center mb-6">
-          <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">
-            1
-          </span>
-          <h2 className="text-2xl font-bold text-gray-900">
-            なぜ「エディオン × コミュファ光」が最強なのか
-          </h2>
-        </div>
-        <div className="grid gap-6">
-          {reasons.map((reason) => (
-            <article
-              key={reason.title}
-              className="p-6 border border-slate-100 rounded-2xl shadow-sm bg-white"
-            >
-              <h3 className="text-lg font-semibold text-blue-700 mb-2">
-                {reason.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-slate-700">
-                {reason.detail}
-              </p>
-            </article>
-          ))}
-        </div>
-        <blockquote className="mt-6 border-l-4 border-blue-600 pl-4 text-sm text-slate-600">
-          {killerPhrases[2]}
-        </blockquote>
-      </section>
-
-      <RakutenAffiliateAd ad={rakutenAds[0]} />
-      <section className="mb-16 bg-amber-50 border border-amber-100 rounded-3xl p-6">
-        <div className="flex items-center gap-3 mb-4">
-          <ExclamationTriangleIcon className="w-8 h-8 text-amber-500" />
-          <h2 className="text-2xl font-bold text-amber-900">
-            【警告】10Gbプランを勧められていませんか？
-          </h2>
-        </div>
-        <p className="text-sm text-amber-900 mb-4">
-          営業現場では「これからは10Gbpsが標準」と言われがちですが、一般家庭ではオーバースペック。月額差額は純粋なコスト増です。
-        </p>
-        <ul className="space-y-3 text-sm text-amber-900">
-          {cautionPoints.map((point) => (
-            <li key={point} className="flex items-start gap-2">
-              <ExclamationTriangleIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
-              <span>{point}</span>
-            </li>
-          ))}
-        </ul>
-        <blockquote className="mt-6 border-l-4 border-amber-400 pl-4 text-sm text-amber-800 italic">
-          {killerPhrases[1]}
-        </blockquote>
-        <p className="mt-4 text-xs text-amber-700">
-          ※ソフトバンク /
-          Y!mobileユーザーが1Gbpsプランを選べば「おうち割」での恩恵は十分に得られます。無駄にハイスペックなプランは避けましょう。
-        </p>
-      </section>
-
-      <section>
-        <div className="flex items-center mb-6">
-          <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">
-            4
-          </span>
-          <h2 className="text-2xl font-bold text-gray-900">
-            おすすめ光回線ランキング（まとめ）
-          </h2>
-        </div>
-        <div className="space-y-8">
-          {ranking.map((item) => (
-            <article
-              key={item.label}
-              className="border border-slate-100 rounded-3xl p-6 shadow-sm"
-            >
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                <div>
-                  <p className="text-sm text-slate-500">#{item.rank}</p>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    {item.label}
-                  </h3>
-                  <p className="text-sm text-slate-500">
-                    おすすめ度：{item.grade}
-                  </p>
-                </div>
-                {item.cta && (
-                  <a
-                    href={item.cta.href}
-                    target="_blank"
-                    rel="nofollow noreferrer"
-                    className="mt-4 sm:mt-0 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-full shadow hover:bg-blue-700 transition"
+              </thead>
+              <tbody>
+                {fiberPlanComparisons.map((item) => (
+                  <tr
+                    key={`${item.rank}-${item.plan}`}
+                    className="border-t border-slate-100"
                   >
-                    {item.cta.text}
-                  </a>
-                )}
-              </div>
-              <p className="text-sm text-slate-600 mb-4">{item.tagline}</p>
-              <ul className="space-y-2 text-sm text-slate-700">
-                {item.reasons.map((reason) => (
-                  <li key={reason} className="flex items-start gap-2">
-                    <CheckCircleIcon className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <span>{reason}</span>
-                  </li>
+                    <td className="px-4 py-4 font-semibold text-slate-900">
+                      {item.rank}
+                    </td>
+                    <td className="px-4 py-4">
+                      <p className="font-semibold text-slate-900">{item.plan}</p>
+                    </td>
+                    <td className="px-4 py-4">
+                      <p className="font-semibold text-slate-900">
+                        {item.monthly}
+                      </p>
+                      {item.monthlyNote && (
+                        <p className="text-xs text-slate-500">
+                          {item.monthlyNote}
+                        </p>
+                      )}
+                    </td>
+                    <td className="px-4 py-4">
+                      <p className="font-semibold text-slate-900">
+                        {item.initial}
+                      </p>
+                      {item.initialNote && (
+                        <p className="text-xs text-slate-500">
+                          {item.initialNote}
+                        </p>
+                      )}
+                    </td>
+                    <td className="px-4 py-4">
+                      <p className="font-semibold text-slate-900">
+                        {item.feature}
+                      </p>
+                      {item.detail && (
+                        <p className="text-xs text-slate-500 mt-1">
+                          {item.detail}
+                        </p>
+                      )}
+                    </td>
+                  </tr>
                 ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
+              </tbody>
+            </table>
+          </div>
+          <RakutenAffiliateAd ad={blogRakutenAds.hikari[0]} />
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {fiberPlanDetails.map((detail) => (
+              <article
+                key={detail.title}
+                className="p-4 rounded-2xl border border-slate-100 bg-white shadow-sm"
+              >
+                <h3 className="text-base font-semibold text-slate-900">
+                  {detail.title}
+                </h3>
+                <p className="mt-2 text-sm text-slate-600">
+                  {detail.description}
+                </p>
+                <p className="mt-3 text-xs font-semibold text-blue-600">
+                  {detail.note}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <RakutenAffiliateAd ad={rakutenAds[0]} />
+        <A8AffiliateAd ad={a8Ads.docomoHikari} />
+        <A8AffiliateAd ad={a8Ads.softbankHikari} />
 
-      <section className="mb-16 prose prose-slate max-w-none">
-        <h2>まとめ：必要な速度を、最もお得な窓口で</h2>
-        <p>
-          ベストな選択肢はシンプルです。<strong>必要十分な1Gbpsプラン</strong>
-          を、<strong>エディオンという信頼できる窓口</strong>
-          で申し込む。これだけで通信費は最適化されます。
-        </p>
-        <p>
-          近くのエディオンでキャンペーン状況を確認し、コミュファ光を相談するだけで「速度・安心・割引」の三拍子がそろいます。
-          申し込み窓口さえ間違えなければ、余計な10Gbpsアップセルに悩まされることもありません。
-        </p>
-        <p>
-          {killerPhrases[0]}{" "}
-          ——この視点を忘れずに、まずは家から一番近いエディオンで最新キャンペーンをチェックしてみてください。
-        </p>
-      </section>
-    </main>
+        <section className="mb-16 prose prose-slate max-w-none">
+          <h2>はじめに：光回線選びで損をしないために</h2>
+          <p>
+            キャッシュバック金額だけを比較して契約したものの、月額料金が高くて結果的に損をする——そんな相談が後を絶ちません。
+            結論を先に言えば、
+            <strong>
+              東海地方に住んでいるならエディオン店頭で「コミュファ光」を申し込むのが最適解
+            </strong>
+            です。
+          </p>
+          <blockquote>{killerPhrases[0]}</blockquote>
+          <p>
+            いま最優先すべきは「混雑時にも安定して速いこと」と「確実に受け取れる特典」の両立。これを実現できるのがエディオン特約のコミュファ光です。
+          </p>
+        </section>
+
+        <section id="ranking" className="mb-8">
+          <div className="flex items-center mb-6">
+            <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">
+              1
+            </span>
+            <h2 className="text-2xl font-bold text-gray-900">
+              なぜ「エディオン × コミュファ光」が最強なのか
+            </h2>
+          </div>
+          <div className="grid gap-6">
+            {reasons.map((reason) => (
+              <article
+                key={reason.title}
+                className="p-6 border border-slate-100 rounded-2xl shadow-sm bg-white"
+              >
+                <h3 className="text-lg font-semibold text-blue-700 mb-2">
+                  {reason.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-slate-700">
+                  {reason.detail}
+                </p>
+              </article>
+            ))}
+          </div>
+          <blockquote className="mt-6 border-l-4 border-blue-600 pl-4 text-sm text-slate-600">
+            {killerPhrases[2]}
+          </blockquote>
+        </section>
+
+        <RakutenAffiliateAd ad={blogRakutenAds.hikari[2]} />
+
+        <section className="mb-16 bg-amber-50 border border-amber-100 rounded-3xl p-6">
+          <div className="flex items-center gap-3 mb-4">
+            <ExclamationTriangleIcon className="w-8 h-8 text-amber-500" />
+            <h2 className="text-2xl font-bold text-amber-900">
+              【警告】10Gbプランを勧められていませんか？
+            </h2>
+          </div>
+          <p className="text-sm text-amber-900 mb-4">
+            営業現場では「これからは10Gbpsが標準」と言われがちですが、一般家庭ではオーバースペック。月額差額は純粋なコスト増です。
+          </p>
+          <ul className="space-y-3 text-sm text-amber-900">
+            {cautionPoints.map((point) => (
+              <li key={point} className="flex items-start gap-2">
+                <ExclamationTriangleIcon className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+          <blockquote className="mt-6 border-l-4 border-amber-400 pl-4 text-sm text-amber-800 italic">
+            {killerPhrases[1]}
+          </blockquote>
+          <p className="mt-4 text-xs text-amber-700">
+            ※ソフトバンク /
+            Y!mobileユーザーが1Gbpsプランを選べば「おうち割」での恩恵は十分に得られます。無駄にハイスペックなプランは避けましょう。
+          </p>
+        </section>
+
+        <RakutenAffiliateAd ad={blogRakutenAds.hikari[3]} />
+
+        <section>
+          <div className="flex items-center mb-6">
+            <span className="bg-blue-600 text-white w-9 h-9 rounded-full flex items-center justify-center mr-3 text-lg font-semibold">
+              4
+            </span>
+            <h2 className="text-2xl font-bold text-gray-900">
+              おすすめ光回線ランキング（まとめ）
+            </h2>
+          </div>
+          <div className="space-y-8">
+            {ranking.map((item) => (
+              <article
+                key={item.label}
+                className="border border-slate-100 rounded-3xl p-6 shadow-sm"
+              >
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
+                  <div>
+                    <p className="text-sm text-slate-500">#{item.rank}</p>
+                    <h3 className="text-xl font-bold text-slate-900">
+                      {item.label}
+                    </h3>
+                    <p className="text-sm text-slate-500">
+                      おすすめ度：{item.grade}
+                    </p>
+                  </div>
+                  {item.cta && (
+                    <a
+                      href={item.cta.href}
+                      target="_blank"
+                      rel="nofollow noreferrer"
+                      className="mt-4 sm:mt-0 inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-white bg-blue-600 rounded-full shadow hover:bg-blue-700 transition"
+                    >
+                      {item.cta.text}
+                    </a>
+                  )}
+                </div>
+                <p className="text-sm text-slate-600 mb-4">{item.tagline}</p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  {item.reasons.map((reason) => (
+                    <li key={reason} className="flex items-start gap-2">
+                      <CheckCircleIcon className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
+                      <span>{reason}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <A8AffiliateAd ad={a8Ads.docomoHikari} />
+
+        <section className="mb-16 prose prose-slate max-w-none">
+          <h2>まとめ：必要な速度を、最もお得な窓口で</h2>
+          <p>
+            ベストな選択肢はシンプルです。<strong>必要十分な1Gbpsプラン</strong>
+            を、<strong>エディオンという信頼できる窓口</strong>
+            で申し込む。これだけで通信費は最適化されます。
+          </p>
+          <p>
+            近くのエディオンでキャンペーン状況を確認し、コミュファ光を相談するだけで「速度・安心・割引」の三拍子がそろいます。
+            申し込み窓口さえ間違えなければ、余計な10Gbpsアップセルに悩まされることもありません。
+          </p>
+          <p>
+            {killerPhrases[0]}{" "}
+            ——この視点を忘れずに、まずは家から一番近いエディオンで最新キャンペーンをチェックしてみてください。
+          </p>
+        </section>
+      </main>
+      <BlogAffiliateRecommendations ads={[blogRakutenAds.hikari[1], blogRakutenAds.hikari[4], blogRakutenAds.hikari[5]]} heading="快適なネット環境づくりに" />
+    </>
   );
 }

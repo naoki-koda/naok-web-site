@@ -1,4 +1,6 @@
-import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
+import BlogAffiliateRecommendations from "@/app/blog/BlogAffiliateRecommendations";
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import RakutenAffiliateAd from "@/app/blog/RakutenAffiliateAd";
 import { kosugiMaru } from "@/app/ui/fonts";
 import type { Metadata } from "next";
 
@@ -111,199 +113,202 @@ export const metadata: Metadata = {
 
 export default function HipHopMatomePage() {
   return (
-    <main className="bg-[linear-gradient(180deg,#fff7ed_0%,#fef3c7_32%,#f8fafc_70%)]">
-      <article className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <header className="overflow-hidden rounded-[32px] border border-amber-200 bg-white/90 p-7 text-slate-950 shadow-2xl shadow-amber-200/50 sm:p-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-600">
-            ADHD × Hip-Hop
-          </p>
-          <h1
-            className={`mt-5 text-3xl leading-tight font-bold sm:text-5xl ${kosugiMaru.className}`}
-          >
-            ADHD気質に刺さる
-            <br />
-            おすすめヒップホッパー3選
-          </h1>
-          <p className="mt-6 max-w-3xl text-base leading-8 text-slate-700 sm:text-lg">
-            ADHDの診断や治療の話ではなく、集中のスイッチを入れたいときの音楽ガイドです。
-            ヒップホップの強いビート、短いフレーズの反復、感情を一気に持ち上げる言葉は、
-            気が散りやすい時間にもリズムを作ってくれます。
-            ここでは、作業前・移動中・気分を切り替えたい瞬間に相性がいい3人を選びました。
-          </p>
+    <>
+      <main className="bg-[linear-gradient(180deg,#fff7ed_0%,#fef3c7_32%,#f8fafc_70%)]">
+        <article className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+          <header className="overflow-hidden rounded-[32px] border border-amber-200 bg-white/90 p-7 text-slate-950 shadow-2xl shadow-amber-200/50 sm:p-12">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-600">
+              ADHD × Hip-Hop
+            </p>
+            <h1
+              className={`mt-5 text-3xl leading-tight font-bold sm:text-5xl ${kosugiMaru.className}`}
+            >
+              ADHD気質に刺さる
+              <br />
+              おすすめヒップホッパー3選
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-700 sm:text-lg">
+              ADHDの診断や治療の話ではなく、集中のスイッチを入れたいときの音楽ガイドです。
+              ヒップホップの強いビート、短いフレーズの反復、感情を一気に持ち上げる言葉は、
+              気が散りやすい時間にもリズムを作ってくれます。
+              ここでは、作業前・移動中・気分を切り替えたい瞬間に相性がいい3人を選びました。
+            </p>
 
-          <aside aria-label="おすすめ商品のPR">
-            <RakutenAffiliateAd ad={rakutenAds[0]} />
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {artists.map((artist) => (
+                <a
+                  key={artist.name}
+                  href={`#rank-${artist.rank}`}
+                  className="rounded-2xl border border-amber-100 bg-amber-50/80 p-4 transition hover:bg-amber-100"
+                >
+                  <span className="text-xs font-semibold text-amber-700">
+                    RANK {artist.rank}
+                  </span>
+                  <span className="mt-1 block text-xl font-bold">
+                    {artist.name}
+                  </span>
+                  <span className="text-sm text-slate-600">{artist.reading}</span>
+                </a>
+              ))}
+            </div>
+          </header>
+
+          <aside aria-label="ヘッドホンのPR">
+            <RakutenAffiliateAd ad={blogRakutenAds.hiphop[2]} />
           </aside>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-3">
-            {artists.map((artist) => (
-              <a
+          <section className="rounded-[32px] bg-white p-6 shadow-xl shadow-slate-300/30 sm:p-9">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-violet-700">
+              Selection
+            </p>
+            <h2 className="mt-3 text-2xl font-bold text-slate-950">
+              この3人を選んだ理由
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-700">
+              3人は同じ日本語ヒップホップでも、魅力の中心が異なります。
+              YZERRは仲間と地元を背負う物語、GADOROは弱さまで武器にする言葉、
+              Tohjiはジャンルの境界を越える音響感覚が強みです。
+              順番に聴けば、日本のヒップホップが持つ幅広さを短時間で体感できます。
+            </p>
+          </section>
+
+          <div className="mt-10 space-y-10">
+            {artists.map((artist, index) => (
+              <section
+                id={`rank-${artist.rank}`}
                 key={artist.name}
-                href={`#rank-${artist.rank}`}
-                className="rounded-2xl border border-amber-100 bg-amber-50/80 p-4 transition hover:bg-amber-100"
+                className="scroll-mt-8 overflow-hidden rounded-[32px] bg-white shadow-xl shadow-slate-300/30"
               >
-                <span className="text-xs font-semibold text-amber-700">
-                  RANK {artist.rank}
-                </span>
-                <span className="mt-1 block text-xl font-bold">
-                  {artist.name}
-                </span>
-                <span className="text-sm text-slate-600">{artist.reading}</span>
-              </a>
-            ))}
-          </div>
-        </header>
-
-        <aside aria-label="おすすめ商品のPR">
-          <RakutenAffiliateAd ad={rakutenAds[5]} />
-        </aside>
-
-        <section className="rounded-[32px] bg-white p-6 shadow-xl shadow-slate-300/30 sm:p-9">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-violet-700">
-            Selection
-          </p>
-          <h2 className="mt-3 text-2xl font-bold text-slate-950">
-            この3人を選んだ理由
-          </h2>
-          <p className="mt-5 text-base leading-8 text-slate-700">
-            3人は同じ日本語ヒップホップでも、魅力の中心が異なります。
-            YZERRは仲間と地元を背負う物語、GADOROは弱さまで武器にする言葉、
-            Tohjiはジャンルの境界を越える音響感覚が強みです。
-            順番に聴けば、日本のヒップホップが持つ幅広さを短時間で体感できます。
-          </p>
-        </section>
-
-        <div className="mt-10 space-y-10">
-          {artists.map((artist, index) => (
-            <section
-              id={`rank-${artist.rank}`}
-              key={artist.name}
-              className="scroll-mt-8 overflow-hidden rounded-[32px] bg-white shadow-xl shadow-slate-300/30"
-            >
-              <div
-                className={`bg-gradient-to-r ${artist.color} px-6 py-7 text-white sm:px-9`}
-              >
-                <p className="text-sm font-bold uppercase tracking-[0.25em] text-white/80">
-                  Rank {artist.rank}
-                </p>
-                <h2 className="mt-2 text-3xl font-black sm:text-4xl">
-                  {artist.name}
-                  <span className="ml-3 text-base font-medium text-white/80">
-                    {artist.reading}
-                  </span>
-                </h2>
-                <p className="mt-3 text-base font-semibold text-white/90">
-                  {artist.catchphrase}
-                </p>
-              </div>
-
-              <div className="p-6 sm:p-9">
-                <div className="grid gap-7 md:grid-cols-2">
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-950">背景</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-700">
-                      {artist.background}
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-950">音楽性</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-700">
-                      {artist.style}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  <h3 className="text-lg font-bold text-slate-950">
-                    最初に聴きたい3曲
-                  </h3>
-                  <div className="mt-4 grid gap-3">
-                    {artist.songs.map((song, songIndex) => (
-                      <div
-                        key={song.title}
-                        className="flex gap-4 rounded-2xl bg-slate-50 p-4"
-                      >
-                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-950 text-xs font-bold text-white">
-                          {songIndex + 1}
-                        </span>
-                        <div>
-                          <p className="font-semibold text-slate-950">
-                            {song.title}
-                          </p>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">
-                            {song.note}
-                          </p>
-                          {"youtubeUrl" in song && (
-                            <a
-                              href={song.youtubeUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="mt-3 inline-flex rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white transition hover:bg-red-700"
-                            >
-                              YouTubeで聴く
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {index < 2 && (
-                <div className="border-t border-slate-100 px-4">
-                  <RakutenAffiliateAd ad={rakutenAds[index + 1]} />
-                </div>
-              )}
-            </section>
-          ))}
-        </div>
-
-        <section className="mt-10 rounded-[32px] bg-slate-950 p-6 text-white sm:p-9">
-          <h2 className="text-2xl font-bold">迷ったときの選び方</h2>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            <div className="rounded-2xl bg-white/5 p-5">
-              <p className="font-bold text-amber-400">YZERRがおすすめ</p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
-                仲間、地元、成功までのストーリーを重視して聴きたい人。
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white/5 p-5">
-              <p className="font-bold text-emerald-400">GADOROがおすすめ</p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
-                歌詞の巧さや、弱さをさらけ出す人間味に心を動かされる人。
-              </p>
-            </div>
-            <div className="rounded-2xl bg-white/5 p-5">
-              <p className="font-bold text-fuchsia-400">Tohjiがおすすめ</p>
-              <p className="mt-2 text-sm leading-6 text-slate-300">
-                クラブ、クラウドラップ、海外の新しいサウンドが好きな人。
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mt-10 rounded-[32px] border border-slate-200 bg-white p-6 sm:p-9">
-          <h2 className="text-xl font-bold text-slate-950">参考資料</h2>
-          <ul className="mt-4 space-y-3 text-sm">
-            {sources.map((source) => (
-              <li key={source.href}>
-                <a
-                  href={source.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-medium text-violet-700 underline underline-offset-4"
+                <div
+                  className={`bg-gradient-to-r ${artist.color} px-6 py-7 text-white sm:px-9`}
                 >
-                  {source.label}
-                </a>
-              </li>
+                  <p className="text-sm font-bold uppercase tracking-[0.25em] text-white/80">
+                    Rank {artist.rank}
+                  </p>
+                  <h2 className="mt-2 text-3xl font-black sm:text-4xl">
+                    {artist.name}
+                    <span className="ml-3 text-base font-medium text-white/80">
+                      {artist.reading}
+                    </span>
+                  </h2>
+                  <p className="mt-3 text-base font-semibold text-white/90">
+                    {artist.catchphrase}
+                  </p>
+                </div>
+
+                <div className="p-6 sm:p-9">
+                  <div className="grid gap-7 md:grid-cols-2">
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-950">背景</h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-700">
+                        {artist.background}
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-950">音楽性</h3>
+                      <p className="mt-3 text-sm leading-7 text-slate-700">
+                        {artist.style}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8">
+                    <h3 className="text-lg font-bold text-slate-950">
+                      最初に聴きたい3曲
+                    </h3>
+                    <div className="mt-4 grid gap-3">
+                      {artist.songs.map((song, songIndex) => (
+                        <div
+                          key={song.title}
+                          className="flex gap-4 rounded-2xl bg-slate-50 p-4"
+                        >
+                          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-950 text-xs font-bold text-white">
+                            {songIndex + 1}
+                          </span>
+                          <div>
+                            <p className="font-semibold text-slate-950">
+                              {song.title}
+                            </p>
+                            <p className="mt-1 text-sm leading-6 text-slate-600">
+                              {song.note}
+                            </p>
+                            {"youtubeUrl" in song && (
+                              <a
+                                href={song.youtubeUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-3 inline-flex rounded-full bg-red-600 px-3 py-1 text-xs font-semibold text-white transition hover:bg-red-700"
+                              >
+                                YouTubeで聴く
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {index < 2 && (
+                  <div className="border-t border-slate-100 px-4">
+                    <RakutenAffiliateAd ad={blogRakutenAds.hiphop[index]} />
+                  </div>
+                )}
+              </section>
             ))}
-          </ul>
-          <p className="mt-5 text-xs leading-6 text-slate-500">
-            楽曲名や経歴は公開情報をもとに整理しています。配信状況や所属情報は変更される場合があります。
-          </p>
-        </section>
-      </article>
-    </main>
+          </div>
+
+          <section className="mt-10 rounded-[32px] bg-slate-950 p-6 text-white sm:p-9">
+            <h2 className="text-2xl font-bold">迷ったときの選び方</h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-2xl bg-white/5 p-5">
+                <p className="font-bold text-amber-400">YZERRがおすすめ</p>
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  仲間、地元、成功までのストーリーを重視して聴きたい人。
+                </p>
+              </div>
+              <div className="rounded-2xl bg-white/5 p-5">
+                <p className="font-bold text-emerald-400">GADOROがおすすめ</p>
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  歌詞の巧さや、弱さをさらけ出す人間味に心を動かされる人。
+                </p>
+              </div>
+              <div className="rounded-2xl bg-white/5 p-5">
+                <p className="font-bold text-fuchsia-400">Tohjiがおすすめ</p>
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  クラブ、クラウドラップ、海外の新しいサウンドが好きな人。
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <aside aria-label="イヤホンのPR">
+            <RakutenAffiliateAd ad={blogRakutenAds.hiphop[4]} />
+          </aside>
+
+          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white p-6 sm:p-9">
+            <h2 className="text-xl font-bold text-slate-950">参考資料</h2>
+            <ul className="mt-4 space-y-3 text-sm">
+              {sources.map((source) => (
+                <li key={source.href}>
+                  <a
+                    href={source.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-violet-700 underline underline-offset-4"
+                  >
+                    {source.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-xs leading-6 text-slate-500">
+              楽曲名や経歴は公開情報をもとに整理しています。配信状況や所属情報は変更される場合があります。
+            </p>
+          </section>
+        </article>
+      </main>
+      <BlogAffiliateRecommendations ads={[blogRakutenAds.hiphop[3], blogRakutenAds.hiphop[5]]} heading="作業用BGMのおともに" />
+    </>
   );
 }

@@ -1,7 +1,7 @@
-import RakutenAffiliateAd, {
-  rakutenAds,
-  type RakutenAd,
-} from "@/app/blog/RakutenAffiliateAd";
+import BlogAffiliateRecommendations from "@/app/blog/BlogAffiliateRecommendations";
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import A8AffiliateAd, { a8Ads } from "@/app/blog/A8AffiliateAd";
+import RakutenAffiliateAd, { type RakutenAd } from "@/app/blog/RakutenAffiliateAd";
 import { kosugiMaru } from "@/app/ui/fonts";
 import type { Metadata } from "next";
 
@@ -136,393 +136,407 @@ export const metadata: Metadata = {
 
 export default function FinancePage() {
   return (
-    <main className="bg-[linear-gradient(180deg,#f6f7f2_0%,#ffffff_22%,#eef4f0_100%)] text-slate-800">
-      <article className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-        <header className="overflow-hidden rounded-[32px] border border-emerald-100/80 bg-white/90 shadow-xl shadow-emerald-100/50">
-          <div className="bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.18),_transparent_42%),linear-gradient(135deg,_rgba(15,23,42,0.98),_rgba(20,83,45,0.92))] px-6 py-10 text-white sm:px-10 sm:py-12">
-            <p className="text-sm font-semibold uppercase tracking-[0.32em] text-emerald-200">
-              Housing Finance Strategy
-            </p>
-            <h1
-              className={`mt-4 max-w-4xl text-3xl leading-tight font-bold sm:text-4xl ${kosugiMaru.className}`}
-            >
-              年収900万円で6,000万円の家は無謀？
-              <br />
-              自営業×公務員夫婦が選んだ
-              <br />
-              「将来のコストを削る」究極の住宅ローン戦略
-            </h1>
-            <p className="mt-6 max-w-3xl text-base leading-8 text-emerald-50/90 sm:text-lg">
-              ローン返済額だけを見て家づくりを判断すると、住み始めてから苦しくなります。
-              大切なのは、借金額ではなく、住んだ後まで含めた支出の総額です。
-            </p>
-          </div>
-          <aside aria-label="さらてろパジャマのPR">
-            <RakutenAffiliateAd ad={rakutenAds[0]} />
-          </aside>
-          <div className="grid gap-4 px-6 py-8 sm:px-10 lg:grid-cols-3">
-            {summaryCards.map((card) => (
-              <div
-                key={card.label}
-                className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5"
+    <>
+      <main className="bg-[linear-gradient(180deg,#f6f7f2_0%,#ffffff_22%,#eef4f0_100%)] text-slate-800">
+        <article className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+          <header className="overflow-hidden rounded-[32px] border border-emerald-100/80 bg-white/90 shadow-xl shadow-emerald-100/50">
+            <div className="bg-[radial-gradient(circle_at_top_left,_rgba(16,185,129,0.18),_transparent_42%),linear-gradient(135deg,_rgba(15,23,42,0.98),_rgba(20,83,45,0.92))] px-6 py-10 text-white sm:px-10 sm:py-12">
+              <p className="text-sm font-semibold uppercase tracking-[0.32em] text-emerald-200">
+                Housing Finance Strategy
+              </p>
+              <h1
+                className={`mt-4 max-w-4xl text-3xl leading-tight font-bold sm:text-4xl ${kosugiMaru.className}`}
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
-                  {card.label}
-                </p>
-                <p className="mt-3 text-2xl font-bold text-slate-900">
-                  {card.value}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-slate-600">
-                  {card.note}
+                年収900万円で6,000万円の家は無謀？
+                <br />
+                自営業×公務員夫婦が選んだ
+                <br />
+                「将来のコストを削る」究極の住宅ローン戦略
+              </h1>
+              <p className="mt-6 max-w-3xl text-base leading-8 text-emerald-50/90 sm:text-lg">
+                ローン返済額だけを見て家づくりを判断すると、住み始めてから苦しくなります。
+                大切なのは、借金額ではなく、住んだ後まで含めた支出の総額です。
+              </p>
+            </div>
+            <div className="grid gap-4 px-6 py-8 sm:px-10 lg:grid-cols-3">
+              {summaryCards.map((card) => (
+                <div
+                  key={card.label}
+                  className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">
+                    {card.label}
+                  </p>
+                  <p className="mt-3 text-2xl font-bold text-slate-900">
+                    {card.value}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {card.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </header>
+
+
+          <section className="mt-10 rounded-[32px] border border-emerald-200 bg-[linear-gradient(135deg,rgba(236,253,245,0.98),rgba(255,255,255,0.96))] p-6 shadow-lg shadow-emerald-100/60 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
+              Conclusion
+            </p>
+            <h2 className="mt-3 text-2xl font-bold text-slate-900">
+              結論：住宅ローン単体ではなく「住居費の総月額」で比べる
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-700">
+              6,000万円の家が高いかどうかは、住宅ローンの返済額だけでは判断できません。
+              本当に比べるべきなのは、
+              <span className="font-semibold text-emerald-800">
+                住宅ローン + 光熱費 - 住宅ローン控除
+              </span>
+              で見た実質負担です。賃貸なら
+              <span className="font-semibold text-emerald-800">
+                家賃 + 光熱費
+              </span>
+              と比べる。マンション購入を検討しているなら、
+              <span className="font-semibold text-emerald-800">
+                マンションのローン + 修繕積立金 + 管理費 + 駐車場代 + 光熱費 - 住宅ローン控除
+              </span>
+              まで含めて比較するのがおすすめです。
+            </p>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              <div className="rounded-3xl border border-emerald-100 bg-white/90 p-5">
+                <h3 className="text-lg font-bold text-slate-900">注文住宅</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">
+                  住宅ローン + 光熱費 - 住宅ローン控除
                 </p>
               </div>
-            ))}
-          </div>
-        </header>
-
-        <aside aria-label="UGREEN紛失防止タグのPR">
-          <RakutenAffiliateAd ad={rakutenAds[5]} />
-        </aside>
-
-        <section className="mt-10 rounded-[32px] border border-emerald-200 bg-[linear-gradient(135deg,rgba(236,253,245,0.98),rgba(255,255,255,0.96))] p-6 shadow-lg shadow-emerald-100/60 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
-            Conclusion
-          </p>
-          <h2 className="mt-3 text-2xl font-bold text-slate-900">
-            結論：住宅ローン単体ではなく「住居費の総月額」で比べる
-          </h2>
-          <p className="mt-5 text-base leading-8 text-slate-700">
-            6,000万円の家が高いかどうかは、住宅ローンの返済額だけでは判断できません。
-            本当に比べるべきなのは、
-            <span className="font-semibold text-emerald-800">
-              住宅ローン + 光熱費 - 住宅ローン控除
-            </span>
-            で見た実質負担です。賃貸なら
-            <span className="font-semibold text-emerald-800">
-              家賃 + 光熱費
-            </span>
-            と比べる。マンション購入を検討しているなら、
-            <span className="font-semibold text-emerald-800">
-              マンションのローン + 修繕積立金 + 管理費 + 駐車場代 + 光熱費 - 住宅ローン控除
-            </span>
-            まで含めて比較するのがおすすめです。
-          </p>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            <div className="rounded-3xl border border-emerald-100 bg-white/90 p-5">
-              <h3 className="text-lg font-bold text-slate-900">注文住宅</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700">
-                住宅ローン + 光熱費 - 住宅ローン控除
-              </p>
+              <div className="rounded-3xl border border-emerald-100 bg-white/90 p-5">
+                <h3 className="text-lg font-bold text-slate-900">賃貸</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">
+                  家賃 + 光熱費
+                </p>
+              </div>
+              <div className="rounded-3xl border border-emerald-100 bg-white/90 p-5">
+                <h3 className="text-lg font-bold text-slate-900">マンション購入</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">
+                  ローン + 修繕積立金 + 管理費 + 駐車場代 + 光熱費 -
+                  住宅ローン控除
+                </p>
+              </div>
             </div>
-            <div className="rounded-3xl border border-emerald-100 bg-white/90 p-5">
-              <h3 className="text-lg font-bold text-slate-900">賃貸</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700">
-                家賃 + 光熱費
-              </p>
-            </div>
-            <div className="rounded-3xl border border-emerald-100 bg-white/90 p-5">
-              <h3 className="text-lg font-bold text-slate-900">マンション購入</h3>
-              <p className="mt-3 text-sm leading-7 text-slate-700">
-                ローン + 修繕積立金 + 管理費 + 駐車場代 + 光熱費 -
-                住宅ローン控除
-              </p>
-            </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="mt-10 rounded-[32px] border border-slate-200 bg-white/85 p-6 shadow-lg shadow-slate-100 sm:p-8">
-          <div className="flex items-center justify-between gap-4 border-b border-slate-100 pb-4">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
-                Intro Dialogue
-              </p>
-              <h2 className="mt-2 text-2xl font-bold text-slate-900">
-                まずは、よくある不安から
-              </h2>
+          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white/85 p-6 shadow-lg shadow-slate-100 sm:p-8">
+            <div className="flex items-center justify-between gap-4 border-b border-slate-100 pb-4">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
+                  Intro Dialogue
+                </p>
+                <h2 className="mt-2 text-2xl font-bold text-slate-900">
+                  まずは、よくある不安から
+                </h2>
+              </div>
+              <div className="rounded-full bg-emerald-50 px-4 py-2 text-xs font-semibold text-emerald-700">
+                対話で要点整理
+              </div>
             </div>
-            <div className="rounded-full bg-emerald-50 px-4 py-2 text-xs font-semibold text-emerald-700">
-              対話で要点整理
-            </div>
-          </div>
 
-          <div className="mt-6 space-y-4">
-            {introMessages.map((message) => {
-              const isAdvisor = message.role === "advisor";
+            <div className="mt-6 space-y-4">
+              {introMessages.map((message) => {
+                const isAdvisor = message.role === "advisor";
 
-              return (
-                <div
-                  key={message.id}
-                  className={`flex items-start gap-3 ${
-                    isAdvisor ? "justify-start" : "justify-end"
-                  }`}
-                >
-                  {isAdvisor && (
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white">
-                      A
-                    </div>
-                  )}
+                return (
                   <div
-                    className={`max-w-[85%] rounded-3xl px-5 py-4 text-sm leading-7 shadow-sm sm:max-w-[78%] ${
-                      isAdvisor
-                        ? "border border-slate-200 bg-white text-slate-800"
-                        : "bg-emerald-600 text-white"
+                    key={message.id}
+                    className={`flex items-start gap-3 ${
+                      isAdvisor ? "justify-start" : "justify-end"
                     }`}
                   >
-                    <p
-                      className={`text-[11px] font-semibold uppercase tracking-[0.2em] ${
-                        isAdvisor ? "text-slate-500" : "text-emerald-100"
+                    {isAdvisor && (
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white">
+                        A
+                      </div>
+                    )}
+                    <div
+                      className={`max-w-[85%] rounded-3xl px-5 py-4 text-sm leading-7 shadow-sm sm:max-w-[78%] ${
+                        isAdvisor
+                          ? "border border-slate-200 bg-white text-slate-800"
+                          : "bg-emerald-600 text-white"
                       }`}
                     >
-                      {message.name}
-                    </p>
-                    <p className="mt-2">{message.text}</p>
-                  </div>
-                  {!isAdvisor && (
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white">
-                      Q
+                      <p
+                        className={`text-[11px] font-semibold uppercase tracking-[0.2em] ${
+                          isAdvisor ? "text-slate-500" : "text-emerald-100"
+                        }`}
+                      >
+                        {message.name}
+                      </p>
+                      <p className="mt-2">{message.text}</p>
                     </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-        <aside aria-label="おすすめ商品のPR">
-          <RakutenAffiliateAd ad={rakutenAds[4]} />
-        </aside>
-        <section className="mt-10 rounded-[32px] bg-white/85 p-6 shadow-lg shadow-slate-100 ring-1 ring-slate-100 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
-            1. はじめに
-          </p>
-          <h2 className="mt-3 text-2xl font-bold text-slate-900">
-            住宅ローンは「借金額」より「支出の総額」で考える
-          </h2>
-          <p className="mt-5 text-base leading-8 text-slate-700">
-            「年収の何倍までなら安全か」「毎月いくらなら払えるか」という問いは、
-            住宅ローンの入り口としては正しいです。ただし、その視点だけでは不十分です。
-            家は住んだ後に、光熱費、修繕費、外壁メンテナンス、設備交換といった支出を
-            何十年も発生させます。さらにインフレが進めば、今は小さく見える固定費の差が、
-            長期では大きな差になります。
-          </p>
-          <p className="mt-4 text-base leading-8 text-slate-700">
-            だからこそ、判断軸はローン返済額ではなく、
-            <span className="font-semibold text-emerald-800">生涯コスト</span>
-            です。注文住宅のファイナンスは、目先の月額を抑えるゲームではなく、
-            35年間の総支出を最適化する設計だと考えた方が失敗しにくくなります。
-          </p>
-        </section>
+                    {!isAdvisor && (
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white">
+                        Q
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+          <aside aria-label="おすすめ商品のPR">
+            <RakutenAffiliateAd ad={blogRakutenAds.finance[0]} />
+          </aside>
+          <section className="mt-10 rounded-[32px] bg-white/85 p-6 shadow-lg shadow-slate-100 ring-1 ring-slate-100 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
+              1. はじめに
+            </p>
+            <h2 className="mt-3 text-2xl font-bold text-slate-900">
+              住宅ローンは「借金額」より「支出の総額」で考える
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-700">
+              「年収の何倍までなら安全か」「毎月いくらなら払えるか」という問いは、
+              住宅ローンの入り口としては正しいです。ただし、その視点だけでは不十分です。
+              家は住んだ後に、光熱費、修繕費、外壁メンテナンス、設備交換といった支出を
+              何十年も発生させます。さらにインフレが進めば、今は小さく見える固定費の差が、
+              長期では大きな差になります。
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-700">
+              だからこそ、判断軸はローン返済額ではなく、
+              <span className="font-semibold text-emerald-800">生涯コスト</span>
+              です。注文住宅のファイナンスは、目先の月額を抑えるゲームではなく、
+              35年間の総支出を最適化する設計だと考えた方が失敗しにくくなります。
+            </p>
+          </section>
+          <aside aria-label="おすすめ書籍のPR">
+            <RakutenAffiliateAd ad={blogRakutenAds.finance[6]} />
+          </aside>
 
-        <section className="mt-10 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-[32px] bg-slate-900 p-6 text-slate-50 shadow-xl shadow-slate-200 sm:p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300">
-              2. 実録
+          <section className="mt-10 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="rounded-[32px] bg-slate-900 p-6 text-slate-50 shadow-xl shadow-slate-200 sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300">
+                2. 実録
+              </p>
+              <h2 className="mt-3 text-2xl font-bold">わが家のペアローン戦略</h2>
+              <p className="mt-5 text-base leading-8 text-slate-200">
+                わが家は、夫が自営業で年収300万円、妻が公務員で年収600万円の世帯です。
+                単純な年収倍率だけ見ると、6,000万円は高く見えるかもしれません。
+                ただ、実際には収入の性質が違うからこそ、組み方次第で家計はかなり安定します。
+              </p>
+              <p className="mt-4 text-base leading-8 text-slate-200">
+                さらに大きかったのが住宅ローン控除です。ペアローンにしたことで夫婦それぞれが控除を使え、
+                わが家では合計でおよそ30万円が戻ってきた年がありました。
+                控除額は借入残高、所得税・住民税、住宅性能などで変わりますが、
+                「毎月の返済額」だけでなく「税金がどれだけ戻るか」まで含めて見ると、
+                6,000万円という数字の見え方はかなり変わります。
+              </p>
+              <div className="mt-6 space-y-4">
+                {strategyPoints.map((point) => (
+                  <div
+                    key={point}
+                    className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-7 text-slate-100"
+                  >
+                    {point}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <aside className="rounded-[32px] border border-emerald-100 bg-emerald-50/80 p-6 shadow-lg shadow-emerald-100/60 sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
+                年収構成
+              </p>
+              <div className="mt-5 space-y-4">
+                <div className="rounded-2xl bg-white/90 p-4">
+                  <p className="text-sm font-medium text-slate-500">夫</p>
+                  <p className="mt-1 text-2xl font-bold text-slate-900">
+                    300万円
+                  </p>
+                  <p className="mt-1 text-sm text-slate-600">自営業</p>
+                </div>
+                <div className="rounded-2xl bg-white/90 p-4">
+                  <p className="text-sm font-medium text-slate-500">妻</p>
+                  <p className="mt-1 text-2xl font-bold text-slate-900">
+                    600万円
+                  </p>
+                  <p className="mt-1 text-sm text-slate-600">公務員</p>
+                </div>
+                <div className="rounded-2xl bg-slate-900 p-4 text-white">
+                  <p className="text-sm font-medium text-slate-300">世帯年収</p>
+                  <p className="mt-1 text-3xl font-bold">900万円</p>
+                  <p className="mt-2 text-sm text-slate-300">
+                    信用力と節税メリットを分けて使えるのが強みです。
+                  </p>
+                </div>
+              </div>
+            </aside>
+          </section>
+          <A8AffiliateAd
+            ad={a8Ads.mortgageComparison}
+            fallback={
+              <aside aria-label="おすすめ書籍のPR">
+                <RakutenAffiliateAd ad={blogRakutenAds.finance[1]} />
+              </aside>
+            }
+          />
+          <section className="mt-10 rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,rgba(255,251,235,0.95),rgba(255,255,255,0.96))] p-6 shadow-lg shadow-amber-100/50 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
+              3. 設備選び
             </p>
-            <h2 className="mt-3 text-2xl font-bold">わが家のペアローン戦略</h2>
-            <p className="mt-5 text-base leading-8 text-slate-200">
-              わが家は、夫が自営業で年収300万円、妻が公務員で年収600万円の世帯です。
-              単純な年収倍率だけ見ると、6,000万円は高く見えるかもしれません。
-              ただ、実際には収入の性質が違うからこそ、組み方次第で家計はかなり安定します。
+            <h2 className="mt-3 text-2xl font-bold text-slate-900">
+              「高い家」が実は「安い」こともある
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-700">
+              初期投資を抑えると、契約時は安心できます。ただし、家づくりでは
+              イニシャルコストを削ったぶんだけ、ランニングコストや修繕コストが後ろに回るケースが多いです。
+              だからこそ、将来の障害コストを意識した設備投資は合理的です。
             </p>
-            <p className="mt-4 text-base leading-8 text-slate-200">
-              さらに大きかったのが住宅ローン控除です。ペアローンにしたことで夫婦それぞれが控除を使え、
-              わが家では合計でおよそ30万円が戻ってきた年がありました。
-              控除額は借入残高、所得税・住民税、住宅性能などで変わりますが、
-              「毎月の返済額」だけでなく「税金がどれだけ戻るか」まで含めて見ると、
-              6,000万円という数字の見え方はかなり変わります。
-            </p>
-            <div className="mt-6 space-y-4">
-              {strategyPoints.map((point) => (
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {equipmentCards.map((card) => (
                 <div
-                  key={point}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-4 text-sm leading-7 text-slate-100"
+                  key={card.title}
+                  className="rounded-3xl border border-amber-100 bg-white/90 p-5"
                 >
-                  {point}
+                  <h3 className="text-lg font-bold text-slate-900">
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">
+                    {card.body}
+                  </p>
                 </div>
               ))}
             </div>
-          </div>
+          </section>
 
-          <aside className="rounded-[32px] border border-emerald-100 bg-emerald-50/80 p-6 shadow-lg shadow-emerald-100/60 sm:p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
-              年収構成
-            </p>
-            <div className="mt-5 space-y-4">
-              <div className="rounded-2xl bg-white/90 p-4">
-                <p className="text-sm font-medium text-slate-500">夫</p>
-                <p className="mt-1 text-2xl font-bold text-slate-900">
-                  300万円
+          <aside className="mt-10 overflow-hidden rounded-[32px] border border-amber-100 bg-white/90 p-6 shadow-lg shadow-amber-100/50 sm:p-8">
+            <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
+              <div className="max-w-2xl">
+                <p className="inline-flex rounded-full bg-amber-600 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white">
+                  PR
                 </p>
-                <p className="mt-1 text-sm text-slate-600">自営業</p>
+                <h2 className="mt-4 text-2xl font-bold text-slate-900">
+                  毎日使う家電は、使用頻度で投資価値を考える
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+                  家づくりでは建物だけでなく、暮らしを支える家電の予算も必要です。
+                  毎日使うものは、価格だけでなく、手間を減らせるか、長く使えるかまで含めて比較すると選びやすくなります。
+                </p>
               </div>
-              <div className="rounded-2xl bg-white/90 p-4">
-                <p className="text-sm font-medium text-slate-500">妻</p>
-                <p className="mt-1 text-2xl font-bold text-slate-900">
-                  600万円
-                </p>
-                <p className="mt-1 text-sm text-slate-600">公務員</p>
-              </div>
-              <div className="rounded-2xl bg-slate-900 p-4 text-white">
-                <p className="text-sm font-medium text-slate-300">世帯年収</p>
-                <p className="mt-1 text-3xl font-bold">900万円</p>
-                <p className="mt-2 text-sm text-slate-300">
-                  信用力と節税メリットを分けて使えるのが強みです。
-                </p>
+
+              <div className="shrink-0">
+                <RakutenAffiliateAd ad={deLonghiRakutenAd} />
               </div>
             </div>
           </aside>
-        </section>
-        <aside aria-label="おすすめ商品のPR">
-          <RakutenAffiliateAd ad={rakutenAds[7]} />
-        </aside>
-        <section className="mt-10 rounded-[32px] border border-amber-100 bg-[linear-gradient(135deg,rgba(255,251,235,0.95),rgba(255,255,255,0.96))] p-6 shadow-lg shadow-amber-100/50 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-amber-700">
-            3. 設備選び
-          </p>
-          <h2 className="mt-3 text-2xl font-bold text-slate-900">
-            「高い家」が実は「安い」こともある
-          </h2>
-          <p className="mt-5 text-base leading-8 text-slate-700">
-            初期投資を抑えると、契約時は安心できます。ただし、家づくりでは
-            イニシャルコストを削ったぶんだけ、ランニングコストや修繕コストが後ろに回るケースが多いです。
-            だからこそ、将来の障害コストを意識した設備投資は合理的です。
-          </p>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {equipmentCards.map((card) => (
-              <div
-                key={card.title}
-                className="rounded-3xl border border-amber-100 bg-white/90 p-5"
-              >
-                <h3 className="text-lg font-bold text-slate-900">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700">
-                  {card.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
 
-        <aside className="mt-10 overflow-hidden rounded-[32px] border border-amber-100 bg-white/90 p-6 shadow-lg shadow-amber-100/50 sm:p-8">
-          <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
-            <div className="max-w-2xl">
-              <p className="inline-flex rounded-full bg-amber-600 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white">
-                PR
-              </p>
-              <h2 className="mt-4 text-2xl font-bold text-slate-900">
-                毎日使う家電は、使用頻度で投資価値を考える
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
-                家づくりでは建物だけでなく、暮らしを支える家電の予算も必要です。
-                毎日使うものは、価格だけでなく、手間を減らせるか、長く使えるかまで含めて比較すると選びやすくなります。
-              </p>
-            </div>
-
-            <div className="shrink-0">
-              <RakutenAffiliateAd ad={deLonghiRakutenAd} />
-            </div>
-          </div>
-        </aside>
-
-        <section className="mt-10 rounded-[32px] bg-white/85 p-6 shadow-lg shadow-slate-100 ring-1 ring-slate-100 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
-            4. マクロ視点
-          </p>
-          <h2 className="mt-3 text-2xl font-bold text-slate-900">
-            インフレ時代は、現金より家計耐性が重要
-          </h2>
-          <div className="mt-6 space-y-4">
-            {macroPoints.map((point) => (
-              <div
-                key={point.title}
-                className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5"
-              >
-                <h3 className="text-lg font-semibold text-slate-900">
-                  {point.title}
-                </h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700">
-                  {point.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <aside className="mt-10 overflow-hidden rounded-[32px] border border-emerald-100 bg-[linear-gradient(135deg,rgba(236,253,245,0.96),rgba(255,255,255,0.98))] p-6 shadow-lg shadow-emerald-100/60 sm:p-8">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <div className="max-w-2xl">
-              <p className="inline-flex rounded-full bg-emerald-700 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white">
-                PR
-              </p>
-              <h2 className="mt-4 text-2xl font-bold text-slate-900">
-                住宅費を考えるなら、比較の質も上げておきたい
-              </h2>
-              <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
-                月々の返済額だけでなく、性能や将来コストまで含めて比較すると、
-                家づくりの判断はかなり変わります。気になる方は、候補整理の参考として確認してください。
-              </p>
-            </div>
-
-            <div className="shrink-0">
-              <RakutenAffiliateAd ad={rakutenAds[1]} />
-            </div>
-          </div>
-        </aside>
-
-        <section className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="rounded-[32px] bg-[linear-gradient(180deg,#062b22_0%,#0f3b30_100%)] p-6 text-white shadow-xl shadow-emerald-200/60 sm:p-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300">
-              5. 診断
+          <section className="mt-10 rounded-[32px] bg-white/85 p-6 shadow-lg shadow-slate-100 ring-1 ring-slate-100 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
+              4. マクロ視点
             </p>
-            <h2 className="mt-3 text-2xl font-bold">
-              失敗しないための住宅ローン診断
+            <h2 className="mt-3 text-2xl font-bold text-slate-900">
+              インフレ時代は、現金より家計耐性が重要
             </h2>
-            <p className="mt-5 text-sm leading-7 text-emerald-50/90">
-              借入可能額ではなく、耐えられる家計かどうかを確認してください。
-              下の5項目に明確に答えられるほど、判断の精度は上がります。
-            </p>
-          </div>
-
-          <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-lg shadow-slate-100 sm:p-8">
-            <ul className="space-y-4">
-              {checklist.map((item, index) => (
-                <li
-                  key={item}
-                  className="flex gap-4 rounded-2xl bg-slate-50/90 p-4"
+            <div className="mt-6 space-y-4">
+              {macroPoints.map((point) => (
+                <div
+                  key={point.title}
+                  className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5"
                 >
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white">
-                    {index + 1}
-                  </div>
-                  <p className="text-sm leading-7 text-slate-700">{item}</p>
-                </li>
+                  <h3 className="text-lg font-semibold text-slate-900">
+                    {point.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-700">
+                    {point.body}
+                  </p>
+                </div>
               ))}
-            </ul>
-          </div>
-        </section>
+            </div>
+          </section>
 
-        <section className="mt-10 rounded-[32px] border border-slate-200 bg-white/90 p-6 shadow-lg shadow-slate-100 sm:p-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
-            6. まとめ
-          </p>
-          <h2 className="mt-3 text-2xl font-bold text-slate-900">
-            今の「安心」より、将来の「自由」を買う
-          </h2>
-          <p className="mt-5 text-base leading-8 text-slate-700">
-            6,000万円という借入額だけを見ると、誰でも一度は身構えます。
-            ただ、注文住宅の本質は、今の支払いを小さく見せることではありません。
-            将来にわたって発生する光熱費、修繕費、設備更新費、そしてインフレまで含めて、
-            どちらが自由を残せるかを比較することです。
-          </p>
-          <p className="mt-4 text-base leading-8 text-slate-700">
-            わが家にとっては、
-            <span className="font-semibold text-emerald-800">
-              ペアローン × 高性能住宅
-            </span>
-            という組み合わせが、単なる背伸びではなく、35年間のトータルコストを削るための合理的な選択でした。
-            家を建てることは借金を背負うことでもありますが、同時に、将来の光熱費高騰やインフレから家計を守るシェルターを持つことでもあります。
-          </p>
-        </section>
-      </article>
-    </main>
+          <aside className="mt-10 overflow-hidden rounded-[32px] border border-emerald-100 bg-[linear-gradient(135deg,rgba(236,253,245,0.96),rgba(255,255,255,0.98))] p-6 shadow-lg shadow-emerald-100/60 sm:p-8">
+            <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="inline-flex rounded-full bg-emerald-700 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-white">
+                  PR
+                </p>
+                <h2 className="mt-4 text-2xl font-bold text-slate-900">
+                  住宅費を考えるなら、比較の質も上げておきたい
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-slate-700 sm:text-base">
+                  月々の返済額だけでなく、性能や将来コストまで含めて比較すると、
+                  家づくりの判断はかなり変わります。気になる方は、候補整理の参考として確認してください。
+                </p>
+              </div>
+
+              <div className="shrink-0">
+                <RakutenAffiliateAd ad={blogRakutenAds.finance[2]} />
+              </div>
+            </div>
+          </aside>
+
+          <section className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+            <div className="rounded-[32px] bg-[linear-gradient(180deg,#062b22_0%,#0f3b30_100%)] p-6 text-white shadow-xl shadow-emerald-200/60 sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300">
+                5. 診断
+              </p>
+              <h2 className="mt-3 text-2xl font-bold">
+                失敗しないための住宅ローン診断
+              </h2>
+              <p className="mt-5 text-sm leading-7 text-emerald-50/90">
+                借入可能額ではなく、耐えられる家計かどうかを確認してください。
+                下の5項目に明確に答えられるほど、判断の精度は上がります。
+              </p>
+            </div>
+
+            <div className="rounded-[32px] border border-slate-200 bg-white p-6 shadow-lg shadow-slate-100 sm:p-8">
+              <ul className="space-y-4">
+                {checklist.map((item, index) => (
+                  <li
+                    key={item}
+                    className="flex gap-4 rounded-2xl bg-slate-50/90 p-4"
+                  >
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white">
+                      {index + 1}
+                    </div>
+                    <p className="text-sm leading-7 text-slate-700">{item}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          <A8AffiliateAd
+            ad={a8Ads.fpConsultation}
+            fallback={
+              <aside aria-label="おすすめ書籍のPR">
+                <RakutenAffiliateAd ad={blogRakutenAds.finance[3]} />
+              </aside>
+            }
+          />
+
+          <section className="mt-10 rounded-[32px] border border-slate-200 bg-white/90 p-6 shadow-lg shadow-slate-100 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
+              6. まとめ
+            </p>
+            <h2 className="mt-3 text-2xl font-bold text-slate-900">
+              今の「安心」より、将来の「自由」を買う
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-700">
+              6,000万円という借入額だけを見ると、誰でも一度は身構えます。
+              ただ、注文住宅の本質は、今の支払いを小さく見せることではありません。
+              将来にわたって発生する光熱費、修繕費、設備更新費、そしてインフレまで含めて、
+              どちらが自由を残せるかを比較することです。
+            </p>
+            <p className="mt-4 text-base leading-8 text-slate-700">
+              わが家にとっては、
+              <span className="font-semibold text-emerald-800">
+                ペアローン × 高性能住宅
+              </span>
+              という組み合わせが、単なる背伸びではなく、35年間のトータルコストを削るための合理的な選択でした。
+              家を建てることは借金を背負うことでもありますが、同時に、将来の光熱費高騰やインフレから家計を守るシェルターを持つことでもあります。
+            </p>
+          </section>
+        </article>
+      </main>
+      <BlogAffiliateRecommendations ads={[blogRakutenAds.finance[4], blogRakutenAds.finance[5]]} heading="お金の勉強に" />
+    </>
   );
 }

@@ -1,4 +1,5 @@
-import RakutenAffiliateAd, { rakutenAds } from "@/app/blog/RakutenAffiliateAd";
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import RakutenAffiliateAd from "@/app/blog/RakutenAffiliateAd";
 import { Check, Clock, ExternalLink, MapPin, Trophy } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -366,7 +367,6 @@ export default function Page() {
           </div>
         </div>
 
-        <RakutenAffiliateAd ad={rakutenAds[0]} />
 
         <section className="mt-12 space-y-6">
           <h2 className="text-2xl font-bold text-gray-800">
@@ -389,7 +389,6 @@ export default function Page() {
           </div>
         </section>
 
-        <RakutenAffiliateAd ad={rakutenAds[1]} />
 
         <section className="mt-12 space-y-8">
           {offices.map((office, index) => {
@@ -516,8 +515,9 @@ export default function Page() {
                   </div>
                 </article>
 
-                {index === 0 && <RakutenAffiliateAd ad={rakutenAds[2]} />}
-                {index === 2 && <RakutenAffiliateAd ad={rakutenAds[0]} />}
+                {index === 2 && <RakutenAffiliateAd ad={blogRakutenAds.gyosei[0]} />}
+                {index === 4 && <RakutenAffiliateAd ad={blogRakutenAds.gyosei[1]} />}
+                {index === 5 && <RakutenAffiliateAd ad={blogRakutenAds.gyosei[2]} />}
               </React.Fragment>
             );
           })}

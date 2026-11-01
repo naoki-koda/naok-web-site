@@ -1,6 +1,7 @@
-import RakutenAffiliateAd, {
-  rakutenAds,
-} from '@/app/blog/RakutenAffiliateAd';
+import A8AffiliateAd, { a8Ads } from '@/app/blog/A8AffiliateAd';
+import BlogAffiliateRecommendations from '@/app/blog/BlogAffiliateRecommendations';
+import { blogRakutenAds } from '@/app/blog/blogRakutenAds';
+import RakutenAffiliateAd from '@/app/blog/RakutenAffiliateAd';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -204,181 +205,184 @@ const dataSources = [
 export default function Page() {
   const currentYear = new Date().getFullYear();
   return (
-    <main className="bg-gradient-to-b from-rose-50 via-white to-slate-50">
-      <article className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <header className="rounded-[32px] bg-white/90 p-10 shadow-xl shadow-rose-100 ring-1 ring-rose-100">
-          <h1 className="text-2xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
-          【{currentYear}年版】<br className="hidden sm:block" />
-          国内ホテル<br/>おすすめ8選！<br />
-          <span className="text-blue-600">会員になるべきホテルブランドの<br/>予約ポイントシステム</span>
-          </h1>
-          <p className="mt-6 text-lg text-gray-600">
-              旅行のたびにホテルを変える楽しさもありますが、ロイヤリティプログラムを活用するとアップグレードや無料宿泊などの特典が加速します。ここでは
-              <span className="font-semibold text-rose-600"> 予約体験 </span>
-              と<span className="font-semibold text-rose-600"> ポイント還元</span>の2軸で国内外の大手チェーンを比較しました。
-          </p>
-          <div className="mt-4 text-sm text-gray-500">
-          最終更新: 2025年11月
-          </div>
-        </header>
+    <>
+      <main className="bg-gradient-to-b from-rose-50 via-white to-slate-50">
+        <article className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+          <header className="rounded-[32px] bg-white/90 p-10 shadow-xl shadow-rose-100 ring-1 ring-rose-100">
+            <h1 className="text-2xl font-extrabold leading-tight text-gray-900 md:text-4xl lg:text-5xl">
+            【{currentYear}年版】<br className="hidden sm:block" />
+            国内ホテル<br/>おすすめ8選！<br />
+            <span className="text-blue-600">会員になるべきホテルブランドの<br/>予約ポイントシステム</span>
+            </h1>
+            <p className="mt-6 text-lg text-gray-600">
+                旅行のたびにホテルを変える楽しさもありますが、ロイヤリティプログラムを活用するとアップグレードや無料宿泊などの特典が加速します。ここでは
+                <span className="font-semibold text-rose-600"> 予約体験 </span>
+                と<span className="font-semibold text-rose-600"> ポイント還元</span>の2軸で国内外の大手チェーンを比較しました。
+            </p>
+            <div className="mt-4 text-sm text-gray-500">
+            最終更新: 2025年11月
+            </div>
+          </header>
 
-        <section className="mt-12 rounded-[32px] border border-rose-100/80 bg-white/95 p-8 shadow-lg shadow-rose-100">
-          <h2 className="text-2xl font-bold text-slate-900">結論：まず押さえておくべきブランド</h2>
-          <p className="mt-3 text-sm leading-relaxed text-slate-700">
-            公式アプリの使いやすさ・ポイントの貯まりやすさの双方で高評価だったのは以下の順番でした。Marriott BonvoyとHilton
-            Honorsはアプリ機能・還元率ともに頭一つ抜けており、国内チェーンではプリンスホテルと三井ガーデンホテルがバランス良く高評価です。
-          </p>
-          <ol className="mt-5 space-y-2 text-sm font-semibold text-slate-800">
-            <li>1位：マリオット（Marriott International）</li>
-            <li>2位：ヒルトン（Hilton Hotels & Resorts）</li>
-            <li>3位：プリンスホテル（Prince Hotels）</li>
-            <li>4位：三井ガーデンホテル（Mitsui Garden Hotel）</li>
-            <li>5位：アパホテル</li>
-            <li>6位：東横イン</li>
-            <li>7位：星野リゾート</li>
-          </ol>
-        </section>
+          <section className="mt-12 rounded-[32px] border border-rose-100/80 bg-white/95 p-8 shadow-lg shadow-rose-100">
+            <h2 className="text-2xl font-bold text-slate-900">結論：まず押さえておくべきブランド</h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-700">
+              公式アプリの使いやすさ・ポイントの貯まりやすさの双方で高評価だったのは以下の順番でした。Marriott BonvoyとHilton
+              Honorsはアプリ機能・還元率ともに頭一つ抜けており、国内チェーンではプリンスホテルと三井ガーデンホテルがバランス良く高評価です。
+            </p>
+            <ol className="mt-5 space-y-2 text-sm font-semibold text-slate-800">
+              <li>1位：マリオット（Marriott International）</li>
+              <li>2位：ヒルトン（Hilton Hotels & Resorts）</li>
+              <li>3位：プリンスホテル（Prince Hotels）</li>
+              <li>4位：三井ガーデンホテル（Mitsui Garden Hotel）</li>
+              <li>5位：アパホテル</li>
+              <li>6位：東横イン</li>
+              <li>7位：星野リゾート</li>
+            </ol>
+          </section>
 
-        <section className="mt-12 rounded-[32px] border border-slate-100 bg-white/95 p-6 shadow-lg shadow-slate-100">
-          <h3 className="text-xl font-semibold text-slate-900">アドバイザーとのやり取り</h3>
-          <div className="mt-6 space-y-4">
-            {messages.map((msg) => {
-              const isAdvisor = msg.role === 'advisor';
-              return (
-                <div
-                  key={msg.id}
-                  className={`flex items-start gap-3 ${isAdvisor ? 'justify-start' : 'justify-end'}`}
-                >
-                  {isAdvisor && (
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">
-                      A
-                    </div>
-                  )}
+          <section className="mt-12 rounded-[32px] border border-slate-100 bg-white/95 p-6 shadow-lg shadow-slate-100">
+            <h3 className="text-xl font-semibold text-slate-900">アドバイザーとのやり取り</h3>
+            <div className="mt-6 space-y-4">
+              {messages.map((msg) => {
+                const isAdvisor = msg.role === 'advisor';
+                return (
                   <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm ${
-                      isAdvisor ? 'bg-white text-slate-900 border border-slate-100' : 'bg-emerald-500 text-white'
-                    }`}
+                    key={msg.id}
+                    className={`flex items-start gap-3 ${isAdvisor ? 'justify-start' : 'justify-end'}`}
                   >
-                    <p className="mb-1 text-[11px] font-semibold opacity-70">{msg.name}</p>
-                    <p>{msg.text}</p>
+                    {isAdvisor && (
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-semibold text-white">
+                        A
+                      </div>
+                    )}
+                    <div
+                      className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm ${
+                        isAdvisor ? 'bg-white text-slate-900 border border-slate-100' : 'bg-emerald-500 text-white'
+                      }`}
+                    >
+                      <p className="mb-1 text-[11px] font-semibold opacity-70">{msg.name}</p>
+                      <p>{msg.text}</p>
+                    </div>
+                    {!isAdvisor && (
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">
+                        Q
+                      </div>
+                    )}
                   </div>
-                  {!isAdvisor && (
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xs font-semibold text-white">
-                      Q
-                    </div>
+                );
+              })}
+            </div>
+          </section>
+
+          <A8AffiliateAd ad={a8Ads.hotelBooking} />
+
+          <section className="mt-14 space-y-10">
+            {ranking.map((hotel, idx) => (
+              <React.Fragment key={hotel.rank}>
+                  <article
+                  key={hotel.rank}
+                  className="rounded-[32px] border border-slate-100 bg-white/95 p-8 shadow-lg shadow-slate-100"
+                  >
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <div>
+                      <span className="inline-flex items-center rounded-full bg-rose-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-rose-600">
+                          Ranking #{hotel.rank}
+                      </span>
+                      <h2 className="mt-3 text-2xl font-bold text-slate-900">
+                          {hotel.brand} <span className="text-base font-semibold text-slate-500">({hotel.name})</span>
+                      </h2>
+                      </div>
+                      <div className="text-sm font-semibold text-slate-500">予約体験 × ポイント還元で評価</div>
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-700">{hotel.summary}</p>
+                  <div className="mt-6 grid gap-5 lg:grid-cols-2">
+                      <div className="rounded-2xl bg-slate-50 p-5">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Reservation UX</p>
+                      <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
+                          {hotel.reservation.map((point) => (
+                          <li key={point}>{point}</li>
+                          ))}
+                      </ul>
+                      </div>
+                  <div className="rounded-2xl bg-white p-5 ring-1 ring-slate-100">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Point Program</p>
+                      <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
+                      {hotel.points.map((point) => (
+                          <li key={point}>{point}</li>
+                      ))}
+                      </ul>
+                  </div>
+                  </div>
+                  {hotel.showcase && (
+                  <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center">
+                      <div className="shrink-0 overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 p-4 md:w-1/2">
+                      <Image
+                          src={hotel.showcase.image}
+                          alt={hotel.showcase.alt}
+                          width={560}
+                          height={360}
+                          className="h-auto w-full rounded-xl object-cover"
+                      />
+                      </div>
+                      <div className="flex-1 space-y-3 text-sm leading-relaxed text-slate-700">
+                      {hotel.showcase.bullets.map((point) => (
+                          <p key={point} className="rounded-2xl bg-slate-50 px-4 py-3">
+                          {point}
+                          </p>
+                      ))}
+                      </div>
+                  </div>
                   )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        <RakutenAffiliateAd ad={rakutenAds[0]} />
-
-        <section className="mt-14 space-y-10">
-          {ranking.map((hotel, idx) => (
-            <React.Fragment key={hotel.rank}>
-                <article
-                key={hotel.rank}
-                className="rounded-[32px] border border-slate-100 bg-white/95 p-8 shadow-lg shadow-slate-100"
-                >
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                    <div>
-                    <span className="inline-flex items-center rounded-full bg-rose-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-rose-600">
-                        Ranking #{hotel.rank}
-                    </span>
-                    <h2 className="mt-3 text-2xl font-bold text-slate-900">
-                        {hotel.brand} <span className="text-base font-semibold text-slate-500">({hotel.name})</span>
-                    </h2>
-                    </div>
-                    <div className="text-sm font-semibold text-slate-500">予約体験 × ポイント還元で評価</div>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-slate-700">{hotel.summary}</p>
-                <div className="mt-6 grid gap-5 lg:grid-cols-2">
-                    <div className="rounded-2xl bg-slate-50 p-5">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Reservation UX</p>
-                    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
-                        {hotel.reservation.map((point) => (
-                        <li key={point}>{point}</li>
-                        ))}
-                    </ul>
-                    </div>
-                <div className="rounded-2xl bg-white p-5 ring-1 ring-slate-100">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Point Program</p>
-                    <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
-                    {hotel.points.map((point) => (
-                        <li key={point}>{point}</li>
-                    ))}
-                    </ul>
-                </div>
-                </div>
-                {hotel.showcase && (
-                <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center">
-                    <div className="shrink-0 overflow-hidden rounded-2xl border border-slate-100 bg-slate-50 p-4 md:w-1/2">
-                    <Image
-                        src={hotel.showcase.image}
-                        alt={hotel.showcase.alt}
-                        width={560}
-                        height={360}
-                        className="h-auto w-full rounded-xl object-cover"
-                    />
-                    </div>
-                    <div className="flex-1 space-y-3 text-sm leading-relaxed text-slate-700">
-                    {hotel.showcase.bullets.map((point) => (
-                        <p key={point} className="rounded-2xl bg-slate-50 px-4 py-3">
-                        {point}
-                        </p>
-                    ))}
-                    </div>
-                </div>
-                )}
-            </article>
-            {idx === 1 && (
-              <RakutenAffiliateAd ad={rakutenAds[0]} />
-            )}
-            {idx === 3 && (
-              <RakutenAffiliateAd ad={rakutenAds[1]} />
-            )}
-            {idx === 5 && (
-              <RakutenAffiliateAd ad={rakutenAds[2]} />
-            )}
-          </React.Fragment>
-          ))}
-        </section>
-        <section className="mt-16 rounded-[32px] bg-slate-900 p-8 text-slate-100">
-          <h3 className="text-2xl font-semibold">選び方のヒント</h3>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {['出張が多いなら全国展開＆泊数ポイント制（東横INN・アパ）', '海外旅行派は外資チェーンでモバイルキーとアップグレードを重視', '国内旅メインなら国内チェーンのアプリ限定プラン・交通系ポイント連携がお得'].map((tip) => (
-              <div key={tip} className="rounded-2xl border border-slate-800 bg-slate-800/60 p-4">
-                <p className="text-sm leading-relaxed text-slate-100">{tip}</p>
-              </div>
+              </article>
+              {idx === 1 && (
+                <RakutenAffiliateAd ad={blogRakutenAds.hotel[0]} />
+              )}
+              {idx === 3 && (
+                <RakutenAffiliateAd ad={blogRakutenAds.hotel[3]} />
+              )}
+              {idx === 5 && (
+                <RakutenAffiliateAd ad={blogRakutenAds.hotel[4]} />
+              )}
+            </React.Fragment>
             ))}
-          </div>
-          <p className="mt-6 text-sm leading-relaxed text-slate-300">
-            直販アプリ経由の予約は、OTAよりも柔軟なキャンセルポリシーやレイトチェックアウト特典がつくケースが多いので、ポイント還元と合わせて比較検討するのがおすすめです。
-          </p>
-        </section>
+          </section>
+          <section className="mt-16 rounded-[32px] bg-slate-900 p-8 text-slate-100">
+            <h3 className="text-2xl font-semibold">選び方のヒント</h3>
+            <div className="mt-6 grid gap-6 md:grid-cols-3">
+              {['出張が多いなら全国展開＆泊数ポイント制（東横INN・アパ）', '海外旅行派は外資チェーンでモバイルキーとアップグレードを重視', '国内旅メインなら国内チェーンのアプリ限定プラン・交通系ポイント連携がお得'].map((tip) => (
+                <div key={tip} className="rounded-2xl border border-slate-800 bg-slate-800/60 p-4">
+                  <p className="text-sm leading-relaxed text-slate-100">{tip}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 text-sm leading-relaxed text-slate-300">
+              直販アプリ経由の予約は、OTAよりも柔軟なキャンセルポリシーやレイトチェックアウト特典がつくケースが多いので、ポイント還元と合わせて比較検討するのがおすすめです。
+            </p>
+          </section>
 
-        <section className="mt-16 rounded-[32px] bg-white/95 p-8 shadow-lg shadow-slate-100">
-          <h3 className="text-xl font-semibold text-slate-900">参考情報</h3>
-          <p className="mt-2 text-sm text-slate-600">公式サイトとロイヤリティプログラムの公開情報をもとに整理しました。</p>
-          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {dataSources.map((source) => (
-              <li key={source.url}>
-                <Link
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-rose-600 hover:text-rose-800"
-                >
-                  <span>{source.name}</span>
-                  <span aria-hidden="true">↗</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      </article>
-    </main>
+          <section className="mt-16 rounded-[32px] bg-white/95 p-8 shadow-lg shadow-slate-100">
+            <h3 className="text-xl font-semibold text-slate-900">参考情報</h3>
+            <p className="mt-2 text-sm text-slate-600">公式サイトとロイヤリティプログラムの公開情報をもとに整理しました。</p>
+            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+              {dataSources.map((source) => (
+                <li key={source.url}>
+                  <Link
+                    href={source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-rose-600 hover:text-rose-800"
+                  >
+                    <span>{source.name}</span>
+                    <span aria-hidden="true">↗</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </article>
+      </main>
+      <BlogAffiliateRecommendations ads={[blogRakutenAds.hotel[1], blogRakutenAds.hotel[2]]} heading="旅行の準備に" />
+    </>
   );
 }

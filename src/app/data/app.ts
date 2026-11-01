@@ -8,7 +8,9 @@ export interface AppData {
   priceAnnualMonthlyCalc: number; // 年割時の月額換算
   trialDays: number;
   rating: number;
-  affiliateLink: string;
+  affiliateLink: string; // A8等のアフィリエイトリンク。空なら officialUrl を使う
+  a8PixelSrc?: string; // A8テキスト広告HTMLの <img src>
+  officialUrl: string;
   features: string[];
   pros: string[];
   cons: string[];
@@ -28,7 +30,8 @@ export const apps: AppData[] = [
     priceAnnualMonthlyCalc: 2750,
     trialDays: 7,
     rating: 4.9,
-    affiliateLink: 'https://speak.com/jp?ref=your_id',
+    affiliateLink: '',
+    officialUrl: 'https://www.speak.com/jp',
     features: ['AIロールプレイ', '文法即時矯正', '1000以上のトピック'],
     pros: ['人間相手より緊張しない', '発話量が圧倒的に多い', 'フィードバックが精密'],
     cons: ['フリートークは中級者以上向け', '自律的に学習する必要がある'],
@@ -45,7 +48,8 @@ export const apps: AppData[] = [
     priceAnnualMonthlyCalc: 3831,
     trialDays: 7,
     rating: 4.7,
-    affiliateLink: 'https://afb.jp/...',
+    affiliateLink: '',
+    officialUrl: '',
     features: ['ビジネスライティング', 'プロシャドーイング', 'ディクテーション'],
     pros: ['仕事で即戦力になるフレーズ', '理論に基づいた学習メソッド'],
     cons: ['地味なトレーニングが多い', 'エンタメ要素は少ない'],
@@ -62,7 +66,8 @@ export const apps: AppData[] = [
     priceAnnualMonthlyCalc: 700,
     trialDays: 0, // フリープランあり
     rating: 4.5,
-    affiliateLink: 'https://elsaspeak.com/...',
+    affiliateLink: '',
+    officialUrl: 'https://elsaspeak.com/ja/',
     features: ['発音スコア化', 'AI会話', 'デイリーレッスン'],
     pros: ['発音矯正に特化している', '無料版でも機能が豊富'],
     cons: ['機能が多すぎて迷う', '会話の文脈練習はSpeakに劣る'],
@@ -71,3 +76,5 @@ export const apps: AppData[] = [
   },
   // 他のアプリデータもここに追加
 ];
+
+export const getAppLink = (app: AppData) => app.affiliateLink || app.officialUrl;
