@@ -1,3 +1,7 @@
+import A8AffiliateAd, { a8Ads } from "@/app/blog/A8AffiliateAd";
+import BlogAdModal from "@/app/blog/BlogAdModal";
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import RakutenAffiliateAd from "@/app/blog/RakutenAffiliateAd";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
@@ -37,6 +41,31 @@ export const metadata: Metadata = {
   },
 };
 
+// 記事を開いたときのモーダルに出す広告。掲載店を紹介する記事（左官・建具・行政書士）には出さない
+const modalAds: Record<string, ReactNode> = {
+  "/blog/hikari": <A8AffiliateAd ad={a8Ads.docomoHikari} />,
+  "/blog/finance": (
+    <A8AffiliateAd
+      ad={a8Ads.mortgageComparison}
+      fallback={<RakutenAffiliateAd ad={blogRakutenAds.finance[0]} />}
+    />
+  ),
+  "/blog/hotelmatome": <A8AffiliateAd ad={a8Ads.hotelBooking} />,
+  "/blog/hiphopmatome": <RakutenAffiliateAd ad={blogRakutenAds.hiphop[2]} />,
+  "/blog/aienappmatome": <RakutenAffiliateAd ad={blogRakutenAds.english[0]} />,
+  "/blog/nagoya/hairsalon": (
+    <RakutenAffiliateAd ad={blogRakutenAds.hairsalon[0]} />
+  ),
+  "/blog/nagoya/personal-color": (
+    <RakutenAffiliateAd ad={blogRakutenAds.personalColor[0]} />
+  ),
+};
+
 export default function BlogLayout({ children }: { children: ReactNode }) {
-  return children;
+  return (
+    <>
+      {children}
+      <BlogAdModal ads={modalAds} />
+    </>
+  );
 }
