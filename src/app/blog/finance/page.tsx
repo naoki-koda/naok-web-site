@@ -2,7 +2,9 @@ import BlogAffiliateRecommendations from "@/app/blog/BlogAffiliateRecommendation
 import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
 import A8AffiliateAd, { a8Ads } from "@/app/blog/A8AffiliateAd";
 import RakutenAffiliateAd, { type RakutenAd } from "@/app/blog/RakutenAffiliateAd";
+import UtilityCostChart, { type UtilityCost } from "@/app/blog/finance/UtilityCostChart";
 import { kosugiMaru } from "@/app/ui/fonts";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 type Role = "advisor" | "user";
@@ -127,6 +129,43 @@ const deLonghiRakutenAd: RakutenAd = {
   price: "価格：69,800円（税込、送料無料)",
   priceCheckedAt: "2026/6/15",
 };
+
+// 請求画面のグラフから読み取った概算（電気は100円、ガスは10円単位）
+const utilityCosts: UtilityCost[] = [
+  { month: "1月", electricity: 20000, gas: 2610 },
+  { month: "2月", electricity: 19400, gas: 2470 },
+  { month: "3月", electricity: 12500, gas: 2670 },
+  { month: "4月", electricity: 9700, gas: 2630 },
+  { month: "5月", electricity: 6400, gas: 2490 },
+  { month: "6月", electricity: 4900, gas: 1870 },
+  { month: "7月", electricity: 5600, gas: 2080 },
+  { month: "8月", electricity: 7100, gas: 2180 },
+  { month: "9月", electricity: 7100, gas: 2160 },
+  { month: "10月", electricity: 7900, gas: 2660 },
+];
+
+const utilityTotal = utilityCosts.reduce(
+  (sum, d) => sum + d.electricity + d.gas,
+  0,
+);
+
+const utilityHighlights = [
+  {
+    label: "10か月の光熱費合計",
+    value: `約${(utilityTotal / 10000).toFixed(1)}万円`,
+    note: "電気＋ガス（2026年1〜10月）",
+  },
+  {
+    label: "月平均",
+    value: `約${(utilityTotal / utilityCosts.length / 10000).toFixed(1)}万円`,
+    note: "冬の暖房費を含めた平均",
+  },
+  {
+    label: "ガス代の最高月",
+    value: `${Math.max(...utilityCosts.map((d) => d.gas)).toLocaleString()}円`,
+    note: "給湯はヒートポンプが中心",
+  },
+];
 
 export const metadata: Metadata = {
   title: "年収900万円で6,000万円の家は無謀？自営業×公務員夫婦の住宅ローン戦略",
@@ -406,6 +445,92 @@ export default function FinancePage() {
             </div>
           </section>
 
+          <section id="utility-costs" className="mt-10 rounded-[32px] bg-white/85 p-6 shadow-lg shadow-slate-100 ring-1 ring-slate-100 sm:p-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
+              4. 実際の光熱費
+            </p>
+            <h2 className="mt-3 text-2xl font-bold text-slate-900">
+              住んでみた光熱費を、そのまま公開します
+            </h2>
+            <p className="mt-5 text-base leading-8 text-slate-700">
+              「高性能住宅は光熱費が下がる」と言われても、実際の数字を見ないと判断できません。
+              そこで、わが家の2026年1月〜10月の電気代とガス代を、請求画面のグラフから読み取って並べました。
+            </p>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              {utilityHighlights.map((item) => (
+                <div
+                  key={item.label}
+                  className="rounded-3xl border border-slate-200 bg-slate-50/80 p-5"
+                >
+                  <p className="text-xs font-semibold text-slate-500">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 text-2xl font-bold text-slate-900">
+                    {item.value}
+                  </p>
+                  <p className="mt-1 text-xs leading-5 text-slate-600">
+                    {item.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <UtilityCostChart data={utilityCosts} />
+
+            <div className="mt-8 space-y-4 text-base leading-8 text-slate-700">
+              <h3 className="text-lg font-bold text-slate-900">
+                ガス代は1年中ほぼ2,000円台
+              </h3>
+              <p>
+                給湯はエコワン（ハイブリッド給湯器）で、お湯の大半を電気のヒートポンプでつくり、ガスは補助として使う仕組みです。
+                そのため、冬でもガス代はほとんど増えず、最も高い月でも3,000円を下回りました。
+              </p>
+              <h3 className="text-lg font-bold text-slate-900">
+                電気代は冬に2万円、春〜秋は5,000〜8,000円
+              </h3>
+              <p>
+                1〜2月は暖房を使い、日照時間も短いため、電気代は約2万円まで上がりました。
+                一方で5月以降は、太陽光で発電した電気を昼間にそのまま使えるので、エアコンを使う夏でも5,000〜8,000円台に収まっています。
+              </p>
+              <p>
+                電気とガスを合わせた10か月の合計は約12.4万円、月平均で約1.2万円です。
+                冬の数か月だけを見ると高く感じますが、1年を通して見ると、断熱性能と設備への投資が毎月の支出を確実に押し下げていると実感しています。
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <figure className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+                <Image
+                  src="/blog/finance/electricity-bill-2026.png"
+                  alt="2026年1月〜10月の電気料金の請求グラフ"
+                  width={1638}
+                  height={1522}
+                  className="h-auto w-full"
+                />
+                <figcaption className="px-4 py-3 text-xs text-slate-500">
+                  電気料金の請求画面（再エネ賦課金を含む）
+                </figcaption>
+              </figure>
+              <figure className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+                <Image
+                  src="/blog/finance/gas-bill-2026.jpg"
+                  alt="2026年1月〜10月のガス料金の請求グラフ"
+                  width={1260}
+                  height={1248}
+                  className="h-auto w-full"
+                />
+                <figcaption className="px-4 py-3 text-xs text-slate-500">
+                  ガス料金の請求画面
+                </figcaption>
+              </figure>
+            </div>
+            <p className="mt-4 text-xs leading-6 text-slate-500">
+              ※金額は請求画面のグラフから読み取った概算です（電気は100円、ガスは10円単位で丸めています）。
+              電気代は電力会社から買った分の金額で、太陽光の売電収入は含みません。
+            </p>
+          </section>
+
           <aside className="mt-10 overflow-hidden rounded-[32px] border border-amber-100 bg-white/90 p-6 shadow-lg shadow-amber-100/50 sm:p-8">
             <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
               <div className="max-w-2xl">
@@ -429,7 +554,7 @@ export default function FinancePage() {
 
           <section className="mt-10 rounded-[32px] bg-white/85 p-6 shadow-lg shadow-slate-100 ring-1 ring-slate-100 sm:p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
-              4. マクロ視点
+              5. マクロ視点
             </p>
             <h2 className="mt-3 text-2xl font-bold text-slate-900">
               インフレ時代は、現金より家計耐性が重要
@@ -475,7 +600,7 @@ export default function FinancePage() {
           <section className="mt-10 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="rounded-[32px] bg-[linear-gradient(180deg,#062b22_0%,#0f3b30_100%)] p-6 text-white shadow-xl shadow-emerald-200/60 sm:p-8">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-300">
-                5. 診断
+                6. 診断
               </p>
               <h2 className="mt-3 text-2xl font-bold">
                 失敗しないための住宅ローン診断
@@ -514,7 +639,7 @@ export default function FinancePage() {
 
           <section className="mt-10 rounded-[32px] border border-slate-200 bg-white/90 p-6 shadow-lg shadow-slate-100 sm:p-8">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-700">
-              6. まとめ
+              7. まとめ
             </p>
             <h2 className="mt-3 text-2xl font-bold text-slate-900">
               今の「安心」より、将来の「自由」を買う
