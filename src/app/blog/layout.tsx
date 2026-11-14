@@ -46,7 +46,7 @@ const modalAds: Record<string, ReactNode> = {
   "/blog/hikari": <A8AffiliateAd ad={a8Ads.docomoHikari} />,
   "/blog/finance": (
     <A8AffiliateAd
-      ad={a8Ads.mortgageComparison}
+      ad={a8Ads.fpConsultation}
       fallback={<RakutenAffiliateAd ad={blogRakutenAds.finance[0]} />}
     />
   ),

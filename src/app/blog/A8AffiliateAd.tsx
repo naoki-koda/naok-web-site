@@ -63,16 +63,21 @@ export const a8Ads = {
     cta: "住宅ローンを比較する",
   },
   fpConsultation: {
-    href: "",
-    pixelSrc: "",
-    name: "FP無料相談",
+    href: "https://px.a8.net/svt/ejp?a8mat=4BGAV1+FJ21TE+5E38+61JSH",
+    pixelSrc: "https://www12.a8.net/0.gif?a8mat=4BGAV1+FJ21TE+5E38+61JSH",
+    banner: {
+      src: "https://www26.a8.net/svt/bgt?aid=261101053939&wid=001&eno=01&mid=s00000025154001015000&mc=1",
+      width: 300,
+      height: 250,
+    },
+    name: "ほけんのAI",
     catchCopy: "「借りられる額」ではなく「耐えられる家計」をプロと確認。",
     points: [
-      "住宅ローン・保険・教育費をまとめて相談",
-      "ライフプランをもとに返済余力を試算",
-      "相談は無料、オンライン対応も",
+      "保険の見直しと家計の悩みをまとめて相談",
+      "LINEから気軽に相談できる",
+      "相談は無料、全国対応",
     ],
-    cta: "無料相談を予約する",
+    cta: "LINEで無料相談する",
   },
   hotelBooking: {
     href: "https://px.a8.net/svt/ejp?a8mat=4BGAV1+FM17UA+AD2+3B4U5D",
