@@ -1,6 +1,7 @@
 "use client";
 
 import MyDrawer from "@/app/ui/Drawer";
+import SpaGuide from "@/app/ui/SpaGuide";
 import { shipporiAntiqueB1, zenKaku } from "@/app/ui/fonts";
 import Image from "next/image";
 import Link from "next/link";
@@ -273,6 +274,12 @@ export default function Home() {
               >
                 制作実績を見る
               </Link>
+              <a
+                href="#document"
+                className="border-b-2 border-transparent pb-1 text-[#5b5748] transition-colors hover:border-[#15181d] hover:text-[#15181d]"
+              >
+                資料をダウンロード
+              </a>
             </div>
           </div>
 
@@ -461,6 +468,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* 資料ダウンロード */}
+      <SpaGuide />
 
       {/* 業種別 */}
       <section className="mx-auto max-w-6xl px-6 py-16">
