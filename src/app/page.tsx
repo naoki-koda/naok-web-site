@@ -1,6 +1,7 @@
 "use client";
 
 import MyDrawer from "@/app/ui/Drawer";
+import LighthouseScores from "@/app/ui/LighthouseScores";
 import SpaGuide from "@/app/ui/SpaGuide";
 import { shipporiAntiqueB1, zenKaku } from "@/app/ui/fonts";
 import Image from "next/image";
@@ -336,6 +337,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <LighthouseScores />
       </section>
 
       {/* 安い */}
