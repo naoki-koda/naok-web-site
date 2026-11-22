@@ -16,8 +16,8 @@ const STRENGTHS = ['速い', '安い', '売れる', '守れる'];
 
 export default function Footer() {
   return (
-    // トップページの濃い帯（実績・CTA）と同じ配色。下部の余白は固定表示のボタンと重ならないため
-    <footer className={`${zenKaku.className} bg-[#aaacff] pb-28 text-[#15181d]`}>
+    // 赤い本文から切り替わる白系のクリーム色。下部の余白は固定表示のボタンと重ならないため
+    <footer className={`${zenKaku.className} bg-[#fff6e8] pb-28 text-[#15181d]`}>
       {/* 巻尺の目盛り */}
       <div
         aria-hidden="true"
@@ -49,7 +49,7 @@ export default function Footer() {
                 </span>
               ))}
             </p>
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-[#2a2c5a]">
+            <p className="mt-5 max-w-md text-sm leading-relaxed text-[#4a4d55]">
               愛知県名古屋市を中心に、Next.js製の高速なWebサイトの制作・運営を行っています。打ち合わせから公開後の運用まで、自社で一貫して対応します。
             </p>
             <Link
@@ -71,7 +71,7 @@ export default function Footer() {
                     <span className="text-sm font-bold tracking-[0.2em] transition-colors group-hover:underline group-hover:underline-offset-4">
                       {label}
                     </span>
-                    <span className="text-xs text-[#2a2c5a]">{subLabel}</span>
+                    <span className="text-xs text-[#4a4d55]">{subLabel}</span>
                   </Link>
                 </li>
               ))}
@@ -79,7 +79,7 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-[#15181d]/15 pt-6 text-xs leading-relaxed text-[#2a2c5a] md:flex-row md:items-center md:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-[#15181d]/15 pt-6 text-xs leading-relaxed text-[#4a4d55] md:flex-row md:items-center md:justify-between">
           <p>
             著作権、及びお客様のプライバシー保護のため、サイト内の写真や内容の無断転載等はお断り致します。
           </p>

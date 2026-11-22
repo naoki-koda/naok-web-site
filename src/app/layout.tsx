@@ -163,7 +163,8 @@ export default function RootLayout({
       </head>
       {/* サイト全体のメインカラー。浮いているナビの裏も同じ色にする */}
       <body className="bg-[#ff4a3f] font-sans antialiased">
-        <ThemeProvider>
+        {/* サイトはライト表示のみ。OS がダークモードでも白いカードの配色を保つ */}
+        <ThemeProvider forcedTheme="light">
           <Header />
           {children}
           <Analytics />

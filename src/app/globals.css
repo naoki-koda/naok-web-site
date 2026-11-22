@@ -2,7 +2,9 @@
 @plugin "tailwindcss-animate";
 /* @import "tw-animate-css"; */
 /**/
-/* @custom-variant dark (&:is(.dark *)); */
+/* サイトはライト表示のみ。OS のダークモードで一部の部品だけ黒くならないよう、
+   dark: は .dark クラスがあるときだけ効かせる（.dark は付けていない） */
+@custom-variant dark (&:is(.dark *));
 /* @tailwind base; */
 /* @tailwind components; */
 /* @tailwind utilities; */
@@ -147,4 +149,9 @@
       height: 0;
     }
   }
+}
+
+/* 入力欄やスクロールバーなどブラウザ標準の部品もライト表示に固定する */
+:root {
+  color-scheme: light;
 }
