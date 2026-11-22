@@ -1,5 +1,6 @@
 "use client";
 
+import { CardBadge, GlowCard } from "@/app/ui/cards";
 import { shipporiAntiqueB1 } from "@/app/ui/fonts";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -43,15 +44,14 @@ export default function SpaGuide() {
   return (
     <section
       id="document"
-      className={`${styles.band} mx-auto max-w-6xl px-6`}
+      className="mx-auto max-w-6xl px-6 py-8 md:py-10"
       aria-labelledby="document-heading"
     >
+      <GlowCard innerClassName="md:p-12">
       {/* スマホでは「見出し→表紙→目次とボタン」の順、PCでは表紙を右列に縦断させる */}
       <div className="grid gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-x-16 md:gap-y-0">
         <div>
-          <p className="text-sm font-bold tracking-[0.2em] text-[#5b5748]">
-            資料ダウンロード
-          </p>
+          <CardBadge>資料ダウンロード</CardBadge>
           <h2
             id="document-heading"
             className={`${shipporiAntiqueB1.className} mt-4 text-[1.75rem] leading-snug md:text-4xl`}
@@ -60,7 +60,7 @@ export default function SpaGuide() {
             <br />
             他社サイトとの技術の違い
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-[#5b5748] md:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-[#4a4d55] md:text-base">
             打ち合わせでお見せしている提案資料を、そのまま公開しています。集客の考え方から、ページ移動が速いSPAの仕組みまでを図解でまとめました。社内での検討や、ほかの制作会社との比較にお使いください。
           </p>
         </div>
@@ -75,20 +75,20 @@ export default function SpaGuide() {
                   onClick={() => open(c.page)}
                   className="group flex w-full items-baseline gap-4 text-left"
                 >
-                  <span className="w-10 shrink-0 text-xs tabular-nums text-[#8a8370]">
+                  <span className="w-10 shrink-0 text-xs tabular-nums text-[#6b6f78]">
                     P.{c.page}
                   </span>
                   <span className="flex-1">
-                    <span className="block text-sm font-bold transition-colors group-hover:text-[#b7791f]">
+                    <span className="block text-sm font-bold transition-colors group-hover:underline">
                       {c.title}
                     </span>
-                    <span className="mt-0.5 block text-xs text-[#8a8370]">
+                    <span className="mt-0.5 block text-xs text-[#6b6f78]">
                       {c.note}
                     </span>
                   </span>
                   <span
                     aria-hidden="true"
-                    className="text-[#8a8370] transition-transform group-hover:translate-x-1"
+                    className="text-[#6b6f78] transition-transform group-hover:translate-x-1"
                   >
                     →
                   </span>
@@ -109,13 +109,13 @@ export default function SpaGuide() {
             <a
               href={PDF_HREF}
               download={PDF_FILENAME}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f0b429] px-7 py-3 text-sm font-bold text-[#15181d] transition hover:brightness-95"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#aaacff] px-7 py-3 text-sm font-bold text-[#15181d] transition hover:brightness-95"
             >
               <DownloadIcon />
               PDFをダウンロード
             </a>
           </div>
-          <p className="mt-3 text-xs text-[#8a8370]">
+          <p className="mt-3 text-xs text-[#6b6f78]">
             PDF・全{PAGE_COUNT}ページ・約4.3MB／登録不要・無料
           </p>
         </div>
@@ -158,7 +158,7 @@ export default function SpaGuide() {
                   type="button"
                   onClick={() => open(n)}
                   aria-label={`${n}ページ目を読む`}
-                  className="block w-full overflow-hidden rounded-md ring-1 ring-[#15181d]/15 transition hover:ring-2 hover:ring-[#f0b429]"
+                  className="block w-full overflow-hidden rounded-md ring-1 ring-[#15181d]/15 transition hover:ring-2 hover:ring-[#aaacff]"
                 >
                   <Image
                     src={pages[n - 1].src}
@@ -174,6 +174,7 @@ export default function SpaGuide() {
           </ul>
         </div>
       </div>
+      </GlowCard>
 
       <GuideViewer
         dialogRef={dialogRef}
@@ -238,7 +239,7 @@ function GuideViewer({
             <a
               href={PDF_HREF}
               download={PDF_FILENAME}
-              className="inline-flex items-center gap-1.5 rounded-full bg-[#f0b429] px-4 py-1.5 text-xs font-bold text-[#15181d] transition hover:brightness-95"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#aaacff] px-4 py-1.5 text-xs font-bold text-[#15181d] transition hover:brightness-95"
             >
               <DownloadIcon />
               <span className="hidden sm:inline">ダウンロード</span>
@@ -337,7 +338,7 @@ function GuideViewer({
                   aria-current={p.number === current ? "page" : undefined}
                   className={`block w-20 overflow-hidden rounded ring-2 transition md:w-24 ${
                     p.number === current
-                      ? "ring-[#f0b429]"
+                      ? "ring-[#aaacff]"
                       : "opacity-60 ring-transparent hover:opacity-100"
                   }`}
                 >

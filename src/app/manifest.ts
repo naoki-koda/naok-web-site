@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Next.js/SPA・PWA対応で高速かつアプリのように使いやすいホームページ制作を提供するREEWA WEBの公式サイトです。",
     start_url: "/",
     display: "standalone",
-    background_color: "#fff7ed",
-    theme_color: "#fb923c",
+    background_color: "#ff4a3f",
+    theme_color: "#ff4a3f",
     icons: [
       {
         src: "/logo.png",

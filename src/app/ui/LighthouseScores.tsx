@@ -46,13 +46,13 @@ export default function LighthouseScores() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 });
 
   return (
-    <div ref={ref} className="mt-12 border-t border-[#15181d]/15 pt-10">
+    <div ref={ref}>
       <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
         <p className="text-sm font-bold">
           Google Lighthouse の計測スコア
-          <span className="ml-2 font-normal text-[#8a8370]">reewa-web.jp</span>
+          <span className="ml-2 font-normal text-[#6b6f78]">reewa-web.jp</span>
         </p>
-        <p className="text-xs text-[#8a8370]">100点満点</p>
+        <p className="text-xs text-[#6b6f78]">100点満点</p>
       </div>
 
       <ul className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
@@ -61,7 +61,7 @@ export default function LighthouseScores() {
         ))}
       </ul>
 
-      <p className="mt-8 text-xs leading-relaxed text-[#8a8370]">
+      <p className="mt-8 text-xs leading-relaxed text-[#6b6f78]">
         ※Lighthouseは、サイトの速さや使いやすさをGoogleの基準で採点するChromeの機能です。スコアは計測する環境や時期によって多少変わります。
       </p>
     </div>
@@ -88,13 +88,13 @@ function Gauge({
       <div aria-hidden="true">
         <AnimatedCircularProgressBar
           value={current}
-          gaugePrimaryColor="#f0b429"
-          gaugeSecondaryColor="rgba(21, 24, 29, 0.1)"
+          gaugePrimaryColor="#aaacff"
+          gaugeSecondaryColor="rgba(21, 24, 29, 0.15)"
           className={`${shipporiAntiqueB1.className} size-28 text-3xl text-[#15181d] md:size-32 md:text-4xl`}
         />
       </div>
       <p className="mt-4 text-sm font-bold">{label}</p>
-      <p className="mt-0.5 text-xs text-[#8a8370]">{sub}</p>
+      <p className="mt-0.5 text-xs text-[#6b6f78]">{sub}</p>
       {/* 読み上げではアニメ途中の数字ではなく最終スコアを伝える */}
       <span className="sr-only">{`${value}点`}</span>
     </li>

@@ -1,9 +1,25 @@
 "use client";
 
+import { BentoCell, CardBadge, GlowCard } from "@/app/ui/cards";
 import MyDrawer from "@/app/ui/Drawer";
+import WorksGallery from "@/app/ui/WorksGallery";
 import LighthouseScores from "@/app/ui/LighthouseScores";
 import SpaGuide from "@/app/ui/SpaGuide";
 import { shipporiAntiqueB1, zenKaku } from "@/app/ui/fonts";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { BentoGrid } from "@/components/ui/bento-grid";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import {
+  BuildingStorefrontIcon,
+  HeartIcon,
+  ScissorsIcon,
+  WrenchScrewdriverIcon,
+} from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
@@ -94,6 +110,7 @@ export default function Home() {
   const verticalFocus = [
     {
       title: "美容・サロン向けホームページ制作",
+      icon: ScissorsIcon,
       description:
         "美容室・ネイルサロン・エステ・ピラティススタジオなど、予約導線とSNS集客が重要な業種に特化。Instagram連携、ビフォーアフターギャラリー、スタッフ紹介、クーポン連動などをワンストップで構築します。",
       highlights: [
@@ -104,6 +121,7 @@ export default function Home() {
     },
     {
       title: "職人・工務店・製造業のブランドサイト",
+      icon: WrenchScrewdriverIcon,
       description:
         "匠の技・施工実績・職人ストーリーを伝え、BtoB/BtoC双方の信頼獲得を目指した構成。見積もり依頼フォーム、CAD図面・製品カタログのダウンロード、補助金情報など専門性をPRします。",
       highlights: [
@@ -114,6 +132,7 @@ export default function Home() {
     },
     {
       title: "飲食店・カフェ・宿泊施設の集客設計",
+      icon: BuildingStorefrontIcon,
       description:
         "飲食店・カフェ・居酒屋・宿泊施設などローカル検索に強い導線を構築。Googleマップ対策、メニュー管理、ネット予約、季節イベントLP制作、インバウンド向け多言語化まで対応します。",
       highlights: [
@@ -124,6 +143,7 @@ export default function Home() {
     },
     {
       title: "クリニック・歯科・美容医療サイト",
+      icon: HeartIcon,
       description:
         "医療広告ガイドライン・薬機法に配慮したコンテンツ制作と動線設計。ネット予約、初診案内、症例写真、AIによるFAQ生成、英語ページなど患者様の不安を解消する情報を整備します。",
       highlights: [
@@ -232,7 +252,8 @@ export default function Home() {
   };
 
   return (
-    <main className={`${styles.page} ${zenKaku.className} pb-16`}>
+    // 浮いているナビの裏まで背景色を伸ばす（Header の余白分だけ上へずらす）
+    <main className={`${styles.page} ${zenKaku.className} -mt-20 pb-16 pt-20 md:-mt-24 md:pt-24`}>
       <Script
         id="service-structured-data"
         type="application/ld+json"
@@ -248,200 +269,150 @@ export default function Home() {
         <MyDrawer />
       </div>
 
-      {/* ヒーロー */}
-      <section className="mx-auto max-w-6xl px-6 pt-16 pb-14 md:pt-24 md:pb-20">
-        <div className="grid gap-12 md:grid-cols-[1.15fr_0.85fr] md:items-start">
-          <div>
-            <h1
-              className={`${shipporiAntiqueB1.className} text-5xl leading-[1.15] md:text-6xl`}
-            >
-              速い。安い。
-              <br />
-              売れる。
-            </h1>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-[#5b5748] md:text-lg">
-              名古屋を拠点に、美容室・工務店・クリニックなど地域の中小事業者向けにNext.js製の高速サイトを制作しています。打ち合わせから公開後の運用まで、外注せず自社だけで対応します。
-            </p>
-            <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4 text-sm font-bold">
-              <Link
-                href="/contact"
-                className="border-b-2 border-[#15181d] pb-1 transition-colors hover:border-[#f0b429]"
+      {/* ヒーロー：コピーは3Dカード、指標はBento Grid */}
+      <section className="mx-auto max-w-6xl px-6 pt-8 pb-12 md:pt-14 md:pb-16">
+        <div className="grid gap-4 md:grid-cols-[1.25fr_0.75fr] md:items-stretch">
+          <CardContainer
+            containerClassName="block py-0"
+            className="h-full w-full"
+          >
+            <CardBody className="relative h-full w-full rounded-[1.75rem] border border-white/60 bg-[#fffaf9] p-7 shadow-[0_30px_60px_-30px_rgba(21,24,29,0.55)] md:p-12">
+              <CardItem translateZ={20}>
+                <CardBadge>NAGOYA WEB PRODUCTION</CardBadge>
+              </CardItem>
+              <CardItem
+                as="h1"
+                translateZ={60}
+                className={`${shipporiAntiqueB1.className} mt-6 text-[2rem] leading-[1.3] sm:text-5xl md:text-[3.25rem]`}
               >
-                無料で相談する
-              </Link>
-              <Link
-                href="/works"
-                className="border-b-2 border-transparent pb-1 text-[#5b5748] transition-colors hover:border-[#15181d] hover:text-[#15181d]"
+                モダンデザインと
+                <br />
+                高性能の
+                <span className="whitespace-nowrap bg-[linear-gradient(transparent_62%,#aaacff_62%)] px-1">
+                  WEBサイト
+                </span>
+              </CardItem>
+              <CardItem
+                as="p"
+                translateZ={30}
+                className="mt-6 max-w-md text-base leading-relaxed text-[#4a4d55] md:text-lg"
               >
-                制作実績を見る
-              </Link>
-              <a
-                href="#document"
-                className="border-b-2 border-transparent pb-1 text-[#5b5748] transition-colors hover:border-[#15181d] hover:text-[#15181d]"
+                名古屋を拠点に、美容室・工務店・クリニックなど地域の中小事業者向けにNext.js製の高速サイトを制作しています。打ち合わせから公開後の運用まで、外注せず自社だけで対応します。
+              </CardItem>
+              <CardItem
+                translateZ={45}
+                className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4 text-sm font-bold"
               >
-                資料をダウンロード
-              </a>
-            </div>
-          </div>
-
-          <div className={styles.scale}>
-            {measures.map((m) => (
-              <div key={m.label} className={styles.scaleRow}>
-                <p className="text-xs font-bold text-[#5b5748]">
-                  {m.label}
-                  <span className="ml-2 font-normal text-[#8a8370]">
-                    {m.note}
-                  </span>
-                </p>
-                <p
-                  className={`${shipporiAntiqueB1.className} mt-1 text-3xl md:text-4xl`}
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#ff4a3f] px-7 py-3 text-[#15181d] shadow-[0_10px_24px_-12px_rgba(255,74,63,0.9)] transition hover:brightness-95"
                 >
-                  {m.value}
-                </p>
-              </div>
+                  無料で相談する
+                </Link>
+                <Link
+                  href="/works"
+                  className="border-b-2 border-transparent pb-1 text-[#4a4d55] transition-colors hover:border-[#aaacff] hover:text-[#15181d]"
+                >
+                  制作実績を見る
+                </Link>
+                <a
+                  href="#document"
+                  className="border-b-2 border-transparent pb-1 text-[#4a4d55] transition-colors hover:border-[#aaacff] hover:text-[#15181d]"
+                >
+                  資料をダウンロード
+                </a>
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+
+          <BentoGrid className="mx-0 w-full max-w-none grid-cols-2 gap-3 md:auto-rows-auto md:grid-cols-2">
+            {measures.map((m) => (
+              <BentoCell
+                key={m.label}
+                innerClassName="justify-center p-4 md:p-5"
+                icon={<CardBadge>{m.label}</CardBadge>}
+                title={
+                  <span
+                    className={`${shipporiAntiqueB1.className} mt-2 block whitespace-nowrap text-lg md:text-[1.4rem]`}
+                  >
+                    {m.value}
+                  </span>
+                }
+                description={<span className="text-xs">{m.note}</span>}
+              />
             ))}
-          </div>
+          </BentoGrid>
         </div>
       </section>
+
+      {/* デザインギャラリー */}
+      <WorksGallery />
 
       {/* 速い */}
-      <section id="speed" className={`${styles.band} mx-auto max-w-6xl px-6`}>
-        <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
-          <div>
-            <IconTile src="/fastIcon.webp" label="速い" />
-            <p className={`${shipporiAntiqueB1.className} mt-6 text-6xl md:text-7xl`}>
-              0
-            </p>
-            <p className="mt-2 text-lg font-bold">
-              リロードで止まらないサイト
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
-              WordPressより高速に動く、SPA・PWA対応のサイトを作ります。ページを移るたびに読み込みが入らないので、見ている人を待たせません。
-            </p>
-          </div>
-          <div>
-            <div className={styles.specList}>
-              {speedPoints.map((item) => (
-                <div key={item.title} className={styles.specItem}>
-                  <p className="font-bold">{item.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-[#5b5748]">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <div className={`${styles.pullquote} mt-8`}>
-              <p className="text-sm leading-relaxed text-[#5b5748]">
-                表示が遅いサイトは、半数以上の人がそのまま離れてしまうといわれています。速さは使いやすさだけでなく、検索での見つかりやすさにも直結します。
-              </p>
-            </div>
-          </div>
-        </div>
-        <LighthouseScores />
-      </section>
+      <FeatureBento
+        id="speed"
+        icon={<IconTile src="/fastIcon.webp" label="速い" />}
+        big="0"
+        heading="リロードで止まらないサイト"
+        text="WordPressより高速に動く、SPA・PWA対応のサイトを作ります。ページを移るたびに読み込みが入らないので、見ている人を待たせません。"
+        points={speedPoints}
+        quote="表示が遅いサイトは、半数以上の人がそのまま離れてしまうといわれています。速さは使いやすさだけでなく、検索での見つかりやすさにも直結します。"
+      >
+        <GlowCard className="mt-4" innerClassName="md:p-10">
+          <LighthouseScores />
+        </GlowCard>
+      </FeatureBento>
 
       {/* 安い */}
-      <section id="price" className={`${styles.band} mx-auto max-w-6xl px-6`}>
-        <div className="grid gap-10 md:grid-cols-[1.2fr_0.8fr] md:gap-16">
-          <div className="md:order-1">
-            <div className={styles.specList}>
-              {pricePoints.map((item) => (
-                <div key={item.title} className={styles.specItem}>
-                  <p className="font-bold">{item.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-[#5b5748]">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <div className={`${styles.pullquote} mt-8`}>
-              <p className="text-sm leading-relaxed text-[#5b5748]">
-                「安かろう悪かろう」ではありません。開発から運用まで一人で担当するからこそ伝達のロスがなく、ご相談から納品まで誠実に対応できます。
-              </p>
-            </div>
-          </div>
-          <div className="md:order-2">
-            <IconTile src="/cheapIcon.webp" label="安い" />
-            <p
-              className={`${shipporiAntiqueB1.className} mt-6 text-5xl md:text-6xl`}
-            >
-              3万円〜
-            </p>
-            <p className="mt-2 text-lg font-bold">1ページあたりの制作費</p>
-            <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
-              最新のフレームワークで開発時間を短縮し、営業・打ち合わせまで自社スタッフが担当することで、外注費や中間マージンを省いています。
-            </p>
-          </div>
-        </div>
-      </section>
+      <FeatureBento
+        id="price"
+        reverse
+        icon={<IconTile src="/cheapIcon.webp" label="安い" />}
+        big="3万円〜"
+        heading="1ページあたりの制作費"
+        text="最新のフレームワークで開発時間を短縮し、営業・打ち合わせまで自社スタッフが担当することで、外注費や中間マージンを省いています。"
+        points={pricePoints}
+        quote="「安かろう悪かろう」ではありません。開発から運用まで一人で担当するからこそ伝達のロスがなく、ご相談から納品まで誠実に対応できます。"
+      />
 
       {/* 売れる */}
-      <section id="sell" className={`${styles.band} mx-auto max-w-6xl px-6`}>
-        <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
-          <div>
-            <IconTile src="/buyIcon.webp" label="売れる" />
-            <p className={`${shipporiAntiqueB1.className} mt-6 text-6xl md:text-7xl`}>
-              理由
-            </p>
-            <p className="mt-2 text-lg font-bold">
-              売れるサイトには、理由があります
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
-              デザインだけでなく、導線設計・文章構成・ユーザー心理までを意識した「成果の出る」サイトを制作します。
-            </p>
-          </div>
-          <div>
-            <div className={styles.specList}>
-              {sellPoints.map((item) => (
-                <div key={item.title} className={styles.specItem}>
-                  <p className="font-bold">{item.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-[#5b5748]">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <div className={`${styles.pullquote} mt-8`}>
-              <p className="text-sm leading-relaxed text-[#5b5748]">
-                見た目が整っているだけでは売れません。行動を起こしやすい導線と検索に強い作りを組み合わせて、「見られる」を「売れる」に変えます。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FeatureBento
+        id="sell"
+        icon={<IconTile src="/buyIcon.webp" label="売れる" />}
+        big="理由"
+        heading="売れるサイトには、理由があります"
+        text="デザインだけでなく、導線設計・文章構成・ユーザー心理までを意識した「成果の出る」サイトを制作します。"
+        points={sellPoints}
+        quote="見た目が整っているだけでは売れません。行動を起こしやすい導線と検索に強い作りを組み合わせて、「見られる」を「売れる」に変えます。"
+      />
 
-      {/* 守れる */}
-      <section id="security" className={`${styles.band} mx-auto max-w-6xl px-6`}>
-        <div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
-          <div>
-            <IconTile label="守れる">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-full w-full text-white"
-                aria-hidden="true"
-              >
-                <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z" />
-                <path d="m8.8 12.2 2.3 2.3 4.3-4.6" />
-              </svg>
-            </IconTile>
-            <p className={`${shipporiAntiqueB1.className} mt-6 text-6xl md:text-7xl`}>
-              PHP 0
-            </p>
-            <p className="mt-2 text-lg font-bold">
-              狙われる入口を、最初から作らない
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
-              WordPressをはじめとするPHP製のサイトは、プログラム・データベース・管理画面がすべて公開サーバー上で動くため、攻撃の入口が多くなりがちです。REEWA
-              WEBのサイトはPHPを使わず、事前に生成したページを配信する構成にしています。
-            </p>
-          </div>
-          <div>
+      {/* 守れる：比較表を横長のカードに入れる */}
+      <section id="security" className="mx-auto max-w-6xl px-6 py-8 md:py-10">
+        <BentoGrid className="mx-0 max-w-none md:auto-rows-auto">
+          <BentoCell
+            className="md:row-span-2"
+            header={
+              <IconTile label="守れる">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-full w-full text-white"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z" />
+                  <path d="m8.8 12.2 2.3 2.3 4.3-4.6" />
+                </svg>
+              </IconTile>
+            }
+            title={<FeatureTitle big="PHP 0" heading="狙われる入口を、最初から作らない" />}
+            description="WordPressをはじめとするPHP製のサイトは、プログラム・データベース・管理画面がすべて公開サーバー上で動くため、攻撃の入口が多くなりがちです。REEWA WEBのサイトはPHPを使わず、事前に生成したページを配信する構成にしています。"
+          />
+          <GlowCard className="md:col-span-2">
             <div className={styles.compareTable}>
               <div className={styles.compareHead}>
                 <span />
@@ -451,24 +422,23 @@ export default function Home() {
               {securityComparison.map((row) => (
                 <div key={row.label} className={styles.compareRow}>
                   <p className="text-sm font-bold">{row.label}</p>
-                  <p className="text-sm leading-relaxed text-[#8a8370]">
+                  <p className="text-sm leading-relaxed text-[#6b6f78]">
                     <span className="mr-2 text-xs font-bold md:hidden">PHP製</span>
                     {row.php}
                   </p>
                   <p className="text-sm font-bold leading-relaxed">
-                    <span className="mr-2 text-xs text-[#b7811a] md:hidden">REEWA WEB</span>
+                    <span className="mr-2 text-xs text-[#6d70ff] md:hidden">REEWA WEB</span>
                     {row.reewa}
                   </p>
                 </div>
               ))}
             </div>
-            <div className={`${styles.pullquote} mt-8`}>
-              <p className="text-sm leading-relaxed text-[#5b5748]">
-                どんな仕組みでも、脆弱性を完全にゼロにすることはできません。だからこそ攻撃される入口そのものを減らす作りを選び、使っているライブラリのセキュリティ更新も継続して適用しています。
-              </p>
-            </div>
-          </div>
-        </div>
+          </GlowCard>
+          <QuoteCell
+            className="md:col-span-2"
+            text="どんな仕組みでも、脆弱性を完全にゼロにすることはできません。だからこそ攻撃される入口そのものを減らす作りを選び、使っているライブラリのセキュリティ更新も継続して適用しています。"
+          />
+        </BentoGrid>
       </section>
 
       {/* 資料ダウンロード */}
@@ -476,203 +446,248 @@ export default function Home() {
 
       {/* 業種別 */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-2xl font-bold md:text-3xl">
-          業種に合わせて、集客の設計を変える
-        </h2>
-        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#5b5748] md:text-base">
-          美容、工務店、飲食、クリニックなど、業種ごとに効果的な見せ方と導線は変わります。それぞれの業種で実際に重視しているポイントをまとめました。
-        </p>
-        <div>
+        <SectionHeading
+          title="業種に合わせて、集客の設計を変える"
+          lead="美容、工務店、飲食、クリニックなど、業種ごとに効果的な見せ方と導線は変わります。それぞれの業種で実際に重視しているポイントをまとめました。"
+        />
+        <BentoGrid className="mx-0 mt-10 max-w-none md:auto-rows-auto md:grid-cols-2">
           {verticalFocus.map((item) => (
-            <div key={item.title} className={styles.verticalRow}>
-              <div className="grid gap-6 md:grid-cols-[0.9fr_1.6fr] md:gap-12">
-                <div>
-                  <h3 className="text-xl font-bold">{item.title}</h3>
-                  <Link
-                    href="/contact"
-                    className="mt-4 inline-block border-b-2 border-transparent text-sm font-bold text-[#5b5748] transition-colors hover:border-[#15181d] hover:text-[#15181d]"
-                  >
-                    相談する
-                  </Link>
-                </div>
-                <div>
-                  <p className="text-sm leading-relaxed text-[#5b5748]">
-                    {item.description}
-                  </p>
-                  <ul className="mt-4 space-y-1.5 text-xs leading-relaxed text-[#5b5748]">
+            <BentoCell
+              key={item.title}
+              icon={
+                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#ff4a3f]/12 text-[#e0372d]">
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                </span>
+              }
+              title={<span className="mt-3 block text-lg">{item.title}</span>}
+              description={
+                <>
+                  <p>{item.description}</p>
+                  <ul className="mt-4 space-y-1.5 text-xs">
                     {item.highlights.map((h) => (
                       <li key={h} className="flex gap-2">
                         <span
                           aria-hidden="true"
-                          className="mt-[0.45em] h-[3px] w-[3px] shrink-0 rounded-full bg-[#f0b429]"
+                          className="mt-[0.4em] h-1.5 w-1.5 shrink-0 rounded-full bg-[#aaacff]"
                         />
                         <span>{h}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-              </div>
-            </div>
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-block border-b-2 border-[#aaacff] pb-0.5 text-sm font-bold text-[#15181d]"
+                  >
+                    この業種で相談する
+                  </Link>
+                </>
+              }
+            />
           ))}
-        </div>
+        </BentoGrid>
       </section>
 
-      {/* 制作実績 */}
+      {/* 制作実績：3Dカード */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="text-2xl font-bold md:text-3xl">制作実績</h2>
-        <p className="mt-6 text-xl font-bold">{featuredWork.title}</p>
-        <div className={`${styles.caseBand} mt-4 p-8 md:p-12`}>
-          <div className="grid gap-10 md:grid-cols-2 md:items-center">
-            <div>
-              <p className="text-sm leading-relaxed text-[#c9c4ad]">
-                {featuredWork.description}
-              </p>
-              <div className="mt-8">
-                {featuredWork.stats.map((s) => (
-                  <div
-                    key={s.label}
-                    className={`${styles.caseStat} flex items-baseline justify-between gap-4 py-4`}
-                  >
-                    <span className="text-sm text-[#c9c4ad]">{s.label}</span>
-                    <span
-                      className={`${shipporiAntiqueB1.className} text-3xl text-[#f0b429]`}
+        <SectionHeading title="制作実績" />
+
+        <CardContainer containerClassName="mt-10 block py-0" className="w-full">
+          <CardBody className="h-auto w-full rounded-[1.75rem] border border-white/60 bg-[#fffaf9] p-7 shadow-[0_30px_60px_-30px_rgba(21,24,29,0.55)] md:p-12">
+            <div className="grid gap-10 md:grid-cols-2 md:items-center">
+              <div>
+                <CardItem translateZ={25}>
+                  <CardBadge>CASE STUDY</CardBadge>
+                </CardItem>
+                <CardItem
+                  as="h3"
+                  translateZ={40}
+                  className="mt-4 text-2xl font-bold"
+                >
+                  {featuredWork.title}
+                </CardItem>
+                <CardItem
+                  as="p"
+                  translateZ={25}
+                  className="mt-4 text-sm leading-relaxed text-[#4a4d55]"
+                >
+                  {featuredWork.description}
+                </CardItem>
+                <CardItem translateZ={50} className="mt-6 w-full">
+                  {featuredWork.stats.map((s) => (
+                    <div
+                      key={s.label}
+                      className="flex items-baseline justify-between gap-4 border-t border-[#15181d]/10 py-4"
                     >
-                      {s.value}
-                    </span>
-                  </div>
-                ))}
+                      <span className="text-sm text-[#4a4d55]">{s.label}</span>
+                      <span
+                        className={`${shipporiAntiqueB1.className} text-3xl text-[#e0372d]`}
+                      >
+                        {s.value}
+                      </span>
+                    </div>
+                  ))}
+                </CardItem>
+                <CardItem
+                  as="a"
+                  translateZ={30}
+                  href={featuredWork.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block border-b-2 border-[#ff4a3f] pb-1 text-sm font-bold"
+                >
+                  サイトを見る
+                </CardItem>
               </div>
-              <a
-                href={featuredWork.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-block border-b-2 border-[#f0b429] pb-1 text-sm font-bold"
+              <CardItem
+                translateZ={90}
+                rotateX={4}
+                rotateZ={-2}
+                className="w-full overflow-hidden rounded-xl shadow-[0_24px_48px_-24px_rgba(21,24,29,0.6)]"
               >
-                サイトを見る
-              </a>
+                <Image
+                  src="/sodeno.png"
+                  alt="袖野建具様のホームページ紹介画像"
+                  width={1200}
+                  height={800}
+                  className="h-auto w-full object-cover"
+                />
+              </CardItem>
             </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                src="/sodeno.png"
-                alt="袖野建具様のホームページ紹介画像"
-                width={1200}
-                height={800}
-                className="h-auto w-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
+          </CardBody>
+        </CardContainer>
 
         {otherWorks.map((work) => (
-          <a
+          <CardContainer
             key={work.url}
-            href={work.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${styles.workRow} group mt-10 grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center`}
+            containerClassName="mt-5 block py-0"
+            className="w-full"
           >
-            <div className="overflow-hidden rounded-xl bg-white">
-              <Image
-                src={work.image}
-                alt={`${work.title}のホームページ紹介画像`}
-                width={1200}
-                height={630}
-                className="h-auto w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-              />
-            </div>
-            <div>
-              <h3 className="text-xl font-bold md:text-2xl">{work.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-[#5b5748]">
-                {work.description}
-              </p>
-              <ul className="mt-5 flex flex-wrap gap-2">
-                {work.tags.map((tag) => (
-                  <li
-                    key={tag}
-                    className="rounded-full border border-[#15181d]/20 px-3 py-1 text-xs font-bold text-[#5b5748]"
+            <CardBody className="h-auto w-full rounded-[1.75rem] border border-white/60 bg-[#fffaf9] p-7 shadow-[0_30px_60px_-30px_rgba(21,24,29,0.55)] md:p-12">
+              <div className="grid gap-8 md:grid-cols-[0.9fr_1.1fr] md:items-center">
+                <CardItem
+                  translateZ={80}
+                  rotateZ={2}
+                  className="w-full overflow-hidden rounded-xl bg-white ring-1 ring-[#15181d]/10"
+                >
+                  <Image
+                    src={work.image}
+                    alt={`${work.title}のホームページ紹介画像`}
+                    width={1200}
+                    height={630}
+                    className="h-auto w-full object-cover"
+                  />
+                </CardItem>
+                <div>
+                  <CardItem as="h3" translateZ={40} className="text-xl font-bold md:text-2xl">
+                    {work.title}
+                  </CardItem>
+                  <CardItem
+                    as="p"
+                    translateZ={25}
+                    className="mt-4 text-sm leading-relaxed text-[#4a4d55]"
                   >
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-              <span className="mt-6 inline-block border-b-2 border-[#f0b429] pb-1 text-sm font-bold">
-                サイトを見る
-              </span>
-            </div>
-          </a>
+                    {work.description}
+                  </CardItem>
+                  <CardItem as="ul" translateZ={35} className="mt-5 flex flex-wrap gap-2">
+                    {work.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="rounded-full bg-[#aaacff]/30 px-3 py-1 text-xs font-bold text-[#2a2c5a]"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </CardItem>
+                  <CardItem
+                    as="a"
+                    translateZ={30}
+                    href={work.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-block border-b-2 border-[#ff4a3f] pb-1 text-sm font-bold"
+                  >
+                    サイトを見る
+                  </CardItem>
+                </div>
+              </div>
+            </CardBody>
+          </CardContainer>
         ))}
 
         <Link
           href="/works"
-          className="mt-10 inline-block border-b-2 border-transparent pb-1 text-sm font-bold text-[#5b5748] transition-colors hover:border-[#15181d] hover:text-[#15181d]"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#fffaf9] px-6 py-3 text-sm font-bold text-[#15181d] shadow-[0_10px_30px_-18px_rgba(21,24,29,0.45)] transition hover:bg-white"
         >
-          制作実績をすべて見る
+          制作実績をすべて見る →
         </Link>
       </section>
 
-      {/* FAQ */}
+      {/* FAQ：shadcn の Accordion を1問ずつ光るカードに入れる */}
       <section id="faq" className="mx-auto max-w-4xl px-6 py-16">
-        <h2 className="text-2xl font-bold md:text-3xl">よくあるご質問</h2>
-        <p className="mt-3 text-sm leading-relaxed text-[#5b5748] md:text-base">
-          SEOや集客、制作フローについてよく聞かれることをまとめました。気になる点があれば、お気軽にご相談ください。
-        </p>
-        <div className="mt-10">
-          {faqItems.map((item) => (
-            <details key={item.question} className={`${styles.faqItem} group py-5`}>
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left font-bold [&::-webkit-details-marker]:hidden">
-                <span>{item.question}</span>
-                <span className="shrink-0 text-xl font-normal text-[#5b5748] transition-transform duration-300 group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 text-sm leading-relaxed text-[#5b5748]">
-                {item.answer}
-              </p>
-            </details>
+        <SectionHeading
+          title="よくあるご質問"
+          lead="SEOや集客、制作フローについてよく聞かれることをまとめました。気になる点があれば、お気軽にご相談ください。"
+        />
+        <Accordion
+          type="multiple"
+          defaultValue={["faq-0"]}
+          className="mt-10 space-y-3"
+        >
+          {faqItems.map((item, i) => (
+            <GlowCard key={item.question} innerClassName="p-0 md:p-0">
+              <AccordionItem value={`faq-${i}`} className="border-b-0">
+                <AccordionTrigger className="gap-6 px-6 py-5 text-left text-base font-bold md:px-7">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6 text-sm leading-relaxed text-[#4a4d55] md:px-7">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            </GlowCard>
           ))}
-        </div>
+        </Accordion>
       </section>
 
       {/* CTA */}
-      <section
-        id="contact"
-        className={`${styles.ctaBand} mx-auto max-w-6xl rounded-2xl px-6 py-16 text-center md:px-16`}
-      >
-        <h2 className={`${shipporiAntiqueB1.className} text-3xl md:text-4xl`}>
-          まずは、話してみませんか。
-        </h2>
-        <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#c9c4ad] md:text-base">
-          料金や進め方のご相談だけでも大丈夫です。スピード感のあるやりとりで、公開までお付き合いします。
-        </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-[#f0b429] px-8 py-3 text-sm font-bold text-[#15181d] transition hover:brightness-95"
-          >
-            無料で相談する
-          </Link>
-          <a
-            href="https://www.instagram.com/reewa_web/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-[#eae6da]/40 px-8 py-3 text-sm font-bold text-[#eae6da] transition hover:border-[#eae6da]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              className="h-5 w-5"
-              aria-hidden="true"
+      <section id="contact" className="mx-auto max-w-6xl px-6">
+        <GlowCard innerClassName="px-6 py-14 text-center md:px-16 md:py-16">
+          <CardBadge>CONTACT</CardBadge>
+          <h2 className={`${shipporiAntiqueB1.className} mt-5 text-3xl md:text-4xl`}>
+            まずは、話してみませんか。
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#4a4d55] md:text-base">
+            料金や進め方のご相談だけでも大丈夫です。スピード感のあるやりとりで、公開までお付き合いします。
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full bg-[#ff4a3f] px-8 py-3 text-sm font-bold text-[#15181d] shadow-[0_10px_24px_-12px_rgba(255,74,63,0.9)] transition hover:brightness-95"
             >
-              <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
-              <path d="M16 11.37a4.5 4.5 0 1 1-3.11-4.25" />
-              <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
-            </svg>
-            Instagramで相談する
-          </a>
-        </div>
+              無料で相談する
+            </Link>
+            <a
+              href="https://www.instagram.com/reewa_web/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-[#aaacff] bg-[#aaacff]/20 px-8 py-3 text-sm font-bold text-[#15181d] transition hover:bg-[#aaacff]/40"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                className="h-5 w-5"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                <path d="M16 11.37a4.5 4.5 0 1 1-3.11-4.25" />
+                <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
+              </svg>
+              Instagramで相談する
+            </a>
+          </div>
+        </GlowCard>
       </section>
     </main>
   );
@@ -705,9 +720,108 @@ function IconTile({
           children
         )}
       </div>
-      <p className="text-sm font-bold tracking-[0.2em] text-[#5b5748]">
+      <p className="text-sm font-bold tracking-[0.2em] text-[#4a4d55]">
         {label}
       </p>
+    </div>
+  );
+}
+
+type Point = { title: string; text: string };
+
+// 「速い・安い・売れる」の共通レイアウト。
+// 大きいメインのカード1枚＋ポイント3枚＋ひと言の5マスを Bento Grid で組む
+function FeatureBento({
+  id,
+  icon,
+  big,
+  heading,
+  text,
+  points,
+  quote,
+  reverse = false,
+  children,
+}: {
+  id: string;
+  icon: ReactNode;
+  big: string;
+  heading: string;
+  text: string;
+  points: Point[];
+  quote: string;
+  reverse?: boolean;
+  children?: ReactNode;
+}) {
+  return (
+    <section id={id} className="mx-auto max-w-6xl px-6 py-8 md:py-10">
+      <BentoGrid className="mx-0 max-w-none md:auto-rows-auto">
+        <BentoCell
+          className={
+            reverse
+              ? "md:col-start-3 md:row-span-2 md:row-start-1"
+              : "md:row-span-2"
+          }
+          header={icon}
+          title={<FeatureTitle big={big} heading={heading} />}
+          description={text}
+        />
+        {points.map((p, i) => (
+          <BentoCell
+            key={p.title}
+            icon={
+              <span
+                className={`${shipporiAntiqueB1.className} text-2xl text-[#ff4a3f]`}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </span>
+            }
+            title={p.title}
+            description={p.text}
+          />
+        ))}
+        <QuoteCell text={quote} />
+      </BentoGrid>
+      {children}
+    </section>
+  );
+}
+
+function FeatureTitle({ big, heading }: { big: string; heading: string }) {
+  return (
+    <>
+      <span
+        className={`${shipporiAntiqueB1.className} mt-4 block text-6xl font-normal md:text-7xl`}
+      >
+        {big}
+      </span>
+      <span className="mt-3 block text-lg">{heading}</span>
+    </>
+  );
+}
+
+// ひと言コメント。ラベンダーの縦線で引用らしく見せる
+function QuoteCell({ text, className }: { text: string; className?: string }) {
+  return (
+    <GlowCard className={className}>
+      <p className="border-l-[3px] border-[#aaacff] pl-4 text-sm leading-relaxed text-[#4a4d55]">
+        {text}
+      </p>
+    </GlowCard>
+  );
+}
+
+// 赤い背景の上に置くセクション見出し
+function SectionHeading({ title, lead }: { title: string; lead?: string }) {
+  return (
+    <div>
+      <h2 className={`${shipporiAntiqueB1.className} text-3xl md:text-4xl`}>
+        {title}
+      </h2>
+      {lead && (
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#3d1410] md:text-base">
+          {lead}
+        </p>
+      )}
     </div>
   );
 }
