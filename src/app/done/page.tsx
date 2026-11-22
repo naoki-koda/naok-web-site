@@ -1,28 +1,26 @@
-
-import { kosugiMaru } from '@/app/ui/fonts';
-import Link from 'next/link';
-
+import { primaryButton } from "@/app/ui/buttons";
+import { GlowCard } from "@/app/ui/cards";
+import { shipporiAntiqueB1 } from "@/app/ui/fonts";
+import { PageShell } from "@/app/ui/page-parts";
+import Link from "next/link";
 
 export default function Page() {
   return (
-    <main className="flex justify-center items-center h-screen">
-      <div className="text-center">
-        <div className="text-6xl animate-bounce">🎈</div>
-        <h1 className={`text-4xl mb-4 ${kosugiMaru.className}`}>
-          メールの送信ありがとうございました。
-        </h1>
-        <p className="text-2xl font-semibold mb-4">
-          ご確認ありがとうございました。
-        </p>
-        <Link
-          href="/"
-          className="inline-block rounded-md bg-orange-400 px-6 py-2 text-white shadow-md shadow-orange-300/30 transition hover:brightness-105"
-        >
-          トップページに戻る
-        </Link>
-
-      </div>
-
-    </main >
-  )
+    <PageShell>
+      <section className="mx-auto flex min-h-[70vh] max-w-3xl items-center px-6">
+        <GlowCard className="w-full" innerClassName="px-6 py-14 text-center md:p-16">
+          <div className="text-6xl animate-bounce">🎈</div>
+          <h1 className={`${shipporiAntiqueB1.className} mt-4 text-3xl md:text-4xl`}>
+            メールの送信ありがとうございました。
+          </h1>
+          <p className="mt-4 text-sm text-[#4a4d55] md:text-base">
+            内容を確認のうえ、1営業日以内にメールでご連絡いたします。
+          </p>
+          <Link href="/" className={`${primaryButton} mt-8`}>
+            トップページに戻る
+          </Link>
+        </GlowCard>
+      </section>
+    </PageShell>
+  );
 }

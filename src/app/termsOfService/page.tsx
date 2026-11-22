@@ -1,7 +1,12 @@
+import { GlowCard } from "@/app/ui/cards";
+import { PageHero, PageShell } from "@/app/ui/page-parts";
+
 export default function TermsOfService() {
   return (
-    <main className="max-w-4xl mx-auto p-6 bg-white shadow-md rounded-md my-10">
-      <h1 className="text-3xl font-bold mb-6">ご利用規約</h1>
+    <PageShell>
+      <PageHero badge="TERMS OF SERVICE" title="ご利用規約" />
+      <section className="mx-auto max-w-6xl px-6">
+      <GlowCard innerClassName="text-sm leading-relaxed text-[#4a4d55] md:p-12 [&_h2]:text-[#15181d] [&_hr]:border-[#15181d]/10">
 
       <p className="mb-6">
         本規約は、nao.k（以下「当方」）が提供するWebサイトの開発、運用、保守サービス（以下「本サービス」）の利用条件を定めるものです。本サービスをご利用される方（以下「利用者」）は、本規約に同意したものとみなします。
@@ -94,6 +99,8 @@ export default function TermsOfService() {
         <p>愛知県名古屋市西区菊井1-33-23</p>
         <p>naoki.koda1997@gmail.com</p>
       </footer>
-    </main>
+      </GlowCard>
+      </section>
+    </PageShell>
   );
 }

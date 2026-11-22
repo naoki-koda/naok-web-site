@@ -1,4 +1,5 @@
-import { cn } from "@/app/lib/utils"; // 任意: classNamesをまとめる関数があると便利
+import { GlowCard } from "@/app/ui/cards";
+import { shipporiAntiqueB1 } from "@/app/ui/fonts";
 
 interface PricingCardProps {
   title: string;
@@ -12,39 +13,35 @@ interface PricingCardProps {
   className?: string;
 }
 
+// 初期費用の大きなカード。金額を中央に大きく見せる
 export default function InitPricingCard({
   title,
   subtitle,
   originalPrice,
   currentPrice,
   period,
-  yearlyTotal,
   note,
-  highlighted = false,
-  className = ''
+  className = "",
 }: PricingCardProps) {
   return (
-    <div
-      className={cn(
-        "rounded-xl border border-orange-200/70 bg-white/95 p-6 text-teal-950 shadow-lg shadow-orange-200/40 flex flex-col justify-between item-center w-full max-w-full",
-        highlighted ? "border-orange-400 shadow-orange-300/50" : "",
-        className
-      )}
+    <GlowCard
+      className={className}
+      innerClassName="flex flex-col items-center justify-center text-center md:p-10"
     >
-      <div className="text-center">
-        <h3 className="text-lg font-medium">{title}</h3>
-        <div className="mt-4">
-          <p className="text-sm text-gray-800 text-center">{originalPrice}</p>
-          <div className="inline-flex flex-col items-center gap-2 rounded-2xl bg-gradient-to-r from-orange-400/15 to-sky-400/15 px-6 py-3 shadow-inner shadow-orange-200/50">
-            <p className="text-4xl font-extrabold bg-gradient-to-r from-orange-400 to-sky-400 bg-clip-text text-transparent">
-              {currentPrice}
-            </p>
-            <span className="text-sm font-semibold text-orange-600/90">{period}</span>
-          </div>
-        </div>
+      <h2 className="text-lg font-bold">{title}</h2>
+      <p className="mt-1 text-sm text-[#4a4d55]">{subtitle}</p>
+      {originalPrice && (
+        <p className="mt-4 text-xs text-[#6b6f78]">{originalPrice}</p>
+      )}
+      <div className="mt-6 inline-flex flex-col items-center gap-1 rounded-2xl bg-[#ff4a3f]/10 px-8 py-5">
+        <p className={`${shipporiAntiqueB1.className} text-5xl text-[#e0372d]`}>
+          {currentPrice}
+        </p>
+        <span className="text-sm font-bold text-[#4a4d55]">{period}</span>
       </div>
-
-      <p className="text-xs text-slate-600 border-t border-orange-200/70 pt-4 mt-4">{note}</p>
-    </div>
+      <p className="mt-6 max-w-md text-xs leading-relaxed text-[#4a4d55]">
+        {note}
+      </p>
+    </GlowCard>
   );
 }

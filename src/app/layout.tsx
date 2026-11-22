@@ -161,7 +161,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-sans antialiased">
+      {/* サイト全体のメインカラー。浮いているナビの裏も同じ色にする */}
+      <body className="bg-[#ff4a3f] font-sans antialiased">
         <ThemeProvider>
           <Header />
           {children}

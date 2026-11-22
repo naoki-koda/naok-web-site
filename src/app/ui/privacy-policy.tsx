@@ -1,10 +1,15 @@
+import { GlowCard } from "@/app/ui/cards";
+import { shipporiAntiqueB1 } from "@/app/ui/fonts";
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-24">
-      <h1 className="text-3xl font-bold mb-6 text-center dark:text-white">個人情報保護方針</h1>
+    <div className="mx-auto max-w-6xl px-6 py-10">
+      <h2 className={`${shipporiAntiqueB1.className} text-3xl md:text-4xl`}>
+        個人情報保護方針
+      </h2>
 
-      <div className="max-h-96 overflow-y-scroll p-4 border rounded bg-white text-sm space-y-4 dark:text-gray-800">
+      <GlowCard className="mt-8" innerClassName="p-0 md:p-0">
+      <div className="max-h-96 space-y-4 overflow-y-scroll p-6 text-sm leading-relaxed text-[#4a4d55] md:p-8">
         <p>
           当サイト（以下「当社」）では、お客様の個人情報を適切かつ厳格に管理するために、以下のプライバシーポリシーを定め、これに基づいて運営いたします。
         </p>
@@ -52,11 +57,12 @@ export default function PrivacyPolicyPage() {
           当社は、関連法令およびその他の規範を遵守し、プライバシーポリシーの継続的な見直しと改善に努めます。
         </p>
 
-        <p className="text-xs text-gray-500 pt-4">
+        <p className="text-xs text-[#6b6f78] pt-4">
           制定日：2025年7月10日<br />
           お問い合わせ先：naoki.koda1997@gmail.com
         </p>
       </div>
+      </GlowCard>
     </div>
   );
 }

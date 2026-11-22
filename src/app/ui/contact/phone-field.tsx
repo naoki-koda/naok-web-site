@@ -34,10 +34,10 @@ export function PhoneField({
     <div>
       <label
         htmlFor={name}
-        className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+        className="flex items-center justify-between text-sm font-medium text-slate-800"
       >
         <span>電話番号</span>
-        <span className="text-xs font-semibold text-slate-400 dark:text-slate-500">
+        <span className="text-xs font-semibold text-slate-400">
           任意
         </span>
       </label>
@@ -52,8 +52,7 @@ export function PhoneField({
         value={displayValue}
         onChange={(e) => setDisplayValue(formatPhoneJP(e.target.value))}
         className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm text-slate-900 shadow-inner
-                   focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60
-                   dark:border-white/10 dark:bg-slate-950/70 dark:text-slate-100"
+                   focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
         aria-describedby={`${name}-hint ${name}-error`}
         aria-invalid={Boolean(error)}
       />

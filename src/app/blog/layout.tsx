@@ -1,4 +1,5 @@
 import A8AffiliateAd, { a8Ads } from "@/app/blog/A8AffiliateAd";
+import BlogFrame from "@/app/blog/BlogFrame";
 import BlogAdModal from "@/app/blog/BlogAdModal";
 import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
 import RakutenAffiliateAd from "@/app/blog/RakutenAffiliateAd";
@@ -64,7 +65,7 @@ const modalAds: Record<string, ReactNode> = {
 export default function BlogLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      {children}
+      <BlogFrame>{children}</BlogFrame>
       <BlogAdModal ads={modalAds} />
     </>
   );

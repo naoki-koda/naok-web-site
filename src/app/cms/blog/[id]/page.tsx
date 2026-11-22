@@ -1,3 +1,5 @@
+import { CardBadge } from "@/app/ui/cards";
+import { PageShell } from "@/app/ui/page-parts";
 import { microcms } from "@/lib/microcms";
 import Image from "next/image";
 import Link from "next/link";
@@ -23,30 +25,24 @@ export default async function BlogDetailPage({
     typeof post.category === "string" ? post.category : post.category?.name;
 
   return (
-    <main className="relative px-4 py-12">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(50%_45%_at_80%_0%,#ffd6e7,transparent_60%),radial-gradient(45%_45%_at_0%_10%,#d2f8ff,transparent_55%)]"
-      />
-      <div className="mx-auto max-w-3xl">
+    <PageShell>
+      <div className="mx-auto max-w-3xl px-6 pt-8">
         <Link
           href="/cms/blog"
-          className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 transition hover:text-zinc-900"
+          className="inline-flex items-center gap-2 rounded-full bg-[#fffaf9] px-5 py-2 text-sm font-bold text-[#15181d] shadow-[0_10px_30px_-18px_rgba(21,24,29,0.45)] transition hover:bg-white"
         >
           <span aria-hidden>←</span>
           ブログ一覧に戻る
         </Link>
 
-        <header className="mt-6 rounded-3xl border border-zinc-200/80 bg-white/90 p-6 shadow-sm sm:p-8">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-            Blog entry
-          </p>
-          <h1 className="mt-3 text-2xl font-semibold leading-tight text-zinc-900 sm:text-3xl">
+        <header className="mt-6 rounded-[1.75rem] border border-white/60 bg-[#fffaf9] p-6 shadow-[0_30px_60px_-30px_rgba(21,24,29,0.55)] sm:p-10">
+          <CardBadge>BLOG ENTRY</CardBadge>
+          <h1 className="mt-3 text-2xl font-semibold leading-tight text-[#15181d] sm:text-3xl">
             {post.title}
           </h1>
           <div className="mt-4 flex flex-wrap items-center gap-2 text-xs font-semibold text-zinc-600">
             {categoryLabel && (
-              <span className="rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-emerald-700">
+              <span className="rounded-full bg-[#aaacff]/30 px-2.5 py-1 text-[#2a2c5a]">
                 {categoryLabel}
               </span>
             )}
@@ -73,13 +69,13 @@ export default async function BlogDetailPage({
           )}
         </header>
 
-        <article className="mt-8 rounded-3xl border border-zinc-200/80 bg-white/90 p-6 shadow-sm sm:p-8">
+        <article className="mt-4 rounded-[1.75rem] border border-white/60 bg-[#fffaf9] p-6 shadow-[0_30px_60px_-30px_rgba(21,24,29,0.55)] sm:p-10">
           <div
             className={styles.post}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>
       </div>
-    </main>
+    </PageShell>
   );
 }

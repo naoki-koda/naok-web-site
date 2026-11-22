@@ -1,4 +1,12 @@
-import { kosugiMaru } from '@/app/ui/fonts';
+import { primaryButton } from '@/app/ui/buttons';
+import { BentoCell, GlowCard } from '@/app/ui/cards';
+import {
+  Chip,
+  PageHero,
+  PageShell,
+  SectionHeading,
+} from '@/app/ui/page-parts';
+import { BentoGrid } from '@/components/ui/bento-grid';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -121,71 +129,67 @@ export const metadata: Metadata = {
 
 export default function BlogIndexPage() {
   return (
-    <main className="bg-gradient-to-b from-slate-50 via-white to-slate-100">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-        <header className="rounded-3xl bg-white/90 p-10 shadow-lg shadow-slate-100 ring-1 ring-slate-100">
-          <p className="text-sm font-semibold uppercase tracking-widest text-amber-500">Blog Archive</p>
-          <h1 className={`mt-4 text-3xl font-bold text-slate-900 sm:text-4xl ${kosugiMaru.className}`}>
-            名古屋のお役立ちまとめ記事
-          </h1>
-          <p className="mt-4 text-base leading-relaxed text-slate-700">
-            専門店のリサーチ結果をまとめた記事を随時公開しています。施工エリアや打ち合わせ方法など、公式情報に基づいて整理しているので比較検討にご活用ください。
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3 text-sm text-slate-500">
-            <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1">#名古屋</span>
-            <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1">#職人ガイド</span>
-            <span className="inline-flex items-center rounded-full bg-slate-100 px-3 py-1">#まとめ記事</span>
-          </div>
-        </header>
+    <PageShell>
+      <PageHero
+        badge="BLOG ARCHIVE"
+        title="名古屋のお役立ちまとめ記事"
+        lead="専門店のリサーチ結果をまとめた記事を随時公開しています。施工エリアや打ち合わせ方法など、公式情報に基づいて整理しているので比較検討にご活用ください。"
+      >
+        <div className="flex flex-wrap gap-2">
+          <Chip>#名古屋</Chip>
+          <Chip>#職人ガイド</Chip>
+          <Chip>#まとめ記事</Chip>
+        </div>
+      </PageHero>
 
-        <section className="mt-12 grid gap-8 lg:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-6 py-6">
+        <SectionHeading title="記事一覧" />
+        <BentoGrid className="mx-0 mt-8 max-w-none md:auto-rows-auto md:grid-cols-2">
           {posts.map((post) => (
-            <article
+            <BentoCell
               key={post.slug}
-              className={`group rounded-3xl bg-gradient-to-br ${post.accent} p-1 shadow-lg shadow-slate-100 transition hover:-translate-y-1`}
-            >
-              <div className="h-full rounded-[26px] bg-white/90 p-8">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-slate-500">
-                  {post.readTime}
-                  <span aria-hidden="true">•</span>
-                  最新更新
-                </div>
-                <h2 className="mt-4 text-2xl font-bold text-slate-900">{post.title}</h2>
-                <p className="mt-3 text-sm leading-relaxed text-slate-700">{post.description}</p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <span key={tag} className="inline-flex items-center rounded-full border border-slate-100 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <Link
-                  href={post.slug}
-                  className="mt-8 inline-flex items-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-700"
-                >
-                  記事を読む
-                  <span className="ml-2" aria-hidden="true">
-                    →
-                  </span>
+              icon={
+                <span className="text-xs font-bold tracking-widest text-[#6b6f78]">
+                  {post.readTime}で読めます
+                </span>
+              }
+              title={
+                <Link href={post.slug} className="mt-2 block text-xl hover:underline">
+                  {post.title}
                 </Link>
-              </div>
-            </article>
+              }
+              description={
+                <>
+                  <p>{post.description}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {post.tags.map((tag) => (
+                      <Chip key={tag}>{tag}</Chip>
+                    ))}
+                  </div>
+                  <Link
+                    href={post.slug}
+                    className="mt-6 inline-block border-b-2 border-[#ff4a3f] pb-0.5 text-sm font-bold text-[#15181d]"
+                  >
+                    記事を読む →
+                  </Link>
+                </>
+              }
+            />
           ))}
-        </section>
+        </BentoGrid>
+      </section>
 
-        <section className="mt-16 rounded-3xl bg-slate-900 p-8 text-slate-100">
-          <h2 className="text-2xl font-semibold">更新予定・リクエスト</h2>
-          <p className="mt-4 text-sm leading-relaxed text-slate-300">
+      <section className="mx-auto max-w-6xl px-6 py-10">
+        <GlowCard innerClassName="md:p-10">
+          <h2 className="text-2xl font-bold">更新予定・リクエスト</h2>
+          <p className="mt-4 text-sm leading-relaxed text-[#4a4d55]">
             今後は塗装、防水、リノベーション会社の比較記事も公開していきます。「この業種をまとめて欲しい」などのリクエストがあれば、お問い合わせフォームからお知らせください。
           </p>
-          <Link
-            href="/contact"
-            className="mt-6 inline-flex items-center rounded-full bg-amber-400/90 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:bg-amber-300"
-          >
+          <Link href="/contact" className={`${primaryButton} mt-6`}>
             お問い合わせへ
           </Link>
-        </section>
-      </div>
-    </main>
+        </GlowCard>
+      </section>
+    </PageShell>
   );
 }

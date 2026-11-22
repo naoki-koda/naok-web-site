@@ -1,176 +1,120 @@
 "use client";
 
-import { kosugiMaru } from "@/app/ui/fonts";
-import type { Variants } from "framer-motion";
-import { motion, MotionConfig } from "framer-motion";
-import Link from "next/link";
+import { CardBadge } from "@/app/ui/cards";
+import {
+  BackToTop,
+  Chip,
+  PageHero,
+  PageShell,
+} from "@/app/ui/page-parts";
+import WorksGallery from "@/app/ui/WorksGallery";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Image from "next/image";
 
-const container: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
-      staggerChildren: 0.08,
-    },
+const works = [
+  {
+    title: "袖野建具店 様",
+    url: "https://www.sodeno-tategu.jp/",
+    image: { src: "/works-gallery/sodeno-hero.jpg", width: 1600, height: 889 },
+    description:
+      "建具製作工房の公式サイト。温かみのあるデザインと、施工写真を活かした見やすい構成を重視しました。「名古屋 建具店」の検索結果で1位を獲得しています。",
+    tags: ["建具・造作家具", "施工写真の見せ方", "検索1位"],
   },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 14, filter: "blur(4px)" },
-  show: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  {
+    title: "すずはな行政書士事務所 様",
+    url: "https://www.suzuhana-gyosei.jp/ja",
+    image: { src: "/works-gallery/suzuhana-hero.jpg", width: 1600, height: 911 },
+    description:
+      "名古屋市中区の行政書士事務所の公式サイト。ビザ申請や許認可の案内をわかりやすく整理し、日本語・英語・中国語の3言語に対応しています。",
+    tags: ["日本語・英語・中国語", "許認可・入管業務", "Next.js"],
   },
-};
+  {
+    title: "C-ENT 様",
+    url: "https://www.c-ent.jp/",
+    image: { src: "/works-gallery/cent-hero.jpg", width: 1600, height: 871 },
+    description:
+      "企業向けサービスのコーポレートサイト。落ち着いた配色とブランドイメージを意識した、プロフェッショナルなデザインに仕上げています。",
+    tags: ["コーポレートサイト", "採用・Web・スクール", "ブランディング"],
+  },
+];
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-50/60 pb-23 dark:bg-slate-900">
-      <section className="relative overflow-hidden rounded-b-[3.5rem] bg-gradient-to-br from-orange-400 to-sky-400 text-white">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-[repeating-linear-gradient(90deg,rgba(255,255,255,0.12)_0,rgba(255,255,255,0.12)_1px,transparent_1px,transparent_80px)] opacity-70" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.25),transparent_55%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.2),transparent_60%)]" />
-          <div className="absolute -top-36 -left-20 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
-          <div className="absolute -bottom-48 right-[-20%] h-80 w-80 rounded-full bg-white/10 blur-3xl" />
-          <div className="absolute inset-0 bg-slate-900/20" />
-        </div>
-        <div className="relative mx-auto max-w-5xl px-6 py-16 sm:py-20 md:px-10">
-          <div className="mx-auto max-w-3xl space-y-6 rounded-[2.75rem] border border-white/25 bg-white/10 px-8 py-12 text-center shadow-[0_20px_60px_-30px_rgba(15,23,42,0.45)] backdrop-blur-xl">
-            <HeroBlock kosugiMaru={kosugiMaru} />
-          </div>
-        </div>
+    <PageShell>
+      <PageHero
+        badge="WORKS"
+        title="制作実績"
+        lead="これまでに制作したホームページをご紹介します。デザイン性・操作性・レスポンシブ対応・SEOを考慮した、高品質なWebサイト制作を心がけています。"
+      />
+
+      <section className="mx-auto max-w-6xl space-y-5 px-6">
+        {works.map((work, i) => (
+          <CardContainer
+            key={work.url}
+            containerClassName="block py-0"
+            className="w-full"
+          >
+            <CardBody className="h-auto w-full rounded-[1.75rem] border border-white/60 bg-[#fffaf9] p-7 shadow-[0_30px_60px_-30px_rgba(21,24,29,0.55)] md:p-12">
+              <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+                <CardItem
+                  translateZ={80}
+                  rotateZ={i % 2 ? -2 : 2}
+                  className="w-full overflow-hidden rounded-xl shadow-[0_24px_48px_-24px_rgba(21,24,29,0.6)] ring-1 ring-[#15181d]/10"
+                >
+                  <Image
+                    src={work.image.src}
+                    alt={`${work.title}のホームページ`}
+                    width={work.image.width}
+                    height={work.image.height}
+                    sizes="(min-width: 768px) 560px, 100vw"
+                    className="h-auto w-full"
+                  />
+                </CardItem>
+                <div>
+                  <CardItem translateZ={25}>
+                    <CardBadge>{`CASE ${String(i + 1).padStart(2, "0")}`}</CardBadge>
+                  </CardItem>
+                  <CardItem
+                    as="h2"
+                    translateZ={40}
+                    className="mt-4 text-2xl font-bold"
+                  >
+                    {work.title}
+                  </CardItem>
+                  <CardItem
+                    as="p"
+                    translateZ={25}
+                    className="mt-4 text-sm leading-relaxed text-[#4a4d55]"
+                  >
+                    {work.description}
+                  </CardItem>
+                  <CardItem translateZ={35} className="mt-5 flex flex-wrap gap-2">
+                    {work.tags.map((tag) => (
+                      <Chip key={tag}>{tag}</Chip>
+                    ))}
+                  </CardItem>
+                  <CardItem
+                    as="a"
+                    translateZ={30}
+                    href={work.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-block border-b-2 border-[#ff4a3f] pb-1 text-sm font-bold"
+                  >
+                    Webサイトを見る ↗
+                  </CardItem>
+                </div>
+              </div>
+            </CardBody>
+          </CardContainer>
+        ))}
       </section>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-gray-900 text-center px-4 py-16">
-        {/*   <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-6"> */}
-        {/*     制作実績（Works） */}
-        {/*   </h1> */}
-        {/* <p className="text-lg text-gray-600 dark:text-gray-300 mb-10 max-w-xl leading-relaxed"> */}
-        {/*   弊社がこれまでに制作したホームページをご紹介します。<br /> */}
-        {/*   デザイン性・操作性・レスポンシブ対応・SEOを考慮した */}
-        {/*   <span className="font-semibold">高品質なWebサイト制作</span>を心がけています。 */}
-        {/* </p> */}
 
-        <div className="flex flex-col gap-6 w-full max-w-2xl">
-          {/* 1つめの実績 */}
-          <a
-            href="https://www.sodeno-tategu.jp/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-6 text-left"
-          >
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-              袖野建具店 様
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-base mb-3">
-              建具製作工房の公式サイト。
-              温かみのあるデザインと、施工写真を活かした見やすい構成を重視しました。
-            </p>
-            <span className="text-orange-500 font-medium">
-              → Webサイトを見る
-            </span>
-          </a>
-
-          {/* すずはな行政書士事務所 */}
-          <a
-            href="https://www.suzuhana-gyosei.jp/ja"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-6 text-left"
-          >
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-              すずはな行政書士事務所 様
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-base mb-3">
-              名古屋市中区の行政書士事務所の公式サイト。
-              ビザ申請や許認可の案内をわかりやすく整理し、日本語・英語・中国語の3言語に対応しています。
-            </p>
-            <span className="text-orange-500 font-medium">
-              → Webサイトを見る
-            </span>
-          </a>
-
-          {/* 2つめの実績 */}
-          <a
-            href="https://www.c-ent.jp/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block rounded-xl bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition p-6 text-left"
-          >
-            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">
-              C-ENT 様
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 text-base mb-3">
-              企業向けサービスのコーポレートサイト。
-              落ち着いた配色とブランドイメージを意識した
-              プロフェッショナルなデザインに仕上げています。
-            </p>
-            <span className="text-orange-500 font-medium">
-              → Webサイトを見る
-            </span>
-          </a>
-        </div>
-
-        {/* 戻るボタン */}
-        <Link
-          href="/"
-          className="mt-12 inline-block rounded-md bg-gradient-to-r from-orange-400 to-sky-400 px-8 py-3 text-white shadow-md shadow-orange-300/30 transition hover:brightness-105"
-        >
-          トップページへ戻る
-        </Link>
+      <div className="mt-8">
+        <WorksGallery />
       </div>
-    </main>
-  );
-}
 
-function HeroBlock({ kosugiMaru }: { kosugiMaru: { className: string } }) {
-  return (
-    <MotionConfig reducedMotion="user">
-      <motion.div
-        className="space-y-6"
-        variants={container}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.6 }}
-      >
-        {/* ラベル：少しスケール＋グロウ */}
-        <motion.span
-          variants={item}
-          whileHover={{
-            scale: 1.04,
-            boxShadow: "0 0 32px rgba(255,255,255,0.18)",
-          }}
-          className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-white/90 shadow-inner shadow-white/20"
-        >
-          WORKS
-        </motion.span>
-
-        {/* 見出し：スプリングでスッと */}
-        <motion.h1
-          variants={item}
-          transition={{ type: "spring", stiffness: 220, damping: 24 }}
-          className={`text-3xl leading-tight text-white md:text-4xl lg:text-[2.8rem] ${kosugiMaru.className}`}
-        >
-          制作実績
-        </motion.h1>
-
-        {/* 説明文：フェードイン */}
-        <motion.p
-          variants={item}
-          className="text-sm leading-relaxed text-slate-100 md:text-base"
-        >
-          弊社がこれまでに制作したホームページをご紹介します。
-          <br />
-          デザイン性・操作性・レスポンシブ対応・SEOを考慮した
-          <span className="font-semibold">高品質なWebサイト制作</span>
-          を心がけています。
-        </motion.p>
-      </motion.div>
-    </MotionConfig>
+      <BackToTop />
+    </PageShell>
   );
 }

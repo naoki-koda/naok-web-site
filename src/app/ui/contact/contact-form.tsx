@@ -30,20 +30,20 @@ export default function Form() {
   return (
     <form
       action={formAction}
-      className="group relative isolate overflow-hidden rounded-3xl border border-slate-200/60 bg-white/95 p-8 shadow-xl shadow-slate-900/10 backdrop-blur md:p-12 dark:border-white/10 dark:bg-slate-900/90"
+      className="group relative isolate p-6 md:p-10"
     >
       {/* <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-sky-400/30 blur-3xl transition-all duration-700 group-hover:translate-x-4 group-hover:-translate-y-2" /> */}
       {/* <div className="pointer-events-none absolute -left-32 -bottom-32 h-80 w-80 rounded-full bg-orange-400/25 blur-3xl transition-all duration-700 group-hover:-translate-x-4 group-hover:translate-y-2" /> */}
 
       <div className="relative space-y-10">
-        <header className="space-y-4 text-teal-950 dark:text-white">
-          <span className="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.35em] text-sky-700 dark:bg-sky-500/20 dark:text-sky-200">
+        <header className="space-y-4 text-[#15181d]">
+          <span className="inline-flex items-center gap-2 rounded-full bg-[#aaacff]/35 px-4 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[#2a2c5a]">
             CONTACT FORM
           </span>
           <h2 className="text-2xl font-semibold md:text-3xl">
             ホームページ制作のご相談内容をお聞かせください
           </h2>
-          <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+          <p className="text-sm leading-relaxed text-slate-600">
             現状の課題や実現したいゴール、ご予算の目安など、わかる範囲で構いません。具体的なヒアリングを通じて最適なプランをご提案します。
           </p>
         </header>
@@ -52,7 +52,7 @@ export default function Form() {
           <div>
             <label
               htmlFor="lastName"
-              className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+              className="flex items-center justify-between text-sm font-medium text-slate-800"
             >
               <span>お名前（姓）</span>
               <span className="text-xs font-semibold text-rose-500">必須</span>
@@ -65,7 +65,7 @@ export default function Form() {
               placeholder="例）山田"
               required
               defaultValue={state.values?.lastName ?? ''}
-              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
               aria-describedby="lastName-error"
             />
             <div id="lastName-error" aria-live="polite" aria-atomic="true">
@@ -75,7 +75,7 @@ export default function Form() {
           <div>
             <label
               htmlFor="firstName"
-              className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+              className="flex items-center justify-between text-sm font-medium text-slate-800"
             >
               <span>お名前（名）</span>
               <span className="text-xs font-semibold text-rose-500">必須</span>
@@ -88,7 +88,7 @@ export default function Form() {
               placeholder="例）太郎"
               required
               defaultValue={state.values?.firstName ?? ''}
-              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
               aria-describedby="firstName-error"
             />
             <div id="firstName-error" aria-live="polite" aria-atomic="true">
@@ -98,7 +98,7 @@ export default function Form() {
           <div>
             <label
               htmlFor="lastNameKana"
-              className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+              className="flex items-center justify-between text-sm font-medium text-slate-800"
             >
               <span>フリガナ（セイ）</span>
               <span className="text-xs font-semibold text-rose-500">必須</span>
@@ -110,7 +110,7 @@ export default function Form() {
               placeholder="例）ヤマダ"
               required
               defaultValue={state.values?.lastNameKana ?? ''}
-              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm uppercase tracking-[0.2em] shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm uppercase tracking-[0.2em] shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
               aria-describedby="lastNameKana-error"
             />
             <div id="lastNameKana-error" aria-live="polite" aria-atomic="true">
@@ -120,7 +120,7 @@ export default function Form() {
           <div>
             <label
               htmlFor="firstNameKana"
-              className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+              className="flex items-center justify-between text-sm font-medium text-slate-800"
             >
               <span>フリガナ（メイ）</span>
               <span className="text-xs font-semibold text-rose-500">必須</span>
@@ -132,7 +132,7 @@ export default function Form() {
               placeholder="例）タロウ"
               required
               defaultValue={state.values?.firstNameKana ?? ''}
-              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm uppercase tracking-[0.2em] shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm uppercase tracking-[0.2em] shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
               aria-describedby="firstNameKana-error"
             />
             <div id="firstNameKana-error" aria-live="polite" aria-atomic="true">
@@ -145,10 +145,10 @@ export default function Form() {
           <div>
             <label
               htmlFor="company"
-              className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+              className="flex items-center justify-between text-sm font-medium text-slate-800"
             >
               <span>会社名・屋号</span>
-              <span className="text-xs font-semibold text-slate-400 dark:text-slate-500">任意</span>
+              <span className="text-xs font-semibold text-slate-400">任意</span>
             </label>
             <input
               id="company"
@@ -157,7 +157,7 @@ export default function Form() {
               autoComplete="organization"
               placeholder="例）株式会NAO.K"
               defaultValue={state.values?.company ?? ''}
-              className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
               aria-describedby="company-error"
             />
             <div id="company-error" aria-live="polite" aria-atomic="true">
@@ -174,7 +174,7 @@ export default function Form() {
         <div>
           <label
             htmlFor="email"
-            className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+            className="flex items-center justify-between text-sm font-medium text-slate-800"
           >
             <span>メールアドレス</span>
             <span className="text-xs font-semibold text-rose-500">必須</span>
@@ -187,7 +187,7 @@ export default function Form() {
             placeholder="you@example.com"
             required
             defaultValue={state.values?.email ?? ''}
-            className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+            className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
             aria-describedby="email-error"
           />
           <div id="email-error" aria-live="polite" aria-atomic="true">
@@ -198,7 +198,7 @@ export default function Form() {
         <div>
           <label
             htmlFor="confirmEmail"
-            className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+            className="flex items-center justify-between text-sm font-medium text-slate-800"
           >
             <span>確認用メールアドレス</span>
             <span className="text-xs font-semibold text-rose-500">必須</span>
@@ -211,7 +211,7 @@ export default function Form() {
             placeholder="you@example.com"
             required
             defaultValue={state.values?.confirmEmail ?? ''}
-            className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+            className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
             aria-describedby="confirmEmail-error"
           />
           <div id="confirmEmail-error" aria-live="polite" aria-atomic="true">
@@ -222,10 +222,10 @@ export default function Form() {
         <div>
           <label
             htmlFor="websiteUrl"
-            className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+            className="flex items-center justify-between text-sm font-medium text-slate-800"
           >
             <span>現状サイトURL</span>
-            <span className="text-xs font-semibold text-slate-400 dark:text-slate-500">任意</span>
+            <span className="text-xs font-semibold text-slate-400">任意</span>
           </label>
           <input
             id="websiteUrl"
@@ -233,7 +233,7 @@ export default function Form() {
             type="url"
             placeholder="https://www.example.com"
             defaultValue={state.values?.websiteUrl ?? ''}
-            className="mt-2 w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+            className="mt-2 w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
             aria-describedby="websiteUrl-error"
           />
           <div id="websiteUrl-error" aria-live="polite" aria-atomic="true">
@@ -243,14 +243,14 @@ export default function Form() {
 
         <fieldset className="grid gap-6 md:grid-cols-3">
           <div className="md:col-span-1">
-            <label className="mb-2 block text-sm font-medium text-slate-800 dark:text-slate-100">
+            <label className="mb-2 block text-sm font-medium text-slate-800">
               ご希望の内容 <span className="text-xs font-semibold text-rose-500">必須</span>
             </label>
             <select
               name="serviceType"
               defaultValue={state.values?.serviceType ?? ''}
               required
-              className="w-full dark:text-slate-100 rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
               aria-describedby="serviceType-error"
             >
               <option value="" disabled>
@@ -268,14 +268,14 @@ export default function Form() {
           </div>
 
           <div className="md:col-span-1">
-            <label className="mb-2 block text-sm font-medium text-slate-800 dark:text-slate-100">
+            <label className="mb-2 block text-sm font-medium text-slate-800">
               ページ数 <span className="text-xs font-semibold text-rose-500">必須</span>
             </label>
             <select
               name="budget"
               defaultValue={state.values?.budget ?? ''}
               required
-              className="w-full rounded-2xl dark:text-slate-100 border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
               aria-describedby="budget-error"
             >
               <option value="" disabled>
@@ -293,14 +293,14 @@ export default function Form() {
           </div>
 
           <div className="md:col-span-1">
-            <label className="mb-2 block text-sm font-medium text-slate-800 dark:text-slate-100">
+            <label className="mb-2 block text-sm font-medium text-slate-800">
               ご希望の納期 <span className="text-xs font-semibold text-rose-500">必須</span>
             </label>
             <select
               name="schedule"
               defaultValue={state.values?.schedule ?? ''}
               required
-              className="w-full rounded-2xl dark:text-slate-100 border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+              className="w-full rounded-2xl border border-slate-200/80 bg-white px-4 py-3 text-sm shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
               aria-describedby="schedule-error"
             >
               <option value="" disabled>
@@ -320,7 +320,7 @@ export default function Form() {
         <div>
           <label
             htmlFor="message"
-            className="flex items-center justify-between text-sm font-medium text-slate-800 dark:text-slate-100"
+            className="flex items-center justify-between text-sm font-medium text-slate-800"
           >
             <span>お問い合わせ内容</span>
             <span className="text-xs font-semibold text-rose-500">必須</span>
@@ -332,7 +332,7 @@ export default function Form() {
             placeholder="例）新しいサービスの立ち上げに伴いホームページを制作したい。競合との差別化、リード獲得に強いLPも併せて相談したいです。"
             required
             defaultValue={state.values?.message ?? ''}
-            className="mt-2 w-full dark:text-slate-100 rounded-3xl border border-slate-200/80 bg-white px-4 py-4 text-sm leading-relaxed shadow-inner focus:border-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-300/60 dark:border-white/10 dark:bg-slate-950/70"
+            className="mt-2 w-full rounded-3xl border border-slate-200/80 bg-white px-4 py-4 text-sm leading-relaxed shadow-inner focus:border-[#aaacff] focus:outline-none focus:ring-2 focus:ring-[#aaacff]/50"
             aria-describedby="message-error"
           />
           <div id="message-error" aria-live="polite" aria-atomic="true">
@@ -340,17 +340,17 @@ export default function Form() {
           </div>
         </div>
 
-        <div className="rounded-3xl bg-slate-50/80 px-4 py-4 text-xs text-slate-500 dark:bg-slate-800/50 dark:text-slate-300 md:px-6 md:py-5">
+        <div className="rounded-2xl bg-[#aaacff]/12 px-4 py-4 text-xs text-slate-500 md:px-6 md:py-5">
           入力いただいた情報は、お問い合わせの対応以外の目的では利用いたしません。送信前にプライバシーポリシーをご確認ください。
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-slate-400 dark:text-slate-500">
+          <p className="text-xs text-slate-400">
             送信後、1営業日以内にメールでご連絡いたします。
           </p>
           <button
             type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-orange-400 px-10 py-3 text-sm font-semibold text-white shadow-lg shadow-orange-300/40 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-sky-300 hover:brightness-105 dark:orange-400"
+            className="inline-flex items-center justify-center rounded-full bg-[#ff4a3f] px-10 py-3 text-sm font-bold text-[#15181d] shadow-[0_10px_24px_-12px_rgba(255,74,63,0.9)] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#aaacff] hover:brightness-95"
           >
             無料で相談する
           </button>

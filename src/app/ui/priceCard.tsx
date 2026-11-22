@@ -1,4 +1,5 @@
-import { cn } from "@/app/lib/utils"; // 任意: classNamesをまとめる関数があると便利
+import { GlowCard } from "@/app/ui/cards";
+import { shipporiAntiqueB1 } from "@/app/ui/fonts";
 
 interface PricingCardProps {
   title: string;
@@ -17,33 +18,38 @@ export default function PricingCard({
   originalPrice,
   currentPrice,
   period,
-  yearlyTotal,
   note,
   highlighted = false,
 }: PricingCardProps) {
   return (
-    <div
-      className={cn(
-        "rounded-xl border border-orange-200/70 bg-white/95 p-6 text-teal-950 shadow-lg shadow-orange-200/40 flex flex-col justify-between",
-        highlighted ? "border-orange-400 shadow-orange-300/50" : "",
-      )}
-    >
+    <GlowCard innerClassName="flex flex-col justify-between">
       <div>
-        <h3 className="text-lg font-medium">{title}</h3>
-        <p className="text-sm text-gray-800">{subtitle}</p>
+        {highlighted && (
+          <span className="mb-3 inline-flex rounded-full bg-[#ff4a3f] px-3 py-1 text-[11px] font-bold text-[#15181d]">
+            おすすめ
+          </span>
+        )}
+        <h3 className="text-lg font-bold">{title}</h3>
+        <p className="mt-1 text-sm text-[#4a4d55]">{subtitle}</p>
 
-        <div className="mt-4">
-          <p className="text-sm text-gray-800">{originalPrice}</p>
-          <div className="inline-flex flex-col gap-1">
-            <p className="text-3xl font-bold bg-gradient-to-r from-orange-400 to-sky-400 bg-clip-text text-transparent">
+        <div className="mt-6">
+          {originalPrice && (
+            <p className="text-xs text-[#6b6f78]">{originalPrice}</p>
+          )}
+          <p className="flex items-baseline gap-2">
+            <span
+              className={`${shipporiAntiqueB1.className} text-4xl text-[#e0372d]`}
+            >
               {currentPrice}
-            </p>
-            <span className="text-sm font-semibold text-orange-600/90">/{period}</span>
-          </div>
+            </span>
+            <span className="text-sm font-bold text-[#4a4d55]">/{period}</span>
+          </p>
         </div>
       </div>
 
-      <p className="text-xs text-slate-600 border-t border-orange-200/70 pt-4 mt-4">{note}</p>
-    </div>
+      <p className="mt-6 border-t border-[#15181d]/10 pt-4 text-xs leading-relaxed text-[#4a4d55]">
+        {note}
+      </p>
+    </GlowCard>
   );
 }
