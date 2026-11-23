@@ -64,21 +64,6 @@ export default function Home() {
     },
   ];
 
-  const sellPoints = [
-    {
-      title: "導線重視の構成",
-      text: "訪れた人がどう動くかを想定して、CTAやナビゲーションを設計します。",
-    },
-    {
-      title: "高速レンダリング",
-      text: "表示速度はCore Web Vitalsの評価に直結し、検索での見つかりやすさにつながります。",
-    },
-    {
-      title: "レスポンシブデザイン対応",
-      text: "多くの人が使うスマホの画面で、見やすく・使いやすく・買いやすく整えます。",
-    },
-  ];
-
   const securityComparison = [
     {
       label: "公開サーバーで動くもの",
@@ -385,17 +370,6 @@ export default function Home() {
         text="最新のフレームワークで開発時間を短縮し、営業・打ち合わせまで自社スタッフが担当することで、外注費や中間マージンを省いています。"
         points={pricePoints}
         quote="「安かろう悪かろう」ではありません。開発から運用まで一人で担当するからこそ伝達のロスがなく、ご相談から納品まで誠実に対応できます。"
-      />
-
-      {/* 売れる */}
-      <FeatureBento
-        id="sell"
-        icon={<IconTile src="/buyIcon-sm.webp" label="売れる" />}
-        big="理由"
-        heading="売れるサイトには、理由があります"
-        text="デザインだけでなく、導線設計・文章構成・ユーザー心理までを意識した「成果の出る」サイトを制作します。"
-        points={sellPoints}
-        quote="見た目が整っているだけでは売れません。行動を起こしやすい導線と検索に強い作りを組み合わせて、「見られる」を「売れる」に変えます。"
       />
 
       {/* 守れる：比較表を横長のカードに入れる */}
@@ -706,7 +680,7 @@ export default function Home() {
   );
 }
 
-// 「速い・安い・売れる・守れる」を表すアイコンを、目盛り付きのダークタイルに載せる
+// 「速い・安い・守れる」を表すアイコンを、目盛り付きのダークタイルに載せる
 function IconTile({
   src,
   label,
@@ -745,7 +719,7 @@ function IconTile({
 
 type Point = { title: string; text: string };
 
-// 「速い・安い・売れる」の共通レイアウト。
+// 「速い・安い」の共通レイアウト。
 // 大きいメインのカード1枚＋ポイント3枚＋ひと言の5マスを Bento Grid で組む
 function FeatureBento({
   id,

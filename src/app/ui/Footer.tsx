@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { href: '/contact', label: 'CONTACT', subLabel: 'お問い合わせ' },
 ];
 
-const STRENGTHS = ['速い', '安い', '売れる', '守れる'];
+const STRENGTHS = ['速い', '安い', '守れる'];
 
 export default function Footer() {
   return (
