@@ -1,7 +1,33 @@
 "use client";
 
+import A8AffiliateAd, { a8Ads } from "@/app/blog/A8AffiliateAd";
+import { blogRakutenAds } from "@/app/blog/blogRakutenAds";
+import RakutenAffiliateAd from "@/app/blog/RakutenAffiliateAd";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type ReactNode } from "react";
+
+// 記事を開いたときのモーダルに出す広告。掲載店を紹介する記事（左官・建具・行政書士）には出さない。
+// レイアウトで広告を組み立てて props で渡すと、他ページからブログへのリンクを先読みしただけで
+// 広告画像が読み込まれ、楽天・A8 のサードパーティCookieが付いてしまう（Lighthouse の
+// ベストプラクティス減点）。そのため広告はモーダルを開くときにここで初めて組み立てる。
+const modalAds: Record<string, () => ReactNode> = {
+  "/blog/hikari": () => <A8AffiliateAd ad={a8Ads.docomoHikari} />,
+  "/blog/finance": () => (
+    <A8AffiliateAd
+      ad={a8Ads.fpConsultation}
+      fallback={<RakutenAffiliateAd ad={blogRakutenAds.finance[0]} />}
+    />
+  ),
+  "/blog/hotelmatome": () => <A8AffiliateAd ad={a8Ads.hotelBooking} />,
+  "/blog/hiphopmatome": () => <RakutenAffiliateAd ad={blogRakutenAds.hiphop[2]} />,
+  "/blog/aienappmatome": () => <RakutenAffiliateAd ad={blogRakutenAds.english[0]} />,
+  "/blog/nagoya/hairsalon": () => (
+    <RakutenAffiliateAd ad={blogRakutenAds.hairsalon[0]} />
+  ),
+  "/blog/nagoya/personal-color": () => (
+    <RakutenAffiliateAd ad={blogRakutenAds.personalColor[0]} />
+  ),
+};
 
 // 同じ人に何度も出すと離脱が増えるため、表示は24時間に1回まで
 const STORAGE_KEY = "blogAdModal:lastShownAt";
@@ -23,8 +49,9 @@ const writeLastShown = () => {
   }
 };
 
-// ads: パスの先頭一致で選ぶ広告（長いパスを優先）
-export default function BlogAdModal({ ads }: { ads: Record<string, ReactNode> }) {
+// パスの先頭一致で広告を選ぶ（長いパスを優先）
+export default function BlogAdModal() {
+  const ads = modalAds;
   const pathname = usePathname();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [open, setOpen] = useState(false);
@@ -92,7 +119,7 @@ export default function BlogAdModal({ ads }: { ads: Record<string, ReactNode> })
         <p className="mt-1 text-center text-base font-bold text-slate-900">
           この記事を読む方におすすめ
         </p>
-        <div className="[&>div]:my-4">{ads[matchedPath]}</div>
+        <div className="[&>div]:my-4">{ads[matchedPath]()}</div>
       </div>
     </dialog>
   );
