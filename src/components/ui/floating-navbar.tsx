@@ -1,17 +1,12 @@
 "use client";
-import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "motion/react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 // Aceternity の Floating Navbar をもとに、ロゴ・現在地表示・CTA を追加したもの。
 // ページ最上部では常に表示し、下へスクロールすると隠れ、上へ戻すと再び現れる。
+// 初回読み込みを軽くするため、アニメーションライブラリ（motion）は使わず CSS の transition で動かす。
 export const FloatingNav = ({
   navItems,
   logo,
@@ -29,38 +24,39 @@ export const FloatingNav = ({
   cta?: { name: string; link: string };
   className?: string;
 }) => {
-  const { scrollY } = useScroll();
   const [visible, setVisible] = useState(true);
   const pathname = usePathname();
 
-  useMotionValueEvent(scrollY, "change", (current) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    if (current < 80) {
-      setVisible(true);
-    } else {
-      setVisible(current < previous);
-    }
-  });
+  useEffect(() => {
+    let previous = window.scrollY;
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const current = window.scrollY;
+        if (current < 80) {
+          setVisible(true);
+        } else if (current !== previous) {
+          setVisible(current < previous);
+        }
+        previous = current;
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   const isActive = (link: string) =>
     link === "/" ? pathname === "/" : pathname.startsWith(link);
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        initial={{
-          opacity: 1,
-          y: 0,
-        }}
-        animate={{
-          y: visible ? 0 : -100,
-          opacity: visible ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.2,
-        }}
+    <div
         className={cn(
-          "flex max-w-[calc(100vw-1rem)] fixed top-3 md:top-5 inset-x-0 mx-auto w-fit z-[5000] items-center justify-center",
+          "flex max-w-[calc(100vw-1rem)] fixed top-3 md:top-5 inset-x-0 mx-auto w-fit z-[5000] items-center justify-center transition-[transform,opacity] duration-200",
+          visible ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-[100px] opacity-0",
           className
         )}
       >
@@ -104,7 +100,6 @@ export const FloatingNav = ({
             </>
           )}
         </nav>
-      </motion.div>
-    </AnimatePresence>
+    </div>
   );
 };

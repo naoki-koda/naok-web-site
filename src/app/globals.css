@@ -172,8 +172,16 @@
     transform: translate3d(-3%, -4%, 0) rotate(-2deg);
   }
 }
+@keyframes hero-wave-fade {
+  from {
+    opacity: 0;
+  }
+}
 .hero-wave {
-  animation: hero-wave-drift 14s ease-in-out infinite alternate;
+  /* 読み込み後にふわっと現れ、その後はゆっくり漂う */
+  animation:
+    hero-wave-fade 1.2s ease-out both,
+    hero-wave-drift 14s ease-in-out infinite alternate;
   transform-origin: 70% 60%;
 }
 @media (prefers-reduced-motion: reduce) {

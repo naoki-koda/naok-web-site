@@ -2,6 +2,7 @@
 
 import { BlurFade } from "@/components/ui/blur-fade";
 import { shipporiAntiqueB1 } from "@/app/ui/fonts";
+import { LazyMount } from "@/components/ui/lazy-mount";
 import Image from "next/image";
 
 type Shot = {
@@ -86,14 +87,17 @@ export default function WorksGallery() {
                       : "overflow-hidden"
                   }
                 >
-                  <Image
-                    src={shot.src}
-                    alt={`${shot.site}様のサイト：${shot.part}`}
-                    width={shot.width}
-                    height={shot.height}
-                    sizes="(min-width: 1024px) 360px, 50vw"
-                    className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-                  />
+                  {/* 画面に近づいてから画像を読み込む。それまでは同じ縦横比の枠だけ確保する */}
+                  <LazyMount style={{ aspectRatio: `${shot.width} / ${shot.height}` }}>
+                    <Image
+                      src={shot.src}
+                      alt={`${shot.site}様のサイト：${shot.part}`}
+                      width={shot.width}
+                      height={shot.height}
+                      sizes="(min-width: 1024px) 360px, 50vw"
+                      className="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                    />
+                  </LazyMount>
                 </div>
                 <figcaption
                   className={`flex items-baseline justify-between gap-3 px-2 pb-1.5 pt-2 text-[10px] sm:px-3 sm:pb-2 sm:pt-3 sm:text-xs ${

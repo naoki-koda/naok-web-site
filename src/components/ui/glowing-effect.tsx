@@ -2,7 +2,10 @@
 
 import { memo, useCallback, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { animate } from "motion/react";
+
+// motion の animate の代わり。初回読み込みを軽くするため、角度の補間は自前の rAF で行う。
+// イージングは元の cubic-bezier(0.16, 1, 0.3, 1) に近い easeOutQuart
+const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
 
 interface GlowingEffectProps {
   blur?: number;
@@ -32,6 +35,7 @@ const GlowingEffect = memo(
     const containerRef = useRef<HTMLDivElement>(null);
     const lastPosition = useRef({ x: 0, y: 0 });
     const animationFrameRef = useRef<number>(0);
+    const tweenFrameRef = useRef<number>(0);
 
     const handleMove = useCallback(
       (e?: MouseEvent | { x: number; y: number }) => {
@@ -85,13 +89,16 @@ const GlowingEffect = memo(
           const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
           const newAngle = currentAngle + angleDiff;
 
-          animate(currentAngle, newAngle, {
-            duration: movementDuration,
-            ease: [0.16, 1, 0.3, 1],
-            onUpdate: (value) => {
-              element.style.setProperty("--start", String(value));
-            },
-          });
+          cancelAnimationFrame(tweenFrameRef.current);
+          const startedAt = performance.now();
+          const durationMs = movementDuration * 1000;
+          const step = (now: number) => {
+            const t = Math.min(1, (now - startedAt) / durationMs);
+            const value = currentAngle + (newAngle - currentAngle) * easeOutQuart(t);
+            element.style.setProperty("--start", String(value));
+            if (t < 1) tweenFrameRef.current = requestAnimationFrame(step);
+          };
+          tweenFrameRef.current = requestAnimationFrame(step);
         });
       },
       [inactiveZone, proximity, movementDuration]
@@ -112,6 +119,7 @@ const GlowingEffect = memo(
         if (animationFrameRef.current) {
           cancelAnimationFrame(animationFrameRef.current);
         }
+        cancelAnimationFrame(tweenFrameRef.current);
         window.removeEventListener("scroll", handleScroll);
         document.body.removeEventListener("pointermove", handlePointerMove);
       };

@@ -58,11 +58,14 @@ export default function Header() {
             aria-label="REEWA WEB トップページ"
             className="flex shrink-0 items-center gap-2 rounded-full pr-1 md:pr-2"
           >
+            {/* 表示サイズ（32px、高解像度画面で64px）に合わせた1.8KBのロゴ。
+                favicon.ico（270KB）を毎回変換して配信しないよう別ファイルにしている */}
             <Image
-              src="/favicon.ico"
+              src="/nav-logo.webp"
               alt=""
               width={32}
               height={32}
+              unoptimized
               className="rounded-full"
             />
             <span className="hidden text-sm font-bold tracking-wider text-[#15181d] lg:block">

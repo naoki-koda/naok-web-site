@@ -1,14 +1,14 @@
 "use client";
 
-import { AnimatedCircularProgressBar } from "@/components/ui/animated-circular-progress-bar";
 import { shipporiAntiqueB1 } from "@/app/ui/fonts";
+import { AnimatedCircularProgressBar } from "@/components/ui/animated-circular-progress-bar";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 // 資料（P.18）に掲載している reewa-web.jp の Lighthouse 計測結果
 const scores = [
-  { label: "パフォーマンス", sub: "Performance", value: 93 },
-  { label: "アクセシビリティ", sub: "Accessibility", value: 96 },
+  { label: "パフォーマンス", sub: "Performance", value: 100 },
+  { label: "アクセシビリティ", sub: "Accessibility", value: 100 },
   { label: "おすすめの設定", sub: "Best Practices", value: 100 },
   { label: "SEO", sub: "SEO", value: 100 },
 ];

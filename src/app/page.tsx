@@ -1,10 +1,10 @@
-"use client";
-
 import { BentoCell, CardBadge, GlowCard } from "@/app/ui/cards";
 import MyDrawer from "@/app/ui/Drawer";
 import WorksGallery from "@/app/ui/WorksGallery";
 import LighthouseScores from "@/app/ui/LighthouseScores";
 import SpaGuide from "@/app/ui/SpaGuide";
+import HeroWaveLazy from "@/app/ui/HeroWaveLazy";
+import { LazyMount } from "@/components/ui/lazy-mount";
 import { shipporiAntiqueB1, zenKaku } from "@/app/ui/fonts";
 import {
   Accordion,
@@ -283,14 +283,8 @@ export default function Home() {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[1.75rem]"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element -- 装飾用のSVGなので最適化不要 */}
-                <img
-                  src="/hero-wave.svg"
-                  alt=""
-                  width={709}
-                  height={415}
-                  fetchPriority="high" // 最大の表示要素(LCP)になるので優先して読み込む
-                  className="hero-wave absolute -left-[12%] bottom-[-16%] w-[170%] max-w-none opacity-55 sm:-left-[6%] sm:bottom-[-34%] sm:w-[135%] sm:opacity-80 md:-left-[8%] md:bottom-[-40%] md:w-[140%] md:opacity-90"
+                <HeroWaveLazy
+                  className="hero-wave absolute h-auto -left-[12%] bottom-[-16%] w-[170%] max-w-none opacity-55 sm:-left-[6%] sm:bottom-[-34%] sm:w-[135%] sm:opacity-80 md:-left-[8%] md:bottom-[-40%] md:w-[140%] md:opacity-90"
                 />
                 {/* 文字が乗る左上側を白くぼかして読みやすさを保つ */}
                 <div className="hero-wave-veil absolute inset-0" />
@@ -369,7 +363,7 @@ export default function Home() {
       {/* 速い */}
       <FeatureBento
         id="speed"
-        icon={<IconTile src="/fastIcon.webp" label="速い" />}
+        icon={<IconTile src="/fastIcon-sm.webp" label="速い" />}
         big="0"
         heading="リロードで止まらないサイト"
         text="WordPressより高速に動く、SPA・PWA対応のサイトを作ります。ページを移るたびに読み込みが入らないので、見ている人を待たせません。"
@@ -385,7 +379,7 @@ export default function Home() {
       <FeatureBento
         id="price"
         reverse
-        icon={<IconTile src="/cheapIcon.webp" label="安い" />}
+        icon={<IconTile src="/cheapIcon-sm.webp" label="安い" />}
         big="3万円〜"
         heading="1ページあたりの制作費"
         text="最新のフレームワークで開発時間を短縮し、営業・打ち合わせまで自社スタッフが担当することで、外注費や中間マージンを省いています。"
@@ -396,7 +390,7 @@ export default function Home() {
       {/* 売れる */}
       <FeatureBento
         id="sell"
-        icon={<IconTile src="/buyIcon.webp" label="売れる" />}
+        icon={<IconTile src="/buyIcon-sm.webp" label="売れる" />}
         big="理由"
         heading="売れるサイトには、理由があります"
         text="デザインだけでなく、導線設計・文章構成・ユーザー心理までを意識した「成果の出る」サイトを制作します。"
@@ -726,15 +720,18 @@ function IconTile({
     <div className="flex items-center gap-4">
       <div className={styles.iconTile}>
         {src ? (
-          // アニメーションWebPのため最適化せずそのまま配信する
-          <Image
-            src={src}
-            alt=""
-            width={96}
-            height={96}
-            unoptimized
-            className="h-full w-full object-contain"
-          />
+          // アニメーションWebPのため最適化せずそのまま配信する（表示サイズに合わせ168pxに縮小済み）
+          // 画面に近づいてから読み込む（ページ下部の画像が初回表示を遅らせないように）
+          <LazyMount className="h-full w-full">
+            <Image
+              src={src}
+              alt=""
+              width={96}
+              height={96}
+              unoptimized
+              className="h-full w-full object-contain"
+            />
+          </LazyMount>
         ) : (
           children
         )}

@@ -125,9 +125,10 @@ export default function SpaGuide() {
           <button
             type="button"
             onClick={() => open(1)}
-            aria-label="資料を1ページ目から読む"
             className="group relative block w-full pb-6 pr-6"
           >
+            {/* 読み上げ名は中身の文字から作る（aria-label にすると画面の「◯ページ」と食い違うため） */}
+            <span className="sr-only">資料を1ページ目から読む：</span>
             <span
               aria-hidden="true"
               className="absolute inset-0 left-6 top-6 rounded-xl bg-[#15181d]/10"

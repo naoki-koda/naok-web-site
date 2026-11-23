@@ -1,16 +1,24 @@
-import { Shippori_Antique_B1 } from "next/font/google";
+import localFont from "next/font/local";
 
 export const kosugiMaru = {
   className: 'font-sans',
 };
 
-export const shipporiAntiqueB1 = Shippori_Antique_B1({
-  subsets: ["latin"],
+// 見出し用。Google Fonts 版は文字範囲ごとに約120ファイルへ分割され、フォント定義CSSだけで
+// 約94KBあって表示を遅らせていたため、サイトで使う文字だけに絞った1ファイル（約67KB）を使う。
+// 見出しに新しい漢字を足したら scripts/shippori-subset.mjs の手順でファイルを作り直す。
+export const shipporiAntiqueB1 = localFont({
+  src: "../fonts/ShipporiAntiqueB1-subset.woff2",
   weight: "400",
   display: "swap",
-  // 日本語フォントは文字範囲ごとに数百ファイルへ分割されるため、先読みすると
-  // CSS より先に約2MBのフォントを取りに行って初回表示が遅れる。必要な分だけ後から読む
-  preload: false,
+  // ファイルに無い文字は本文と同じ端末標準のゴシック体で表示する
+  fallback: [
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP",
+    "Meiryo",
+    "sans-serif",
+  ],
 });
 
 // 本文は端末の標準ゴシック体を使う（定義は globals.css の .font-jp-sans）。

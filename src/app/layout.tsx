@@ -97,11 +97,12 @@ export default function RootLayout({
         />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-1YSXLNJL1Q"
-          strategy="afterInteractive"
+          // 計測タグ（約180KB）はページの表示が終わってから読み込み、初回表示を遅らせない
+          strategy="lazyOnload"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
