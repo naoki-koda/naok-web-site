@@ -445,7 +445,8 @@ export default function Home() {
                     {row.php}
                   </p>
                   <p className="text-sm font-bold leading-relaxed">
-                    <span className="mr-2 text-xs text-[#6d70ff] md:hidden">REEWA WEB</span>
+                    {/* 白いカード上で文字のコントラスト比4.5以上を満たす濃さ（#6d70ff は3.75で不足） */}
+                    <span className="mr-2 text-xs text-[#4f52e0] md:hidden">REEWA WEB</span>
                     {row.reewa}
                   </p>
                 </div>
