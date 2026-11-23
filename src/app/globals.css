@@ -155,3 +155,37 @@
 :root {
   color-scheme: light;
 }
+
+/* 本文用の日本語ゴシック体。端末に入っているフォントを使うので読み込みが発生しない
+   （iPhone/Mac はヒラギノ角ゴ、Android は Noto Sans JP、Windows はメイリオ） */
+.font-jp-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+}
+
+/* ファーストビュー背景の波線。ゆっくり上下に漂わせる（動きを減らす設定の端末では止める） */
+@keyframes hero-wave-drift {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(-3%, -4%, 0) rotate(-2deg);
+  }
+}
+.hero-wave {
+  animation: hero-wave-drift 14s ease-in-out infinite alternate;
+  transform-origin: 70% 60%;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-wave {
+    animation: none;
+  }
+}
+/* 波線の上にかける白いぼかし。見出しと本文が乗る左上を白く保つ */
+.hero-wave-veil {
+  background: radial-gradient(
+    ellipse at 18% 28%,
+    #fffaf9 35%,
+    rgba(255, 250, 249, 0) 75%
+  );
+}

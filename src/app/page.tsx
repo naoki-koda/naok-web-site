@@ -276,7 +276,25 @@ export default function Home() {
             containerClassName="block py-0"
             className="h-full w-full"
           >
-            <CardBody className="relative h-full w-full rounded-[1.75rem] border border-white/60 bg-[#fffaf9] p-7 shadow-[0_30px_60px_-30px_rgba(21,24,29,0.55)] md:p-12">
+            <CardBody className="relative isolate h-full w-full rounded-[1.75rem] border border-white/60 bg-[#fffaf9] p-7 shadow-[0_30px_60px_-30px_rgba(21,24,29,0.55)] md:p-12">
+              {/* 背景のラベンダーの波線。文字の後ろに敷き、ゆっくり漂わせる。
+                  isolate で重なりをカード内に閉じ、-z-10 で本文より奥に置く */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[1.75rem]"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element -- 装飾用のSVGなので最適化不要 */}
+                <img
+                  src="/hero-wave.svg"
+                  alt=""
+                  width={709}
+                  height={415}
+                  fetchPriority="high" // 最大の表示要素(LCP)になるので優先して読み込む
+                  className="hero-wave absolute -left-[12%] bottom-[-16%] w-[170%] max-w-none opacity-55 sm:-left-[6%] sm:bottom-[-34%] sm:w-[135%] sm:opacity-80 md:-left-[8%] md:bottom-[-40%] md:w-[140%] md:opacity-90"
+                />
+                {/* 文字が乗る左上側を白くぼかして読みやすさを保つ */}
+                <div className="hero-wave-veil absolute inset-0" />
+              </div>
               <CardItem translateZ={20}>
                 <CardBadge>NAGOYA WEB PRODUCTION</CardBadge>
               </CardItem>
